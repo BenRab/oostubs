@@ -15,8 +15,8 @@
 #                    METHODS                      # 
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 /** \todo \~german implementieren \~english write implementation */
-Keyboard::Keyboard(){
-}
+//Keyboard::Keyboard(){
+//}
 
 /** \todo \~german implementieren \~english write implementation */
 void Keyboard::plugin(){

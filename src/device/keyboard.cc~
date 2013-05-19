@@ -2,35 +2,26 @@
  *                                   Technische Informatik II                                    * 
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
  *                                                                                               * 
- *                                          P A N I C                                            * 
+ *                                       K E Y B O A R D                                         * 
  *                                                                                               * 
 \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #                    INCLUDES                     #
 \* * * * * * * * * * * * * * * * * * * * * * * * */
-#include "device/panic.h"
-#include "machine/cpu.h"
-#include "device/cgastr.h"
-
-extern CPU cpu;
-extern CGA_Stream kout;
+#include "device/keyboard.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #                    METHODS                      # 
 \* * * * * * * * * * * * * * * * * * * * * * * * */
+/** \todo \~german implementieren \~english write implementation */
+Keyboard::Keyboard(){
+}
 
-/** \todo \~german implementieren \~english write implementation*/
-/*Panic::Panic(){
-}*/
+/** \todo \~german implementieren \~english write implementation */
+void Keyboard::plugin(){
+}
 
-
-
-/** \todo \~german implementieren \~english write implementation*/
-void Panic::trigger(){
-  cpu.disable_int();
-
-  kout << "Interrupt: " << gateInterruptNumber << endl;
-
-  cpu.halt();
+/** \todo \~german implementieren \~english write implementation */
+void Keyboard::trigger(){
 }
