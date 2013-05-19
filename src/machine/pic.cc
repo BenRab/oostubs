@@ -12,7 +12,7 @@
 #include "machine/pic.h"
 #include "machine/io_port.h"
 
-
+extern CPU cpu;
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #                    METHODS                      # 
 \* * * * * * * * * * * * * * * * * * * * * * * * */
@@ -52,7 +52,7 @@ void PIC::allow(Interrupts interrupt){//setzt Bit vom zu erlaubenden INT auf 0
   IO_Port mask_1(0x21), //Datenport Master
           mask_2(0xa1); //Datenport Slave
 
-  CPU cpu;
+  //CPU cpu;
   cpu.enable_int();
 
   unsigned char status;

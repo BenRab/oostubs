@@ -47,8 +47,8 @@ extern "C" void handleExceptionReserved(unsigned short slot);
  * \todo write implementation
  */
 void guardian (unsigned short slot) {
- // kout.flush();
-  kout << "test" << endl;
+  kout.setpos(0,23);
+  kout << "Interrupt Nr.:" << slot <<endl;
 }
 
 
