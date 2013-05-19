@@ -1,0 +1,339 @@
+/**
+ * \~german
+ * \page task2 Aufgabe 2 - Interrupts
+ * \tableofcontents
+ * 
+ * \section task2_sec1 Ziele
+ *   \li Behandlung asynchroner Ereignisse
+ *   \li Problematik und Schutz kritischer Abschnitte
+ * 
+ * \section task1_sec2 Aufgabe
+ * Es soll eine einfache Interruptbehandlung für die Unterbrechungen durch Tastaturereignisse 
+ * umgesetzt werden. Hierzu müssen die Klassen \ref CPU (bereits implementiert), \ref PIC, 
+ * \ref Plugbox, \ref Gate, \ref Panic, \ref Keyboard sowie die Funktion \ref guardian() 
+ * implementiert werden. Um die entsprechenden Geräte überall in OOStuBS nutzen zu können, 
+ * sollen von diesen Klassen die globale Objekte \c cpu, \c plugbox, \c pic und \c keyboard 
+ * angelegt werden. 
+ * Dies ist bereits geschehen.
+ * 
+\dot
+  digraph task1 {
+    size="5.9,5.5";
+    node [shape=box, style="solid,filled", fillcolor=white];
+    
+    
+    kernelF [label="kernel(...)", shape=oval, URL="\ref kernel"];
+    
+    subgraph cluster_subuser {
+      rank="source";
+      style=filled;
+      color=lightgray;
+      label = "user";
+      labeljust=l;
+      task2C [label="Task2", URL="\ref Task2"];
+    }
+    
+    subgraph cluster_submachine {
+      style=filled;
+      color=lightgray;
+      label = "machine";
+      labeljust=r;
+      keyctrlC [label="Keyboard_Controller", URL="\ref Keyboard_Controller"];
+      plugboxC [label="Plugbox", URL="\ref Plugbox", color=blue];
+      picC [label="PIC", URL="\ref PIC", color=blue];
+      cpuC [label="CPU", URL="\ref CPU"];
+      cgascrC [label="CGA_Screen", URL="\ref CGA_Screen"];
+      keyC [label="Key", URL="\ref Key"];
+      {rank=max; keyC;}
+      keyC -> keyctrlC [arrowhead="ediamond"];
+    }
+    
+    subgraph cluster_subguard {
+      style=filled;
+      color=lightgray;
+      label = "guard";
+      labeljust=c;
+      gateC [label="Gate", URL="\ref Gate"];
+      guardianF [label="guardian(...)", shape=oval, URL="\ref guardian", color=blue];
+    }
+    
+    subgraph cluster_subdevice {
+      style=filled;
+      color=lightgray;
+      label = "device";
+      labeljust=c;
+      panicC [label="Panic", URL="\ref Panic", color=blue];
+      keyboardC [label="Keyboard", URL="\ref Keyboard", color=blue];
+    }
+    
+    
+    kernelF -> task2C [arrowhead="open"];
+    task2C -> cgascrC [arrowhead="open"];
+    task2C -> cpuC [arrowhead="open"];
+    panicC -> cpuC [arrowhead="open"];
+    panicC -> gateC [arrowhead="empty"];
+    keyboardC -> keyctrlC [arrowhead="empty"];
+    keyboardC -> gateC [arrowhead="empty"];
+    keyboardC -> picC [arrowhead="open", weight=3];
+    keyboardC -> plugboxC [arrowhead="open", weight=4];
+    plugboxC -> gateC [arrowhead="open", weight=2];
+    //plugboxC -> panicC [arrowhead="open"];
+    //plugboxC -> keyboardC [arrowhead="open"];
+    guardianF -> plugboxC [arrowhead="open", weight=5];
+  }
+\enddot
+ * 
+ * \section task2_sec3 Implementierung
+ * 
+ * \subsection task2_sec3_1 Teil A
+ * Im ersten Schritt sollte die Klasse \ref PIC implementiert werden. Mit ihrer Hilfe 
+ * und der Klasse \ref CPU können Unterbrechungen von der Tastatur zugelassen werden 
+ * (während des Boot-Vorgangs werden alle Unterbrechungen bei der CPU deaktiviert). 
+ * Nach der Implementierung des PIC müsste automatisch bei jedem Betätigen einer 
+ * Taste die Funktion guardian() aktiviert werden, da die Interruptdeskriptortabelle im 
+ * Startup-Code entsprechend initialisiert wurde. Mit einer Ausgabe in guardian() kann 
+ * Teil A dann leicht getestet werden (zumindestens einige Male).
+ * 
+ * \note
+ * Da die Zeichen noch nicht vom Tastaturcontroller abgeholt werden, läuft der 
+ * Tastaturpuffer irgendwann voll. Sobald dies geschehen ist, sendet der 
+ * Tastaturcontroller keine Interrupts mehr. Deshalb kann es durchaus passieren, 
+ * dass zunächst nur für ein oder zwei Tastendrücke Interrupts angezeigt werden.
+ * 
+ * \note
+ * Während der Bearbeitung einer Unterbrechung muss sich nicht um unerwünschte 
+ * Interrupts gekümmert werden. Der Prozessor schaltet diese automatisch aus, 
+ * wenn er mit der Behandlung beginnt und lässt sie erst wieder zu, wenn 
+ * die Unterbrechungsbehandlung mit der Assembleranweisung \c iret beendet wird. 
+ * Die vorhandene Implementierung führt dazu, dass dies quasi der letzten 
+ * schließenden Klammer der \ref guardian() entspricht.
+ * 
+ * \attention
+ * Die Interruptverarbeitung kann natürlich nur funktionieren, wenn 
+ * OOStuBS auch läuft. Sobald die \ref kernel()-Funktion verlassen wird, ist das 
+ * Verhalten beim Auftreten eines Interrupts undefiniert. Ein Betriebssystem 
+ * sollte nicht plötzlich enden! ;-)
+ * 
+ * \subsection task2_sec3_2 Teil B
+ * Im zweiten Schritt soll eine Infrastruktur geschaffen werden, die die Behandlung von 
+ * Unterbrechungen durch zugeordnete Gerätetreiberobjekte ermöglicht. Zur Verwaltung 
+ * dieser Treiberobjekte dient dabei die Klasse \ref Plugbox, die für jeden möglichen Interrupt 
+ * einen Zeiger auf ein \ref Gate - Objekt bereithält. Die abstrakte Klasse Gate beschreibt dazu 
+ * die Schnittstelle aller Treiber, die Interrupts behandeln.
+ * 
+ * \note
+ * Alle Zeiger der \ref Plugbox sollen initial so gesetzt werden, dass sie auf ein globales 
+ * \ref Panic - Objekt verweisen.
+ * 
+ * \subsection task2_sec3_3 Teil C
+ * Im nächsten Schritt sollen Unterbrechungen, die von der Tastatur ausgelöst werden, 
+ * abgefangen und interpretiert werden. Als Ergebnis soll nach jedem Tastendruck das 
+ * entsprechende Zeichen an einer festen Position auf dem Bildschirm dargestellt werden. 
+ * Zusätzlich soll die Tastenkombination <b>Ctrl-Alt-Delete</b> einen <b>Reboot</b> auslösen. 
+ * Hierzu soll die Klasse \ref Keyboard implementiert werden, die den eigentlichen 
+ * Tastaturtreiber darstellt.
+ * 
+ * \subsection task2_sec3_4 Teil D
+ * Anschließend solltet ihr am oberen Bildschirmrand eine Laufzeile mit Sternen 
+ * sehen und am unteren Bildschirmrand Tastatureingaben machen können. Allerdings 
+ * werden nach kurzer Zeit merkwürdige Artefakte auftreten. Wo könnten diese her kommen? 
+ * Was kann gegen sie unternommen werden?
+ * 
+ * \note
+ * Die Artefakte sind Teil der Aufgabe und kein Fehler.
+ * 
+ * \section task2_sec4 Hilfestellung
+ *   \li \subpage task2_pic
+ *   \li <a href="http://www.bjoern-koester.de/iogrundlagen/">Input/Output-Grundlagen</a>
+ * 
+ * \~english
+ * \page task2 Task 2 - Interrupts
+ * 
+ * There is no english describtion. Use the german one.
+ */
+
+/**
+ * \~german
+ * \page task2_pic Informationen zum Programmierbaren Interrupt Controller
+ * \tableofcontents
+ * 
+ * \section task2_pic_sec1 Grundlagen
+ * Der %PIC 8259A ist ein Chip - meist nur Teil eines Chips- der wie der Prozessor 
+ * selbst auf dem Motherboard eines jeden PCs zu finden ist. Seine Aufgabe besteht 
+ * in der Koordination der Unterbrechungsanforderungen der verschiedenen Geräte.
+ * 
+ * Dazu besitzt der %PIC acht Eingänge \c IR0 bis \c IR7, an die jeweils der 
+ * Interruptausgang eines Gerätes angeschlossen werden kann. Beispiele für 
+ * diese Geräte sind der Timer, die Tastatur, die seriellen Schnittstellen 
+ * (Maus) und der Festplattencontroller. Die Nummer des IR Pins gibt gleichzeitig 
+ * die Priorität der Unterbrechung an. Das Gerät, das an IR0 angeschlossen ist, 
+ * wird mit höchster Priorität behandelt, das an \c IR7 mit der niedrigsten.
+ * 
+ * Der %PIC hat mehrere Ausgänge, durch die er mit der %CPU verbunden ist. 
+ * Unter anderem ist der Pin INT des PICs direkt an den Pin \c INTR der %CPU 
+ * angeschlossen, ebenso sind die bei %PIC und %CPU gleichermaßen mit \c INTA 
+ * bezeichneten Pins gekoppelt. Die Pins \c D0 bis \c D7 des PICs sind mit den 
+ * acht niederwertigsten Leiterbahnen des Datenbusses verbunden.
+ * 
+ * Wenn der %PIC feststellt, dass auf mindestens einem seiner Eingänge 
+ * \c IR0 bis \c IR7 eine Interruptanforderung anliegt und dem %PIC nicht 
+ * mitgeteilt wurde, dass er die entsprechende Anforderung ignorieren soll, 
+ * so gibt er die Interruptanforderung über seinen Ausgang \c INTR an die %CPU 
+ * weiter. Diese wird die Anforderung mit Hilfe der \c INTA Leitung quittieren 
+ * und durch ein zweites Signal auf \c INTA nach der Nummer des Interrupts fragen. 
+ * Der %PIC antwortet daraufhin, indem er die Nummer des Interrupts 
+ * (gleich der Nummer der Eingangsleitung + einem Offset) auf den Datenbus legt. 
+ * Die %CPU ist nun in der Lage, die Anfangsadresse der Unterbrechungsbehandlungsroutine 
+ * zu finden und die Unterbrechungsbehandlung zu starten.
+ * 
+ * \subsection task2_pic_sec1_1 Regiester
+ * Damit der %PIC sich merken kann, von welchen Geräten er Interruptanforderungen 
+ * erhalten hat, welche er ignorieren soll und welche gerade von der %CPU behandelt werden, 
+ * besitzt er drei interne Register, die jeweils acht Bit breit sind.
+ * 
+ * \subsubsection task2_pic_sec1_1_1 Interrupt-Request Register (IRR)
+ * Hier speichert der %PIC, auf welchen der IR Leitungen eine Interruptanforderung 
+ * signalisiert wurden. Dadurch braucht das betreffende Gerät nur eine kurze 
+ * Änderung des Pegels auf der Leitung auszulösen.
+ * 
+ * \subsubsection task2_pic_sec1_1_2 Interrupt-Service Register (ISR)
+ * Liegen die Interruptanforderungen mehrerer Geräte gleichzeitig an, 
+ * so wird der %PIC zunächst nur die wichtigste weiterleiten. Dazu wird 
+ * die Unterbrechungsanforderung der %CPU über die Leitung \c INT angezeigt. 
+ * Sobald diese daraufhin mit zwei INTA Signalen reagiert hat, wird nicht nur 
+ * die Nummer des Interrupts auf den Datenleitungen \c D0 bis \c D7 ausgegeben, 
+ * sondern auch das entsprechende Bit im \c ISR gesetzt. Gleichzeitig wird das 
+ * Bit im \c IRR gelöscht. Da das Bit im \c ISR gesetzt bleibt, bis es von der 
+ * Unterbrechungsbehandlungsroutine mit Hilfe eines speziellen Befehls explizit 
+ * gelöscht wird, kann der %PIC beim Eintreffen einer weiteren Unterbrechung 
+ * leicht erkennen, ob diese noch wichtiger als die gerade bearbeitete ist. 
+ * In diesem Fall wird er dies der %CPU durch ein erneutes Signal auf der 
+ * \c INT Leitung mitteilen.
+ * 
+ * \subsubsection task2_pic_sec1_1_3 Interrupt-Mask Register (IMR)
+ * Mit Hilfe dieses Registers ist es möglich, Interrupts selektiv zu 
+ * unterdrücken. Ein gesetztes Bit im IMR sorgt dafür, dass der %PIC Interrupts 
+ * des entsprechenden Gerätes ignoriert.
+ * 
+ * \subsection task2_pic_sec1_2 Master-Slave-System
+ * Um mehr als acht Interruptquellen unterscheiden zu können, enthalten 
+ * moderne PCs - das heißt alle ab dem XT von 1983 - zwei PICs, die 
+ * hintereinander geschaltet sind. Der \c INT Ausgang des Slave-PICs hat also 
+ * keine direkte Verbindung zu dem \c INTR Eingang der %CPU, sondern wird an einen 
+ * der IR Einänge (IR2) des Master PICs angeschlossen. Außerdem stehen Master und 
+ * Slave über drei weitere Leitungen in Verbindungen, über die der Master dem Slave 
+ * mitteilen kann, wann dieser die Nummer des von ihm signalisierten Interrupts 
+ * auf den Datenbus legen soll.
+ * 
+ * OOStuBS implementiert das Master-Slave in der Klasse \ref PIC.
+ * 
+ * Mittlerweile wird der \c APIC - Advanced Programmable Interrupt Controller - verwendet. 
+ * Mit diesem ist ein Mehrkern- und Mehrprozessorbetrieb möglich. OOStuBS verwendet diesen 
+ * allerdings nicht. Das Grundprinzip kann nach wie vor mit dem einfacher zu bedienenden 
+ * %PIC verdeutlicht werden.
+ * 
+ * \section task2_pic_sec2 Software
+ * 
+ * \subsection task2_pic_sec2_1 Ignorieren eines Interrupts
+ * %CPU-seitig kann dafür gesorgt werden, dass das laufende Programm nicht durch 
+ * Interrupts unterbrochen wird. Dazu wird mit der Assembleranweisung \c cli das 
+ * Interrupt-Bit im \c EFLAGS -Register gelöscht. Der Prozessor wird auf Signale 
+ * seiner \c INTR Leitung nun nicht mehr reagieren. Da der %PIC einen Interrupt 
+ * frühestens dann weitergibt, wenn die %CPU auf den vorhergehenden Interrupt 
+ * reagiert hat, wird der %PIC keine Interrupts weiterleiten, solange die %CPU 
+ * Interrupts ignoriert. \n
+ * Dieser Vorgang kann mit dem Befehl \c sti wieder rückgängig gemacht werden.
+ * 
+ * Interrupts können auch selektiv unterdrückt werden. 
+ * Dazu muss der %PIC programmiert werden. Das geht wie üblich mit 
+ * \c in und \c out Befehlen.
+ * 
+ * \subsection task2_pic_sec2_2 Software zur Interruptbehandlung
+ * Wenn ein Interrupt ankommt, der sowohl seitens des %PICs als auch seitens 
+ * der %CPU zugelassen wurde, verzweigt der Prozessor automatisch zur 
+ * Interruptbehandlungsroutine.
+ * 
+ * Deren Adresse wird einer Interruptdeskriptortabelle (\c IDT) entnommen, wobei die von 
+ * dem %PIC auf den Datenbus gelegte Nummer des Interrupts als Index dient. 
+ * Beim 8086 Prozessor war die Lage der Interruptdeskriptortabelle noch fest von 
+ * der Hardware vorgegeben, ab dem 80386 wird ihr Anfang und ihre Größe durch 
+ * das IDT-Register beschrieben.
+ * 
+ * Die Interruptdeskriptortabelle kann maximal 256 Interruptgate-Deskriptoren enthalten, 
+ * von denen es drei verschiedene Typen gibt
+ * \li <b>Task-Gate</b>\n
+ *   Der Taskgate-Deskriptor zeigt auf einen Task, einen hardwaremäßig unterstützten Prozeß. 
+ *   Wenn der entsprechende Interrupt eintritt, führt der Prozessor automatisch einen 
+ *   Taskwechsel zu dem angegebenen Interrupt-Task durch.
+ * \li <b>Interrupt-Gate</b>\n
+ *   Der Interruptgate-Deskriptor zeigt auf eine Prozedur, die als 
+ *   Interruptbehandlungsroutine ohne vorherigen Taskwechsel aufgerufen wird.
+ * \li <b>Trap-Gate</b>\n
+ *   Der Trapgate-Deskriptor zeigt auf eine Prozedur, die als 
+ *   Trapbehandlungsroutine ohne vorherigen Taskwechsel aufgerufen wird.
+ * 
+ * Bevor der Prozessor infolge eines Interrupts oder Traps die 
+ * angegebene Behandlungsroutine aufruft, legt er den aktuellen 
+ * Inhalt des \c EFLAGS -Registers auf den Stack ab. Dies ermöglicht es 
+ * ihm, nun das Interrupt-Enable-Flag im \c EFLAGS -Register zu löschen und 
+ * auf diese Weise die geschachtelte Behandlung weiterer Interrupts zu 
+ * verhindern. Wie bei einem normalen Funktionsaufruf wird dann noch die 
+ * Rücksprungadresse - Inhalt von Code-Segment und Instruction Pointer - 
+ * auf dem Stack gesichert, bevor die Behandlungsroutine begonnen wird. \n
+ * Bei manchen Exceptions legt der Prozessor zusätzlich einen Fehlercode auf dem Stack ab.
+ * 
+ * Wurde die Unterbrechung durch einen Interrupt ausgelöst, besteht eine 
+ * Aufgabe der Interruptbehandlungsroutine darin, dem %PIC mitzuteilen, 
+ * dass der Interrupt behandelt wurde. Anderenfalls wird der %PIC nämlich 
+ * keine weiteren Interrupts desselben Gerätes weiterleiten. Das Senden 
+ * dieses Interrupt-Acknowledge-Signals erfolgt wieder mit einem bzw. bei einer 
+ * Kaskadierung der PICs mit zwei out Befehlen an den Port des PICs.
+ * 
+ * Mit dem \c iret Befehl wird die Unterbrechungsbehandlung abgeschlossen. 
+ * Der Prozessor holt die Rücksprungadresse vom Stack, stellt den Inhalt 
+ * des \c EFLAGS -Registers wieder her und kehrt zu der unterbrochenen 
+ * Methode zurück. Dadurch, dass auch die \c EFLAGS wieder hergestellt werden, 
+ * werden spätestens jetzt die Interrupts %CPU-seitig wieder zugelassen.
+ * 
+ * \subsection task2_pic_sec2_3 Zugriff auf die PICs über Ports
+ * Jedem der beiden PICs in einem PC sind zwei Ports im I/O-Adressraum zugeordnet, 
+ * die wie folgt belegt sind:
+ * <table rules="all" border="1">
+ *   <tr><th><strong>Port</strong>(IRQ0-7/IRQ8-15)</th><th><strong>Lesedaten</strong></th><th><strong>Schreibdaten</strong></th></tr>
+ *   <tr><td>0x20 / 0xa0</td><td>IRR, ISR, Int.Vektor</td><td>ICW1, OCW2, OCW3</td></tr>
+ *   <tr><td>0x21 / 0xa1</td><td>IMR</td><td>ICW2, ICW3, ICW4, OCW1</td></tr>
+ * </table>
+ * 
+ * Die Bezeichnungen \c ICW und \c OCW stehend dabei für 
+ * Initialization Control Word und Operation Control Word. 
+ * Für die Lösung der Aufgabe sind nur die Operationsbefehlsworte 
+ * \c OCW1 und \c OCW2 relevant:
+ * \li \c OCW1 ist schlicht ein Platzhalter für die Maske der gesperrten Interrupts. 
+ *     Diese Maske wird direkt in das Interrupt Mask Register (\c IMR, \c 0x21/0xa1) 
+ *     übertragen; ein gesetztes Bit X sorgt dafür, dass der entsprechende Interrupt X 
+ *     gesperrt wird.
+ * \li \c OCW2 wird verwendet um dem %PIC einen \c EOI -Befehl zu senden, 
+ *     damit dieser erfährt, dass der Interrupt bearbeitet wird und das 
+ *     gesetzte Bit im \c ISR löscht. Bei OOStuBS verwenden wir den 
+ *     "unspezifischen \c EOI -Befehl": \c OCW2 == \c 0x20 wird nach der 
+ *     Bearbeitung eines Interrupts in die Kontrollregister \c 0x20/0xa0 geschrieben.
+ * 
+ * Die Initialisierungsbefehlsworte \c ICW1 bis \c ICW4 dienen der 
+ * Initialisierung des Chips. Dies erfolgt bei OOStuBS innerhalb des 
+ * Konstruktors des %PIC, so dass ihr euch darum ausnahmsweise mal 
+ * nicht selber kümmern müsst.
+ * 
+ * \section task2_pic_sec3 Literatur
+ * 
+ * \li <a href="http://www.lowlevel.eu/wiki/Programmable_Interrupt_Controller">PIC auf lowlevel.eu</a>
+ * \li <a href="http://wiki.osdev.org/8259_PIC">8259 PIC auf osdev.org</a>
+ * \li Hans-Peter Messmer, "PC-Hardwarebuch", Addison-Wesley, 1995
+ * \li Intel, "8259A - Programmable Interrupt Controller"
+ * \li Andreas Roth, "Das Computer-Peripherie Kochbuch", IWT Verlag, 1990
+ * \li Klaus-Dieter Thies, "80386 - Die innovativen 80286/80386 Architekturen", tewi Verlag, 1988
+ * 
+ * \~english
+ * \page task2_pic Informationen zum Programmierbaren Interrupt Controller
+ * 
+ * There is no english describtion. Use the german one.
+ */

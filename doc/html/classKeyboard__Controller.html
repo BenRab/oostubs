@@ -1,0 +1,953 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>OOStuBS - Technische Informatik II (TI-II): Keyboard_Controller Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.3.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Auflistung&#160;der&#160;Klassen</span></a></li>
+      <li><a href="classes.html"><span>Klassen-Verzeichnis</span></a></li>
+      <li><a href="inherits.html"><span>Klassenhierarchie</span></a></li>
+      <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Öffentliche Typen</a> &#124;
+<a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="#pri-types">Private Typen</a> &#124;
+<a href="#pri-methods">Private Methoden</a> &#124;
+<a href="#pri-attribs">Private Attribute</a> &#124;
+<a href="#pri-static-attribs">Statische, private Attribute</a> &#124;
+<a href="classKeyboard__Controller-members.html">Aufstellung aller Elemente</a>  </div>
+  <div class="headertitle">
+<div class="title">Keyboard_Controller Klassenreferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>(PS/2) Tastaturtreiber  
+ <a href="classKeyboard__Controller.html#details">Mehr ...</a></p>
+
+<p><code>#include &lt;<a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>&gt;</code></p>
+<div class="dynheader">
+Klassendiagramm für Keyboard_Controller:</div>
+<div class="dyncontent">
+<div class="center"><img src="classKeyboard__Controller__inherit__graph.png" border="0" usemap="#Keyboard__Controller_inherit__map" alt="Inheritance graph"/></div>
+<map name="Keyboard__Controller_inherit__map" id="Keyboard__Controller_inherit__map">
+<area shape="rect" id="node2" href="classKeyboard.html" title="Treiber für die Tastatur, incl. Interruptunterstützung." alt="" coords="37,80,112,107"/></map>
+<center><span class="legend">[<a href="graph_legend.html">Legende</a>]</span></center></div>
+<div class="dynheader">
+Zusammengehörigkeiten von Keyboard_Controller:</div>
+<div class="dyncontent">
+<div class="center"><img src="classKeyboard__Controller__coll__graph.png" border="0" usemap="#Keyboard__Controller_coll__map" alt="Collaboration graph"/></div>
+<map name="Keyboard__Controller_coll__map" id="Keyboard__Controller_coll__map">
+<area shape="rect" id="node2" href="classIO__Port.html" title="Accessor for I/O&#45;Space." alt="" coords="5,5,69,32"/><area shape="rect" id="node3" href="classKey.html" title="Translator between scancodes ASCII&#45;code and modifier bits." alt="" coords="107,5,149,32"/></map>
+<center><span class="legend">[<a href="graph_legend.html">Legende</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Öffentliche Typen</h2></td></tr>
+<tr class="memitem:a414ec606d3be05aad7e35be45f020936"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#a414ec606d3be05aad7e35be45f020936">Leds</a> { <a class="el" href="classKeyboard__Controller.html#a414ec606d3be05aad7e35be45f020936abdd5ec14afb32a1984348cba79ab62ac">caps_lock</a> = 4, 
+<a class="el" href="classKeyboard__Controller.html#a414ec606d3be05aad7e35be45f020936ab98cac5e1d396ba8e0fabc048ef8a79c">num_lock</a> = 2, 
+<a class="el" href="classKeyboard__Controller.html#a414ec606d3be05aad7e35be45f020936a5d077499f70a97d63e3b49245a4d1b10">scroll_lock</a> = 1
+ }</td></tr>
+<tr class="memdesc:a414ec606d3be05aad7e35be45f020936"><td class="mdescLeft">&#160;</td><td class="mdescRight">LED names.  <a href="classKeyboard__Controller.html#a414ec606d3be05aad7e35be45f020936">Mehr ...</a><br/></td></tr>
+<tr class="separator:a414ec606d3be05aad7e35be45f020936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:a78cf6859d88097a0f2b6945fc86c1d21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classKey.html">Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21">key_hit</a> ()</td></tr>
+<tr class="memdesc:a78cf6859d88097a0f2b6945fc86c1d21"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the last pressed key  <a href="#a78cf6859d88097a0f2b6945fc86c1d21">Mehr ...</a><br/></td></tr>
+<tr class="separator:a78cf6859d88097a0f2b6945fc86c1d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13a0e454bd8c6ee99182d05770d7c44a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#a13a0e454bd8c6ee99182d05770d7c44a">Keyboard_Controller</a> ()</td></tr>
+<tr class="memdesc:a13a0e454bd8c6ee99182d05770d7c44a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor, turns all LEDs off and set speed and delay maximal.  <a href="#a13a0e454bd8c6ee99182d05770d7c44a">Mehr ...</a><br/></td></tr>
+<tr class="separator:a13a0e454bd8c6ee99182d05770d7c44a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a686dd47e66ae9c2d9ccf1b9f84d3e99d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#a686dd47e66ae9c2d9ccf1b9f84d3e99d">reboot</a> ()</td></tr>
+<tr class="memdesc:a686dd47e66ae9c2d9ccf1b9f84d3e99d"><td class="mdescLeft">&#160;</td><td class="mdescRight">reboots the computer  <a href="#a686dd47e66ae9c2d9ccf1b9f84d3e99d">Mehr ...</a><br/></td></tr>
+<tr class="separator:a686dd47e66ae9c2d9ccf1b9f84d3e99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36dfc2c73c4031c8662e37159238d5b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#a36dfc2c73c4031c8662e37159238d5b0">set_led</a> (<a class="el" href="classKeyboard__Controller.html#a414ec606d3be05aad7e35be45f020936">Leds</a> led, bool on)</td></tr>
+<tr class="memdesc:a36dfc2c73c4031c8662e37159238d5b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">switch the specified LED of the keyboard on or off.  <a href="#a36dfc2c73c4031c8662e37159238d5b0">Mehr ...</a><br/></td></tr>
+<tr class="separator:a36dfc2c73c4031c8662e37159238d5b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa213c738efd52d7986fb925e6aaa7d95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#aa213c738efd52d7986fb925e6aaa7d95">set_repeat_rate</a> (unsigned char speed, unsigned char delay)</td></tr>
+<tr class="memdesc:aa213c738efd52d7986fb925e6aaa7d95"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the speed and delay of repeats of the keyboard.  <a href="#aa213c738efd52d7986fb925e6aaa7d95">Mehr ...</a><br/></td></tr>
+<tr class="separator:aa213c738efd52d7986fb925e6aaa7d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Typen</h2></td></tr>
+<tr class="memitem:a80ce619a9c28e0cdf8d8cbf8fada0a6a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#a80ce619a9c28e0cdf8d8cbf8fada0a6a">Commands</a> { <a class="el" href="classKeyboard__Controller.html#a80ce619a9c28e0cdf8d8cbf8fada0a6aa18b955e8017de0f804917f3c20772ce9">cmd_set_led</a> = 0xed, 
+<a class="el" href="classKeyboard__Controller.html#a80ce619a9c28e0cdf8d8cbf8fada0a6aa8dea5c7347df6e1da045daabf257b9a1">cmd_set_speed</a> = 0xf3, 
+<a class="el" href="classKeyboard__Controller.html#a80ce619a9c28e0cdf8d8cbf8fada0a6aafffdea70156b83fed7276c57fe939f40">cmd_cpu_reset</a> = 0xfe
+ }</td></tr>
+<tr class="memdesc:a80ce619a9c28e0cdf8d8cbf8fada0a6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">keyboard commands  <a href="classKeyboard__Controller.html#a80ce619a9c28e0cdf8d8cbf8fada0a6a">Mehr ...</a><br/></td></tr>
+<tr class="separator:a80ce619a9c28e0cdf8d8cbf8fada0a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7538f35b49d05df3e89cd67dd99fde2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#ac7538f35b49d05df3e89cd67dd99fde2">Decodes</a> { <a class="el" href="classKeyboard__Controller.html#ac7538f35b49d05df3e89cd67dd99fde2a97ffc5de322e60b7a7222e32af976b8c">break_bit</a> = 0x80, 
+<a class="el" href="classKeyboard__Controller.html#ac7538f35b49d05df3e89cd67dd99fde2a4ced0c0979cef935c9914b0ec4ef8e8a">prefix1</a> = 0xe0, 
+<a class="el" href="classKeyboard__Controller.html#ac7538f35b49d05df3e89cd67dd99fde2a63e699a1a357b367dee5c65be5ef5067">prefix2</a> = 0xe1
+ }</td></tr>
+<tr class="memdesc:ac7538f35b49d05df3e89cd67dd99fde2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decoding constants.  <a href="classKeyboard__Controller.html#ac7538f35b49d05df3e89cd67dd99fde2">Mehr ...</a><br/></td></tr>
+<tr class="separator:ac7538f35b49d05df3e89cd67dd99fde2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb711a0db2053b55655b2d1fcf3b0417"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#afb711a0db2053b55655b2d1fcf3b0417">Responses</a> { <a class="el" href="classKeyboard__Controller.html#afb711a0db2053b55655b2d1fcf3b0417a4d0183c68fe1d36bb75702f660b85f58">ack</a> = 0xfa
+ }</td></tr>
+<tr class="memdesc:afb711a0db2053b55655b2d1fcf3b0417"><td class="mdescLeft">&#160;</td><td class="mdescRight">keyboard responses  <a href="classKeyboard__Controller.html#afb711a0db2053b55655b2d1fcf3b0417">Mehr ...</a><br/></td></tr>
+<tr class="separator:afb711a0db2053b55655b2d1fcf3b0417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab95e0dd61e962a1824dbe92b5d7cee1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#aab95e0dd61e962a1824dbe92b5d7cee1">StatusMasks</a> { <a class="el" href="classKeyboard__Controller.html#aab95e0dd61e962a1824dbe92b5d7cee1aee6c926f6850b207c37ba05bad265a1a">outb</a> = 0x01, 
+<a class="el" href="classKeyboard__Controller.html#aab95e0dd61e962a1824dbe92b5d7cee1a8e6ca982c4e0a403e7d489f5c231e7a4">inpb</a> = 0x02, 
+<a class="el" href="classKeyboard__Controller.html#aab95e0dd61e962a1824dbe92b5d7cee1aaad9e4e16c2b0793d5dd6027152ac430">auxb</a> = 0x20
+ }</td></tr>
+<tr class="memdesc:aab95e0dd61e962a1824dbe92b5d7cee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit-Maske für das Status-Register.  <a href="classKeyboard__Controller.html#aab95e0dd61e962a1824dbe92b5d7cee1">Mehr ...</a><br/></td></tr>
+<tr class="separator:aab95e0dd61e962a1824dbe92b5d7cee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Methoden</h2></td></tr>
+<tr class="memitem:ac2b33ffe1e2794c81249861aa792513a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#ac2b33ffe1e2794c81249861aa792513a">get_ascii_code</a> ()</td></tr>
+<tr class="memdesc:ac2b33ffe1e2794c81249861aa792513a"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert the received scancode and modfier bits to an ascii char  <a href="#ac2b33ffe1e2794c81249861aa792513a">Mehr ...</a><br/></td></tr>
+<tr class="separator:ac2b33ffe1e2794c81249861aa792513a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa517065c0ed4059b477dfb481539b1b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2">key_decoded</a> ()</td></tr>
+<tr class="memdesc:aa517065c0ed4059b477dfb481539b1b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">interpret the reveived scancode and modifier bits  <a href="#aa517065c0ed4059b477dfb481539b1b2">Mehr ...</a><br/></td></tr>
+<tr class="separator:aa517065c0ed4059b477dfb481539b1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attribute</h2></td></tr>
+<tr class="memitem:a7ac0b301244d985c5eaf53208536baa5"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#a7ac0b301244d985c5eaf53208536baa5">code</a></td></tr>
+<tr class="memdesc:a7ac0b301244d985c5eaf53208536baa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">der zuletzt eingelesene Scan-Code  <a href="#a7ac0b301244d985c5eaf53208536baa5">Mehr ...</a><br/></td></tr>
+<tr class="separator:a7ac0b301244d985c5eaf53208536baa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9e735cb81aac10de878dabb819b3358"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classIO__Port.html">IO_Port</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#ae9e735cb81aac10de878dabb819b3358">ctrl_port</a></td></tr>
+<tr class="memdesc:ae9e735cb81aac10de878dabb819b3358"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Control Port" des Tastaturkontrollers  <a href="#ae9e735cb81aac10de878dabb819b3358">Mehr ...</a><br/></td></tr>
+<tr class="separator:ae9e735cb81aac10de878dabb819b3358"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b8a4585aaaf8a7262e0d9aac689d463"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classIO__Port.html">IO_Port</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#a4b8a4585aaaf8a7262e0d9aac689d463">data_port</a></td></tr>
+<tr class="memdesc:a4b8a4585aaaf8a7262e0d9aac689d463"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Daten Port" des Tastaturkontrollers  <a href="#a4b8a4585aaaf8a7262e0d9aac689d463">Mehr ...</a><br/></td></tr>
+<tr class="separator:a4b8a4585aaaf8a7262e0d9aac689d463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3faad20e89b182c21ea1420622ab6f43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classKey.html">Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#a3faad20e89b182c21ea1420622ab6f43">gather</a></td></tr>
+<tr class="memdesc:a3faad20e89b182c21ea1420622ab6f43"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classKey.html" title="Translator between scancodes ASCII-code and modifier bits.">Key</a> to save the last input.  <a href="#a3faad20e89b182c21ea1420622ab6f43">Mehr ...</a><br/></td></tr>
+<tr class="separator:a3faad20e89b182c21ea1420622ab6f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab13fd3a19a862d66f6d723299926a4f4"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#ab13fd3a19a862d66f6d723299926a4f4">leds</a></td></tr>
+<tr class="memdesc:ab13fd3a19a862d66f6d723299926a4f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable containing the current led status  <a href="#ab13fd3a19a862d66f6d723299926a4f4">Mehr ...</a><br/></td></tr>
+<tr class="separator:ab13fd3a19a862d66f6d723299926a4f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a604c580209e0f8ccd65a8ab6581293bb"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#a604c580209e0f8ccd65a8ab6581293bb">prefix</a></td></tr>
+<tr class="memdesc:a604c580209e0f8ccd65a8ab6581293bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">der Vorsatz/Prefix des aktuellen Scan-Codes  <a href="#a604c580209e0f8ccd65a8ab6581293bb">Mehr ...</a><br/></td></tr>
+<tr class="separator:a604c580209e0f8ccd65a8ab6581293bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Statische, private Attribute</h2></td></tr>
+<tr class="memitem:a45113045e3e4a0ef53fa552b3cef44c6"><td class="memItemLeft" align="right" valign="top">static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#a45113045e3e4a0ef53fa552b3cef44c6">alt_tab</a> []</td></tr>
+<tr class="memdesc:a45113045e3e4a0ef53fa552b3cef44c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scancode translation table if alt is pressed.  <a href="#a45113045e3e4a0ef53fa552b3cef44c6">Mehr ...</a><br/></td></tr>
+<tr class="separator:a45113045e3e4a0ef53fa552b3cef44c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5290667fc948539a0055cddbcc978b2a"><td class="memItemLeft" align="right" valign="top">static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#a5290667fc948539a0055cddbcc978b2a">asc_num_tab</a> []</td></tr>
+<tr class="memdesc:a5290667fc948539a0055cddbcc978b2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scancode translation table to ascii for numeric block.  <a href="#a5290667fc948539a0055cddbcc978b2a">Mehr ...</a><br/></td></tr>
+<tr class="separator:a5290667fc948539a0055cddbcc978b2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b80b1b927914f2d55d70a74552c8fe1"><td class="memItemLeft" align="right" valign="top">static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#a6b80b1b927914f2d55d70a74552c8fe1">normal_tab</a> []</td></tr>
+<tr class="memdesc:a6b80b1b927914f2d55d70a74552c8fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scancode translation table without modifier.  <a href="#a6b80b1b927914f2d55d70a74552c8fe1">Mehr ...</a><br/></td></tr>
+<tr class="separator:a6b80b1b927914f2d55d70a74552c8fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f71b29920153636fd90909a8f7a5ba6"><td class="memItemLeft" align="right" valign="top">static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#a4f71b29920153636fd90909a8f7a5ba6">scan_num_tab</a> []</td></tr>
+<tr class="memdesc:a4f71b29920153636fd90909a8f7a5ba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scancode translation table to special keys for numeric block.  <a href="#a4f71b29920153636fd90909a8f7a5ba6">Mehr ...</a><br/></td></tr>
+<tr class="separator:a4f71b29920153636fd90909a8f7a5ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8479d47f63fa606866c466240e129da"><td class="memItemLeft" align="right" valign="top">static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboard__Controller.html#ab8479d47f63fa606866c466240e129da">shift_tab</a> []</td></tr>
+<tr class="memdesc:ab8479d47f63fa606866c466240e129da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scancode translation table if shift is pressed.  <a href="#ab8479d47f63fa606866c466240e129da">Mehr ...</a><br/></td></tr>
+<tr class="separator:ab8479d47f63fa606866c466240e129da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><p>(PS/2) Tastaturtreiber </p>
+<p>Diese Klasse ist eine Abstraktion des Tastaturkontrollers des Computers. Historisch bedingt ist dieser nicht ausschließlich für die Tastatur und Maus zuständig. Auch ein CPU-Neustart, PC-Lautsprecher et cetera werden durch ihn gesteuert.</p>
+<p>Früher war er ein eigener Chip, heutzutage ist er meist Teil eines AIP-Chips (Advanced Integrated Peripheral). </p>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8h_source.html#l00032">32</a> der Datei <a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>.</p>
+</div><h2 class="groupheader">Dokumentation der Aufzählungstypen</h2>
+<a class="anchor" id="a80ce619a9c28e0cdf8d8cbf8fada0a6a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classKeyboard__Controller.html#a80ce619a9c28e0cdf8d8cbf8fada0a6a">Keyboard_Controller::Commands</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>keyboard commands </p>
+<table class="fieldtable">
+<tr><th colspan="2">Aufzählungswerte</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a80ce619a9c28e0cdf8d8cbf8fada0a6aa18b955e8017de0f804917f3c20772ce9"></a>cmd_set_led</em>&nbsp;</td><td class="fielddoc">
+<p>set the keyboard leds </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a80ce619a9c28e0cdf8d8cbf8fada0a6aa8dea5c7347df6e1da045daabf257b9a1"></a>cmd_set_speed</em>&nbsp;</td><td class="fielddoc">
+<p>change repeat rate and delay </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a80ce619a9c28e0cdf8d8cbf8fada0a6aafffdea70156b83fed7276c57fe939f40"></a>cmd_cpu_reset</em>&nbsp;</td><td class="fielddoc">
+<p>reset the cpu </p>
+</td></tr>
+</table>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8h_source.html#l00101">101</a> der Datei <a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac7538f35b49d05df3e89cd67dd99fde2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classKeyboard__Controller.html#ac7538f35b49d05df3e89cd67dd99fde2">Keyboard_Controller::Decodes</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decoding constants. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Aufzählungswerte</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ac7538f35b49d05df3e89cd67dd99fde2a97ffc5de322e60b7a7222e32af976b8c"></a>break_bit</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ac7538f35b49d05df3e89cd67dd99fde2a4ced0c0979cef935c9914b0ec4ef8e8a"></a>prefix1</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ac7538f35b49d05df3e89cd67dd99fde2a63e699a1a357b367dee5c65be5ef5067"></a>prefix2</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8h_source.html#l00113">113</a> der Datei <a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a414ec606d3be05aad7e35be45f020936"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classKeyboard__Controller.html#a414ec606d3be05aad7e35be45f020936">Keyboard_Controller::Leds</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LED names. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Aufzählungswerte</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a414ec606d3be05aad7e35be45f020936abdd5ec14afb32a1984348cba79ab62ac"></a>caps_lock</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a414ec606d3be05aad7e35be45f020936ab98cac5e1d396ba8e0fabc048ef8a79c"></a>num_lock</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a414ec606d3be05aad7e35be45f020936a5d077499f70a97d63e3b49245a4d1b10"></a>scroll_lock</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8h_source.html#l00122">122</a> der Datei <a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afb711a0db2053b55655b2d1fcf3b0417"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classKeyboard__Controller.html#afb711a0db2053b55655b2d1fcf3b0417">Keyboard_Controller::Responses</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>keyboard responses </p>
+<table class="fieldtable">
+<tr><th colspan="2">Aufzählungswerte</th></tr><tr><td class="fieldname"><em><a class="anchor" id="afb711a0db2053b55655b2d1fcf3b0417a4d0183c68fe1d36bb75702f660b85f58"></a>ack</em>&nbsp;</td><td class="fielddoc">
+<p>acknowledged command </p>
+</td></tr>
+</table>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8h_source.html#l00108">108</a> der Datei <a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aab95e0dd61e962a1824dbe92b5d7cee1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classKeyboard__Controller.html#aab95e0dd61e962a1824dbe92b5d7cee1">Keyboard_Controller::StatusMasks</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bit-Maske für das Status-Register. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Aufzählungswerte</th></tr><tr><td class="fieldname"><em><a class="anchor" id="aab95e0dd61e962a1824dbe92b5d7cee1aee6c926f6850b207c37ba05bad265a1a"></a>outb</em>&nbsp;</td><td class="fielddoc">
+<p>Ausgabepuffer ist befüllt </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aab95e0dd61e962a1824dbe92b5d7cee1a8e6ca982c4e0a403e7d489f5c231e7a4"></a>inpb</em>&nbsp;</td><td class="fielddoc">
+<p>Eingabepuffer ist befüllt </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aab95e0dd61e962a1824dbe92b5d7cee1aaad9e4e16c2b0793d5dd6027152ac430"></a>auxb</em>&nbsp;</td><td class="fielddoc">
+<p>Wert des Ausgabepuffers kommt von der Maus </p>
+</td></tr>
+</table>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8h_source.html#l00091">91</a> der Datei <a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" id="a13a0e454bd8c6ee99182d05770d7c44a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Keyboard_Controller::Keyboard_Controller </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default constructor, turns all LEDs off and set speed and delay maximal. </p>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8cc_source.html#l00180">180</a> der Datei <a class="el" href="keyctrl_8cc_source.html">keyctrl.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="classKeyboard__Controller_a13a0e454bd8c6ee99182d05770d7c44a_cgraph.png" border="0" usemap="#classKeyboard__Controller_a13a0e454bd8c6ee99182d05770d7c44a_cgraph" alt=""/></div>
+<map name="classKeyboard__Controller_a13a0e454bd8c6ee99182d05770d7c44a_cgraph" id="classKeyboard__Controller_a13a0e454bd8c6ee99182d05770d7c44a_cgraph">
+<area shape="rect" id="node2" href="classKeyboard__Controller.html#a36dfc2c73c4031c8662e37159238d5b0" title="switch the specified LED of the keyboard on or off." alt="" coords="203,107,341,149"/><area shape="rect" id="node7" href="classKeyboard__Controller.html#aa213c738efd52d7986fb925e6aaa7d95" title="set the speed and delay of repeats of the keyboard." alt="" coords="203,42,341,83"/><area shape="rect" id="node5" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port." alt="" coords="417,173,509,200"/><area shape="rect" id="node3" href="classCPU.html#a23c8f5e46dac3304f1d8def9c612b88e" title="Interupts werden global deaktiviert." alt="" coords="405,5,521,32"/><area shape="rect" id="node4" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="413,56,513,83"/><area shape="rect" id="node6" href="classCPU.html#a725124d36e67ea9e9539e4828ce54847" title="stellt den letzten bekannten Zustand des Interrupt&#45;Flags der CPU wieder her" alt="" coords="389,107,536,149"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="ac2b33ffe1e2794c81249861aa792513a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Keyboard_Controller::get_ascii_code </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>convert the received scancode and modfier bits to an ascii char </p>
+<p>Determins the ASCII code of a key according to the scancode and modifier bits.</p>
+<p>Determins the ASCII code of a key using the scancode and modifier bits. </p>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8cc_source.html#l00151">151</a> der Datei <a class="el" href="keyctrl_8cc_source.html">keyctrl.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="classKeyboard__Controller_ac2b33ffe1e2794c81249861aa792513a_cgraph.png" border="0" usemap="#classKeyboard__Controller_ac2b33ffe1e2794c81249861aa792513a_cgraph" alt=""/></div>
+<map name="classKeyboard__Controller_ac2b33ffe1e2794c81249861aa792513a_cgraph" id="classKeyboard__Controller_ac2b33ffe1e2794c81249861aa792513a_cgraph">
+<area shape="rect" id="node2" href="classKey.html#abb65ed9de2b4a8c24f557416b484df34" title="set ascii value" alt="" coords="207,5,284,32"/><area shape="rect" id="node3" href="classKey.html#ae67075af1a5c0a7f585e8e61fc8515f8" title="set scancode value" alt="" coords="193,56,298,83"/><area shape="rect" id="node4" href="classKey.html#a4a8da77b0cb57bf89bffa3903c2f79ce" title="Key::num_lock" alt="" coords="192,107,299,133"/><area shape="rect" id="node6" href="classKey.html#af4fa809960860523573abd695e3f8fbe" title="Key::alt_right" alt="" coords="196,157,295,184"/><area shape="rect" id="node8" href="classKey.html#a62e735f4121d8984d994a508bdd6a74b" title="Key::shift" alt="" coords="207,208,283,235"/><area shape="rect" id="node10" href="classKey.html#a45fb60e270f30b9f23e28259e851b14a" title="Key::caps_lock" alt="" coords="192,259,299,285"/><area shape="rect" id="node5" href="classKey.html#aab1b4f9446a6db6fc4a6a1f7824d51b5" title="Key::num_lock" alt="" coords="347,107,453,133"/><area shape="rect" id="node7" href="classKey.html#af12fb21a12c35fb89f6ff43db96759ba" title="Key::alt_right" alt="" coords="351,157,449,184"/><area shape="rect" id="node9" href="classKey.html#a19b48c665bdda438c55de7399eb4a631" title="Key::shift" alt="" coords="362,208,438,235"/><area shape="rect" id="node11" href="classKey.html#a8a4da1819e66bb141c4dea2934845fab" title="Key::caps_lock" alt="" coords="347,259,453,285"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="classKeyboard__Controller_ac2b33ffe1e2794c81249861aa792513a_icgraph.png" border="0" usemap="#classKeyboard__Controller_ac2b33ffe1e2794c81249861aa792513a_icgraph" alt=""/></div>
+<map name="classKeyboard__Controller_ac2b33ffe1e2794c81249861aa792513a_icgraph" id="classKeyboard__Controller_ac2b33ffe1e2794c81249861aa792513a_icgraph">
+<area shape="rect" id="node2" href="classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2" title="interpret the reveived scancode and modifier bits" alt="" coords="192,5,331,46"/><area shape="rect" id="node3" href="classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21" title="get the last pressed key" alt="" coords="379,5,517,46"/><area shape="rect" id="node4" href="classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object" alt="" coords="566,12,706,39"/><area shape="rect" id="node5" href="classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information" alt="" coords="755,12,855,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa517065c0ed4059b477dfb481539b1b2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Keyboard_Controller::key_decoded </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>interpret the reveived scancode and modifier bits </p>
+<p>Interpretes the make and break code of the keyboard an returns an valid ASCII code, scancode and information about modifier keys like SHIFT and CTRL.</p>
+<dl class="section return"><dt>Rückgabe</dt><dd>TRUE if character is komplete otherwise FALSE. </dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8cc_source.html#l00054">54</a> der Datei <a class="el" href="keyctrl_8cc_source.html">keyctrl.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="classKeyboard__Controller_aa517065c0ed4059b477dfb481539b1b2_cgraph.png" border="0" usemap="#classKeyboard__Controller_aa517065c0ed4059b477dfb481539b1b2_cgraph" alt=""/></div>
+<map name="classKeyboard__Controller_aa517065c0ed4059b477dfb481539b1b2_cgraph" id="classKeyboard__Controller_aa517065c0ed4059b477dfb481539b1b2_cgraph">
+<area shape="rect" id="node2" href="classKey.html#a62e735f4121d8984d994a508bdd6a74b" title="Key::shift" alt="" coords="414,5,490,32"/><area shape="rect" id="node4" href="classKey.html#af4fa809960860523573abd695e3f8fbe" title="Key::alt_right" alt="" coords="403,208,501,235"/><area shape="rect" id="node6" href="classKey.html#ab1199ecfd588b567053543b6715ba19a" title="Key::alt_left" alt="" coords="216,309,307,336"/><area shape="rect" id="node8" href="classKey.html#a90ea541bc6d1286a517eaccd700c4ba0" title="Key::ctrl_right" alt="" coords="210,360,313,387"/><area shape="rect" id="node10" href="classKey.html#af1c7ef33119f0c10909a2de246de7854" title="Key::ctrl_left" alt="" coords="214,411,309,437"/><area shape="rect" id="node12" href="classKey.html#a45fb60e270f30b9f23e28259e851b14a" title="Key::caps_lock" alt="" coords="399,259,505,285"/><area shape="rect" id="node14" href="classKeyboard__Controller.html#a36dfc2c73c4031c8662e37159238d5b0" title="switch the specified LED of the keyboard on or off." alt="" coords="192,513,331,554"/><area shape="rect" id="node19" href="classKey.html#af3d96c346d2e6088cafbc94fe7c783ef" title="Key::scroll_lock" alt="" coords="206,629,317,656"/><area shape="rect" id="node21" href="classKeyboard__Controller.html#ac2b33ffe1e2794c81249861aa792513a" title="convert the received scancode and modfier bits to an ascii char" alt="" coords="192,91,331,133"/><area shape="rect" id="node24" href="classKey.html#a4a8da77b0cb57bf89bffa3903c2f79ce" title="Key::num_lock" alt="" coords="399,157,505,184"/><area shape="rect" id="node3" href="classKey.html#a19b48c665bdda438c55de7399eb4a631" title="Key::shift" alt="" coords="589,5,665,32"/><area shape="rect" id="node5" href="classKey.html#af12fb21a12c35fb89f6ff43db96759ba" title="Key::alt_right" alt="" coords="577,208,676,235"/><area shape="rect" id="node7" href="classKey.html#a8d41de9c5f54ed629bfd7a7f4742fbbc" title="Key::alt_left" alt="" coords="407,309,497,336"/><area shape="rect" id="node9" href="classKey.html#a8c4d5f648534aa271a9582d53382e54f" title="Key::ctrl_right" alt="" coords="401,360,503,387"/><area shape="rect" id="node11" href="classKey.html#aaa434afc90ecb93a28a0e5e6e8c58e87" title="Key::ctrl_left" alt="" coords="405,411,499,437"/><area shape="rect" id="node13" href="classKey.html#a8a4da1819e66bb141c4dea2934845fab" title="Key::caps_lock" alt="" coords="573,259,680,285"/><area shape="rect" id="node15" href="classCPU.html#a23c8f5e46dac3304f1d8def9c612b88e" title="Interupts werden global deaktiviert." alt="" coords="394,579,510,605"/><area shape="rect" id="node16" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="402,629,502,656"/><area shape="rect" id="node17" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port." alt="" coords="406,461,498,488"/><area shape="rect" id="node18" href="classCPU.html#a725124d36e67ea9e9539e4828ce54847" title="stellt den letzten bekannten Zustand des Interrupt&#45;Flags der CPU wieder her" alt="" coords="379,513,525,554"/><area shape="rect" id="node20" href="classKey.html#a5f85f2e72598824e028162ec53890260" title="Key::scroll_lock" alt="" coords="397,680,507,707"/><area shape="rect" id="node22" href="classKey.html#abb65ed9de2b4a8c24f557416b484df34" title="set ascii value" alt="" coords="413,56,491,83"/><area shape="rect" id="node23" href="classKey.html#ae67075af1a5c0a7f585e8e61fc8515f8" title="set scancode value" alt="" coords="399,107,505,133"/><area shape="rect" id="node25" href="classKey.html#aab1b4f9446a6db6fc4a6a1f7824d51b5" title="Key::num_lock" alt="" coords="573,157,680,184"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="classKeyboard__Controller_aa517065c0ed4059b477dfb481539b1b2_icgraph.png" border="0" usemap="#classKeyboard__Controller_aa517065c0ed4059b477dfb481539b1b2_icgraph" alt=""/></div>
+<map name="classKeyboard__Controller_aa517065c0ed4059b477dfb481539b1b2_icgraph" id="classKeyboard__Controller_aa517065c0ed4059b477dfb481539b1b2_icgraph">
+<area shape="rect" id="node2" href="classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21" title="get the last pressed key" alt="" coords="192,5,331,46"/><area shape="rect" id="node3" href="classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object" alt="" coords="379,12,519,39"/><area shape="rect" id="node4" href="classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information" alt="" coords="569,12,669,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a78cf6859d88097a0f2b6945fc86c1d21"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classKey.html">Key</a> Keyboard_Controller::key_hit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get the last pressed key </p>
+<p>Is used to get the information of the pressed key after is has been pressed. If a scancode and ASCII code could not be determined an invalid key is returned.</p>
+<dl class="section return"><dt>Rückgabe</dt><dd>an invalid key if data transfer has not ended otherwise a valid key with every information is returned. Can be checked withd <a class="el" href="classKey.html#a4292f24b142a697e610fb7780a0dc9d5" title="test for validity.">Key::valid()</a>. </dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8cc_source.html#l00213">213</a> der Datei <a class="el" href="keyctrl_8cc_source.html">keyctrl.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="classKeyboard__Controller_a78cf6859d88097a0f2b6945fc86c1d21_cgraph.png" border="0" usemap="#classKeyboard__Controller_a78cf6859d88097a0f2b6945fc86c1d21_cgraph" alt=""/></div>
+<map name="classKeyboard__Controller_a78cf6859d88097a0f2b6945fc86c1d21_cgraph" id="classKeyboard__Controller_a78cf6859d88097a0f2b6945fc86c1d21_cgraph">
+<area shape="rect" id="node2" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port." alt="" coords="593,5,685,32"/><area shape="rect" id="node3" href="classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2" title="interpret the reveived scancode and modifier bits" alt="" coords="192,419,331,461"/><area shape="rect" id="node4" href="classKey.html#a62e735f4121d8984d994a508bdd6a74b" title="Key::shift" alt="" coords="601,224,677,251"/><area shape="rect" id="node6" href="classKey.html#af4fa809960860523573abd695e3f8fbe" title="Key::alt_right" alt="" coords="589,427,688,453"/><area shape="rect" id="node8" href="classKey.html#ab1199ecfd588b567053543b6715ba19a" title="Key::alt_left" alt="" coords="403,528,493,555"/><area shape="rect" id="node10" href="classKey.html#a90ea541bc6d1286a517eaccd700c4ba0" title="Key::ctrl_right" alt="" coords="397,579,499,605"/><area shape="rect" id="node12" href="classKey.html#af1c7ef33119f0c10909a2de246de7854" title="Key::ctrl_left" alt="" coords="401,629,495,656"/><area shape="rect" id="node14" href="classKey.html#a45fb60e270f30b9f23e28259e851b14a" title="Key::caps_lock" alt="" coords="585,477,692,504"/><area shape="rect" id="node16" href="classKeyboard__Controller.html#a36dfc2c73c4031c8662e37159238d5b0" title="switch the specified LED of the keyboard on or off." alt="" coords="379,99,517,141"/><area shape="rect" id="node20" href="classKey.html#af3d96c346d2e6088cafbc94fe7c783ef" title="Key::scroll_lock" alt="" coords="393,680,503,707"/><area shape="rect" id="node22" href="classKeyboard__Controller.html#ac2b33ffe1e2794c81249861aa792513a" title="convert the received scancode and modfier bits to an ascii char" alt="" coords="379,310,517,351"/><area shape="rect" id="node25" href="classKey.html#a4a8da77b0cb57bf89bffa3903c2f79ce" title="Key::num_lock" alt="" coords="585,376,692,403"/><area shape="rect" id="node5" href="classKey.html#a19b48c665bdda438c55de7399eb4a631" title="Key::shift" alt="" coords="775,224,851,251"/><area shape="rect" id="node7" href="classKey.html#af12fb21a12c35fb89f6ff43db96759ba" title="Key::alt_right" alt="" coords="764,427,863,453"/><area shape="rect" id="node9" href="classKey.html#a8d41de9c5f54ed629bfd7a7f4742fbbc" title="Key::alt_left" alt="" coords="593,528,684,555"/><area shape="rect" id="node11" href="classKey.html#a8c4d5f648534aa271a9582d53382e54f" title="Key::ctrl_right" alt="" coords="587,579,690,605"/><area shape="rect" id="node13" href="classKey.html#aaa434afc90ecb93a28a0e5e6e8c58e87" title="Key::ctrl_left" alt="" coords="591,629,686,656"/><area shape="rect" id="node15" href="classKey.html#a8a4da1819e66bb141c4dea2934845fab" title="Key::caps_lock" alt="" coords="760,477,867,504"/><area shape="rect" id="node17" href="classCPU.html#a23c8f5e46dac3304f1d8def9c612b88e" title="Interupts werden global deaktiviert." alt="" coords="581,56,697,83"/><area shape="rect" id="node18" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="589,107,689,133"/><area shape="rect" id="node19" href="classCPU.html#a725124d36e67ea9e9539e4828ce54847" title="stellt den letzten bekannten Zustand des Interrupt&#45;Flags der CPU wieder her" alt="" coords="565,158,712,199"/><area shape="rect" id="node21" href="classKey.html#a5f85f2e72598824e028162ec53890260" title="Key::scroll_lock" alt="" coords="583,680,694,707"/><area shape="rect" id="node23" href="classKey.html#abb65ed9de2b4a8c24f557416b484df34" title="set ascii value" alt="" coords="600,275,677,301"/><area shape="rect" id="node24" href="classKey.html#ae67075af1a5c0a7f585e8e61fc8515f8" title="set scancode value" alt="" coords="586,325,691,352"/><area shape="rect" id="node26" href="classKey.html#aab1b4f9446a6db6fc4a6a1f7824d51b5" title="Key::num_lock" alt="" coords="760,376,867,403"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="classKeyboard__Controller_a78cf6859d88097a0f2b6945fc86c1d21_icgraph.png" border="0" usemap="#classKeyboard__Controller_a78cf6859d88097a0f2b6945fc86c1d21_icgraph" alt=""/></div>
+<map name="classKeyboard__Controller_a78cf6859d88097a0f2b6945fc86c1d21_icgraph" id="classKeyboard__Controller_a78cf6859d88097a0f2b6945fc86c1d21_icgraph">
+<area shape="rect" id="node2" href="classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object" alt="" coords="193,12,333,39"/><area shape="rect" id="node3" href="classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information" alt="" coords="382,12,482,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a686dd47e66ae9c2d9ccf1b9f84d3e99d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Keyboard_Controller::reboot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>reboots the computer </p>
+<p>This uses a keyboard controller command. </p>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8cc_source.html#l00200">200</a> der Datei <a class="el" href="keyctrl_8cc_source.html">keyctrl.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="classKeyboard__Controller_a686dd47e66ae9c2d9ccf1b9f84d3e99d_cgraph.png" border="0" usemap="#classKeyboard__Controller_a686dd47e66ae9c2d9ccf1b9f84d3e99d_cgraph" alt=""/></div>
+<map name="classKeyboard__Controller_a686dd47e66ae9c2d9ccf1b9f84d3e99d_cgraph" id="classKeyboard__Controller_a686dd47e66ae9c2d9ccf1b9f84d3e99d_cgraph">
+<area shape="rect" id="node2" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port." alt="" coords="197,5,289,32"/><area shape="rect" id="node3" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="193,56,293,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a36dfc2c73c4031c8662e37159238d5b0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Keyboard_Controller::set_led </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classKeyboard__Controller.html#a414ec606d3be05aad7e35be45f020936">Leds</a>&#160;</td>
+          <td class="paramname"><em>led</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>on</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>switch the specified LED of the keyboard on or off. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">led</td><td>specifies the LED turned on or off </td></tr>
+    <tr><td class="paramname">on</td><td>if TRUE LED is turned on otherwise off </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8cc_source.html#l00253">253</a> der Datei <a class="el" href="keyctrl_8cc_source.html">keyctrl.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="classKeyboard__Controller_a36dfc2c73c4031c8662e37159238d5b0_cgraph.png" border="0" usemap="#classKeyboard__Controller_a36dfc2c73c4031c8662e37159238d5b0_cgraph" alt=""/></div>
+<map name="classKeyboard__Controller_a36dfc2c73c4031c8662e37159238d5b0_cgraph" id="classKeyboard__Controller_a36dfc2c73c4031c8662e37159238d5b0_cgraph">
+<area shape="rect" id="node2" href="classCPU.html#a23c8f5e46dac3304f1d8def9c612b88e" title="Interupts werden global deaktiviert." alt="" coords="207,5,323,32"/><area shape="rect" id="node3" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="215,56,315,83"/><area shape="rect" id="node4" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port." alt="" coords="219,107,311,133"/><area shape="rect" id="node5" href="classCPU.html#a725124d36e67ea9e9539e4828ce54847" title="stellt den letzten bekannten Zustand des Interrupt&#45;Flags der CPU wieder her" alt="" coords="192,158,339,199"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="classKeyboard__Controller_a36dfc2c73c4031c8662e37159238d5b0_icgraph.png" border="0" usemap="#classKeyboard__Controller_a36dfc2c73c4031c8662e37159238d5b0_icgraph" alt=""/></div>
+<map name="classKeyboard__Controller_a36dfc2c73c4031c8662e37159238d5b0_icgraph" id="classKeyboard__Controller_a36dfc2c73c4031c8662e37159238d5b0_icgraph">
+<area shape="rect" id="node2" href="classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2" title="interpret the reveived scancode and modifier bits" alt="" coords="197,5,336,46"/><area shape="rect" id="node6" href="classKeyboard__Controller.html#a13a0e454bd8c6ee99182d05770d7c44a" title="Default constructor, turns all LEDs off and set speed and delay maximal." alt="" coords="193,70,341,111"/><area shape="rect" id="node3" href="classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21" title="get the last pressed key" alt="" coords="389,5,528,46"/><area shape="rect" id="node4" href="classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object" alt="" coords="577,12,717,39"/><area shape="rect" id="node5" href="classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information" alt="" coords="766,12,866,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa213c738efd52d7986fb925e6aaa7d95"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Keyboard_Controller::set_repeat_rate </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>delay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set the speed and delay of repeats of the keyboard. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">speed</td><td>defines speed of a repeat (0 fast - 31 slow) </td></tr>
+    <tr><td class="paramname">delay</td><td>defines delay of a repeat (0 minimal - 7 maximal) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8cc_source.html#l00231">231</a> der Datei <a class="el" href="keyctrl_8cc_source.html">keyctrl.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="classKeyboard__Controller_aa213c738efd52d7986fb925e6aaa7d95_cgraph.png" border="0" usemap="#classKeyboard__Controller_aa213c738efd52d7986fb925e6aaa7d95_cgraph" alt=""/></div>
+<map name="classKeyboard__Controller_aa213c738efd52d7986fb925e6aaa7d95_cgraph" id="classKeyboard__Controller_aa213c738efd52d7986fb925e6aaa7d95_cgraph">
+<area shape="rect" id="node2" href="classCPU.html#a23c8f5e46dac3304f1d8def9c612b88e" title="Interupts werden global deaktiviert." alt="" coords="207,5,323,32"/><area shape="rect" id="node3" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="215,56,315,83"/><area shape="rect" id="node4" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port." alt="" coords="219,107,311,133"/><area shape="rect" id="node5" href="classCPU.html#a725124d36e67ea9e9539e4828ce54847" title="stellt den letzten bekannten Zustand des Interrupt&#45;Flags der CPU wieder her" alt="" coords="192,158,339,199"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="classKeyboard__Controller_aa213c738efd52d7986fb925e6aaa7d95_icgraph.png" border="0" usemap="#classKeyboard__Controller_aa213c738efd52d7986fb925e6aaa7d95_icgraph" alt=""/></div>
+<map name="classKeyboard__Controller_aa213c738efd52d7986fb925e6aaa7d95_icgraph" id="classKeyboard__Controller_aa213c738efd52d7986fb925e6aaa7d95_icgraph">
+<area shape="rect" id="node2" href="classKeyboard__Controller.html#a13a0e454bd8c6ee99182d05770d7c44a" title="Default constructor, turns all LEDs off and set speed and delay maximal." alt="" coords="193,5,341,46"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Datenelemente</h2>
+<a class="anchor" id="a45113045e3e4a0ef53fa552b3cef44c6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char Keyboard_Controller::alt_tab</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initialisierung:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">  0, 0, 0, 253, 0, 0, 0, 0, <span class="charliteral">&#39;{&#39;</span>, <span class="charliteral">&#39;[&#39;</span>, <span class="charliteral">&#39;]&#39;</span>, <span class="charliteral">&#39;}&#39;</span>, <span class="charliteral">&#39;\\&#39;</span>, 0, 0,</div>
+<div class="line">  0, <span class="charliteral">&#39;@&#39;</span>, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, <span class="charliteral">&#39;~&#39;</span>, 0,</div>
+<div class="line">  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,</div>
+<div class="line">  0, 0, 0, 0, 0, 0, 230, 0, 0, 0, 0,</div>
+<div class="line">  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,</div>
+<div class="line">  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, <span class="charliteral">&#39;|&#39;</span>, 0, 0</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Scancode translation table if alt is pressed. </p>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8h_source.html#l00136">136</a> der Datei <a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5290667fc948539a0055cddbcc978b2a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char Keyboard_Controller::asc_num_tab</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initialisierung:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">  <span class="charliteral">&#39;7&#39;</span>, <span class="charliteral">&#39;8&#39;</span>, <span class="charliteral">&#39;9&#39;</span>, <span class="charliteral">&#39;-&#39;</span>, <span class="charliteral">&#39;4&#39;</span>, <span class="charliteral">&#39;5&#39;</span>, <span class="charliteral">&#39;6&#39;</span>, <span class="charliteral">&#39;+&#39;</span>, <span class="charliteral">&#39;1&#39;</span>, <span class="charliteral">&#39;2&#39;</span>, <span class="charliteral">&#39;3&#39;</span>, <span class="charliteral">&#39;0&#39;</span>, <span class="charliteral">&#39;,&#39;</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Scancode translation table to ascii for numeric block. </p>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8h_source.html#l00139">139</a> der Datei <a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7ac0b301244d985c5eaf53208536baa5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char Keyboard_Controller::code</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>der zuletzt eingelesene Scan-Code </p>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8h_source.html#l00039">39</a> der Datei <a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae9e735cb81aac10de878dabb819b3358"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classIO__Port.html">IO_Port</a> Keyboard_Controller::ctrl_port</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>"Control Port" des Tastaturkontrollers </p>
+<p>Dieser Port gibt beim Lesen den Zustand des Tastaturkontrollers aus und beim Schreiben werden Befehle übergeben. </p>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8h_source.html#l00071">71</a> der Datei <a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4b8a4585aaaf8a7262e0d9aac689d463"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classIO__Port.html">IO_Port</a> Keyboard_Controller::data_port</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>"Daten Port" des Tastaturkontrollers </p>
+<p>Hiermit können Daten vom Tastaturpuffer gelesen oder in diesem geschrieben werden. </p>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8h_source.html#l00084">84</a> der Datei <a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3faad20e89b182c21ea1420622ab6f43"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classKey.html">Key</a> Keyboard_Controller::gather</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classKey.html" title="Translator between scancodes ASCII-code and modifier bits.">Key</a> to save the last input. </p>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8h_source.html#l00051">51</a> der Datei <a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab13fd3a19a862d66f6d723299926a4f4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char Keyboard_Controller::leds</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>variable containing the current led status </p>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8h_source.html#l00057">57</a> der Datei <a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b80b1b927914f2d55d70a74552c8fe1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char Keyboard_Controller::normal_tab</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initialisierung:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">  0, 0, <span class="charliteral">&#39;1&#39;</span>, <span class="charliteral">&#39;2&#39;</span>, <span class="charliteral">&#39;3&#39;</span>, <span class="charliteral">&#39;4&#39;</span>, <span class="charliteral">&#39;5&#39;</span>, <span class="charliteral">&#39;6&#39;</span>, <span class="charliteral">&#39;7&#39;</span>, <span class="charliteral">&#39;8&#39;</span>, <span class="charliteral">&#39;9&#39;</span>, <span class="charliteral">&#39;0&#39;</span>, 225, 39, <span class="charliteral">&#39;\b&#39;</span>,</div>
+<div class="line">  0, <span class="charliteral">&#39;q&#39;</span>, <span class="charliteral">&#39;w&#39;</span>, <span class="charliteral">&#39;e&#39;</span>, <span class="charliteral">&#39;r&#39;</span>, <span class="charliteral">&#39;t&#39;</span>, <span class="charliteral">&#39;z&#39;</span>, <span class="charliteral">&#39;u&#39;</span>, <span class="charliteral">&#39;i&#39;</span>, <span class="charliteral">&#39;o&#39;</span>, <span class="charliteral">&#39;p&#39;</span>, 129, <span class="charliteral">&#39;+&#39;</span>, <span class="charliteral">&#39;\n&#39;</span>,</div>
+<div class="line">  0, <span class="charliteral">&#39;a&#39;</span>, <span class="charliteral">&#39;s&#39;</span>, <span class="charliteral">&#39;d&#39;</span>, <span class="charliteral">&#39;f&#39;</span>, <span class="charliteral">&#39;g&#39;</span>, <span class="charliteral">&#39;h&#39;</span>, <span class="charliteral">&#39;j&#39;</span>, <span class="charliteral">&#39;k&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, 148, 132, <span class="charliteral">&#39;^&#39;</span>, 0, <span class="charliteral">&#39;#&#39;</span>,</div>
+<div class="line">  <span class="charliteral">&#39;y&#39;</span>, <span class="charliteral">&#39;x&#39;</span>, <span class="charliteral">&#39;c&#39;</span>, <span class="charliteral">&#39;v&#39;</span>, <span class="charliteral">&#39;b&#39;</span>, <span class="charliteral">&#39;n&#39;</span>, <span class="charliteral">&#39;m&#39;</span>, <span class="charliteral">&#39;,&#39;</span>, <span class="charliteral">&#39;.&#39;</span>, <span class="charliteral">&#39;-&#39;</span>, 0,</div>
+<div class="line">  <span class="charliteral">&#39;*&#39;</span>, 0, <span class="charliteral">&#39; &#39;</span>, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, <span class="charliteral">&#39;-&#39;</span>,</div>
+<div class="line">  0, 0, 0, <span class="charliteral">&#39;+&#39;</span>, 0, 0, 0, 0, 0, 0, 0, <span class="charliteral">&#39;&lt;&#39;</span>, 0, 0</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Scancode translation table without modifier. </p>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8h_source.html#l00130">130</a> der Datei <a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a604c580209e0f8ccd65a8ab6581293bb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char Keyboard_Controller::prefix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>der Vorsatz/Prefix des aktuellen Scan-Codes </p>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8h_source.html#l00045">45</a> der Datei <a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4f71b29920153636fd90909a8f7a5ba6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char Keyboard_Controller::scan_num_tab</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initialisierung:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">  8, 9, 10, 53, 5, 6, 7, 27, 2, 3, 4, 11, 51</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Scancode translation table to special keys for numeric block. </p>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8h_source.html#l00142">142</a> der Datei <a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab8479d47f63fa606866c466240e129da"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char Keyboard_Controller::shift_tab</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initialisierung:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">  0, 0, <span class="charliteral">&#39;!&#39;</span>, <span class="charliteral">&#39;&quot;&#39;</span>, 21, <span class="charliteral">&#39;$&#39;</span>, <span class="charliteral">&#39;%&#39;</span>, <span class="charliteral">&#39;&amp;&#39;</span>, <span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;(&#39;</span>, <span class="charliteral">&#39;)&#39;</span>, <span class="charliteral">&#39;=&#39;</span>, <span class="charliteral">&#39;?&#39;</span>, 96, 0,</div>
+<div class="line">  0, <span class="charliteral">&#39;Q&#39;</span>, <span class="charliteral">&#39;W&#39;</span>, <span class="charliteral">&#39;E&#39;</span>, <span class="charliteral">&#39;R&#39;</span>, <span class="charliteral">&#39;T&#39;</span>, <span class="charliteral">&#39;Z&#39;</span>, <span class="charliteral">&#39;U&#39;</span>, <span class="charliteral">&#39;I&#39;</span>, <span class="charliteral">&#39;O&#39;</span>, <span class="charliteral">&#39;P&#39;</span>, 154, <span class="charliteral">&#39;*&#39;</span>, 0,</div>
+<div class="line">  0, <span class="charliteral">&#39;A&#39;</span>, <span class="charliteral">&#39;S&#39;</span>, <span class="charliteral">&#39;D&#39;</span>, <span class="charliteral">&#39;F&#39;</span>, <span class="charliteral">&#39;G&#39;</span>, <span class="charliteral">&#39;H&#39;</span>, <span class="charliteral">&#39;J&#39;</span>, <span class="charliteral">&#39;K&#39;</span>, <span class="charliteral">&#39;L&#39;</span>, 153, 142, 248, 0, 39,</div>
+<div class="line">  <span class="charliteral">&#39;Y&#39;</span>, <span class="charliteral">&#39;X&#39;</span>, <span class="charliteral">&#39;C&#39;</span>, <span class="charliteral">&#39;V&#39;</span>, <span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;N&#39;</span>, <span class="charliteral">&#39;M&#39;</span>, <span class="charliteral">&#39;;&#39;</span>, <span class="charliteral">&#39;:&#39;</span>, <span class="charliteral">&#39;_&#39;</span>, 0,</div>
+<div class="line">  0, 0, <span class="charliteral">&#39; &#39;</span>, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,</div>
+<div class="line">  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, <span class="charliteral">&#39;&gt;&#39;</span>, 0, 0</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Scancode translation table if shift is pressed. </p>
+
+<p>Definiert in Zeile <a class="el" href="keyctrl_8h_source.html#l00133">133</a> der Datei <a class="el" href="keyctrl_8h_source.html">keyctrl.h</a>.</p>
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>include/machine/<a class="el" href="keyctrl_8h_source.html">keyctrl.h</a></li>
+<li>src/machine/<a class="el" href="keyctrl_8cc_source.html">keyctrl.cc</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Don Mai 2 2013 02:26:31 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

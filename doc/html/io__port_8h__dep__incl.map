@@ -1,0 +1,19 @@
+<map id="include/machine/io_port.h" name="include/machine/io_port.h">
+<area shape="rect" id="node2" href="$cgascr_8h.html" title="include/machine/cgascr.h" alt="" coords="173,96,341,123"/>
+<area shape="rect" id="node11" href="$keyctrl_8h.html" title="include/machine/keyctrl.h" alt="" coords="581,96,749,123"/>
+<area shape="rect" id="node16" href="$machine_2pic_8h.html" title="include/machine/pic.h" alt="" coords="773,96,920,123"/>
+<area shape="rect" id="node18" href="$pic_8cc.html" title="src/machine/pic.cc" alt="" coords="938,171,1067,197"/>
+<area shape="rect" id="node3" href="$cgastr_8h.html" title="include/device/cgastr.h" alt="" coords="180,171,335,197"/>
+<area shape="rect" id="node10" href="$cgascr_8cc.html" title="src/machine/cgascr.cc" alt="" coords="5,171,155,197"/>
+<area shape="rect" id="node4" href="$kout_8h.html" title="alles notwendige zum nutzen der in main.cc deklarierten globalen Variable kout" alt="" coords="316,245,457,272"/>
+<area shape="rect" id="node8" href="$cgastr_8cc.html" title="CGA_Stream ist hier implementiert" alt="" coords="156,245,292,272"/>
+<area shape="rect" id="node9" href="$main_8cc.html" title="Grunddatei von OOStuBS." alt="" coords="481,245,569,272"/>
+<area shape="rect" id="node5" href="$guardian_8cc.html" title="Interrupt&#45;Behandlungsfunktionen." alt="" coords="313,320,460,347"/>
+<area shape="rect" id="node6" href="$task1_8cc.html" title="src/user/task1.cc" alt="" coords="753,320,873,347"/>
+<area shape="rect" id="node7" href="$task2_8cc.html" title="src/user/task2.cc" alt="" coords="527,320,647,347"/>
+<area shape="rect" id="node12" href="$device_2keyboard_8h.html" title="include/device/keyboard.h" alt="" coords="585,171,756,197"/>
+<area shape="rect" id="node15" href="$keyctrl_8cc.html" title="src/machine/keyctrl.cc" alt="" coords="359,171,509,197"/>
+<area shape="rect" id="node13" href="$useful_2keyboard_8h.html" title="include/useful/keyboard.h" alt="" coords="771,245,940,272"/>
+<area shape="rect" id="node14" href="$keyboard_8cc.html" title="src/device/keyboard.cc" alt="" coords="594,245,747,272"/>
+<area shape="rect" id="node17" href="$useful_2pic_8h.html" title="include/useful/pic.h" alt="" coords="780,171,913,197"/>
+</map>

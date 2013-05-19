@@ -1,0 +1,8 @@
+digraph "Grafische Darstellung der Klassenhierarchie"
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Task1::ELF_Section\l_Header_Table",height=0.2,width=0.4,color="black",URL="$structTask1_1_1ELF__Section__Header__Table.html",tooltip="Section header table for ELF executables."];
+}

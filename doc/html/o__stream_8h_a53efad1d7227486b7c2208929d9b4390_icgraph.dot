@@ -1,0 +1,16 @@
+digraph "bin"
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="bin",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="handleException",height=0.2,width=0.4,color="black",URL="$guardian_8cc.html#afe78f34c7c65df79376008e0d23c1afd",tooltip="This function is called if a normal exception is raised by the cpu."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="handleExceptionE",height=0.2,width=0.4,color="black",URL="$guardian_8cc.html#a70466c5bd3ffac85265c22f65e9a4ef9",tooltip="This function is called if a normal exception with error code is raised by the cpu."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="Task1::parseAndPrint",height=0.2,width=0.4,color="black",URL="$classTask1.html#af4e3f3b3085e350a5e939da4dba2738d",tooltip="parse and print the multiboot information"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="Task1::action",height=0.2,width=0.4,color="black",URL="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c",tooltip="parse and print multiboot information"];
+}

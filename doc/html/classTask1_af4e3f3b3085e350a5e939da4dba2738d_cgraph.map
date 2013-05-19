@@ -1,0 +1,8 @@
+<map id="Task1::parseAndPrint" name="Task1::parseAndPrint">
+<area shape="rect" id="node2" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="238,5,285,32"/>
+<area shape="rect" id="node4" href="$o__stream_8h.html#a53efad1d7227486b7c2208929d9b4390" title="switch basis of o_stream to binary" alt="" coords="242,56,281,83"/>
+<area shape="rect" id="node5" href="$o__stream_8h.html#a143762d59413d6d7cae38fb25104c5c4" title="switch basis of o_stream to decimal" alt="" coords="240,107,283,133"/>
+<area shape="rect" id="node6" href="$classTask1.html#a33f61914bf73c0cb7d159db1152dfe29" title="check the multiboot infromation struct for provided information" alt="" coords="200,157,323,184"/>
+<area shape="rect" id="node7" href="$o__stream_8h.html#ac9bf4a3a6b7a2f0105d73ce270f5e69d" title="switch basis of o_stream to hexadecimal" alt="" coords="240,208,283,235"/>
+<area shape="rect" id="node3" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="371,5,498,32"/>
+</map>

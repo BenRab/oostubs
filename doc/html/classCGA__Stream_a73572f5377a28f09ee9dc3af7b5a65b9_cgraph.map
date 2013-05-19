@@ -1,0 +1,9 @@
+<map id="CGA_Stream::flush" name="CGA_Stream::flush">
+<area shape="rect" id="node2" href="$classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus" alt="" coords="187,81,317,108"/>
+<area shape="rect" id="node3" href="$classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position" alt="" coords="368,56,509,83"/>
+<area shape="rect" id="node6" href="$classCGA__Screen.html#a8176499ecb3ce4e9eb05910e66aee9d2" title="print a character to a specific position" alt="" coords="560,132,693,159"/>
+<area shape="rect" id="node7" href="$classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt" alt="" coords="365,157,512,184"/>
+<area shape="rect" id="node8" href="$classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position" alt="" coords="369,5,509,32"/>
+<area shape="rect" id="node4" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="577,5,677,32"/>
+<area shape="rect" id="node5" href="$classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port." alt="" coords="581,56,673,83"/>
+</map>

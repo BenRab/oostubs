@@ -1,0 +1,50 @@
+SECTIONS 
+ {
+   . = 0x100000;     /* Startadresse des Systems */
+
+   .text :
+    {
+      *(".text")
+      *(".text$")
+      *(".init")
+      *(".fini") 
+      *(".gnu.linkonce.*")
+    }
+    
+   .init_array : {
+    ConstructorListStart = .;
+      *(".init_array")
+      *(".ctors")
+      *(".ctor")
+    ConstructorListEnd = .;
+    }
+    
+   .fini_array : {
+    DestructorListStart = .;
+      *(".fini_array")
+      *(".dtors")
+      *(".dtor")
+    DestructorListEnd = .;
+    }
+    
+   .data :
+    {
+      *(".data")
+      *(".data$")
+      *(".rodata")
+      *(".got")
+      *(".got.plt")
+      *(".jcr")
+    }
+
+   .bss : 
+    {
+      *(".bss")
+    }
+   /DISCARD/ :
+    {
+      *(".note")
+      *(".comment")
+    }
+ }
+

@@ -1,0 +1,17 @@
+digraph "include/machine/cpu.h"
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="include/machine/cpu.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="include/useful/cpu.h",height=0.2,width=0.4,color="black",URL="$useful_2cpu_8h.html",tooltip="alles notwendige zum nutzen der in main.cc deklarierten globalen Variable cpu"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="src/guard/guardian.cc",height=0.2,width=0.4,color="black",URL="$guardian_8cc.html",tooltip="Interrupt-Behandlungsfunktionen."];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="src/user/task2.cc",height=0.2,width=0.4,color="black",URL="$task2_8cc.html"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="src/machine/keyctrl.cc",height=0.2,width=0.4,color="black",URL="$keyctrl_8cc.html"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="src/main.cc",height=0.2,width=0.4,color="black",URL="$main_8cc.html",tooltip="Grunddatei von OOStuBS."];
+}

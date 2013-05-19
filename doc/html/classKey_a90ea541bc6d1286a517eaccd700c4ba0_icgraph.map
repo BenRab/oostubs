@@ -1,0 +1,6 @@
+<map id="Key::ctrl_right" name="Key::ctrl_right">
+<area shape="rect" id="node2" href="$classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2" title="interpret the reveived scancode and modifier bits" alt="" coords="157,5,296,46"/>
+<area shape="rect" id="node3" href="$classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21" title="get the last pressed key" alt="" coords="344,5,483,46"/>
+<area shape="rect" id="node4" href="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object" alt="" coords="531,12,671,39"/>
+<area shape="rect" id="node5" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information" alt="" coords="721,12,821,39"/>
+</map>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>OOStuBS - Technische Informatik II (TI-II): src/main.cc Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.3.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">main.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="main_8cc.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *                                 Technische Informatik II                                      *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                                                                                               *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *                                         M A I N                                               *</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *                                                                                               *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">#                   INCLUDES                      #</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="multiboot_8h.html">machine/multiboot.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="machine_2cpu_8h.html">machine/cpu.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="machine_2pic_8h.html">machine/pic.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="machine_2plugbox_8h.html">machine/plugbox.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="device_2keyboard_8h.html">device/keyboard.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cgastr_8h.html">device/cgastr.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="device_2panic_8h.html">device/panic.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="task1_8h.html" title="Klassendeklaration für erste Aufgabe.">user/task1.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">#                    MACROS                       #</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="main_8cc.html#a3ebb888a082a3138da0d7e0a41cfd9ce">   29</a></span>&#160;<span class="preprocessor">#define USE_TASK           20</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//load the necessary header and define the class name of the task</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#if USE_TASK == 10</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span><span class="preprocessor">  #include &quot;<a class="code" href="task1_8h.html" title="Klassendeklaration für erste Aufgabe.">user/task1.h</a>&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">typedef</span> <a class="code" href="classTask1.html" title="Erste Testanwendung.">Task1</a> <a class="code" href="main_8cc.html#a0d2b4b390fc40e74d8056beab77f7437">TaskClass</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#elif USE_TASK == 20</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span><span class="preprocessor">  #include &quot;<a class="code" href="task2_8h.html">user/task2.h</a>&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="main_8cc.html#a0d2b4b390fc40e74d8056beab77f7437">   38</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="classTask2.html" title="Second test application.">Task2</a> <a class="code" href="main_8cc.html#a0d2b4b390fc40e74d8056beab77f7437">TaskClass</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">#                GLOBAL OBJECTS                   #</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="main_8cc.html#a0b2a3530e9a5998456be351b4251b878">   45</a></span>&#160;<a class="code" href="classCPU.html" title="Zugriff auf einige spezielle CPU-Anweisungen.">CPU</a> <a class="code" href="useful_2cpu_8h.html#a0b2a3530e9a5998456be351b4251b878">cpu</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="main_8cc.html#a5df8263917aec96d469d1c5d00ae364c">   46</a></span>&#160;<a class="code" href="classPIC.html" title="Treiber für den PIC (Programmable Interrupt Controller)">PIC</a> <a class="code" href="useful_2pic_8h.html#a5df8263917aec96d469d1c5d00ae364c">pic</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="main_8cc.html#aed4de46ea2fd44dd527973dfbc87e23c">   47</a></span>&#160;<a class="code" href="classPanic.html" title="Standardinterruptbehandlungsroutine.">Panic</a> <a class="code" href="useful_2panic_8h.html#aed4de46ea2fd44dd527973dfbc87e23c">panic</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="main_8cc.html#aa0c53aa97b3dec9b04fa8e566e706e4c">   48</a></span>&#160;<a class="code" href="classPlugbox.html" title="Administrationseinheit für die Interruptweitergabe.">Plugbox</a> <a class="code" href="useful_2plugbox_8h.html#aa0c53aa97b3dec9b04fa8e566e706e4c">plugbox</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="main_8cc.html#af177bb20a527a2c8f2df3a4a2ddb5d38">   49</a></span>&#160;<a class="code" href="classCGA__Stream.html" title="CGA basierte Ausgabe, ählich zu std::cout von C++.">CGA_Stream</a> <a class="code" href="kout_8h.html#af177bb20a527a2c8f2df3a4a2ddb5d38">kout</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="main_8cc.html#a0cb952f54873ca1b1a213ac08e6ff9a2">   50</a></span>&#160;<a class="code" href="classKeyboard.html" title="Treiber für die Tastatur, incl. Interruptunterstützung.">Keyboard</a> <a class="code" href="useful_2keyboard_8h.html#a0cb952f54873ca1b1a213ac08e6ff9a2">keyboard</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">#                   METHODS                       #</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keywordtype">void</span> <a class="code" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point">kernel</a>(uint32_t magic, <span class="keyword">const</span> Multiboot_Info* info);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819">   65</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point">kernel</a>(uint32_t magic, <span class="keyword">const</span> Multiboot_Info* info){</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">  #if USE_TASK == 10</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor"></span>    <a class="code" href="classTask2.html" title="Second test application.">TaskClass</a> task(magic, info);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">  #else</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor"></span>    <a class="code" href="classTask2.html" title="Second test application.">TaskClass</a> task;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">  #endif</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor"></span>  </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  task.<a class="code" href="classTask2.html#aa5de17846032b02d6d0819cdc78b1b3e" title="prints the line">action</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Don Mai 2 2013 02:26:29 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

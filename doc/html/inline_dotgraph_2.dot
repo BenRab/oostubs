@@ -1,0 +1,65 @@
+ 
+  digraph task1 {
+    size="5.9,5.5";
+    node [shape=box, style="solid,filled", fillcolor=white];
+    
+    
+    kernelF [label="kernel(...)", shape=oval, URL="\ref kernel"];
+    
+    subgraph cluster_subuser {
+      rank="source";
+      style=filled;
+      color=lightgray;
+      label = "user";
+      labeljust=l;
+      task2C [label="Task2", URL="\ref Task2"];
+    }
+    
+    subgraph cluster_submachine {
+      style=filled;
+      color=lightgray;
+      label = "machine";
+      labeljust=r;
+      keyctrlC [label="Keyboard_Controller", URL="\ref Keyboard_Controller"];
+      plugboxC [label="Plugbox", URL="\ref Plugbox", color=blue];
+      picC [label="PIC", URL="\ref PIC", color=blue];
+      cpuC [label="CPU", URL="\ref CPU"];
+      cgascrC [label="CGA_Screen", URL="\ref CGA_Screen"];
+      keyC [label="Key", URL="\ref Key"];
+      {rank=max; keyC;}
+      keyC -> keyctrlC [arrowhead="ediamond"];
+    }
+    
+    subgraph cluster_subguard {
+      style=filled;
+      color=lightgray;
+      label = "guard";
+      labeljust=c;
+      gateC [label="Gate", URL="\ref Gate"];
+      guardianF [label="guardian(...)", shape=oval, URL="\ref guardian", color=blue];
+    }
+    
+    subgraph cluster_subdevice {
+      style=filled;
+      color=lightgray;
+      label = "device";
+      labeljust=c;
+      panicC [label="Panic", URL="\ref Panic", color=blue];
+      keyboardC [label="Keyboard", URL="\ref Keyboard", color=blue];
+    }
+    
+    
+    kernelF -> task2C [arrowhead="open"];
+    task2C -> cgascrC [arrowhead="open"];
+    task2C -> cpuC [arrowhead="open"];
+    panicC -> cpuC [arrowhead="open"];
+    panicC -> gateC [arrowhead="empty"];
+    keyboardC -> keyctrlC [arrowhead="empty"];
+    keyboardC -> gateC [arrowhead="empty"];
+    keyboardC -> picC [arrowhead="open", weight=3];
+    keyboardC -> plugboxC [arrowhead="open", weight=4];
+    plugboxC -> gateC [arrowhead="open", weight=2];
+    //plugboxC -> panicC [arrowhead="open"];
+    //plugboxC -> keyboardC [arrowhead="open"];
+    guardianF -> plugboxC [arrowhead="open", weight=5];
+  }

@@ -1,0 +1,14 @@
+<map id="Task1::testKout" name="Task1::testKout">
+<area shape="rect" id="node2" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="209,5,255,32"/>
+<area shape="rect" id="node4" href="$classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position" alt="" coords="528,56,669,83"/>
+<area shape="rect" id="node7" href="$classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers" alt="" coords="166,157,298,184"/>
+<area shape="rect" id="node11" href="$classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position" alt="" coords="529,107,669,133"/>
+<area shape="rect" id="node12" href="$o__stream_8h.html#a143762d59413d6d7cae38fb25104c5c4" title="switch basis of o_stream to decimal" alt="" coords="211,208,253,235"/>
+<area shape="rect" id="node13" href="$o__stream_8h.html#ac9bf4a3a6b7a2f0105d73ce270f5e69d" title="switch basis of o_stream to hexadecimal" alt="" coords="211,259,253,285"/>
+<area shape="rect" id="node3" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="349,5,475,32"/>
+<area shape="rect" id="node5" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="737,107,837,133"/>
+<area shape="rect" id="node6" href="$classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port." alt="" coords="741,56,833,83"/>
+<area shape="rect" id="node8" href="$classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus" alt="" coords="347,157,477,184"/>
+<area shape="rect" id="node9" href="$classCGA__Screen.html#a8176499ecb3ce4e9eb05910e66aee9d2" title="print a character to a specific position" alt="" coords="720,183,853,209"/>
+<area shape="rect" id="node10" href="$classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt" alt="" coords="525,157,672,184"/>
+</map>

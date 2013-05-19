@@ -1,0 +1,28 @@
+digraph "Keyboard_Controller::get_ascii_code"
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Keyboard_Controller\l::get_ascii_code",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="Key::ascii",height=0.2,width=0.4,color="black",URL="$classKey.html#abb65ed9de2b4a8c24f557416b484df34",tooltip="set ascii value"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="Key::scancode",height=0.2,width=0.4,color="black",URL="$classKey.html#ae67075af1a5c0a7f585e8e61fc8515f8",tooltip="set scancode value"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="Key::num_lock",height=0.2,width=0.4,color="black",URL="$classKey.html#a4a8da77b0cb57bf89bffa3903c2f79ce"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="Key::num_lock",height=0.2,width=0.4,color="black",URL="$classKey.html#aab1b4f9446a6db6fc4a6a1f7824d51b5"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="Key::alt_right",height=0.2,width=0.4,color="black",URL="$classKey.html#af4fa809960860523573abd695e3f8fbe"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="Key::alt_right",height=0.2,width=0.4,color="black",URL="$classKey.html#af12fb21a12c35fb89f6ff43db96759ba"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node8 [label="Key::shift",height=0.2,width=0.4,color="black",URL="$classKey.html#a62e735f4121d8984d994a508bdd6a74b"];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node9 [label="Key::shift",height=0.2,width=0.4,color="black",URL="$classKey.html#a19b48c665bdda438c55de7399eb4a631"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node10 [label="Key::caps_lock",height=0.2,width=0.4,color="black",URL="$classKey.html#a45fb60e270f30b9f23e28259e851b14a"];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node11 [label="Key::caps_lock",height=0.2,width=0.4,color="black",URL="$classKey.html#a8a4da1819e66bb141c4dea2934845fab"];
+}

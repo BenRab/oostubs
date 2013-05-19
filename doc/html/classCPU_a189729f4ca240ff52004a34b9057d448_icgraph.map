@@ -1,0 +1,5 @@
+<map id="CPU::halt" name="CPU::halt">
+<area shape="rect" id="node2" href="$guardian_8cc.html#afe78f34c7c65df79376008e0d23c1afd" title="This function is called if a normal exception is raised by the cpu." alt="" coords="157,5,272,32"/>
+<area shape="rect" id="node3" href="$guardian_8cc.html#a70466c5bd3ffac85265c22f65e9a4ef9" title="This function is called if a normal exception with error code is raised by the cpu." alt="" coords="154,56,275,83"/>
+<area shape="rect" id="node4" href="$guardian_8cc.html#a390d383038610b600ab986ec9b54879a" title="This function is called if a reserved exception is raised by the cpu." alt="" coords="131,107,298,133"/>
+</map>

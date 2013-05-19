@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>OOStuBS - Technische Informatik II (TI-II): Enwicklungsumgebung</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.3.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li class="current"><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Enwicklungsumgebung </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>Inhaltsverzeichnis</h3>
+<ul><li class="level1"><a href="#devenv_sec0">Umgebung der Betriebssystementwicklung</a></li>
+<li class="level1"><a href="#devenv_sec1">OOStuBS bauen</a><ul><li class="level2"><a href="#devenv_sec1_1">Makefile</a></li>
+<li class="level2"><a href="#devenv_sec1_2">misc/[PLATFORM]/config.mk</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#devenv_sec2">OOStuBS testen und debuggen</a></li>
+<li class="level1"><a href="#devenv_sec4">OOStuBS an echter Hardware testen</a></li>
+<li class="level1"><a href="#devenv_sec5">Patch als Vorgabe</a><ul><li class="level2"><a href="#devenv_sec5_1">Fehler beim Patch</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="textblock"><p>Als Entwicklungsumgebung wird Linux in Form von einer 32- oder 64-Bit Variante vorgesehen. Es gibt in den Vorgaben auch die Möglichkeit für MacOSX und <a class="el" href="devenv_win.html">Windows mit CygWin</a> , diese sind zwar getestet werden aber beide nicht unterstützt. Sollten Fehler auftreten, so können zwar die Übungsleiter gefragt werden, wir garantieren aber weder, dass die Lösungen laufen, noch dass wir immer bei Problemen helfen können. Jeder der eine der beiden Umgebungen nutzt muss notfalls selber eine Lösung für seine Probleme finden.</p>
+<p>Auf den Rechnern im Labor ist Ubuntu vorinstalliert und kann entsprechend genutzt werden. Wer auf seinem privaten Rechner nur Windows installiert hat, kann entweder zusätzlich ein Linux wie Ubuntu installieren, oder <a class="el" href="devenv_ubu.html">in einer Virtuellen Umgebung ein Linux installieren</a>.</p>
+<dl class="section attention"><dt>Achtung</dt><dd>Fehlgeschlagene Installationen auf dem privaten Rechner werden nicht als Ausrede für eine verspätete Abgabe akzeptiert.</dd></dl>
+<h1><a class="anchor" id="devenv_sec0"></a>
+Umgebung der Betriebssystementwicklung</h1>
+<p>Es gibt eine Vielzahl von Linux Distributionen und somit eine Vielzahl von möglichen Installationsvarianten. Aus diesem Grund wird die Aufsetzung der Entwicklungsumgebung anhand von Ubuntu 12.10 gezeigt. In anderen Distributionen läuft dies ähnlich ab, nur sind dann unter Umständen andere, mehr oder weniger Pakete zu installieren.</p>
+<p>In Ubuntu wird eine <a href="http://complete-concrete-concise.com/ubuntu-2/ubuntu-12-10/how-to-get-a-command-line-shell-or-terminal">Konsole geöffnet</a>. Im Anschluss wird folgendes eingegeben: </p>
+<pre class="fragment">sudo apt-get install build-essential gcc g++ gdb binutils make doxygen graphviz patch qemu
+cd [Ordner]
+wget [Archiv-Adresse]
+tar xvfz [Archiv-Name].tar.gz
+</pre><dl class="section note"><dt>Zu beachten</dt><dd>Bei 64-Bit Ubuntu muss die apt-get-Zeile um <code>libc6-dev-i386</code> erweitert werden.</dd></dl>
+<dl class="section warning"><dt>Warnung</dt><dd>Die Installation der Pakete erfordert i.d.R. root-Rechte und muss nur bei neuen Installationen durchgeführt werden. Auf den Computern im Labor ist bereits alles notwendige installiert. Die Zeile kann dort also weggelassen werden.</dd></dl>
+<p>Dabei muss [Ordner] mit dem Ordner ersetzt werden, in dem OOStuBS liegen soll. [Archiv-Adresse] ist die Adresse zum Archiv auf der Webseite, in dem die Vorgabe liegt. [Archiv-Name] ist dann der Name des heruntergeladenen Archivs, ohne Endung. Die Endung müsste ".tar.gz" sein.</p>
+<h1><a class="anchor" id="devenv_sec1"></a>
+OOStuBS bauen</h1>
+<p>Je nach verwendetem Linux müssen noch einige Dateien angepasst werden.</p>
+<h2><a class="anchor" id="devenv_sec1_1"></a>
+Makefile</h2>
+<p>In der <code>Makefile</code> unter <code>PLATFORM</code> muss das Betriebssystem unter dem entwickelt wird spezifiziert werden. Unter einem 32-Bit Linux ist es <code>linux</code> und unter 64 Bit entsprechend <code>linux64</code>. </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment"># one of linux, linux64</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># the platforms osxcross and windows are also possible but are not supported</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;PLATFORM=linux</div>
+</div><!-- fragment --><h2><a class="anchor" id="devenv_sec1_2"></a>
+misc/[PLATFORM]/config.mk</h2>
+<p>Unter dem Ordner <code>misc</code> sind die einzelnen Konfigurationen abgelegt. Im Unterordner der gewählten Plattform gibt es eine Datei <code>config.mk</code>. Diese speichert welche Dateien vorhanden sind. Bei QEMU gibt es ab und zu das Problem der Bezeichnung des Programms. In der Konfigurationsdatei gibt es eine Zeile, die mit EMU anfängt: </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;EMU=qemu-system-i386</div>
+</div><!-- fragment --><p> Diese muss u.U. auf die richtige QEMU-Datei umgeschrieben werden. Dies hängt definitiv vom System ab. Unter Gentoo ist es z.B. "<code>qemu-kvm</code>".</p>
+<h1><a class="anchor" id="devenv_sec1"></a>
+OOStuBS bauen</h1>
+<p>Zum Bauen von OOStuBS muss zuerst die Plattform in der Datei Makefile des Hauptordners festgelegt werden. In der Zeile mir "PLATFORM=" muss entweder "linux" bei 32 Bit oder "linux64" bei 64 bit eingetragen werden. Danach kann das Betriebssystem mit der folgenden Zeile in der Konsole (im Hauptordner) gebaut werden: </p>
+<pre class="fragment">make
+</pre><p>Soll die Dokumentation gebaut werden, so ist folgendes einzugeben: </p>
+<pre class="fragment">make doc
+</pre><p>Um wieder aufzuräumen ist folgendes einzugeben: </p>
+<pre class="fragment">make clean
+</pre><p> Dies entfernt sowohl die gebauten, ausführbaren Dateien, als auch die Dokumentation. Soll nur die Dokumentation entfernt werden, so kann statt <code>clean</code> <code>cleanDoc</code> verwendet werden. Sollen die Objektdateien weg, so kann stattdessen <code>cleanBuild</code> verwendet werden.</p>
+<h1><a class="anchor" id="devenv_sec2"></a>
+OOStuBS testen und debuggen</h1>
+<p>Dank dem Emulator QEMU kann OOStuBS relativ leicht ausgeführt und debuggt werden. Mit </p>
+<pre class="fragment">make run
+</pre><p> kann OOStuBS ausgeführt werden. Es öffnet sich ein neues Fester - QEMU - in dem dann das entwickelte Betriebssystem läuft.</p>
+<p>Liegt ein Fehler vor, so kann mit </p>
+<pre class="fragment">make debug
+</pre><p> debuggt werden. Dabei startet sowohl das QEMU-Fenster, als auch gdb in der Konsole. Das System wird dabei gleich angehalten, so dass gleich mit der Arbeit begonnen werden kann.</p>
+<h1><a class="anchor" id="devenv_sec4"></a>
+OOStuBS an echter Hardware testen</h1>
+<p>Um das Betriebssystem auf einem echten Computer zu testen, muss zuerst ein USB-Stick bootfähig gemacht werden. Als Bootmanager bieten sich <a href="http://www.lowlevel.eu/wiki/GRUB_Installation_auf_einem_USB-Stick">GRUB</a> oder <a href="http://www.syslinux.org/wiki/index.php/The_Syslinux_Project">Syslinux</a> an. Für letzteres gibt es in der <a class="el" href="devenv_win.html">Windowsanleitung</a> eine beschriebene Vorgehensweise, die in leicht abgewandelter Form auch unter Linux funktioniert.</p>
+<h1><a class="anchor" id="devenv_sec5"></a>
+Patch als Vorgabe</h1>
+<p>Einige Vorgaben werden als Patchdatei angeboten. Diese kommen mit Hilfe von patch in das vorhandene System eingebunden werden. In diesem Beispiel wird von einer bestehenden Implementation der ersten Aufgabe ausgegangen. Die Vorgabe der zweiten soll gepatcht werden. Der Patch liegt bereits im Hauptverzeichnis von OOStuBS. Auch die Konsole befindet sich in dem Ordner. </p>
+<pre class="fragment">patch -p1 &lt; Aufgabe2.patch
+</pre><p>Im Anschluss sollten die Dateien der Vorgaben und die Änderungen der Vorgaben vorhanden sein.</p>
+<p>Sind Binärdateien, wie Bilder, in den Änderungen erhalten, so werden diese als extra Paket angeboten, die dann manuell in den richtigen Ordner kopiert werden müssen.</p>
+<h2><a class="anchor" id="devenv_sec5_1"></a>
+Fehler beim Patch</h2>
+<p>Es kann vorkommen, dass patch nicht alle Stellen zum Ändern finden kann oder dass andere Konflikte auftreten. Diese müssen dann manuell behoben werden. Nehmen wir folgendes Beispiel an: </p>
+<pre class="fragment">ubuntu@ubuntuPC:/data/oostubs/oostubs$ patch -p1 &lt; Aufgabe2.patch 
+patching file doc/task1.dox
+patching file doc/task2.dox
+patching file include/device/keyboard.h
+patching file include/device/panic.h
+patching file include/guard/gate.h
+patching file include/machine/cpu.h
+patching file include/machine/pic.h
+patching file include/machine/plugbox.h
+patching file include/useful/keyboard.h
+patching file include/useful/panic.h
+patching file include/useful/plugbox.h
+patching file include/user/task2.h
+patching file src/device/keyboard.cc
+patching file src/device/panic.cc
+patching file src/machine/pic.cc
+patching file src/machine/plugbox.cc
+patching file src/main.cc
+Hunk #3 FAILED at 65.
+1 out of 3 hunks FAILED -- saving rejects to file src/main.cc.rej
+patching file src/user/task1.cc
+patching file src/user/task2.cc
+ubuntu@ubuntuPC:/data/oostubs/oostubs$ 
+</pre><p> Die Datei <a class="el" href="main_8cc.html" title="Grunddatei von OOStuBS.">main.cc</a> konnte nicht erfolgreich aktualisiert werden. Die letzte der drei Änderungen schlug fehl, vermutlich um Zeile 65. Durch den Fehler gibt es jetzt drei verschiedene Dateien: <a class="el" href="main_8cc.html" title="Grunddatei von OOStuBS.">main.cc</a>, main.cc.rej und main.cc.orig. Die erste Datei enthält alle erfolgreichen Änderungen, die Datei .rej enthält die Fehler und orig enthält den Zustand der Datei vor dem Einspielen der patch-Datei. Die rej-Datei könnte Aufschluss geben:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; --- src/main.cc  2013-04-27 09:04:58.609128500 +0200</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;+++ src/main.cc 2013-05-01 19:13:16.249563000 +0200</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;@@ -65,7 +80,11 @@</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; void <a class="code" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point">kernel</a>(uint32_t magic, const Multiboot_Info* info){</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;   </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;+  <span class="comment">#if USE_TASK == 10</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;   TaskClass task(magic, info);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;+  <span class="comment">#else</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;+    TaskClass task;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;+  <span class="comment">#endif</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;   </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;   task.action();</div>
+</div><!-- fragment --><p>Offenbar konnte der Codeabschnitt nicht in der Datei gefunden werden. In der neuen Datei hätte der gezeigte Quellcodeabschnitt von Zeile 65 bis Zeile 80 gehen und der Teil mit dem Plus hätte eingefügt werden sollen.</p>
+<p>Ein Blick in die aktuelle <a class="el" href="main_8cc.html" title="Grunddatei von OOStuBS.">main.cc</a>-Datei ab Zeile 65 ergibt: </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;void <a class="code" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point">kernel</a>(uint32_t magic, const Multiboot_Info* info){</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;  TaskClass task( magic, info);</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  task.action();</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
+</div><!-- fragment --><p>In der Datei gibt es kleine Änderungen bzgl. Leerzeilen und Leertasten. Die vier neuen Zeilen können leicht eingefügt werden und dann ist auch der Patch komplett.</p>
+<h4>Bilder</h4>
+ 
+        <ul style="margin:2px; padding:0px;">
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="patch_01.png">
+              <img width=200 src="small_patch_01.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="patch_02.png">
+              <img width=200 src="small_patch_02.png" />
+            </a>
+          </li>
+        </ul>
+  </div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Don Mai 2 2013 02:26:30 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

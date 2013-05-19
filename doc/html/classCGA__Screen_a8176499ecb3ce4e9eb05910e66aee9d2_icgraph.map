@@ -1,0 +1,15 @@
+<map id="CGA_Screen::show" name="CGA_Screen::show">
+<area shape="rect" id="node2" href="$classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus" alt="" coords="405,132,534,159"/>
+<area shape="rect" id="node12" href="$classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt" alt="" coords="187,157,333,184"/>
+<area shape="rect" id="node13" href="$classCGA__Screen.html#a622bc3a2822e3006579167343d639353" title="leert den aktuellen Bildschirm" alt="" coords="195,208,325,235"/>
+<area shape="rect" id="node3" href="$classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers" alt="" coords="606,132,738,159"/>
+<area shape="rect" id="node4" href="$guardian_8cc.html#afe78f34c7c65df79376008e0d23c1afd" title="This function is called if a normal exception is raised by the cpu." alt="" coords="813,5,928,32"/>
+<area shape="rect" id="node5" href="$guardian_8cc.html#a70466c5bd3ffac85265c22f65e9a4ef9" title="This function is called if a normal exception with error code is raised by the cpu." alt="" coords="810,56,931,83"/>
+<area shape="rect" id="node6" href="$guardian_8cc.html#a390d383038610b600ab986ec9b54879a" title="This function is called if a reserved exception is raised by the cpu." alt="" coords="787,107,954,133"/>
+<area shape="rect" id="node7" href="$classTask1.html#a48ca608ac9cdc03ab6614a4f61e2448e" title="test the functionality of the Kout object" alt="" coords="815,157,927,184"/>
+<area shape="rect" id="node9" href="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object" alt="" coords="801,208,941,235"/>
+<area shape="rect" id="node10" href="$classTask2.html#aa5de17846032b02d6d0819cdc78b1b3e" title="prints the line" alt="" coords="821,259,921,285"/>
+<area shape="rect" id="node8" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information" alt="" coords="1003,183,1103,209"/>
+<area shape="rect" id="node11" href="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point" alt="" coords="1025,259,1082,285"/>
+<area shape="rect" id="node14" href="$classCGA__Screen.html#a4415c1855a6afdc5cd3116e5fa054252" title="Constructor." alt="" coords="382,208,557,235"/>
+</map>

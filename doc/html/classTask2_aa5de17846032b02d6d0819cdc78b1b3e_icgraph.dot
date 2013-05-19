@@ -1,0 +1,10 @@
+digraph "Task2::action"
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Task2::action",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="kernel",height=0.2,width=0.4,color="black",URL="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819",tooltip="kernel entry point"];
+}

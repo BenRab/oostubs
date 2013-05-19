@@ -1,0 +1,16 @@
+/**
+ * \~german
+ * \page task5 Aufgabe 5 - Semaphoren
+ * \tableofcontents
+ * 
+ * Diese Aufgabe basiert auf dem neuen Grundsystem von \ref task4 "Aufgabe 4". Dieses läuft nicht 
+ * mehr als eigenständiges Betriebssystem, sondern als normales Programm unter Linux. \n
+ * 
+ * Die Informationen dieser Aufgabe erscheinen mit dem entsprechenden Patch.
+ * 
+ * \~english
+ * \page task5 Task 5 - Semaphor
+ * 
+ * There is no english describtion. Use the german one.
+ */
+

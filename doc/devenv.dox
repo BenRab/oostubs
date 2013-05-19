@@ -1,0 +1,1552 @@
+/** 
+ * \~german
+ * \page devenv Enwicklungsumgebung
+ * \tableofcontents
+ * 
+ * Als Entwicklungsumgebung wird Linux in Form von einer 32- oder 64-Bit Variante vorgesehen. 
+ * Es gibt in den Vorgaben auch die Möglichkeit für MacOSX und 
+ * \subpage devenv_win "Windows mit CygWin"
+ * , diese sind zwar getestet werden aber beide nicht unterstützt. Sollten Fehler auftreten, 
+ * so können zwar die Übungsleiter gefragt werden, wir garantieren aber weder, dass die Lösungen 
+ * laufen, noch dass wir immer bei Problemen helfen können. Jeder der eine der beiden Umgebungen 
+ * nutzt muss notfalls selber eine Lösung für seine Probleme finden.
+ * 
+ * Auf den Rechnern im Labor ist Ubuntu vorinstalliert und kann entsprechend genutzt werden. Wer 
+ * auf seinem privaten Rechner nur Windows installiert hat, kann entweder zusätzlich ein 
+ * Linux wie Ubuntu installieren, oder 
+ * \subpage devenv_ubu "in einer Virtuellen Umgebung ein Linux installieren".
+ * 
+ * \attention
+ * Fehlgeschlagene Installationen auf dem privaten Rechner werden nicht als Ausrede für eine 
+ * verspätete Abgabe akzeptiert.
+ * 
+ * \section devenv_sec0 Umgebung der Betriebssystementwicklung
+ * Es gibt eine Vielzahl von Linux Distributionen und somit eine Vielzahl von möglichen 
+ * Installationsvarianten. Aus diesem Grund wird die Aufsetzung der Entwicklungsumgebung 
+ * anhand von Ubuntu 12.10 gezeigt. In anderen Distributionen läuft dies ähnlich ab, nur sind 
+ * dann unter Umständen andere, mehr oder weniger Pakete zu installieren.
+ * 
+ * In Ubuntu wird eine 
+ * <a href="http://complete-concrete-concise.com/ubuntu-2/ubuntu-12-10/how-to-get-a-command-line-shell-or-terminal">Konsole geöffnet</a>.
+ * Im Anschluss wird folgendes eingegeben:
+ * \verbatim
+sudo apt-get install build-essential gcc g++ gdb binutils make doxygen graphviz patch qemu
+cd [Ordner]
+wget [Archiv-Adresse]
+tar xvfz [Archiv-Name].tar.gz
+\endverbatim
+ * 
+ * \note
+ * Bei 64-Bit Ubuntu muss die apt-get-Zeile um \c libc6-dev-i386 erweitert werden.
+ * 
+ * \warning
+ * Die Installation der Pakete erfordert i.d.R. root-Rechte und muss nur bei neuen Installationen
+ * durchgeführt werden. Auf den Computern im Labor ist bereits alles notwendige installiert.
+ * Die Zeile kann dort also weggelassen werden.
+ * 
+ * Dabei muss [Ordner] mit dem Ordner ersetzt werden, in dem OOStuBS liegen soll. [Archiv-Adresse] 
+ * ist die Adresse zum Archiv auf der Webseite, in dem die Vorgabe liegt. [Archiv-Name] ist dann
+ * der Name des heruntergeladenen Archivs, ohne Endung. Die Endung müsste ".tar.gz" sein.
+ * 
+ * 
+ * \section devenv_sec1 OOStuBS anpassen
+ * Je nach verwendetem Linux müssen noch einige Dateien angepasst werden.
+ * 
+ * \subsection devenv_sec1_1 Makefile
+ * In der \c Makefile unter \c PLATFORM muss das Betriebssystem unter dem entwickelt wird 
+ * spezifiziert werden. Unter einem 32-Bit Linux ist es \c linux und unter 64 Bit entsprechend
+ * \c linux64.
+ * \code{.py}
+# one of linux, linux64
+# the platforms osxcross and windows are also possible but are not supported
+PLATFORM=linux
+  \endcode
+ * 
+ * \subsection devenv_sec1_2 misc/[PLATFORM]/config.mk
+ * Unter dem Ordner \c misc sind die einzelnen Konfigurationen abgelegt. Im Unterordner der
+ * gewählten Plattform gibt es eine Datei \c config.mk. Diese speichert welche Dateien vorhanden 
+ * sind. Bei QEMU gibt es ab und zu das Problem der Bezeichnung des Programms. In der 
+ * Konfigurationsdatei gibt es eine Zeile, die mit EMU anfängt:
+ * \code{.py}
+EMU=qemu-system-i386
+  \endcode
+ * Diese muss u.U. auf die richtige QEMU-Datei umgeschrieben werden. Dies hängt definitiv vom 
+ * System ab. Unter Gentoo ist es z.B. \"<tt>qemu-kvm</tt>\".
+ * 
+ * \section devenv_sec1 OOStuBS bauen
+ * Zum Bauen von OOStuBS muss zuerst die Plattform in der Datei Makefile des Hauptordners
+ * festgelegt werden. In der Zeile mir "PLATFORM=" muss entweder "linux" bei 32 Bit oder 
+ * "linux64" bei 64 bit eingetragen werden. Danach kann das Betriebssystem mit der folgenden
+ * Zeile in der Konsole (im Hauptordner) gebaut werden:
+ * \verbatim
+make
+\endverbatim
+ * 
+ * Soll die Dokumentation gebaut werden, so ist folgendes einzugeben:
+ * \verbatim
+make doc
+\endverbatim
+ * 
+ * Um wieder aufzuräumen ist folgendes einzugeben:
+ * \verbatim
+make clean
+\endverbatim
+ * Dies entfernt sowohl die gebauten, ausführbaren Dateien, als auch die Dokumentation. Soll nur 
+ * die Dokumentation entfernt werden, so kann statt \c clean \c cleanDoc verwendet werden. Sollen 
+ * die Objektdateien weg, so kann stattdessen \c cleanBuild verwendet werden.
+ * 
+ * \section devenv_sec2 OOStuBS testen und debuggen
+ * Dank dem Emulator QEMU kann OOStuBS relativ leicht ausgeführt und debuggt werden.
+ * Mit 
+ * \verbatim
+make run
+\endverbatim
+ * kann OOStuBS ausgeführt werden. Es öffnet sich ein neues Fester - QEMU - in dem dann 
+ * das entwickelte Betriebssystem läuft.
+ * 
+ * Liegt ein Fehler vor, so kann mit 
+ * \verbatim
+make debug
+\endverbatim
+ * debuggt werden. Dabei startet sowohl das QEMU-Fenster, als auch gdb in der Konsole. Das System
+ * wird dabei gleich angehalten, so dass gleich mit der Arbeit begonnen werden kann.
+ * 
+ * \section devenv_sec4 OOStuBS an echter Hardware testen
+ * Um das Betriebssystem auf einem echten Computer zu testen, muss zuerst ein USB-Stick 
+ * bootfähig gemacht werden. Als Bootmanager bieten sich 
+ * <a href="http://www.lowlevel.eu/wiki/GRUB_Installation_auf_einem_USB-Stick">GRUB</a> oder 
+ * <a href="http://www.syslinux.org/wiki/index.php/The_Syslinux_Project">Syslinux</a> an. 
+ * Für letzteres gibt es in der \ref devenv_win "Windowsanleitung" eine beschriebene Vorgehensweise,
+ * die in leicht abgewandelter Form auch unter Linux funktioniert.
+ * 
+ * 
+ * \section devenv_sec5 Patch als Vorgabe
+ * Einige Vorgaben werden als Patchdatei angeboten. Diese kommen mit Hilfe von patch in das 
+ * vorhandene System eingebunden werden. In diesem Beispiel wird von einer bestehenden 
+ * Implementation der ersten Aufgabe ausgegangen. Die Vorgabe der zweiten soll gepatcht werden.
+ * Der Patch liegt bereits im Hauptverzeichnis von OOStuBS. Auch die Konsole befindet sich 
+ * in dem Ordner.
+ * \verbatim
+patch -p1 < Aufgabe2.patch
+\endverbatim
+ * 
+ * Im Anschluss sollten die Dateien der Vorgaben und die Änderungen der Vorgaben vorhanden sein.
+ * 
+ * Sind Binärdateien, wie Bilder, in den Änderungen erhalten, so werden diese als extra Paket 
+ * angeboten, die dann manuell in den richtigen Ordner kopiert werden müssen.
+ * 
+ * \subsection devenv_sec5_1 Fehler beim Patch
+ * Es kann vorkommen, dass patch nicht alle Stellen zum Ändern finden kann oder dass andere 
+ * Konflikte auftreten. Diese müssen dann manuell behoben werden. Nehmen wir folgendes Beispiel
+ * an:
+ * \verbatim
+ubuntu@ubuntuPC:/data/oostubs/oostubs$ patch -p1 < Aufgabe2.patch 
+patching file doc/task1.dox
+patching file doc/task2.dox
+patching file include/device/keyboard.h
+patching file include/device/panic.h
+patching file include/guard/gate.h
+patching file include/machine/cpu.h
+patching file include/machine/pic.h
+patching file include/machine/plugbox.h
+patching file include/useful/keyboard.h
+patching file include/useful/panic.h
+patching file include/useful/plugbox.h
+patching file include/user/task2.h
+patching file src/device/keyboard.cc
+patching file src/device/panic.cc
+patching file src/machine/pic.cc
+patching file src/machine/plugbox.cc
+patching file src/main.cc
+Hunk #3 FAILED at 65.
+1 out of 3 hunks FAILED -- saving rejects to file src/main.cc.rej
+patching file src/user/task1.cc
+patching file src/user/task2.cc
+ubuntu@ubuntuPC:/data/oostubs/oostubs$ 
+\endverbatim
+ * Die Datei main.cc konnte nicht erfolgreich aktualisiert werden. Die letzte der drei 
+ * Änderungen schlug fehl, vermutlich um Zeile 65. Durch den Fehler gibt es jetzt drei 
+ * verschiedene Dateien: main.cc, main.cc.rej und main.cc.orig. Die erste Datei enthält
+ * alle erfolgreichen Änderungen, die Datei .rej enthält die Fehler und orig enthält 
+ * den Zustand der Datei vor dem Einspielen der patch-Datei.
+ * Die rej-Datei könnte Aufschluss geben:
+ *
+ * \code{.py}
+ --- src/main.cc	2013-04-27 09:04:58.609128500 +0200
++++ src/main.cc	2013-05-01 19:13:16.249563000 +0200
+@@ -65,7 +80,11 @@
+ void kernel(uint32_t magic, const Multiboot_Info* info){
+   
++  #if USE_TASK == 10
+   TaskClass task(magic, info);
++  #else
++    TaskClass task;
++  #endif
+   
+   task.action();
+   
+
+\endcode
+ *  
+ * Offenbar konnte der Codeabschnitt nicht in der Datei gefunden werden. In der neuen 
+ * Datei hätte der gezeigte Quellcodeabschnitt von Zeile 65 bis Zeile 80 gehen und der Teil 
+ * mit dem Plus hätte eingefügt werden sollen.
+ * 
+ * Ein Blick in die aktuelle main.cc-Datei ab Zeile 65 ergibt:
+ * \code{.py}
+void kernel(uint32_t magic, const Multiboot_Info* info){
+  TaskClass task( magic, info);
+  
+  task.action();
+  
+}
+
+\endcode
+ * 
+ * In der Datei gibt es kleine Änderungen bzgl. Leerzeilen und Leertasten. Die vier neuen Zeilen 
+ * können leicht eingefügt werden und dann ist auch der Patch komplett.
+ * 
+ * <h4>Bilder</h4>
+ * \htmlonly
+        <ul style="margin:2px; padding:0px;">
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="patch_01.png">
+              <img width=200 src="small_patch_01.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="patch_02.png">
+              <img width=200 src="small_patch_02.png" />
+            </a>
+          </li>
+        </ul>
+ \endhtmlonly
+ * 
+ * \~english
+ * \page devenv Development Environment
+ * There is no english description. Use the german version.
+ */ 
+
+
+/** 
+ * \~german
+ * \page devenv_win Enwicklungsumgebung Windows aufsetzen
+ * \tableofcontents
+ * 
+ * \section devenv_win_sec0 Schritt 0 - Vorwort
+ * 
+ * <b>Es wird kein Unterstützung für Windows gewährt!</b> Jeder der unter Windows 
+ * entwickeln möchte muss seine Probleme selber lösen. <b>Es wird empfohlen 
+ * unter Linux/Solaris zu entwickeln</b>. Für alle, die dennoch Windows verwenden wollen, 
+ * bietet diese Anleitung eine Orientierung einer möglichen Einrichtung der Entwicklungsumgebung 
+ * unter Windows. Es wird nicht garantiert, dass die Befolgung dieser Anleitung zwangsweise zum 
+ * Ziel führt. 
+ * 
+ * \attention
+ * Eine nicht funktionierende Entwicklungsumgebung ist keine Ausrede, warum eine 
+ * Aufgabe nicht rechtzeitig abgegeben werden konnte. \n
+ * Die Verwendung dieser Anleitung geschieht auf eigene Gefahr, bestimmte Schritte können 
+ * in seltenen Fällen das System (Windows) zerstören bzw. unbrauchbar machen. 
+ * 
+ * Es gibt viele Möglichkeiten auch unter Windows ein Betriebssystem zu entwickeln. 
+ * Aufgrund der Vorgaben für den GNU-C-Compiler wurde sich für eine Kombination von Cygwin, 
+ * Doxygen, QEMU und Visual Studio 2010 entschieden. Eine Alternative zu Cygwin bietet 
+ * <a href="http://www.mingw.org/">MinGW</a>. \n
+ * Diese Anleitung wurde unter Windows 7 Professional 64 Bit, mit Visual Studio 2010 Ultimate - 
+ * beides mittels MSDNAA für FIN-Studenten kostenlos zu erhalten - vom 14.08. bis 21.09.2011 
+ * herum mit den neusten Versionen von Cygwin, Doxygen, Graphviz, QEMU und Syslinux entwickelt 
+ * und getestet. \n
+ * Am 12.04.2013 wurde die Anleitung überholt und auf die geänderte Vorgabe und den neuen 
+ * Programmversionen angepasst. Zusätzlich wurde unter einem 32Bit Windows XP Professional, 
+ * welches unter <a href="https://www.virtualbox.org/">VirtualBox</a> lief, getestet.
+ * 
+ * \section devenv_win_sec1 Schritt 1 - Cygwin
+ * Unter <a href="http://cygwin.com/install.html">http://cygwin.com/install.html</a> kann die 
+ * <a href="http://cygwin.com/setup.exe">Installationsroutine</a> herunter geladen werden. 
+ * Diese bietet lediglich ein Interface, in dem die gewollten Pakete ausgewählt werden. Diese 
+ * werden dann aus dem Internet herunter geladen und installiert.\n 
+ * Nachdem die Routine heruntergeladen wurde, muss sie ausgeführt werden. Dabei ist es u.U. 
+ * erforderlich, der Anwendung Administratorrechte zu erlauben (Windows Vista/Windows 7). 
+ * Im Anschluss werden sich die Informationen durchgelesen und zweimal "Weiter" betätigt. 
+ * Nun gilt es den Installationsort auszuwählen, es wird einer ohne Leerzeichen im Pfad empfohlen, 
+ * in dieser Anleitung wird "F:\Programme\CygWin\" verwendet. Danach "Weiter" klicken und dann den 
+ * Ort auswählen, in dem die aus dem Internet heruntergeladenen Dateien zwischengespeichert 
+ * werden sollen. Abschließend wird dieser mit "Weiter" festgelegt. Im  folgenden Dialog wird 
+ * eine Direktverbindung zum Herunterladen ausgewählt. Nach einem  weiteren Klick auf "Weiter" 
+ * werden kurz Dateien aus dem Internet geladen und  dann eine Liste mit Mirror-Servern angeboten. 
+ * Hier muss einer ausgewählt werden und dieser erneut mit "Weiter" betätigt werden. Nun werden 
+ * einige Grunddateien aus dem Internet herunter geladen. Es kann dabei eine Meldung auftauchen, 
+ * dass dies eine Installation ist und eine bereits installierte Version beeinflussen könnte. 
+ * Dies kann mit "OK" bestätigt werden.\n
+ * Es folgt ein Menü mit der Auswahl der zu installierenden Pakete, gemäß der Linux-Umgebung 
+ * werden folgende Pakete benötigt und sollten ausgewählt werden (per Klick auf "Skip"):
+ * \verbatim
+ unter "Devel"
+            binutils
+            gcc4 (Version 4.5.3 oder höher)
+            gcc4-core (Version 4.5.3 oder höher)
+            gcc4-g++ (Version 4.5.3 oder höher)
+            gdb
+            make
+            patchutils
+ \endverbatim
+ * 
+ * Es sollten keine Pakete abgewählt werden, die vorausgewählt waren. Wichtig ist 
+ * an dieser Stelle, dass die gcc4-Pakete als 4.5-Version (oder höher) ausgewählt 
+ * werden. Beim ersten Klick auf Skip wurde bei den Tests manchmal 4.3.4 als Version 
+ * angezeigt. Diese unterstützt allerdings die benötigte Option "-fno-leading-underscore" 
+ * nicht. Ein erneuter Klick bringt in einem solchen Fall dann die 4.5.3 hervor. Dies ist 
+ * für alle gcc4-Pakete einzeln anzugeben.\n
+ * \note
+ *   In der aktuellen Version (Stand: 12.04.2013) wird Version 4.7.2-2 als erste Auswahl angezeigt.
+ *   Mit dieser Version wurden erfolgreich Tests durchgeführt.
+ * 
+ * Mit "Weiter" werden Abhängigkeiten aufgelistet, die mit installiert werden müssen. 
+ * Hier sollte ein Haken bei "Select required packages" vorhanden sein. Mit "Weiter" 
+ * werden die Pakete dann heruntergeladen und installiert. Nachdem dies abgeschlossen 
+ * ist, kann mit "Fertig stellen" die Installation abgeschlossen werden. Es wird ein 
+ * Neustart des Computers empfohlen.
+ * 
+ * <h4>Bilder</h4>
+ * \htmlonly
+        <ul style="margin:2px; padding:0px;">
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallCygwin_01.png">
+              <img width=200 src="small_InstallCygwin_01.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallCygwin_02.png">
+              <img width=200 src="small_InstallCygwin_02.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallCygwin_03.png">
+              <img width=200 src="small_InstallCygwin_03.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallCygwin_04.png">
+              <img width=200 src="small_InstallCygwin_04.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallCygwin_05.png">
+              <img width=200 src="small_InstallCygwin_05.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallCygwin_06.png">
+              <img width=200 src="small_InstallCygwin_06.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallCygwin_07.png">
+              <img width=200 src="small_InstallCygwin_07.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallCygwin_08.png">
+              <img width=200 src="small_InstallCygwin_08.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallCygwin_09.png">
+              <img width=200 src="small_InstallCygwin_09.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallCygwin_10.png">
+              <img width=200 src="small_InstallCygwin_10.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallCygwin_11.png">
+              <img width=200 src="small_InstallCygwin_11.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallCygwin_12.png">
+              <img width=200 src="small_InstallCygwin_12.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallCygwin_13.png">
+              <img width=200 src="small_InstallCygwin_13.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallCygwin_14.png">
+              <img width=200 src="small_InstallCygwin_14.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallCygwin_15.png">
+              <img width=200 src="small_InstallCygwin_15.png" />
+            </a>
+          </li>
+        </ul>
+ \endhtmlonly
+ * 
+ * \section devenv_win_sec2 Schritt 2 - Doxygen und Graphviz
+ * Doxygen kann zwar mit Cygwin installiert werden, allerdings gab es in letzter Zeit 
+ * einige nützliche Änderungen, weshalb empfohlen wird, die neuste Version zu verwenden.\n
+ * Diese kann von der <a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen-Webseite</a> unter 
+ * <a href="http://www.stack.nl/~dimitri/doxygen/download.html#latestsrc">Downloads</a> herunter 
+ * geladen werden. Hier sollte das "binaries in a zip"-Paket genutzt werden. Nachdem dieses 
+ * heruntergeladen wurde, kann es entpackt werden. Prinzipiell ist es egal, wo die zwei 
+ * Exe-Dateien und die eine Cgi-Datei hin gespeichert werden, der Pfad sollte aber bekannt 
+ * und ohne Leertaste sein. In dieser Anleitung wird "F:\Programme\Doxygen\" verwendet, 
+ * eine ordentliche Strukturierung ist immer gut. 
+ * Analoges gilt für Graphviz. Dieses kann auf der 
+ * <a href="http://www.graphviz.org/">offiziellen Webseite</a> unter 
+ * <a href="http://www.graphviz.org/Download.php">Downloads</a> herunter geladen werden. 
+ * Dazu muss den Lizenzen zugestimmt werden. Im Anschluss kann der Windows-Installer, 
+ * in diesem Beispiel "graphviz-2.30.1.msi" geladen und danach ausgeführt werden. 
+ * \warning 
+ *   Früher war folgende Fehlermeldung auf der Webseite zu lesen:\n
+ *   \b Warning: Not safe to use on Windows 7! On September 17, a Windows 7 user warned 
+ *   that a failed installation wiped out the system PATH variable and this was a lot of 
+ *   trouble because the installer does not create a restore point. We will investigate. 
+ * 
+ * Legt also vor der Installation einen 
+ * <a href="http://www.netzwerktotal.de/windows7wiederherstellungspunkt.htm">Wiederherstellungspunkt</a>
+ * an und speichert euch 
+ * am besten noch die PATH-Umgebungsvariable zwischen (unter Windows 7 Tastenkombination 
+ * [Windows]+[Pause], links "erweiterte Systemeinstellungen", untere Schaltfläche 
+ * "Umgebungsvariablen", bei Systemvariablen Path suchen und auswählen, "Bearbeiten" und 
+ * den Wert in eine Textdatei kopieren und diese speichern). \n 
+ * In diesem Beispiel wird Graphviz nach "F:\Programme\Graphviz" installiert. Ist die 
+ * Installation geglückt, so ist ein Neustart bestimmt keine schlechte Sache. 
+ * 
+ * \section devenv_win_sec3 Schritt 3 - QEMU
+ * Es gibt zwei Wege an QEMU für Windows heran zu kommen. Die erste und einfache 
+ * Variante ist es, eine bereits kompilierte Version zu verwenden. Die zweite 
+ * Variante ist dann logischer Weise, es selber zu bauen. Dabei kann die 
+ * Cygwin-Umgebung genutzt werden. 
+ * 
+ * \subsection devenv_win_sec3_1 Variante 1: fertige Binaries verwenden
+ * Unter 
+ * <a href="http://qemu-buch.de/de/index.php/QEMU-KVM-Buch/_QEMU_unter_Microsoft_Windows#QEMU_ohne_GUI">qemu-buch.de</a> 
+ * ist ein Link zu den Binaries von QEMU für Windows angegeben. Es gilt das Zip-Paket 
+ * <a href="http://qemu-buch.de/download/qemu-1.3-windows.zip">qemu-1.3-windows.zip</a> herunter 
+ * zu laden und zu entpacken. Der Inhalt des Ordners "qemu-1.3-windows" wird in 
+ * dieser Anleitung nach "F:\Programme\QEMU" entpackt. 
+ * 
+ * \subsection devenv_win_sec3_2 Variante 2: QEMU selber bauen
+ * Diese Variante wird hier nicht genau beschrieben. Nur so viel, der Quellcode von 
+ * QEMU kann von der <a href="http://wiki.qemu.org/Main_Page">Webseite</a> des Projektes 
+ * herunter geladen werden. Aktuell ist momentan 
+ * <a href="http://wiki.qemu-project.org/download/qemu-1.4.0.tar.bz2">qemu-1.4.0.tar.bz2</a>. 
+ * Im Internet können verschiedene Anleitungen für das Kompilieren gefunden werden. 
+ * Einige (z.B. qemu-buch.de) sehen vor, dies unter einem Linux mit MinGW zu bauen. 
+ * 
+ * 
+ * \section devenv_win_sec4 Schritt 4 - Codevorbereitung
+ * Nachdem nun Großteile der Entwicklungsumgebung existieren, geht es an den Quellcode selber. 
+ * Es ist an der Zeit die Vorgaben der ersten Aufgabe herunter zu laden und zu entpacken. 
+ * In diesem Beispiel werden die Daten nach \"F:\\Daten\\oostubs\\code\" gepackt. Der Ordner 
+ * "F:\Daten\oostubs" soll später alles direkt für OOStuBS enthalten. Sollte nach dem 
+ * entpacken ein Ordner namens \"F:\\Daten\\oostubs\\code\\oostubs\" existieren, so ist dessen 
+ * Inhalt nach \"F:\\Daten\\oostubs\\code\", also einen Ordner höher, zu verschieben, so dass 
+ * z.B. die Datei \"F:\\Daten\\oostubs\\code\\Makefile\" existiert, der leere oostubs-Ordner 
+ * kann nun gelöscht werden. 
+ * 
+ * \subsection devenv_win_sec4_1 Windows-Anpassungen - Makefile
+ * Da unter misc von OOStuBS bereits ein windows-Ordner existiert, muss nur in der Datei 
+ * \"F:\\Daten\\oostubs\\code\\Makefile\" muss in der Zeile mit "PLATFORM=" der Teil danach in 
+ * "windows" anstelle des vorhandenen - in diesem Beispiel "linux" - umgeändert werden. 
+ * 
+ * \subsection devenv_win_sec4_2 Optional: Funktionstest
+ * Es besteht nun die Möglichkeit zu schauen, ob OOStuBS bereits gebaut, wenn auch noch 
+ * nicht mit QEMU gestartet, werden kann. Dies müsste theoretisch bereits der Fall sein, 
+ * sofern keine Fehler aufgetreten sind. \n 
+ * Zu diesem Zweck wird die Datei \"F:\\Programme\\CygWin\\Cygwin.bat\" ausgeführt. 
+ * Im Anschluss wird "cd /cygdrive/f/Daten/oostubs/code/" [ENTER] und danach "make" 
+ * [ENTER] eingegeben. Es sollten keine Fehlermeldungen angezeigt werden. Danach folgt 
+ * noch ein "make clean" [ENTER]. Der komplette Ablauf müsste dann etwa wie folgt aussehen: 
+ * \verbatim
+a@b ~
+$ cd /cygdrive/f/Daten/oostubs/code/
+
+a@b /cygdrive/f/Daten/oostubs/code
+$ make
+(ASM  ) build/boot.o <- src/asm/boot.S
+(CXX  ) build/cgastr.o <- src/device/cgastr.cc
+(CXX  ) build/guardian.o <- src/guard/guardian.cc
+(CXX  ) build/cgascr.o <- src/machine/cgascr.cc
+(CXX  ) build/keyctrl.o <- src/machine/keyctrl.cc
+(CXX  ) build/o_stream.o <- src/object/o_stream.cc
+(CXX  ) build/strbuf.o <- src/object/strbuf.cc
+(CXX  ) build/main.o <- src/main.cc
+(ASM  ) build/compat.o <- src/asm/compat.S
+(CC   ) build/inifini.o <- misc/windows/inifini.c
+(LD   ) bin/oostubs <- [boot.o cgastr.o guardian.o cgascr.o keyctrl.o o_stream.o strbuf.o main.o compat.o inifini.o]
+
+a@b /cygdrive/f/Daten/oostubs/code
+$ make clean
+(CLEAN)
+
+a@b /cygdrive/f/Daten/oostubs/code
+$
+ \endverbatim
+ * \note Anstelle von a\@b müsste der unter Windows verwendete Benutzername "@" Computername 
+ * des gerade genutzten Computers erscheinen.
+ * 
+ * \section devenv_win_sec5 Schritt 5 - Visual Studio
+ * Prinzipiell existiert bereits alles, um OOStuBS zu bauen, dokumentieren, auszuführen 
+ * und zu debuggen. Allerdings ist dafür noch einige "Handarbeit" notwendig, um jedes Mal 
+ * die Einzelteile zusammen zu führen. Diese Arbeit soll Visual Studio abnehmen. Weitere 
+ * Vorteile sind die Code-Vervollständigung und die Syntaxhervorhebung.\n
+ * Dazu ist <a href="oostubs_VS.zip">dieses vorbereitete Paket</a> herunter zu laden und 
+ * nach \"F:\\Daten\\oostubs\" zu entpacken. Somit müssten sich dann unter \"F:\\Daten\\oostubs\" 
+ * drei Ordner befinden, "code", in dem die OOStuBS-Vorgaben liegen, "scripts", in dem einige 
+ * Hilfs-Batch-Dateien liegen und "vsproject", in dem die Visual Studio Projekte liegen. 
+ * 
+ * Bevor nun Visual Studio gestartet wird, sollte die Datei 
+ * \"F:\\Daten\\oostubs\\scripts\\setVariable.bat\" überprüft werden. In dieser sind die Orte 
+ * eingetragen, an denen die verschiedenen Programme vorzufinden sind. Die Datei müsste wie 
+ * folgt aussehen: 
+ * \code{.py}
+@set "CYGWINPATH=F:\Programme\CygWin"
+@set "DOXYGENPATH=F:\Programme\Doxygen"
+@set "QEMUPATH=F:\Programme\QEMU"
+@set "GRAPHVIZPATH=F:\Programme\Graphviz"
+
+@set "CROSSPATH=F:\Programme\CygWin\usr\src\cross"
+  \endcode
+ * 
+ * Wurden andere Orte als die in dieser Anleitung verwendet, so gilt es nun diese Pfade 
+ * zu korrigieren. Es ist wichtig darauf zu achten, dass alles vor dem Gleichheitszeichen 
+ * (incl.) und die Anführungszeichen am Ende unverändert bleiben. "CROSSPATH" muss an 
+ * dieser Stelle nicht verändert werden, es dient nur einer alternativen Variante 
+ * (siehe \ref devenv_win_sec8 "Alternativen"). \n
+ * Wurde alles kontrolliert und notfalls angepasst, kann nun Visual Studio gestartet werden, 
+ * indem entweder die Datei \"F:\\Daten\\oostubs\\vsproject\\oostubs.sln\" oder 
+ * \"F:\\Daten\\oostubs\\vsproject\\oostubs.vcxproj\" geöffnet wird. Sollte eine neuere 
+ * Version von Visual Studio verwendet werden, so wird nun vermutlich eine Konvertierung 
+ * stattfinden, die hoffentlich auch korrekt funktioniert. Da aktuell keine neuere Visual 
+ * Studio Version existiert, kann dies natürlich momentan nicht getestet werden. \n
+ * Nach dem Start kann nun die Entwicklung losgehen. 
+ * 
+ * \subsection devenv_win_sec5_1 Arbeiten mit Visual Studio als Verwalter
+ * Das ganze System ist so aufgebaut, dass alles über Projekte gesteuert wird. 
+ * Von diesen gibt es fünf Stück. \n 
+ * Das wichtigste Projekt ist "oostubs". In diesem sind die Quellcode-Dateien 
+ * eingebunden und die Code-Autovervollständigung ist entsprechend konfiguriert. Um 
+ * OOStuBS zu bauen gilt es das Projekt zu erstellen. Eine Möglichkeit dazu ist über 
+ * einen Rechtsklick auf das Projekt und "erstellen". Zum Ausführen von OOStuBS kann 
+ * allerdings keine der Standard-Ausführungs-Varianten von Visual Studio ([F5], 
+ * [Strg]+[F5], grüner Pfeil, ...) verwendet werden. Wird dies versucht, so kommt 
+ * u.U. erst eine Warnung, wird der Vorgang dann mit "Ja" fortgesetzt, erscheint Wordpad 
+ * mit einem kleinen Text. \n 
+ * Zum Ausführen von OOStuBS sind die Projekte "run_debug" und "run_normal" vorgesehen. 
+ * Diese müssen erstellt werden, um OOStuBS zu starten. Dies mag jetzt etwas seltsam 
+ * klingen, jedoch ist es eine einfache Variante, mit Visual Studio projektspezifisch 
+ * andere Programme zu starten, ohne dass Visual Studio versucht diese mit den internen 
+ * Mitteln zu debuggen und ohne dass Visual Studio dafür - zum Beispiel über PlugIns - 
+ * verändert werden muss. \n 
+ * Bei "run_debug" wird QEMU wartend gestartet und kurze Zeit später GDB, welches mit 
+ * QEMU Kontakt aufnimmt. Wird hingegen "run_normal" erstellt, so wird kein GDB gestartet 
+ * und QEMU pausiert auch nicht, sondern führt OOStuBS direkt aus. \n 
+ * Die Dokumentation kann mittels "write_doc" erstellt und mittels "show_doc" im 
+ * Standard-Internet-Browser geöffnet werden. 
+ * 
+ * \subsection devenv_win_sec5_2 Anpassung der Projekte bei späteren Vorgaben
+ * Das oostubs-Projekt kennt nur die in Aufgabe 1 vorhandenen Dateien. Dateien späterer 
+ * Aufgaben sind entsprechend noch nicht berücksichtigt und müssen von Hand hinzugefügt 
+ * werden. An dieser Stelle wird anhand der fiktiven Datei src/test/test.cc beispielhaft 
+ * das Vorgehen gezeigt. Es wird davon ausgegangen, dass die Dateien schon im entsprechenden 
+ * code-Ordner existieren (Schritt 7). \n 
+ * Per Rechtsklick auf "src", "Hinzufügen", "neuer Filter" und der Benennung in "test" wird 
+ * ein neuer virtueller Ordner angelegt. Der Übersichtlichkeit wird hier die gleiche Struktur 
+ * verwendet, wie sie real aussieht. Per Rechtsklick auf "test", "Hinzufügen", "Vorhandenes 
+ * Element..." kann eine neue Quelltextdatei (oder mehrere auf einmal) hinzugefügt werden. 
+ * Im Aufgehenden Dialog wird in den korrekten Ordner gewechselt und die entsprechende Datei 
+ * ausgewählt. \n
+ * Fertig.
+ * 
+ * <h4>Bilder</h4>
+ * \htmlonly
+<ul style="margin:2px; padding:0px;">
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_01.png">
+              <img width=200 src="small_UseVS_01.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_02.png">
+              <img width=200 src="small_UseVS_02.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_03.png">
+              <img width=200 src="small_UseVS_03.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_04.png">
+              <img width=200 src="small_UseVS_04.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_05.png">
+              <img width=200 src="small_UseVS_05.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_06.png">
+              <img width=200 src="small_UseVS_06.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_07.png">
+              <img width=200 src="small_UseVS_07.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_08.png">
+              <img width=200 src="small_UseVS_08.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_09.png">
+              <img width=200 src="small_UseVS_09.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_10.png">
+              <img width=200 src="small_UseVS_10.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_11.png">
+              <img width=200 src="small_UseVS_11.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_12.png">
+              <img width=200 src="small_UseVS_12.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_13.png">
+              <img width=200 src="small_UseVS_13.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_14.png">
+              <img width=200 src="small_UseVS_14.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_15.png">
+              <img width=200 src="small_UseVS_15.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_16.png">
+              <img width=200 src="small_UseVS_16.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_17.png">
+              <img width=200 src="small_UseVS_17.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_18.png">
+              <img width=200 src="small_UseVS_18.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_19.png">
+              <img width=200 src="small_UseVS_19.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_20.png">
+              <img width=200 src="small_UseVS_20.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_21.png">
+              <img width=200 src="small_UseVS_21.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="UseVS_22.png">
+              <img width=200 src="small_UseVS_22.png" />
+            </a>
+          </li>
+        </ul>
+  \endhtmlonly
+ * 
+ * \section devenv_win_sec6 Schritt 6 - bootfähiger USB-Stick
+ * Da die Abnahmen der Aufgaben an realen Computern geschehen, ist es notwendig, 
+ * das Betriebssystem auf einem echten Computer direkt auszuführen. Dies geschieht, indem ein 
+ * USB-Stick bootfähig gemacht wird und so eingerichtet wird, dass er OOStuBS startet. 
+ * An dieser Stelle wird Syslinux verwendet, um OOStuBS vom Stick zu starten. \n
+ * Als Arbeitsmaterial wird ein USB-Stick benötigt, der prinzipiell bootfähig ist. <b>Da während 
+ * der Behandlung alle Daten des USB-Sticks vernichtet werden, gilt es diese zu sichern!</b>
+ * 
+ * \subsection devenv_win_sec6_1 FAT32 formatieren
+ * Syslinux kann nicht mit NTFS umgehen, aber mit FAT32. Deshalb muss der Stick FAT32 
+ * formatiert werden. Auch wenn der Stick bereits dieses Format hat, bietet sich eine 
+ * Formatierung an, um alte Leichen und evtl. Fehler im Dateisystem zu bereinigen. \n 
+ * Im Windows Explorer sollte mit einem Rechtsklick auf das Laufwerk des USB-Sticks, 
+ * in diesem Beispiel G:, geklickt und "Formatieren..." ausgewählt werden. Ist der Stick 
+ * nicht zu groß, wird unter "Dateisystem" FAT32 angeboten, welches auszuwählen ist. 
+ * Unter "Größe der Zuordnungseinheiten" wird "Standardgröße" ausgewählt. Es wird empfohlen, 
+ * den Haken bei "Schnellformatierung" zu entfernen. Damit wird der komplette Speicherbereich 
+ * beschrieben. Dann kann "Starten" geklickt werden. \n 
+ * Ist die Formatierung abgeschlossen, kann das Fenster geschlossen werden. \n
+ * Nun müssen auf dem Stick noch drei Ordner angelegt werden: 
+ *  - \"G:\\boot\" 
+ *  - \"G:\\boot\\kernel\" 
+ *  - \"G:\\boot\\syslinux\" 
+ * 
+ * \subsection devenv_win_sec6_2 Syslinux aufbringen
+ * Nun geht es an das Aufspielen von <a href="http://www.syslinux.org/wiki/">Syslinux</a>. Auf 
+ * der Webseite von Syslinux kann über "download" auf 
+ * <a href="http://www.kernel.org/pub/linux/utils/boot/syslinux/">eine Unterwebseite</a> von 
+ * Kernel.org gelangt werden. Hier kann das aktuelle ZIP-Paket (momentan 
+ * <a href="https://www.kernel.org/pub/linux/utils/boot/syslinux/syslinux-5.01.zip">syslinux-5.01.zip</a>) 
+ * herunter geladen zu werden. \n 
+ * Das Paket wird dann nach \"F:\\Temp\\Syslinux\" entpackt. 
+ * Das Paket enthält bereits Windows-Dateien, ein Erstellen dieser ist also nicht mehr 
+ * notwendig. Es wird die Eingabeaufforderung von Windows, mit Administratorrechten 
+ * gestartet - zum Beispiel über "Start", bei "Programme/Dateien durchsuchen" wird "cmd" 
+ * eingegeben, auf das vorgeschlagene "cmd.exe" wird ein Rechtsklick, 
+ * "Als Administrator ausführen" getätigt. Im erscheinenden Fenster wird in das richtige 
+ * Laufwerk gewechselt, hier "F:" und danach in den richtigen Ordner per 
+ * \"cd F:\\Temp\\Syslinux\\win32\" gegangen. Mit dem Befehl 
+ * \"syslinux.exe -m -a -d boot G:\" wird nun Syslinux auf den USB-Stick G: 
+ * übertragen und dieser zugleich bootfähig gemacht. Die Eingabeaufforderung kann nun 
+ * wieder geschlossen werden. Ein Beispielablauf könnte so aussehen: 
+ * \verbatim
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation. Alle Rechte vorbehalten.
+
+C:\Windows\system32>F:
+
+F:\>cd Temp\Syslinux\win32
+
+F:\Temp\Syslinux\win32>syslinux.exe -m -a -d boot G:
+
+F:\Temp\Syslinux\win32>
+  \endverbatim
+ * 
+ * Der USB-Stick müsste nun außer den drei Ordnern unter boot auch noch die zwei Dateien
+ * \c ldlinux.sys und \c ldlinux.c32 haben:
+  \verbatim
+G:\boot>dir /Ah
+ Datenträger in Laufwerk G: ist OOSTUBS
+ Volumeseriennummer: 2EBA-DC86
+
+ Verzeichnis von G:\boot
+
+15.04.2013  19:58            55.296 ldlinux.sys
+15.04.2013  19:58           115.784 ldlinux.c32
+               2 Datei(en),        171.080 Bytes
+               0 Verzeichnis(se),  8.018.268.160 Bytes frei
+  \endverbatim
+ * 
+ * \subsection devenv_win_sec6_3 Syslinux für OOStuBS konfigurieren
+ * Die Dateien \"F:\\Temp\\Syslinux\\com32\\mboot\\mboot.c32\" und
+ * \"F:\\Temp\\Syslinux\\com32\\lib\\libcom32.c32\" werden nach \"G:\\boot\\syslinux\\\" 
+ * kopiert. 
+ * Dort wird auch eine Text-Datei mit dem Namen "syslinux.cfg" angelegt. Der Inhalt dieser 
+ * müsste dann wie folgt gesetzt werden: 
+ * \code{.py}
+PROMPT 1
+TIMEOUT 10
+DEFAULT oostubs
+DISPLAY bootmenu.lst
+
+LABEL oostubs
+  KERNEL /boot/syslinux/mboot.c32
+  APPEND /boot/kernel/oostubs
+  \endcode
+ * Es folgt das Anlegen der Datei "G:\boot\syslinux\bootmenu.lst": 
+ * 
+ * \code{.py}
+oostubs   - aktuelle OOStuBS-Version [DEFAULT]
+  \endcode
+ * Nachdem dies erledigt ist, muss nur noch die oostubs-Datei von 
+ * \"F:\\Daten\\oostubs\\code\\bin\\oostubs\" nach \"G:\\boot\\kernel\\" kopiert werden. \n 
+ * Der Stick ist nun bereit und es kann OOStuBS gestartet werden. 
+ * Beim Booten mit dem Stick startet das Betriebssystem nahezu sofort. Dies ist dank des 
+ * geringen \c TIMEOUTs der Fall.
+ * 
+ * \subsection devenv_win_sec6_4 Optional: mehrere Versionen
+ * Möchte man für jede Aufgabe eine eigene Bootoption haben - beispielsweise um später 
+ * in Nostalgie zu schwelgen oder nachzusehen, ob bestimmte Fehler auch schon in 
+ * früheren Versionen auftreten, kann ein Menü angelegt werden. In diesem Beispiel 
+ * wurde Aufgabe 1 und 2 bereits bearbeitet wurde und Aufgabe 3 teilweise. Die aktuelle 
+ * Version ist immer noch \"G:\\boot\\kernel\\oostubs\". Die fertige Aufgabe 1 liegt als 
+ * \"G:\\boot\\kernel\\oostubs.A1" vor und Aufgabe 2 als \"G:\\boot\\kernel\\oostubs.A2\". \n
+ * Nun werden zuerst die Datei \"F:\\Temp\\Syslinux\\com32\\menu\\menu.c32\" und 
+ * \"F:\\Temp\\Syslinux\\com32\\libutil\\libutil.c32\" zusätzlich nach \"G:\\boot\\syslinux\\\" 
+ * kopiert. Im Anschluss wird die \"G:\\boot\\syslinux\\syslinux.cfg\"-Datei bearbeitet, 
+ * diese müsste dann wie folgt aussehen: 
+ * \code{.py}
+PROMPT 1
+TIMEOUT 100
+DEFAULT oostubs
+UI /boot/menu.c32
+MENU TITLE OOStuBS Bootmenue mit Syslinux
+
+LABEL -
+	MENU LABEL OOStuBS:
+	MENU DISABLE
+
+LABEL oostubs
+	MENU LABEL ^oostubs   - aktuelle Version [DEFAULT]
+	MENU INDENT 1
+	TEXT HELP
+Dies ist die aktuelle Entwicklungsversion von OOStuBS.
+	ENDTEXT
+	KERNEL /boot/mboot.c32
+	APPEND /boot/kernel/oostubs
+
+LABEL oostubsA1
+	MENU LABEL oostubsA^1 - fertige Aufgabe 1
+	MENU INDENT 1
+	TEXT HELP
+Diese Version von OOStuBS beeinhaltet nur die abgeschlossene Aufgabe 1.
+	ENDTEXT
+	KERNEL /boot/mboot.c32
+	APPEND /boot/kernel/oostubs.A1
+
+LABEL oostubsA2
+	MENU LABEL oostubsA^2 - fertige Aufgabe 2
+	MENU INDENT 1
+	TEXT HELP
+Diese Version von OOStuBS beeinhaltet nur die abgeschlossenen Aufgaben 1 bis 2.
+	ENDTEXT
+	KERNEL /boot/mboot.c32
+	APPEND /boot/kernel/oostubs.A2
+  \endcode
+ * 
+ * Der Wert bei \c TIMEOUT gibt an, wie lange gewartet wird, bis die Standard-Option 
+ * genutzt wird. Die Angabe ist in 1/10 Sekunden, der Wert 100 besagt also 10 Sekunden. \n 
+ * Bei den Namen gilt die "8+3"-Regel zu beachten, max. acht Zeichen vor und drei Zeichen 
+ * nach dem Punkt. \n 
+ * Der Lohn der Mühe sieht dann wie folgt aus: 
+ * 
+ * \htmlonly
+        <ul style="margin:2px; padding:0px;">
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="bootSyslinux_01.png">
+              <img width=200 src="small_bootSyslinux_01.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="bootSyslinux_02.png">
+              <img width=200 src="small_bootSyslinux_02.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="bootSyslinux_03.png">
+              <img width=200 src="small_bootSyslinux_03.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="bootSyslinux_04.png">
+              <img width=200 src="small_bootSyslinux_04.png" />
+            </a>
+          </li>
+        </ul>
+  \endhtmlonly
+ * 
+ * Alternativ zu \c menu.c32 kann auch \c vesamenu.c32 verwendet werden, um statt des
+ * Textmodus-Menüs ein grafisches Menü zu erhalten.
+ * 
+ * \section devenv_win_sec7 Schritt 7 - Vorgaben weiterer Aufgaben
+ * Die Vorgaben zu den weiteren Aufgaben werden als patch-Dateien angeboten. Am Beispiel 
+ * der zweiten Aufgabe wird das Vorgehen zum Einpflegen dieser Veränderungen gezeigt. 
+ * Es wird davon ausgegangen, dass die Datei bereits heruntergeladen wurde. In diesem 
+ * Beispiel ist sie als \"F:\\Daten\\oostubs\\oostubs_task2.patch\" abgelegt. 
+ * \note 
+ * Es empfiehlt sich vor dem Aktualisieren ein Backup der Dateien, am Besten des 
+ * kompletten code-Ordners, anzulegen.
+ * 
+ * Sollte noch ein Programm - Visual Studio, QEMU oder GDB - auf Dateien von OOStuBS 
+ * zugreifen, so sollten diese jetzt beendet werden. Danach wird die Datei 
+ * \"F:\\Daten\\oostubs\\scripts\\doConsole\" gestartet. Der Patch wird dann mittels 
+ * "patch -p1 -i ../oostubs_task2.patch" eingespielt. Der Ablauf könnte dort so aussehen: 
+ * \verbatim
+Setup Environment
+
+F:\Daten\oostubs\code>patch -p1 -i ../oostubs_task2.patch
+patching file include/machine/io_port.h
+patching file Makefile
+patching file include/device/keyboard.h
+patching file include/device/panic.h
+patching file include/guard/gate.h
+patching file include/machine/cpu.h
+patching file include/machine/keyctrl.h
+patching file include/machine/pic.h
+patching file include/machine/plugbox.h
+patching file include/user/task2.h
+patching file src/device/keyboard.cc
+patching file src/device/panic.cc
+patching file src/machine/pic.cc
+patching file src/machine/plugbox.cc
+patching file src/main.cc
+Hunk #1 succeeded at 9 with fuzz 2.
+Hunk #2 succeeded at 28 (offset 4 lines).
+Hunk #3 succeeded at 36 with fuzz 1 (offset 4 lines).
+patching file src/user/task2.cc
+
+F:\Daten\oostubs\code>
+  \endverbatim
+ * Damit sollte alles abgeschlossen sein, das Konsolenfenster kann wieder geschlossen werden. 
+ * 
+ * \subsection devenv_win_sec7_1 Probleme beim Zusammenführen
+ * Das Programm patch versucht die in der "*.patch"-Datei angegebenen Änderungen 
+ * durchzuführen. Dabei muss es die passenden Stellen in den zu ändernden Dateien 
+ * finden, wobei einige Zeilen davor und danach bekannt sind. Wurden hier beispielsweise 
+ * bei der Entwicklung von OOStuBS Manipulationen vorgenommen, kann das Programm die 
+ * Stellen nicht eindeutig identifizieren. In einem solchen Fall meldet patch die Probleme. 
+ * Hier ist eine Beispielausgabe: 
+ * \verbatim
+patching file include/machine/io_port.h
+patching file Makefile
+Hunk #1 FAILED at 9.
+1 out of 1 hunk FAILED -- saving rejects to file Makefile.rej
+patching file include/device/keyboard.h
+patching file include/device/panic.h
+patching file include/guard/gate.h
+patching file include/machine/cpu.h
+patching file include/machine/keyctrl.h
+Hunk #1 succeeded at 20 with fuzz 2 (offset 8 lines).
+patching file include/machine/pic.h
+patching file include/machine/plugbox.h
+patching file include/user/task2.h
+patching file src/device/keyboard.cc
+patching file src/device/panic.cc
+patching file src/machine/pic.cc
+patching file src/machine/plugbox.cc
+patching file src/main.cc
+Hunk #1 FAILED at 9.
+Hunk #2 succeeded at 29 (offset 5 lines).
+Hunk #3 FAILED at 37.
+2 out of 3 hunks FAILED -- saving rejects to file src/main.cc.rej
+patching file src/user/task2.cc
+  \endverbatim
+ * In der Makefile, vermutlich ab Zeile 9, konnte er den "Hunk", also die Änderung 
+ * nicht durchführen. Genauso verhält es sich mit der Datei "code/src/main.cc" ab 
+ * vermutlich Zeile 9 und Zeile 37. In der main.cc-Datei konnte er aber eine von 
+ * drei Änderungen erfolgreich durchführen. Vermutlich bedeutet dabei, dass das 
+ * Programm patch davon ausging, dass dort der Bereich der Änderungen anfängt, da er 
+ * aber nicht erfolgreich war, kann diese Zeilenangabe nur als Anhaltspunkt genommen werden. \n 
+ * In dieser Anleitung wird die Fehlerbehebung am Beispiel von der Makefile gezeigt. \n 
+ * Nach der Einspielung des Patches gibt es drei Dateien in dem Ordner "/code/", 
+ * Makefile, Makefile.orig und Makefile.rej. Die erste Datei enthält alle erfolgreichen 
+ * Änderungen, die zweite Datei ist in der Form vor dem Einspielen des Patches und die 
+ * dritte Datei gibt die nicht erfolgreichen Veränderungen an. In diesem Beispiel sind 
+ * Makefile und Makefile.orig gleich, da es nur eine Veränderung in der makefile gab und 
+ * die fehlgeschlagen ist. Die reject-Datei Makefile.rej sieht so aus:
+ * \code{.py}
+***************
+*** 9,15 ****
+  LDFLAGS=-O0
+  ASMFLAGS=-g
+  
+- OBJECT_IGNORE= task1.o
+  
+  INCPATHS=
+  LDPATHS=
+--- 9,15 ----
+  LDFLAGS=-O0
+  ASMFLAGS=-g
+  
++ OBJECT_IGNORE= task1.o task2.o
+  
+  INCPATHS=
+  LDPATHS=
+  \endcode
+ * 
+ * Die obere Hälfte gibt an, die patch sich die Originaldatei in Zeile 9-15 vorstellt. 
+ * Das Minus gibt an, dass diese Zeile entfernt werden soll. Die zweite Hälfte gibt an, 
+ * wie er sich die fertig veränderte Datei vorstellt, das Plus gibt dabei an, dass die 
+ * Zeile eingefügt wurde. \n 
+ * Schauen wir uns nun die Makefile dieses Beispiels von Zeile 9-15 an: 
+ * \code{.py}
+LDFLAGS=-O0
+ASMFLAGS=-g
+
+#OBJECT_IGNORE= task1.o
+OBJECT_IGNORE= 
+
+INCPATHS=
+  \endcode
+ * 
+ * Ganz offenbar ist das schon die richtige Stelle, sie muss nur leicht abgeändert werden:
+ * 
+ * \code{.py}
+LDFLAGS=-O0
+ASMFLAGS=-g
+
+#OBJECT_IGNORE= task1.o
+OBJECT_IGNORE= task1.o task2.o
+
+INCPATHS=
+  \endcode
+ * 
+ * Schon ist der Patch bei dieser Datei erfolgreich durchgeführt wurden. Jetzt können die 
+ * .orig und .rej-Dateien gelöscht werden. \n 
+ * So muss auch bei anderen Fehlern vorgegangen werden. 
+ * 
+ * \subsection devenv_win_sec7_2 Zugriffsfehler
+ * In seltenen Fällen kann es passieren, dass Dateien Zugriffsrechte verlieren. 
+ * Bei einem Bauversuch von OOStuBS könnte dann beispielsweise folgende Fehlermeldung erscheinen:
+ * \verbatim
+1>  ./include/machine/cgascr.h:13:21: schwerwiegender Fehler: ./include/machine/io_port.h: Permission denied
+1>  Kompilierung beendet.
+  \endverbatim 
+ * Dann ist beim Patchen etwas schief gelaufen und die Zugriffsrechte auf die Datei, 
+ * in diesem Beispiel \"F:\\Daten\\oostubs\\code\\include\\machine\\io_port.h\" müssen 
+ * korrigiert werden (im Explorer Rechtsklick auf die Datei, "Eigenschaften", 
+ * Reiter "Sicherheit", hier kontrollieren, im Notfall "Bearbeiten" und korrigieren). 
+ * Bei den Tests zu dieser Anleitung trat dies Problem jedoch nur auf, als sich nicht an 
+ * diese Anleitung gehalten wurde, genauer gesagt, als Cygwin zum Patchen genutzt wurde 
+ * und nicht das oben angegebene "doConsole". 
+ * 
+ * 
+ * \section devenv_win_sec8 Alternativen
+ * Es gibt einen Haufen an Möglichkeiten, Betriebssysteme unter Windows zu entwickeln. 
+ * An dieser Stelle werden zwei potentielle Kandidaten für OOStuBS vorgestellt, diese 
+ * erfordern jedoch einen gewissen Aufwand und Zeitinvestition, haben dafür aber gewisse 
+ * Vorteile. 
+ * 
+ * \subsection devenv_win_sec8_1 ELF-Cross-Compiler
+ * 
+ * Bei einem ELF-Cross-Compiler handelt es sich in diesem Fall um eine Entwicklungsumgebung, 
+ * bei der die Ausführbaren Dateien nicht für das laufende Betriebssystem (hier Windows), 
+ * sondern für ein anderes - hier mit ELF-Dateiformat (Linux) - geeignet sind. Die Webseite 
+ * <a href="http://wiki.osdev.org/GCC_Cross-Compiler">OSDev.org</a> stellt eine gute Anleitung 
+ * für die Erstellung eines Cross-Compilers bereit. Diese Anleitung wurde auch für die Tests 
+ * an dieser Stelle verwendet. Sie wurde jedoch nur bis einschließlich "gcc" abgearbeitet, 
+ * mehr ist für die hier verwendeten Zwecke nicht notwendig. \n 
+ * Auch wurden einige Änderungen vorgenommen. Gleich zu Beginn bei "Preperation" wurden die 
+ * beiden exports verändert: 
+ * \code{.py}
+export PREFIX==/usr/src/cross
+export TARGET=i686-pc-linux 
+  \endcode
+ * 
+ * binutils wurde auch leicht anders konfiguriert: 
+ * \verbatim 
+../binutils-2.21.1/configure --target=$TARGET --prefix=$PREFIX --with-gnu-as --with-gnu-ld --disable-nls
+  \endverbatim
+ * Und zu guter letzt wurde auch gcc anders konfiguriert: 
+ * \verbatim 
+../gcc-4.6.1/configure --prefix=$PREFIX --target=$TARGET --disable-nls --enable-language=c,c++ --without-headers \
+          --with-newlib --disable-gdbtk --disable-libssp --enable-threads
+  \endverbatim
+ * 
+ * Die so erzeugten Dateien und Ordner von binutils und gcc liegen damit unter 
+ * \"F:\\Programme\\CygWin\\usr\\src\\cross\". \n 
+ * Von den oben angegebenen Schritten können alle verwendet werden, nur Schritt 4 
+ * muss abgewandelt werden. Bis einschließlich "Windows-Anpassungen - misc" ist noch 
+ * alles in Ordnung. Doch die folgenden Abschnitte sind überflüssig und sollten nicht 
+ * gemacht werden. Zuletzt muss noch die Makefile (\"F:\\Daten\\oostubs\\code\\Makefile\") 
+ * angepasst werden. Hier muss in der Zeile mit "PLATFORM=" ein "windowscross" anstelle 
+ * des vorhandenen - in diesem Beispiel "linux64" - eingetragen werden. \n 
+ * Schritt 5 und folgend kann dann wieder normal genutzt werden. Zu beachten ist nur, 
+ * auch "CROSSPATH" von "\F:\\Daten\\oostubs\\scripts\\setVariable.bat\" zu kontrollieren 
+ * und anzupassen. Im Anschluss wird oostubs dann nicht im PE-Format von Windows, 
+ * sondern ELF-Format von Linux/Unix erstellt. 
+ * 
+ * Der Haupt-Vorteil dieser Variante ist, dass die Vorlage nicht wesentlich 
+ * verändert werden muss. Je weniger Änderungen vorgenommen werden, desto weniger 
+ * neue Fehlerquellen fließen ein. Ebenfalls wird an diversen 
+ * "Betriebssystem-Entwicklungs-Fronten" vermittelt, dass bei einer Entwicklung eines 
+ * Betriebssystems unter Windows ein ELF-Cross-Compiler verwendet werden sollte. 
+ * Hilfe gibt es dann oft nur bei Verwendung eines solchen, da sich die Personen mit 
+ * anderen Varianten nicht auskennen. \n 
+ * Auch können diverse Boot-Manager zwar mit dem ELF-Format, aber nicht mit Windows 
+ * PE-Format umgehen. Und ein Betriebssystem kann noch so toll sein, kann es nicht 
+ * geladen werden, bringt es gar nichts. 
+ * 
+ * \subsection devenv_win_sec8_2 Entwicklung mit Visual Studio
+ * Auch mit Visual Studio direkt können Betriebssysteme erstellt werden. Damit kann 
+ * komplett auf Cygwin verzichtet werden. Jedoch ist es dafür notwendig jeden 
+ * Assembler-Code - sowohl die Assembler-Dateien, als auch die verschiedenen 
+ * Stellen Inline-Assembler - von der AT&T Assembler Syntax auf die von Intel umzustellen. 
+ * Dies ist eine Arbeit, die sich an dieser Stelle erspart wurde. Folglich ist diese 
+ * Variante ungeprüft und es werden keine Pakete angeboten, bei denen dies bereits umgesetzt 
+ * wurde. \n 
+ * Wen das nicht abschreckt: Einen Anhalt für das Vorgehen gibt 
+ * <a href="http://ksrenevasan.blogspot.com/2005/10/writing-multiboot-pe-kernels-using.html">dieser Blogeintrag</a> 
+ * (<a href="http://ksrenevasan.blogspot.com/2005/10/writing-multiboot-pe-kernels-using_03.html">Teil 2</a>). 
+ * Auch hat <a href="http://wiki.osdev.org/Visual_Studio">OSDev.org</a> einen entsprechenden 
+ * Eintrag parat. \n 
+ * Grob gesagt, muss das Gleiche wie für diese Anleitung passieren, der Multi-Boot-Header 
+ * muss korrekt und präsent sein und die Datei genau so vorliegen, wie sie nach dem Laden 
+ * durch ein PE-fähiges Ladeprogramm im RAM aussehen würde. \n 
+ * Der Patcher zum Einspielen der nächsten Aufgaben kann von dieser Webseite als 
+ * Windows-Binaries in Version 2.5.9 (von 2007) herunter geladen werden. 
+ * 
+ * 
+ * \subsection devenv_win_sec8_3 Bootloader GRUB
+ * Eine Alternative zu Syslinux (Schritt 6) ist GRUB. Im Wiki von 
+ * <a href="http://www.lowlevel.eu/wiki">lowlevel.eu</a> kann eine 
+ * <a href="http://www.lowlevel.eu/wiki/GRUB_Installation_auf_einem_USB-Stick#Windows">Anleitung</a> 
+ * gefunden werden, wie GRUB auf einen USB-Stick unter Windows installiert werden kann. Es gibt 
+ * auch eine <a href="http://wiki.osdev.org/GRUB#Installing_to_USB">Anleitung</a> von 
+ * <a href="http://wiki.osdev.org/">OSDev.org</a>, diese empfiehlt dafür eine Linux Live CD. \n 
+ * Beide Varianten wurden nicht getestet. 
+ * 
+ * 
+ * \section devenv_win_sec9 Quellen und Links
+ * 
+ * - <a href="http://cygwin.com/">Cygwin</a>
+ * - <a href="http://wiki.qemu.org/Main_Page">QEMU</a>
+ * - <a href="http://www.mingw.org/">MinGW</a>
+ * - <a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a>
+ * - <a href="http://www.graphviz.org">Graphviz</a>
+ * - <a href="http://www.syslinux.org/wiki/">Syslinux</a>
+ * - <a href="http://www.syslinux.org/wiki/index.php/Library_modules">Syslinux Modulabhängigkeiten</a>
+ * - <a href="http://www.gnu.org/software/diffutils/manual/html_mono/diff.html">GNU Dokumentation "Comparing and Merging Files"</a>
+ * 
+ * - <a href="http://wiki.osdev.org/">OSDev.org-Wiki</a>
+ * - <a href="http://www.lowlevel.eu/wiki">Lowlevel-Wiki</a>
+ * - <a href="http://qemu-buch.de/d/QEMU_unter_Microsoft_Windows">QEMU unter Windows</a>
+ * - <a href="http://migeel.sk/blog/2009/04/21/gdb-and-qemu-on-windows/">GDB und QEMU unter Windows - Problem</a>
+ * - <a href="http://mikehadlow.blogspot.com/2007/03/building-visual-studio-custom-project.html">eigener Visual Studio Projekt-Typ</a>
+ * 
+ * \section devenv_win_secA Changelog
+ * \author Michael Schiefer
+ * \date 15.04.2013
+ * \version 1.1.1
+ * 
+ * <b>Changelog:</b>
+ * <table style="margin-left:8px;">
+ *   <tr>
+ *     <th style="vertical-align:top;">1.0.0 (23.09.2011)</th>
+ *     <td>
+ *       <ul style="margin:0px; margin-left:2px; margin-bottom:2px;">
+ *         <li>Anleitung fertig gestellt</li>
+ *       </ul>
+ *     </td>
+ *   </tr>
+ *   <tr>
+ *     <th style="vertical-align:top;">1.0.1 (09.10.2011)</th>
+ *     <td>
+ *       <ul style="margin:0px; margin-left:2px; margin-bottom:2px;">
+ *         <li>Namenskonventionen bei Syslinux angemerkt</li>
+ *       </ul>
+ *     </td>
+ *   </tr>
+ *   <tr>
+ *     <th style="vertical-align:top;">1.0.2 (11.10.2011)</th>
+ *     <td>
+ *       <ul style="margin:0px; margin-left:2px; margin-bottom:2px;">
+ *         <li>kleine Fehlerbehebung in angebotenen Dateipaketen</li>
+ *         <li>Bilder diesbez&uuml;glich aktualisiert</li>
+ *       </ul>
+ *     </td>
+ *   </tr>
+ *   <tr>
+ *     <th style="vertical-align:top;">1.1.0 (08.11.2011)</th>
+ *     <td>
+ *       <ul style="margin:0px; margin-left:2px; margin-bottom:2px;">
+ *         <li>Umgang mit Fehlern von "patch" (reject-Dateien) eingef&uuml;gt</li>
+ *       </ul>
+ *     </td>
+ *   </tr>
+ *   <tr>
+ *     <th style="vertical-align:top;">1.1.1 (15.04.2013)</th>
+ *     <td>
+ *       <ul style="margin:0px; margin-left:2px; margin-bottom:2px;">
+ *         <li>Einbindung in Dokumentation</li>
+ *         <li>Aktualisierung der einzelnen Programmversionen</li>
+ *         <li>Syslinux an 5.0.1 angepasst</li>
+ *         <li>Windows XP getestet</li>
+ *         <li>VS-Hilfsdateien angepasst</li>
+ *       </ul>
+ *     </td>
+ *   </tr>
+ * </table>
+ * 
+ * \~english
+ * \page devenv Setup Windows Development Environment
+ * There is no english description. Use the german version.
+ */ 
+ 
+ 
+/** 
+ * \~german
+ * \page devenv_ubu Enwicklungsumgebung Linux in Windows aufsetzen
+ * 
+ * \tableofcontents
+ * 
+ * \section devenv_ubu_sec0 Schritt 0 - Vorwort
+ * Es gibt viele Möglichkeiten ein Linux virtuell unter Windows laufen zu lassen. Hier wird 
+ * beschrieben, wie ein Ubuntu 12.10 in VirtualBox installiert wird.
+ * Es wird eine grafische Oberfläche für Ubuntu gewählt. Das meiste kann zwar auch ohne Fenster 
+ * erledigt werden, aber für den Emulator QEMU ist ein Fenstermanager von Vorteil.
+ * 
+ * \attention
+ * Diese Anleitung ist lediglich eine Richtlinie und legt keinen Wert auf Allgemeingültigkeit, 
+ * noch gibt es eine Garantie für Richtigkeit. Die Nutzung dieser Anleitung geschieht auf 
+ * eigene Gefahr.
+ * 
+ * \note
+ * Virtuelle Computer mit VirtualBox sind in der Regel wesentlich langsamer als echte Computer. 
+ * Dies sollte bei der Wahl bzgl. "virtuell oder echt installieren" berücksichtigt werden.
+ * 
+ * \section devenv_ubu_sec1 Schritt 1 - VirtualBox
+ * Von der <a href="https://www.virtualbox.org/">Webseite</a> kann unter 
+ * <a href="https://www.virtualbox.org/wiki/Downloads">Downloads</a> die aktuelle Version, 
+ * momentan <a href="http://download.virtualbox.org/virtualbox/4.2.12/VirtualBox-4.2.12-84980-Win.exe">4.2.12</a>, 
+ * herunter geladen werden. \n
+ * Zur Installation sind Administratorrechte notwendig. Unter Windows Vista/7 sollte die Datei 
+ * mit einem entsprechenden Account per Rechtsklick "Als Administrator ausführen" gesteartet 
+ * werden. Die Installation selber kann mit den Standard-Einstellungen ablaufen.
+ * VirtualBox selber muss mehrere Treiber installieren. Windows gibt dann Meldungen aus und fragt,
+ * ob die Treiber wirklich installiert werden sollen. Dies sollte bestätigt werden. Einer dieser 
+ * Treiber umfasst ein Netzwerk-Interface. In Folge dessen kann eine Internetverbindung o.ä. 
+ * während der Installation kurz gestört werden.
+ * 
+ * Ist die Installation geglückt, so kann unter Datei, globale Einstellungen, Allgemein, 
+ * "Voreingestellter Pfad für VMs" ein Standardordner für die Anlegung virtueller Maschinen
+ * angegeben werden. Dies ist aber nur optional. In dem Beispiel wurde es auf 
+ * \"F:\\Daten\\VirtualMachines\" umgeändert.
+ * 
+ * <h4>Bilder</h4>
+ * \htmlonly
+        <ul style="margin:2px; padding:0px;">
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallVirtualBox_01.png">
+              <img width=200 src="small_InstallVirtualBox_01.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallVirtualBox_02.png">
+              <img width=200 src="small_InstallVirtualBox_02.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallVirtualBox_03.png">
+              <img width=200 src="small_InstallVirtualBox_03.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallVirtualBox_04.png">
+              <img width=200 src="small_InstallVirtualBox_04.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallVirtualBox_05.png">
+              <img width=200 src="small_InstallVirtualBox_05.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallVirtualBox_06.png">
+              <img width=200 src="small_InstallVirtualBox_06.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallVirtualBox_07.png">
+              <img width=200 src="small_InstallVirtualBox_07.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallVirtualBox_08.png">
+              <img width=200 src="small_InstallVirtualBox_08.png" />
+            </a>
+          </li>
+        </ul>
+ \endhtmlonly
+ * 
+ * \section devenv_ubu_sec2 Schritt 2 - virtuelle Maschine anlegen
+ * Nach der Installation starten das Kontrollzemtrum von VirtualBox selber, sofern nichts 
+ * anderes angegeben wurde. In der Regel übernimmt das Programm die Sprache des Betriebssystems.
+ * Über "Neu" kann dann eine neue Virtualle Maschine angelegt werden. Bei Name kann ein
+ * beliebiger Name für die VM vergeben werden. In diesem Fall wird "Ubuntu" gewählt. Typ und 
+ * Version wurden dann automatisch auf Linux bzw. Ubuntu umgestellt.
+ * Im nächsten Formular muss die RAM-Größe angegeben werden. Da auf dem Wirtsrechner genügend
+ * Arbeitsspeicher vorhanden ist, wurde hier 2048 MB ausgewählt. 
+ * Es folgt die Angabe der Festplatte. Da noch keine existiert, wird eine neue erzeugt. 
+ * Sogleich geht ein Dialog dafür auf- "VDI" kann als Dateiformat verwendet werden. Durch 
+ * "dynamisch alloziert" wächst die Festplatte nur in genutzen Bereichen, alles andere wird als 
+ * "mit Nullen gefüllt" angesehen. Als Größe sind 8 GB für unsere Zwecke durchaus ausreichend.
+ * Da die reale Größe aber dynamisch wachsend ist und auf der echten Festplatte ausreichend 
+ * Platz vorhanden ist, wird in diesem Tutorial 16 GB gewählt.
+ * 
+ * Nach der Beendigung des Dialogs durch "Erzeugen" ist die Installation prinzipiell 
+ * abgeschlossen. Allerdings können noch einige kleine Feinheiten eingestellt werden. 
+ * Also wird die Schaltfläche "Ändern" gewählt. Dort links unter "System" und rechts unter 
+ * "Erweitert" wird ein Haken bei "IO-APIC aktivieren" ausgewählt, sofern der Computer das 
+ * unterstützt. Sollte die VM später nicht starten, kann die Option wieder rückgängig gemacht 
+ * werden.\n
+ * Die zweite, vorzunehmende Einstellung, unter Anzeige, getrifft den Grafikkartenspeicher. Dieser 
+ * ist mit 12 MB etwas klein und sollte vergrößert werden. Ob der Haken bei 
+ * "3D-Beschleunigung aktivieren" gesetzt werden soll ist jedem selber überlassen.
+ * 
+ * <h4>Bilder</h4>
+ * \htmlonly
+        <ul style="margin:2px; padding:0px;">
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_01.png">
+              <img width=200 src="small_CreateVM_01.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_02.png">
+              <img width=200 src="small_CreateVM_02.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_03.png">
+              <img width=200 src="small_CreateVM_03.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_04.png">
+              <img width=200 src="small_CreateVM_04.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_05.png">
+              <img width=200 src="small_CreateVM_05.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_06.png">
+              <img width=200 src="small_CreateVM_06.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_07.png">
+              <img width=200 src="small_CreateVM_07.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_08.png">
+              <img width=200 src="small_CreateVM_08.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_09.png">
+              <img width=200 src="small_CreateVM_09.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_10.png">
+              <img width=200 src="small_CreateVM_10.png" />
+            </a>
+          </li>
+        </ul>
+ \endhtmlonly
+ * 
+ * \section devenv_ubu_sec3 Schritt 3 - Ubuntu 12.10 installieren
+ * Für die Installation muss zuerst ein bootfähiges Image heruntergeladen werden. 
+ * <a href="http://ubuntuusers.de/">ubuntuusers.de</a> ist eine Anlaufstelle für Informationen, 
+ * Fragen aber auch der Suche nach den CDs. Unter Downloads kann eine Version ausgesucht werden. 
+ * Hauptsächlich in Frage kommt die aktuelle LTS-Version 12.04 und die momentan neuste Version 
+ * 12.10. Da verschiedene Programme in 12.04 veraltet sind, wird hier die 12.10 gewählt. In ein 
+ * paar Wochen wird die Version 13.04 erscheinen und der Ablauf sollte ähnlich sein. Da dies 
+ * aber erst in der Zukunft liegt, ist dies für dieses Tutorial keine Option.\n
+ * Auf der <a href="http://wiki.ubuntuusers.de/Downloads/Quantal_Quetzal">Downloadseite</a> 
+ * der aktuellen Version können verschiede Varianten ausgewählt werden. Hier wird Ubuntu, 
+ * 32-Bit, Direktlink gewählt. Das ist dann die Datei "ubuntu-12.10-desktop-i386.iso".
+ * 
+ * Nach dem Download kann es losgehen. Die eben angelegte virtuelle Maschine wird per "Starten" 
+ * gestartet. Da dies der erste Start ist und somit noch kein Betriebssystem installiert ist, 
+ * fragt VirtualBox nach, ob eine Boot-CD/DVD genommen werden soll. Es wird die entsprechende, 
+ * gerade heruntergeladene ISO-Datei gewählt.\n
+ * Nun startet der virtuelle PC die DVD und nach einiger Zeit kommt ein Auswahlfeld, ob Ubuntu 
+ * getestet oder installiert werden soll. Hier wird links die Sprache ausgewählt und danach 
+ * auf Installieren geklickt. Im folgenden Dialog kann ein Haken bei "Aktualisierung während der 
+ * Installation herunterladen" gewählt werden. In der vorliegenden Beispielinstallation schien 
+ * er dies aber dennoch nicht gemacht zu haben. Danach wird bestätigt, dass die Festplatte 
+ * gelöscht und dann auf ihr Ubuntu installiert werden soll.\n
+ * Die Installation läuft dann an. Während dessen können noch Konfigurationen vorgenommen werden. 
+ * Es beginnt mit der Zeitzone und danach dem Tastaturlayout. Im Anschluss ist ein Benutzername 
+ * zu vergeben. Da es sich hier nur um einen virtuellen Entwickler-PC handelt, wurde nicht groß 
+ * auf Sicherheit geachtet. Name, Benutzername, und Passwort wurden alle auf "ubuntu" gesetzt. 
+ * Ferner wurde eine automatische Anmeldung gewählt.\n
+ * \warning
+ * Dies ist eine sehr unsichere Konfiguration. Dies sollte niemals bei einem realen Computer 
+ * gemacht werden.
+ * 
+ * Danach sind alle Einstellungen erledigt und die Installation kann fortlaufen. Am Ende kann 
+ * der virtuelle Computer neu gestartet werden.
+ * 
+ * Nun wird am Besten die Gasterweiterung installiert, um die Anzeige etwas zu verbessern. Zu 
+ * diesem Zweck wird zuerst ein Terminal geöffnet. Dies geschieht mit einem Klick auf das Symbol 
+ * oben links und der Eingabe "Terminal". Bei den Vorschlägen erscheint dies dann und wird 
+ * ausgewählt. Im Anschluss wird im Windows-Fenster der virtuellen Maschine "Gerät" und 
+ * "Gasterweiterung installieren" ausgewählt. Das System arbeitet dann ein Bisschen und es 
+ * erscheint eine Frage, ob die CD ausgewührt werden soll. Dies wird verneint/abgebrochen. Im
+ * Terminal wird dann in den Ordner der CD gewechselt. Dieser beginnt mit "/media/" und lautet 
+ * in diesem Beispiel exakt "/media/ubuntu/VBOXADDITIONS_4.2.12_84980/". Dies könnte leicht 
+ * abweichen. In dem Ordner angelangt wird nun
+ * \verbatim
+sudo ./VBoxLinucAddition.run
+\endverbatim
+ * eingegeben. Dieses arbeitet etwas und gibt auch Warnungen aus. Am Ende sollte er dann aber 
+ * erfolgreich installieren. Es kann passieren, dass dann die Auflösung des virtuellen 
+ * Monitors geändert wird. Ein Neustart bietet sich nun an, damit alle Änderungen übernommen 
+ * werden.
+ * 
+ * <h4>Bilder</h4>
+ * \htmlonly
+        <ul style="margin:2px; padding:0px;">
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_01.png">
+              <img width=200 src="small_InstallUbuntu_01.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_02.png">
+              <img width=200 src="small_InstallUbuntu_02.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_03.png">
+              <img width=200 src="small_InstallUbuntu_03.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_04.png">
+              <img width=200 src="small_InstallUbuntu_04.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_05.png">
+              <img width=200 src="small_InstallUbuntu_05.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_06.png">
+              <img width=200 src="small_InstallUbuntu_06.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_07.png">
+              <img width=200 src="small_InstallUbuntu_07.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_08.png">
+              <img width=200 src="small_InstallUbuntu_08.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_09.png">
+              <img width=200 src="small_InstallUbuntu_09.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_10.png">
+              <img width=200 src="small_InstallUbuntu_10.png" />
+            </a>
+          </li>
+        </ul>
+ \endhtmlonly
+ * 
+ * \section devenv_ubu_sec4 Schritt 4 - Ubuntu einrichten
+ * 
+ * Die Unity-Oberfläche von Ubuntu ist ziemlich ressourcenfressend, was für eine VM weniger von 
+ * Vorteil ist. Aus diesem Grund wurde sich dazu entschieden einen anderen Desktopmanager 
+ * zu installieren. Dies ist nicht zwangsweise notwendig und ist deshalb auch optional. Die 
+ * später notwendigen Änderungen können auch im Terminal durchgeführt werden.\n
+ * Zur Installation muss ein Terminal geöffnet werden, indem
+ * \verbatim
+sudo abt-get install gnome gnome-panel
+\endverbatim
+ * eingegeben wird. Während der Installation wird gefragt welcher Display-/Login-Manager genommen 
+ * werden soll. Hier kann "gdm" angegeben werden, wobei das aber an sich egal ist.
+ * Nach der Installation wird neu gestartet. Es kann nun geschehen, dass ein Login stattfinden 
+ * muss. Ist dies nicht der Fall, so muss dies per Abmeldung erzwungen werden. Im Login-Menü, nach 
+ * Auswahl des Benutzers, kann die "Sitzung" festgelegt werden. Hier wird 
+ * "GNOME Classic (No effects)" ausgewählt und dann eingeloggt. In diesem Beispiel wurde auch noch 
+ * das Hintergrundbild entfernt und durch etwas einfarbiges ersetzt. Folglich ist in den 
+ * Abbildungen unten nur noch ein blauer Hintergrund zu sehen.\n
+ * Nun muss die Software aktualisiert werden. Dies geschieht über Anwendungen, Systemwerkzeuge, 
+ * Systemverwaltung und Software-Aktualisierungen.
+ * Alternativ kann es im Terminal über die folgenden Befehle geschehen:
+ * \verbatim
+sudo apt-get update
+sudo apt-get dist-upgrade
+\endverbatim
+ * Dies kann einige Zeit dauern. Danach sollte das System neu gestartet werden. Da das Autologin 
+ * möglicherweise nicht mehr funktioniert, muss dies manuell wieder eingestellt werden. Dies 
+ * geschieht über Anwendungen, Systemwerkzeuge, Systemeinstellungen. Dort wird Benutzer ausgewählt. 
+ * Im Fenster wird dann rechts oben "Entsperren" gewählt und nach der Passworteingabe kann
+ * "Automatische Anmeldung" auf "AN" gestellt werden. \n
+ * Nach den Aktualisierungen (und dem Neustart) muss die Gasterweiterung erneut installiert werden. 
+ * Das Vorgehen ist bereits bekannt. In der neuen Oberfläche kann das Terminal über Anwendungen, 
+ * Zubehör, Terminal geöffnet werden. Im gegensatz zum ersten Mal werden nun nach 
+ * "sudo ./VBoxLinucAddition.run" erst die alten entfernt und dann die neuen gebaut und installeirt.
+ * Auch nun sollte das System neu gestartet werden.
+ * 
+ * Da ein virtueller Computer durch die Deaktivierung des virtuellen Monitors i.d.R. keinen oder 
+ * vernachlässigbar wenig Strom sparrt, kann dies ausgestellt werden. Über Anwendungen, 
+ * Systemwerkzeuge, Systemeinstellungen kann über "Helligkeit und Sperren" die Option 
+ * "Bildschirm abschalten, wenn inaktiv für:" auf "Nie" gesetzt und damit die Monitordeaktivierung 
+ * deaktiviert werden.
+ * 
+ * Die restliche Einrichtung erfolgt wie in der normalen Aufsetzung der Entwicklungsumgebung 
+ * unter Linux.
+ * 
+ * <h4>Bilder</h4>
+ * \htmlonly
+        <ul style="margin:2px; padding:0px;">
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_15.png">
+              <img width=200 src="small_InstallUbuntu_15.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_16.png">
+              <img width=200 src="small_InstallUbuntu_16.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_17.png">
+              <img width=200 src="small_InstallUbuntu_17.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_18.png">
+              <img width=200 src="small_InstallUbuntu_18.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_19.png">
+              <img width=200 src="small_InstallUbuntu_19.png" />
+            </a>
+          </li>
+        </ul>
+ \endhtmlonly
+ * 
+ * 
+ * \section devenv_ubu_secA Changelog
+ * \author Michael Schiefer
+ * \date 15.04.2013
+ * \version 1.0
+ * 
+ * <b>Changelog:</b>
+ * <table style="margin-left:8px;">
+ *   <tr>
+ *     <th style="vertical-align:top;">1.0 (15.04.2013)</th>
+ *     <td>
+ *       <ul style="margin:0px; margin-left:2px; margin-bottom:2px;">
+ *         <li>Anleitung fertig gestellt</li>
+ *       </ul>
+ *     </td>
+ *   </tr>
+ * </table>
+ * 
+ * \~english
+ * \page devenv_ubu  Setup virtual Linux Development Environment under Windows
+ * There is no english description. Use the german version.
+ */ 

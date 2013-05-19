@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>OOStuBS - Technische Informatik II (TI-II): Informationen zu CGA</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.3.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li class="current"><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="task1.html">Aufgabe 1 - Ausgabefunktionen und Tastatursteuerung</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Informationen zu CGA </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>Inhaltsverzeichnis</h3>
+<ul><li class="level1"><a href="#task1_cga_sec1">Video-RAM</a></li>
+<li class="level1"><a href="#task1_cga_sec2">Darstellungsattribute</a></li>
+<li class="level1"><a href="#task1_cga_sec3">Cursor</a></li>
+</ul>
+</div>
+<div class="textblock"><h1><a class="anchor" id="task1_cga_sec1"></a>
+Video-RAM</h1>
+<p>Jede Grafikkarte verfügt über einen Video-RAM, einen eigenen Speicherbereich mit dessen Hilfe der Bildschirminhalt programmiert werden kann. Im Grafikmodus müssen dazu für jeden Bildpunkt je nach Anzahl der möglichen Farben ein oder mehrere Bits im Video-RAM gesetzt bzw. gelöscht werden. Im Textmodus genügt es dagegen, den ASCII-Code des gewünschten Zeichens, zusammen mit dessen Darstellungsattributen in den Video-RAM zu übertragen. Die Umsetzung des ASCII-Codes in eine Pixelmatrix wird dann eigenständig von der Grafikkarte vorgenommen.</p>
+<p>In der Übung zur Vorlesung sollen alle Ausgaben des Betriebssystems OOStuBS im CGA-Textmodus erfolgen. Dieser Modus wird von fast allen Grafikkarten unterstützt, ist einfach zu programmieren und für ein Übungsbetriebssystem vollkommen ausreichend.</p>
+<p>Im CGA Textmodus belegt jede Bildschirmposition zwei Bytes im Video-RAM. Das erste der beiden Bytes (gerade Offsetadresse) nimmt den ASCII-Code des darzustellenden Zeichens auf, das zweite (ungerade Offsetadresse) die gewünschte Vorder- und Hintergrundfarbe. Die Abbildung der Bildschirmpositionen auf die Einträge im Video-RAM erfolgt nach Zeilen und Spalten geordnet. Bei einer Auflösung von 80 Zeichen pro Zeile und 25 Zeilen belegt das Zeichen in der linken oberen Ecke die Bytes 0 und 1, das Zeichen rechts daneben die Bytes 2 und 3 und das Zeichen am Ende der ersten Zeile die Bytes 158 und 159. Diese Zählung wird dann mit dem ersten Zeichen der zweiten Zeile fortgesetzt usw..</p>
+<p>Da der Video-RAM in den Hauptspeicher des Computers eingeblendet wird, kann er mit Hilfe normaler Speicherzugriffe beschrieben werden. Offset 0 im Video-RAM wird mit (hexadezimal) B8000 addressiert.</p>
+<h1><a class="anchor" id="task1_cga_sec2"></a>
+Darstellungsattribute</h1>
+<p>Zu jedem Zeichen können die Merkmale Vordergrundfarbe, Hintergrundfarbe sowie Blinken einzeln festgelegt werden. Für diese Attribute steht pro Zeichen ein Byte zur Verfügung, dessen Bits haben für die Darstellungsattribute folgende Bedeutung:</p>
+<table  rules="all" border="1">
+<tr>
+<td><b>Bits</b> </td><td><b>Bedeutung</b>  </td></tr>
+<tr>
+<td>0-3 </td><td>Vordergrundfarbe  </td></tr>
+<tr>
+<td>4-6 </td><td>Hintergrundfarbe  </td></tr>
+<tr>
+<td>7 </td><td>Blinken  </td></tr>
+</table>
+<p>Für die Darstellung im CGA-Textmodus stehen dem Anwender die folgenden 16 Farben zur Verfügung. Die folgende Tabelle zeigt die zur Verfügung stehende Farbpalette. Da für die Hintergrundfarbe im Attributbyte nur drei Bits zur Verfügung stehen, können auch nur die ersten acht Farben als Hintergrundfarbe gewählt werden.</p>
+<table  rules="all" border="1">
+<tr>
+<td>00 </td><td>Schwarz </td><td style="background-color:#000000;">&#160;&#160; </td><td></td><td>08 </td><td>Dunkelgrau </td><td style="background-color:#555555;">&#160;&#160;  </td></tr>
+<tr>
+<td>01 </td><td>Blau </td><td style="background-color:#0000AA;">&#160;&#160; </td><td></td><td>09 </td><td>Hellblau </td><td style="background-color:#5555FF;">&#160;&#160;  </td></tr>
+<tr>
+<td>02 </td><td>Grün </td><td style="background-color:#00AA00;">&#160;&#160; </td><td></td><td>10 </td><td>Hellgrün </td><td style="background-color:#55FF55;">&#160;&#160;  </td></tr>
+<tr>
+<td>03 </td><td>Cyan </td><td style="background-color:#00AAAA;">&#160;&#160; </td><td></td><td>11 </td><td>Hellcyan </td><td style="background-color:#55FFFF;">&#160;&#160; </td></tr>
+<tr>
+<td>04 </td><td>Rot </td><td style="background-color:#AA0000;">&#160;&#160; </td><td></td><td>12 </td><td>Hellrot </td><td style="background-color:#FF5555;">&#160;&#160;  </td></tr>
+<tr>
+<td>05 </td><td>Magenta </td><td style="background-color:#AA00AA;">&#160;&#160; </td><td></td><td>13 </td><td>Hellmagenta </td><td style="background-color:#FF55FF;">&#160;&#160;  </td></tr>
+<tr>
+<td>06 </td><td>Braun </td><td style="background-color:#AA5500;">&#160;&#160; </td><td></td><td>14 </td><td>Gelb </td><td style="background-color:#FFFF55;">&#160;&#160;  </td></tr>
+<tr>
+<td>07 </td><td>Hellgrau </td><td style="background-color:#AAAAAA;">&#160;&#160; </td><td></td><td>15 </td><td>Weiß </td><td style="background-color:#FFFFFF;">&#160;&#160;  </td></tr>
+</table>
+<h1><a class="anchor" id="task1_cga_sec3"></a>
+Cursor</h1>
+<p>Um die aktuelle Position des Cursors abfragen oder setzen zu können, muss der Videocontroller der Grafikkarte programmiert werden. Der Videocontroller einer CGA-Karte stellt zu diesem Zweck insgesamt 18 Steuerregister (8-Bit Wortbreite) zur Verfügung. Für die Cursorsteuerung sind jedoch nur die Steuerregister 14 und 15 interessant: </p>
+<table  rules="all" border="1">
+<tr>
+<td><b>Index</b></td><td><b>Register</b> </td></tr>
+<tr>
+<td>14</td><td>Cursor (high) </td></tr>
+<tr>
+<td>15</td><td>Cursor (low) </td></tr>
+</table>
+<p>Die Steuerregister können jedoch nicht direkt angesprochen werden. Der Zugriff erfolgt vielmehr indirekt über ein Index- und ein Datenregister. Dazu wird in das Indexregister zunächst die Nummer des Steuerregisters geschrieben, das gelesen oder geschrieben werden soll. Der eigentliche Zugriff auf den Inhalt des Steuerregisters (lesen/schreiben) erfolgt dann über das Datenregister. Daten- und Indexregister können direkt mit Hilfe der in und out Befehle angesprochen werden, da ihnen eigenständige Portadressen zugeordnet sind: </p>
+<table  rules="all" border="1">
+<tr>
+<th><b>Port</b></th><th><b>Register</b></th><th><b>Zugriffsart</b> </th></tr>
+<tr>
+<td>3d4</td><td>Indexregister</td><td>nur schreiben </td></tr>
+<tr>
+<td>3d5</td><td>Datenregister</td><td>lesen und schreiben </td></tr>
+</table>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Don Mai 2 2013 02:26:30 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

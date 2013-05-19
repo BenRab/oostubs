@@ -1,0 +1,17 @@
+/**
+ * \~german
+ * \page task4 Aufgabe 4 - Threads
+ * \tableofcontents
+ * 
+ * Diese Aufgabe basiert auf einem neuen Grundsystem. Dieses läuft nicht mehr Dieses läuft nicht 
+ * mehr als eigenständiges Betriebssystem, sondern als normales Programm unter Linux. 
+ * Zur Nutzung ist eine neue Vorgabe herunter zu laden. \n
+ * 
+ * Die Informationen dieser Aufgabe erscheinen mit dem entsprechenden Patch.
+ * 
+ * \~english
+ * \page task4 Task 4 - Threads
+ * 
+ * There is no english describtion. Use the german one.
+ */
+

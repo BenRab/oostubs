@@ -1,0 +1,312 @@
+/** \file src/main.cc
+ * 
+ * \~german
+ * \brief Grunddatei von OOStuBS
+ * 
+ * Diese Datei enthält die globalen Variablen und zusätzlich den Einsprungspunkt in das
+ * Betriebssystem (\ref kernel).
+ * 
+ * \~english
+ * \brief 
+ * 
+ */ 
+
+/** \file src/internal/boot.S
+ * 
+ * \~german
+ * \brief enthält Start-Code
+ * 
+ * 
+ * \~english
+ * \brief startup code
+ * 
+ */ 
+
+/** \file src/internal/compat.S
+ * 
+ * \~german
+ * \brief Dummy-Funktionen für Fehlerbehandlungen
+ * 
+ * C++ baut automatisch einige Fehlerbehandlungsroutinen ein. Da das Betriebssystem selber
+ * ohne Bibliotheken gebaut wird sind auch diese Funktionen nicht hinterlegt und 
+ * müssen selber geschrieben werden. Dies wurde durch leere Funktionen gelöst. \n
+ * Die hinterlegten Funktionen werden in der Regel nie aufgerufen.
+ * 
+ * \~english
+ * \brief dummy check functions
+ * 
+ * The compiler links to check function build in standard library. But the operating system
+ * is build without them thus this file contains empty functions with the defined names. \n
+ * Normally this function are not called.
+ * 
+ */ 
+
+/** \file src/internal/pow.S
+ * 
+ * \~german
+ * \brief Berechnung der Potenz
+ * 
+ * Diese Datei enthaelt den Code zur Berechnung einer Potenz mittels der 
+ * <a href="http://wiki.osdev.org/FPU">x86 FPU</a>
+ * 
+ * \~english
+ * \brief calculation of power
+ * 
+ * This file contains a single function to calculate the power of two numbers using the existing
+ * <a href="http://wiki.osdev.org/FPU">x86 FPU</a> of the processor.
+ */ 
+
+/** \file src/device/cgastr.cc
+ * 
+ * \~german
+ * \brief \ref CGA_Stream ist hier implementiert
+ * 
+ * 
+ * 
+ * \~english
+ * \brief implementation of \ref CGA_Stream
+ * 
+ * 
+ */ 
+ 
+/** \file src/guard/guardian.cc
+ * 
+ * \~german
+ * \brief Interrupt-Behandlungsfunktionen
+ * 
+ * 
+ * 
+ * \~english
+ * \brief interrupt handler function
+ * 
+ * 
+ */ 
+ 
+/** \file src/machine/cgascr.cc
+ * 
+ * \~german
+ * \brief 
+ * 
+ * 
+ * 
+ * \~english
+ * \brief 
+ * 
+ * 
+ */ 
+ 
+/** \file src/machine/keyctrl.cc
+ * 
+ * \~german
+ * \brief 
+ * 
+ * 
+ * 
+ * \~english
+ * \brief 
+ * 
+ * 
+ */ 
+ 
+/** \file src/object/o_stream.cc
+ * 
+ * \~german
+ * \brief 
+ * 
+ * 
+ * 
+ * \~english
+ * \brief 
+ * 
+ * 
+ */ 
+ 
+/** \file src/object/strbuf.cc
+ * 
+ * \~german
+ * \brief 
+ * 
+ * 
+ * 
+ * \~english
+ * \brief 
+ * 
+ * 
+ */ 
+ 
+/** \file src/user/task1.cc
+ * 
+ * \~german
+ * \brief 
+ * 
+ * 
+ * 
+ * \~english
+ * \brief 
+ * 
+ * 
+ */ 
+
+
+/** \file include/device/cgastr.h
+ * 
+ * \~german
+ * \brief 
+ * 
+ * 
+ * 
+ * \~english
+ * \brief 
+ * 
+ * 
+ */ 
+
+/** \file include/machine/cgascr.h
+ * 
+ * \~german
+ * \brief 
+ * 
+ * 
+ * 
+ * \~english
+ * \brief 
+ * 
+ * 
+ */ 
+
+/** \file include/machine/cpu.h
+ * 
+ * \~german
+ * \brief 
+ * 
+ * 
+ * 
+ * \~english
+ * \brief 
+ * 
+ * 
+ */ 
+
+/** \file include/machine/io_port.h
+ * 
+ * \~german
+ * \brief 
+ * 
+ * 
+ * 
+ * \~english
+ * \brief 
+ * 
+ * 
+ */ 
+
+/** \file include/machine/key.h
+ * 
+ * \~german
+ * \brief 
+ * 
+ * 
+ * 
+ * \~english
+ * \brief 
+ * 
+ * 
+ */ 
+
+/** \file include/machine/keyctrl.h
+ * 
+ * \~german
+ * \brief 
+ * 
+ * 
+ * 
+ * \~english
+ * \brief 
+ * 
+ * 
+ */ 
+
+/** \file include/machine/multiboot.h
+ * 
+ * \~german
+ * \brief 
+ * 
+ * 
+ * 
+ * \~english
+ * \brief 
+ * 
+ * 
+ */ 
+
+/** \file include/object/o_stream.h
+ * 
+ * \~german
+ * \brief 
+ * 
+ * 
+ * 
+ * \~english
+ * \brief 
+ * 
+ * 
+ */ 
+
+/** \file include/object/strbuf.h
+ * 
+ * \~german
+ * \brief 
+ * 
+ * 
+ * 
+ * \~english
+ * \brief 
+ * 
+ * 
+ */ 
+
+/** \file include/useful/cpu.h
+ * 
+ * \~german
+ * \brief alles notwendige zum nutzen der in main.cc deklarierten globalen Variable \ref cpu
+ * 
+ * \~english
+ * \brief help include file for use of global declared variable \ref cpu, declared in main.cc
+ */ 
+
+/** \file include/useful/kout.h
+ * 
+ * \~german
+ * \brief alles notwendige zum nutzen der in main.cc deklarierten globalen Variable \ref kout
+ * 
+ * \~english
+ * \brief help include file for use of global declared variable \ref kout, declared in main.cc
+ */ 
+
+/** \file include/user/appl.h
+ * 
+ * \~german
+ * \brief Grundklasse für Anwendungen, für die einzelnen Aufgaben benötigt
+ * 
+ * \~english
+ * \brief declaration of basic class for application of the tasks
+ */ 
+
+/** \file include/user/task1.h
+ * 
+ * \~german
+ * \brief Klassendeklaration für erste Aufgabe
+ * 
+ * \~english
+ * \brief declaration of class for first task
+ */ 
+
+/** \file include/config.h
+ * 
+ * \~german
+ * \brief verschiedene defines für Einstellungen
+ * 
+ * \~english
+ * \brief defines for different configurations of OOStuBS
+ */ 
+ 

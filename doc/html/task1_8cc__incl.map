@@ -1,0 +1,17 @@
+<map id="src/user/task1.cc" name="src/user/task1.cc">
+<area shape="rect" id="node2" href="$task1_8h.html" title="Klassendeklaration für erste Aufgabe." alt="" coords="192,80,285,107"/>
+<area shape="rect" id="node6" href="$kout_8h.html" title="alles notwendige zum nutzen der in main.cc deklarierten globalen Variable kout" alt="" coords="337,80,433,107"/>
+<area shape="rect" id="node13" href="$useful_2keyboard_8h.html" title="useful/keyboard.h" alt="" coords="463,80,587,107"/>
+<area shape="rect" id="node3" href="$multiboot_8h.html" title="machine/multiboot.h" alt="" coords="5,155,144,181"/>
+<area shape="rect" id="node5" href="$appl_8h.html" title="Grundklasse für Anwendungen, für die einzelnen Aufgaben benötigt." alt="" coords="169,155,255,181"/>
+<area shape="rect" id="node7" href="$cgastr_8h.html" title="device/cgastr.h" alt="" coords="331,155,440,181"/>
+<area shape="rect" id="node8" href="$o__stream_8h.html" title="object/o_stream.h" alt="" coords="173,229,299,256"/>
+<area shape="rect" id="node11" href="$cgascr_8h.html" title="machine/cgascr.h" alt="" coords="324,229,447,256"/>
+<area shape="rect" id="node9" href="$strbuf_8h.html" title="object/strbuf.h" alt="" coords="183,304,289,331"/>
+<area shape="rect" id="node10" href="$config_8h.html" title="verschiedene defines für Einstellungen" alt="" coords="203,379,269,405"/>
+<area shape="rect" id="node12" href="$io__port_8h.html" title="machine/io_port.h" alt="" coords="379,304,505,331"/>
+<area shape="rect" id="node14" href="$device_2keyboard_8h.html" title="device/keyboard.h" alt="" coords="535,155,661,181"/>
+<area shape="rect" id="node15" href="$keyctrl_8h.html" title="machine/keyctrl.h" alt="" coords="471,229,593,256"/>
+<area shape="rect" id="node17" href="$gate_8h.html" title="guard/gate.h" alt="" coords="617,229,713,256"/>
+<area shape="rect" id="node16" href="$key_8h.html" title="machine/key.h" alt="" coords="589,304,693,331"/>
+</map>

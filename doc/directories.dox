@@ -1,0 +1,117 @@
+/** \dir include
+ * 
+ * \~german
+ * \brief <span style="padding-left:128px">Hauptpfad der Deklarationsdateien (Header)</span>
+ * 
+ * \~english
+ * \brief <span style="padding-left:128px">main directory of the header files</span>
+ */ 
+
+/** \dir include/device
+ * 
+ * \~german
+ * \brief <span style="padding-left:128px">Ordner für Header-Dateien für abstrakte Treiber</span>
+ * 
+ * \~english
+ * \brief <span style="padding-left:128px">header files for abstract driver</span>
+ */ 
+
+/** \dir include/machine
+ * 
+ * \~german
+ * \brief <span style="padding-left:128px">Ordner für Header-Dateien von direkten Treibern</span>
+ * 
+ * \~english
+ * \brief <span style="padding-left:128px">header files for raw driver</span>
+ */ 
+
+/** \dir include/object
+ * 
+ * \~german
+ * \brief <span style="padding-left:128px">Ordner für Header-Dateien von Objektverwaltungsklassen</span>
+ * 
+ * \~english
+ * \brief <span style="padding-left:128px">header files for object manager classes</span>
+ */ 
+
+/** \dir include/useful
+ * 
+ * \~german
+ * \brief <span style="padding-left:128px">Ordner für Header-Dateien für den einfachen Zugriff auf globale Objekte</span>
+ * 
+ * \~english
+ * \brief <span style="padding-left:128px">header files for easy use of useful global objects</span>
+ */ 
+
+/** \dir include/user
+ * 
+ * \~german
+ * \brief <span style="padding-left:128px">Ordner für die Header-Dateien der Anwendungsprogramme</span>
+ * 
+ * \~english
+ * \brief <span style="padding-left:128px">header files of application</span>
+ */ 
+
+/** \dir src
+ * 
+ * \~german
+ * \brief <span style="padding-left:128px">Hauptpfad der Implementationsdateien</span>
+ * 
+ * \~english
+ * \brief <span style="padding-left:128px">main directory of the implementing files</span>
+ */ 
+
+ /** \dir src/device
+ * 
+ * \~german
+ * \brief <span style="padding-left:128px">  </span>
+ * 
+ * \~english
+ * \brief <span style="padding-left:128px">  </span>
+ */ 
+
+ /** \dir src/guard
+ * 
+ * \~german
+ * \brief <span style="padding-left:128px"> Absicherung und Interrups </span>
+ * 
+ * \~english
+ * \brief <span style="padding-left:128px"> interrups and protection </span>
+ */ 
+ 
+/** \dir src/internal
+ * 
+ * \~german
+ * \brief <span style="padding-left:128px">Assemblerdateien</span>
+ * 
+ * \~english
+ * \brief <span style="padding-left:128px">assembler files</span>
+ */ 
+
+/** \dir src/machine
+ * 
+ * \~german
+ * \brief <span style="padding-left:128px">  </span>
+ * 
+ * \~english
+ * \brief <span style="padding-left:128px">  </span>
+ */ 
+
+/** \dir src/object
+ * 
+ * \~german
+ * \brief <span style="padding-left:128px">  </span>
+ * 
+ * \~english
+ * \brief <span style="padding-left:128px">  </span>
+ */ 
+
+/** \dir src/user
+ * 
+ * \~german
+ * \brief <span style="padding-left:128px">  </span>
+ * 
+ * \~english
+ * \brief <span style="padding-left:128px">  </span>
+ */ 
+

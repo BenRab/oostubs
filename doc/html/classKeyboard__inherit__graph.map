@@ -1,0 +1,4 @@
+<map id="Keyboard" name="Keyboard">
+<area shape="rect" id="node2" href="$classKeyboard__Controller.html" title="(PS/2) Tastaturtreiber" alt="" coords="5,5,144,32"/>
+<area shape="rect" id="node3" href="$classGate.html" title="Basisklasse für die Interruptbehandlung." alt="" coords="168,5,216,32"/>
+</map>

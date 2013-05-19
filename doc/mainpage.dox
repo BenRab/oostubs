@@ -1,0 +1,55 @@
+/** \mainpage
+ * "Objekt-Orientiertes Studenten BetriebSystem" (OOStuBS)
+ * 
+ * \~german
+ * \section main_sec1 Informationen
+ * Diese Voragben dienen als Grundlage und Hilfe für Studenten der Informatik bei der
+ * Implementierung der praktischen Aufgaben der Lehrveranstaltung TI-II.
+ * Um eine schnelle Implementierung zu ermöglichen bietet es nicht nur Abstraktionen, sondern
+ * auch bereits implementierte Elemente.
+ * 
+ * \section main_sec2 Aufgaben
+ * \ref task1 \n
+ * \ref task2 \n
+ * \ref task3 \n
+ * \ref task4 \n
+ * \ref task5 \n
+ * \ref task6 \n
+ * 
+ * \section main_sec3 Entwicklungsumgebung
+ * Auf der folgenden Seite ist die Entwicklungsumgebung beschrieben. \n
+ * \ref devenv
+ * 
+ * \section main_sec4 Kontakt
+ * Kontaktmöglichkeiten im Falle von Fragen, Anmerkungen und Verbesserungsvorschlägen:
+ * 
+ * Christoph Steup  steup@ivs.cs.ovgu.de \n
+ * Sebastian Zug    zug@ivs.cs.ovgu.de \n
+ * Michael Schiefer schiefer@ivs.cs.ovgu.de \n
+ * 
+ * \~english
+ * \section main_sec1 information
+ * This framework helps student of computer of science to implement the
+ * practical tasks of the lecture TI-II.  It provides abstraction and
+ * preimplemented components to ease the development of the needed
+ * functionality. 
+ * 
+ * \section main_sec2 tasks
+ * \ref task1 \n
+ * \ref task2 \n
+ * \ref task3 \n
+ * \ref task4 \n
+ * \ref task5 \n
+ * \ref task6 \n
+ * 
+ * \section main_sec3 Development Environment
+ * The following side describe the environment. \n
+ * \ref devenv
+ * 
+ * \section main_sec4 contact
+ * Contacts in case of question, hints or improvements:
+ * 
+ * Christoph Steup  steup@ivs.cs.ovgu.de \n
+ * Sebastian Zug    zug@ivs.cs.ovgu.de \n
+ * Michael Schiefer schiefer@ivs.cs.ovgu.de \n
+ **/

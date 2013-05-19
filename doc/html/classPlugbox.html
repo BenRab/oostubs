@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>OOStuBS - Technische Informatik II (TI-II): Plugbox Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.3.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Auflistung&#160;der&#160;Klassen</span></a></li>
+      <li><a href="classes.html"><span>Klassen-Verzeichnis</span></a></li>
+      <li><a href="inherits.html"><span>Klassenhierarchie</span></a></li>
+      <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="classPlugbox-members.html">Aufstellung aller Elemente</a>  </div>
+  <div class="headertitle">
+<div class="title">Plugbox Klassenreferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Administrationseinheit für die Interruptweitergabe.  
+ <a href="classPlugbox.html#details">Mehr ...</a></p>
+
+<p><code>#include &lt;<a class="el" href="machine_2plugbox_8h_source.html">plugbox.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:a7f48e4645e6709fe2030aaa79eb0d3f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugbox.html#a7f48e4645e6709fe2030aaa79eb0d3f1">assign</a> (unsigned short slot, <a class="el" href="classGate.html">Gate</a> &amp;gate)</td></tr>
+<tr class="memdesc:a7f48e4645e6709fe2030aaa79eb0d3f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">bindet ein <a class="el" href="classGate.html">Gate</a> -Objekt an einen speziellen Interrupt  <a href="#a7f48e4645e6709fe2030aaa79eb0d3f1">Mehr ...</a><br/></td></tr>
+<tr class="separator:a7f48e4645e6709fe2030aaa79eb0d3f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acccc8fd7b05f113a36146ca599e79f6c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugbox.html#acccc8fd7b05f113a36146ca599e79f6c">Plugbox</a> ()</td></tr>
+<tr class="memdesc:acccc8fd7b05f113a36146ca599e79f6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array von Zeigern auf Gate-Objekte.  <a href="#acccc8fd7b05f113a36146ca599e79f6c">Mehr ...</a><br/></td></tr>
+<tr class="separator:acccc8fd7b05f113a36146ca599e79f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94a04c50b59ce8ce9ba0578b9d5831d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGate.html">Gate</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugbox.html#a94a04c50b59ce8ce9ba0578b9d5831d9">report</a> (unsigned short slot)</td></tr>
+<tr class="memdesc:a94a04c50b59ce8ce9ba0578b9d5831d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">gibt eine Referenz auf das für den Interrupt richtige <a class="el" href="classGate.html">Gate</a> -Objekt zurück  <a href="#a94a04c50b59ce8ce9ba0578b9d5831d9">Mehr ...</a><br/></td></tr>
+<tr class="separator:a94a04c50b59ce8ce9ba0578b9d5831d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><p>Administrationseinheit für die Interruptweitergabe. </p>
+<p>Diese Klasse abstrahiert die IDT (Interruptdeskriptortabelle). Sie ermöglicht dem System für jeden Hardware- und jeden Softwareinterrupt eine entsprechende Behandlungsroutine zu vergeben und bereit zu stellen. </p>
+
+<p>Definiert in Zeile <a class="el" href="machine_2plugbox_8h_source.html#l00035">35</a> der Datei <a class="el" href="machine_2plugbox_8h_source.html">plugbox.h</a>.</p>
+</div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" id="acccc8fd7b05f113a36146ca599e79f6c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Plugbox::Plugbox </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Array von Zeigern auf Gate-Objekte. </p>
+<p>Der Puffer soll Gate-Zeiger für alle möglichen 256 Interrupts vorhalten.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Noch zu erledigen:</a></b></dt><dd>deklarieren</dd></dl>
+<p>Standardkonstruktor</p>
+<p>Er initialisiert das Array von Gate-Zeiger mit dem globalen <a class="el" href="classPanic.html">Panic</a> -Objekt.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000013">Noch zu erledigen:</a></b></dt><dd>implementieren</dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="plugbox_8cc_source.html#l00021">21</a> der Datei <a class="el" href="plugbox_8cc_source.html">plugbox.cc</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="a7f48e4645e6709fe2030aaa79eb0d3f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Plugbox::assign </td>
+          <td>(</td>
+          <td class="paramtype">unsigned short&#160;</td>
+          <td class="paramname"><em>slot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classGate.html">Gate</a> &amp;&#160;</td>
+          <td class="paramname"><em>gate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bindet ein <a class="el" href="classGate.html">Gate</a> -Objekt an einen speziellen Interrupt </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slot</td><td>Zahl des Interrupts, welche mit dem Gateobjekt behandelt werden soll </td></tr>
+    <tr><td class="paramname">gate</td><td>Referenz auf das Gateobjekt für den Interrupt</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000014">Noch zu erledigen:</a></b></dt><dd>implementieren</dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="plugbox_8cc_source.html#l00025">25</a> der Datei <a class="el" href="plugbox_8cc_source.html">plugbox.cc</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a94a04c50b59ce8ce9ba0578b9d5831d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGate.html">Gate</a> &amp; Plugbox::report </td>
+          <td>(</td>
+          <td class="paramtype">unsigned short&#160;</td>
+          <td class="paramname"><em>slot</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>gibt eine Referenz auf das für den Interrupt richtige <a class="el" href="classGate.html">Gate</a> -Objekt zurück </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slot</td><td>Nummer des aufgetretenen Interrupts </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Referenz auf das Gateobjekt, sollte die Zahl ungültig sein, so das globale <a class="el" href="classPanic.html">Panic</a> -Objekt</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000015">Noch zu erledigen:</a></b></dt><dd>implementieren</dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="plugbox_8cc_source.html#l00029">29</a> der Datei <a class="el" href="plugbox_8cc_source.html">plugbox.cc</a>.</p>
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>include/machine/<a class="el" href="machine_2plugbox_8h_source.html">plugbox.h</a></li>
+<li>src/machine/<a class="el" href="plugbox_8cc_source.html">plugbox.cc</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Don Mai 2 2013 02:26:31 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

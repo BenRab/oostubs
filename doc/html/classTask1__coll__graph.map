@@ -1,0 +1,6 @@
+<map id="Task1" name="Task1">
+<area shape="rect" id="node2" href="$classApplication.html" title="Basis of OOStuBs&#45;Applications." alt="" coords="5,112,88,139"/>
+<area shape="rect" id="node3" href="$structTask1_1_1Multiboot__Info.html" title="Multiboot information." alt="" coords="113,112,260,139"/>
+<area shape="rect" id="node4" href="$structTask1_1_1AOut__Symbol__Table.html" title="Symbol table for a.out executables." alt="" coords="34,6,176,47"/>
+<area shape="rect" id="node5" href="$structTask1_1_1ELF__Section__Header__Table.html" title="Section header table for ELF executables." alt="" coords="201,6,335,47"/>
+</map>

@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>OOStuBS - Technische Informatik II (TI-II): Enwicklungsumgebung Linux in Windows aufsetzen</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.3.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li class="current"><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="devenv.html">Enwicklungsumgebung</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Enwicklungsumgebung Linux in Windows aufsetzen </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>Inhaltsverzeichnis</h3>
+<ul><li class="level1"><a href="#devenv_ubu_sec0">Schritt 0 - Vorwort</a></li>
+<li class="level1"><a href="#devenv_ubu_sec1">Schritt 1 - VirtualBox</a></li>
+<li class="level1"><a href="#devenv_ubu_sec2">Schritt 2 - virtuelle Maschine anlegen</a></li>
+<li class="level1"><a href="#devenv_ubu_sec3">Schritt 3 - Ubuntu 12.10 installieren</a></li>
+<li class="level1"><a href="#devenv_ubu_sec4">Schritt 4 - Ubuntu einrichten</a></li>
+<li class="level1"><a href="#devenv_ubu_secA">Changelog</a></li>
+</ul>
+</div>
+<div class="textblock"><h1><a class="anchor" id="devenv_ubu_sec0"></a>
+Schritt 0 - Vorwort</h1>
+<p>Es gibt viele Möglichkeiten ein Linux virtuell unter Windows laufen zu lassen. Hier wird beschrieben, wie ein Ubuntu 12.10 in VirtualBox installiert wird. Es wird eine grafische Oberfläche für Ubuntu gewählt. Das meiste kann zwar auch ohne Fenster erledigt werden, aber für den Emulator QEMU ist ein Fenstermanager von Vorteil.</p>
+<dl class="section attention"><dt>Achtung</dt><dd>Diese Anleitung ist lediglich eine Richtlinie und legt keinen Wert auf Allgemeingültigkeit, noch gibt es eine Garantie für Richtigkeit. Die Nutzung dieser Anleitung geschieht auf eigene Gefahr.</dd></dl>
+<dl class="section note"><dt>Zu beachten</dt><dd>Virtuelle Computer mit VirtualBox sind in der Regel wesentlich langsamer als echte Computer. Dies sollte bei der Wahl bzgl. "virtuell oder echt installieren" berücksichtigt werden.</dd></dl>
+<h1><a class="anchor" id="devenv_ubu_sec1"></a>
+Schritt 1 - VirtualBox</h1>
+<p>Von der <a href="https://www.virtualbox.org/">Webseite</a> kann unter <a href="https://www.virtualbox.org/wiki/Downloads">Downloads</a> die aktuelle Version, momentan <a href="http://download.virtualbox.org/virtualbox/4.2.12/VirtualBox-4.2.12-84980-Win.exe">4.2.12</a>, herunter geladen werden. <br/>
+ Zur Installation sind Administratorrechte notwendig. Unter Windows Vista/7 sollte die Datei mit einem entsprechenden Account per Rechtsklick "Als Administrator ausführen" gesteartet werden. Die Installation selber kann mit den Standard-Einstellungen ablaufen. VirtualBox selber muss mehrere Treiber installieren. Windows gibt dann Meldungen aus und fragt, ob die Treiber wirklich installiert werden sollen. Dies sollte bestätigt werden. Einer dieser Treiber umfasst ein Netzwerk-Interface. In Folge dessen kann eine Internetverbindung o.ä. während der Installation kurz gestört werden.</p>
+<p>Ist die Installation geglückt, so kann unter Datei, globale Einstellungen, Allgemein, "Voreingestellter Pfad für VMs" ein Standardordner für die Anlegung virtueller Maschinen angegeben werden. Dies ist aber nur optional. In dem Beispiel wurde es auf "F:\Daten\VirtualMachines" umgeändert.</p>
+<h4>Bilder</h4>
+ 
+        <ul style="margin:2px; padding:0px;">
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallVirtualBox_01.png">
+              <img width=200 src="small_InstallVirtualBox_01.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallVirtualBox_02.png">
+              <img width=200 src="small_InstallVirtualBox_02.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallVirtualBox_03.png">
+              <img width=200 src="small_InstallVirtualBox_03.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallVirtualBox_04.png">
+              <img width=200 src="small_InstallVirtualBox_04.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallVirtualBox_05.png">
+              <img width=200 src="small_InstallVirtualBox_05.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallVirtualBox_06.png">
+              <img width=200 src="small_InstallVirtualBox_06.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallVirtualBox_07.png">
+              <img width=200 src="small_InstallVirtualBox_07.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallVirtualBox_08.png">
+              <img width=200 src="small_InstallVirtualBox_08.png" />
+            </a>
+          </li>
+        </ul>
+ <h1><a class="anchor" id="devenv_ubu_sec2"></a>
+Schritt 2 - virtuelle Maschine anlegen</h1>
+<p>Nach der Installation starten das Kontrollzemtrum von VirtualBox selber, sofern nichts anderes angegeben wurde. In der Regel übernimmt das Programm die Sprache des Betriebssystems. Über "Neu" kann dann eine neue Virtualle Maschine angelegt werden. Bei Name kann ein beliebiger Name für die VM vergeben werden. In diesem Fall wird "Ubuntu" gewählt. Typ und Version wurden dann automatisch auf Linux bzw. Ubuntu umgestellt. Im nächsten Formular muss die RAM-Größe angegeben werden. Da auf dem Wirtsrechner genügend Arbeitsspeicher vorhanden ist, wurde hier 2048 MB ausgewählt. Es folgt die Angabe der Festplatte. Da noch keine existiert, wird eine neue erzeugt. Sogleich geht ein Dialog dafür auf- "VDI" kann als Dateiformat verwendet werden. Durch "dynamisch alloziert" wächst die Festplatte nur in genutzen Bereichen, alles andere wird als "mit Nullen gefüllt" angesehen. Als Größe sind 8 GB für unsere Zwecke durchaus ausreichend. Da die reale Größe aber dynamisch wachsend ist und auf der echten Festplatte ausreichend Platz vorhanden ist, wird in diesem Tutorial 16 GB gewählt.</p>
+<p>Nach der Beendigung des Dialogs durch "Erzeugen" ist die Installation prinzipiell abgeschlossen. Allerdings können noch einige kleine Feinheiten eingestellt werden. Also wird die Schaltfläche "Ändern" gewählt. Dort links unter "System" und rechts unter "Erweitert" wird ein Haken bei "IO-APIC aktivieren" ausgewählt, sofern der Computer das unterstützt. Sollte die VM später nicht starten, kann die Option wieder rückgängig gemacht werden.<br/>
+ Die zweite, vorzunehmende Einstellung, unter Anzeige, getrifft den Grafikkartenspeicher. Dieser ist mit 12 MB etwas klein und sollte vergrößert werden. Ob der Haken bei "3D-Beschleunigung aktivieren" gesetzt werden soll ist jedem selber überlassen.</p>
+<h4>Bilder</h4>
+ 
+        <ul style="margin:2px; padding:0px;">
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_01.png">
+              <img width=200 src="small_CreateVM_01.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_02.png">
+              <img width=200 src="small_CreateVM_02.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_03.png">
+              <img width=200 src="small_CreateVM_03.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_04.png">
+              <img width=200 src="small_CreateVM_04.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_05.png">
+              <img width=200 src="small_CreateVM_05.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_06.png">
+              <img width=200 src="small_CreateVM_06.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_07.png">
+              <img width=200 src="small_CreateVM_07.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_08.png">
+              <img width=200 src="small_CreateVM_08.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_09.png">
+              <img width=200 src="small_CreateVM_09.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="CreateVM_10.png">
+              <img width=200 src="small_CreateVM_10.png" />
+            </a>
+          </li>
+        </ul>
+ <h1><a class="anchor" id="devenv_ubu_sec3"></a>
+Schritt 3 - Ubuntu 12.10 installieren</h1>
+<p>Für die Installation muss zuerst ein bootfähiges Image heruntergeladen werden. <a href="http://ubuntuusers.de/">ubuntuusers.de</a> ist eine Anlaufstelle für Informationen, Fragen aber auch der Suche nach den CDs. Unter Downloads kann eine Version ausgesucht werden. Hauptsächlich in Frage kommt die aktuelle LTS-Version 12.04 und die momentan neuste Version 12.10. Da verschiedene Programme in 12.04 veraltet sind, wird hier die 12.10 gewählt. In ein paar Wochen wird die Version 13.04 erscheinen und der Ablauf sollte ähnlich sein. Da dies aber erst in der Zukunft liegt, ist dies für dieses Tutorial keine Option.<br/>
+ Auf der <a href="http://wiki.ubuntuusers.de/Downloads/Quantal_Quetzal">Downloadseite</a> der aktuellen Version können verschiede Varianten ausgewählt werden. Hier wird Ubuntu, 32-Bit, Direktlink gewählt. Das ist dann die Datei "ubuntu-12.10-desktop-i386.iso".</p>
+<p>Nach dem Download kann es losgehen. Die eben angelegte virtuelle Maschine wird per "Starten" gestartet. Da dies der erste Start ist und somit noch kein Betriebssystem installiert ist, fragt VirtualBox nach, ob eine Boot-CD/DVD genommen werden soll. Es wird die entsprechende, gerade heruntergeladene ISO-Datei gewählt.<br/>
+ Nun startet der virtuelle PC die DVD und nach einiger Zeit kommt ein Auswahlfeld, ob Ubuntu getestet oder installiert werden soll. Hier wird links die Sprache ausgewählt und danach auf Installieren geklickt. Im folgenden Dialog kann ein Haken bei "Aktualisierung während der 
+   Installation herunterladen" gewählt werden. In der vorliegenden Beispielinstallation schien er dies aber dennoch nicht gemacht zu haben. Danach wird bestätigt, dass die Festplatte gelöscht und dann auf ihr Ubuntu installiert werden soll.<br/>
+ Die Installation läuft dann an. Während dessen können noch Konfigurationen vorgenommen werden. Es beginnt mit der Zeitzone und danach dem Tastaturlayout. Im Anschluss ist ein Benutzername zu vergeben. Da es sich hier nur um einen virtuellen Entwickler-PC handelt, wurde nicht groß auf Sicherheit geachtet. Name, Benutzername, und Passwort wurden alle auf "ubuntu" gesetzt. Ferner wurde eine automatische Anmeldung gewählt.<br/>
+ </p>
+<dl class="section warning"><dt>Warnung</dt><dd>Dies ist eine sehr unsichere Konfiguration. Dies sollte niemals bei einem realen Computer gemacht werden.</dd></dl>
+<p>Danach sind alle Einstellungen erledigt und die Installation kann fortlaufen. Am Ende kann der virtuelle Computer neu gestartet werden.</p>
+<p>Nun wird am Besten die Gasterweiterung installiert, um die Anzeige etwas zu verbessern. Zu diesem Zweck wird zuerst ein Terminal geöffnet. Dies geschieht mit einem Klick auf das Symbol oben links und der Eingabe "Terminal". Bei den Vorschlägen erscheint dies dann und wird ausgewählt. Im Anschluss wird im Windows-Fenster der virtuellen Maschine "Gerät" und "Gasterweiterung installieren" ausgewählt. Das System arbeitet dann ein Bisschen und es erscheint eine Frage, ob die CD ausgewührt werden soll. Dies wird verneint/abgebrochen. Im Terminal wird dann in den Ordner der CD gewechselt. Dieser beginnt mit "/media/" und lautet in diesem Beispiel exakt "/media/ubuntu/VBOXADDITIONS_4.2.12_84980/". Dies könnte leicht abweichen. In dem Ordner angelangt wird nun </p>
+<pre class="fragment">sudo ./VBoxLinucAddition.run
+</pre><p> eingegeben. Dieses arbeitet etwas und gibt auch Warnungen aus. Am Ende sollte er dann aber erfolgreich installieren. Es kann passieren, dass dann die Auflösung des virtuellen Monitors geändert wird. Ein Neustart bietet sich nun an, damit alle Änderungen übernommen werden.</p>
+<h4>Bilder</h4>
+ 
+        <ul style="margin:2px; padding:0px;">
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_01.png">
+              <img width=200 src="small_InstallUbuntu_01.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_02.png">
+              <img width=200 src="small_InstallUbuntu_02.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_03.png">
+              <img width=200 src="small_InstallUbuntu_03.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_04.png">
+              <img width=200 src="small_InstallUbuntu_04.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_05.png">
+              <img width=200 src="small_InstallUbuntu_05.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_06.png">
+              <img width=200 src="small_InstallUbuntu_06.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_07.png">
+              <img width=200 src="small_InstallUbuntu_07.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_08.png">
+              <img width=200 src="small_InstallUbuntu_08.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_09.png">
+              <img width=200 src="small_InstallUbuntu_09.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_10.png">
+              <img width=200 src="small_InstallUbuntu_10.png" />
+            </a>
+          </li>
+        </ul>
+ <h1><a class="anchor" id="devenv_ubu_sec4"></a>
+Schritt 4 - Ubuntu einrichten</h1>
+<p>Die Unity-Oberfläche von Ubuntu ist ziemlich ressourcenfressend, was für eine VM weniger von Vorteil ist. Aus diesem Grund wurde sich dazu entschieden einen anderen Desktopmanager zu installieren. Dies ist nicht zwangsweise notwendig und ist deshalb auch optional. Die später notwendigen Änderungen können auch im Terminal durchgeführt werden.<br/>
+ Zur Installation muss ein Terminal geöffnet werden, indem </p>
+<pre class="fragment">sudo abt-get install gnome gnome-panel
+</pre><p> eingegeben wird. Während der Installation wird gefragt welcher Display-/Login-Manager genommen werden soll. Hier kann "gdm" angegeben werden, wobei das aber an sich egal ist. Nach der Installation wird neu gestartet. Es kann nun geschehen, dass ein Login stattfinden muss. Ist dies nicht der Fall, so muss dies per Abmeldung erzwungen werden. Im Login-Menü, nach Auswahl des Benutzers, kann die "Sitzung" festgelegt werden. Hier wird "GNOME Classic (No effects)" ausgewählt und dann eingeloggt. In diesem Beispiel wurde auch noch das Hintergrundbild entfernt und durch etwas einfarbiges ersetzt. Folglich ist in den Abbildungen unten nur noch ein blauer Hintergrund zu sehen.<br/>
+ Nun muss die Software aktualisiert werden. Dies geschieht über Anwendungen, Systemwerkzeuge, Systemverwaltung und Software-Aktualisierungen. Alternativ kann es im Terminal über die folgenden Befehle geschehen: </p>
+<pre class="fragment">sudo apt-get update
+sudo apt-get dist-upgrade
+</pre><p> Dies kann einige Zeit dauern. Danach sollte das System neu gestartet werden. Da das Autologin möglicherweise nicht mehr funktioniert, muss dies manuell wieder eingestellt werden. Dies geschieht über Anwendungen, Systemwerkzeuge, Systemeinstellungen. Dort wird Benutzer ausgewählt. Im Fenster wird dann rechts oben "Entsperren" gewählt und nach der Passworteingabe kann "Automatische Anmeldung" auf "AN" gestellt werden. <br/>
+ Nach den Aktualisierungen (und dem Neustart) muss die Gasterweiterung erneut installiert werden. Das Vorgehen ist bereits bekannt. In der neuen Oberfläche kann das Terminal über Anwendungen, Zubehör, Terminal geöffnet werden. Im gegensatz zum ersten Mal werden nun nach "sudo ./VBoxLinucAddition.run" erst die alten entfernt und dann die neuen gebaut und installeirt. Auch nun sollte das System neu gestartet werden.</p>
+<p>Da ein virtueller Computer durch die Deaktivierung des virtuellen Monitors i.d.R. keinen oder vernachlässigbar wenig Strom sparrt, kann dies ausgestellt werden. Über Anwendungen, Systemwerkzeuge, Systemeinstellungen kann über "Helligkeit und Sperren" die Option "Bildschirm abschalten, wenn inaktiv für:" auf "Nie" gesetzt und damit die Monitordeaktivierung deaktiviert werden.</p>
+<p>Die restliche Einrichtung erfolgt wie in der normalen Aufsetzung der Entwicklungsumgebung unter Linux.</p>
+<h4>Bilder</h4>
+ 
+        <ul style="margin:2px; padding:0px;">
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_15.png">
+              <img width=200 src="small_InstallUbuntu_15.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_16.png">
+              <img width=200 src="small_InstallUbuntu_16.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_17.png">
+              <img width=200 src="small_InstallUbuntu_17.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_18.png">
+              <img width=200 src="small_InstallUbuntu_18.png" />
+            </a>
+          </li>
+          <li style="list-style:none; display:inline; margin:2px; padding:2px;">
+            <a href="InstallUbuntu_19.png">
+              <img width=200 src="small_InstallUbuntu_19.png" />
+            </a>
+          </li>
+        </ul>
+ <h1><a class="anchor" id="devenv_ubu_secA"></a>
+Changelog</h1>
+<dl class="section author"><dt>Autor</dt><dd>Michael Schiefer </dd></dl>
+<dl class="section date"><dt>Datum</dt><dd>15.04.2013 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0</dd></dl>
+<p><b>Changelog:</b> </p>
+<table  style="margin-left:8px;">
+<tr>
+<th style="vertical-align:top;">1.0 (15.04.2013) </th><td><ul style="margin:0px; margin-left:2px; margin-bottom:2px;">
+<li>
+Anleitung fertig gestellt </li>
+</ul>
+</td></tr>
+</table>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Don Mai 2 2013 02:26:30 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

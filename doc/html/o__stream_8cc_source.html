@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>OOStuBS - Technische Informatik II (TI-II): src/object/o_stream.cc Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.3.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_bb043af75e54e1af3032f67529bb720c.html">object</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">o_stream.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="o__stream_8cc.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *                                 Technische Informatik II                                      *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                                                                                               *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *                                      O _ S T R E A M                                          *</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *                                                                                               *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="o__stream_8h.html">object/o_stream.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="classO__Stream.html#ae1931cec2c9120b8284973009bcbdcdc">   11</a></span>&#160;<a class="code" href="classO__Stream.html#ae1931cec2c9120b8284973009bcbdcdc" title="Default constructor initialising with dezimal system.">O_Stream::O_Stream</a>() : <a class="code" href="classStringbuffer.html" title="Puffer für die Textausgabe.">Stringbuffer</a>(), fgColor(<a class="code" href="o__stream_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967a283fc479650da98250635b9c3c0e7e50">WHITE</a>), bgColor(<a class="code" href="o__stream_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967af77fb67151d0c18d397069ad8c271ba3">BLACK</a>), blink(false), base(<a class="code" href="o__stream_8h.html#a143762d59413d6d7cae38fb25104c5c4" title="switch basis of o_stream to decimal">dec</a>){</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="classO__Stream.html#a25011fb2945f56b01e599865e6329f30">   15</a></span>&#160;<a class="code" href="classO__Stream.html#a25011fb2945f56b01e599865e6329f30" title="Default Destructor.">O_Stream::~O_Stream</a>(){</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// display of a character</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="classO__Stream.html#a54c3b6ba3682176472dfc7a1a9e421bb">   20</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="classO__Stream.html#a54c3b6ba3682176472dfc7a1a9e421bb" title="overloded output operator">O_Stream::operator &lt;&lt; </a>(<span class="keywordtype">char</span> c) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer">put</a>(c);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classO__Stream.html#a3dfa8aa02b74c451255c19fbc6d6eee4">   25</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="classO__Stream.html#a54c3b6ba3682176472dfc7a1a9e421bb" title="overloded output operator">O_Stream::operator &lt;&lt; </a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span> &lt;&lt; (char) c;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// display of a string</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="classO__Stream.html#a1819e5793d94431f34aede2844245416">   30</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="classO__Stream.html#a54c3b6ba3682176472dfc7a1a9e421bb" title="overloded output operator">O_Stream::operator &lt;&lt; </a>(<span class="keywordtype">char</span>* <span class="keywordtype">string</span>) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">return</span> *this &lt;&lt; static_cast&lt;const char*&gt;(string);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="classO__Stream.html#a6c894087c1800fe59d1b6d986b6b676a">   34</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="classO__Stream.html#a54c3b6ba3682176472dfc7a1a9e421bb" title="overloded output operator">O_Stream::operator &lt;&lt; </a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keywordtype">string</span>) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">while</span> (*<span class="keywordtype">string</span>)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer">put</a> (*<span class="keywordtype">string</span>++);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// display of digits using basis base to determen the output refering to </span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// the value</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="classO__Stream.html#af0c4b73af508c6144886ba136243e957">   42</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="classO__Stream.html#a54c3b6ba3682176472dfc7a1a9e421bb" title="overloded output operator">O_Stream::operator &lt;&lt; </a>(<span class="keywordtype">short</span> ival) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span> &lt;&lt; (long) ival;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="classO__Stream.html#ae3140e906b496fe4c76327d77c84d557">   46</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="classO__Stream.html#a54c3b6ba3682176472dfc7a1a9e421bb" title="overloded output operator">O_Stream::operator &lt;&lt; </a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> ival) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span> &lt;&lt; (<span class="keywordtype">unsigned</span> long) ival;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="classO__Stream.html#a4bfc73a5ab3e9207bce7477f622cb0c8">   50</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="classO__Stream.html#a54c3b6ba3682176472dfc7a1a9e421bb" title="overloded output operator">O_Stream::operator &lt;&lt; </a>(<span class="keywordtype">int</span> ival) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span> &lt;&lt; (long ) ival;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="classO__Stream.html#a3c5645d690eb9bf9fe51febed9fe4a67">   54</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="classO__Stream.html#a54c3b6ba3682176472dfc7a1a9e421bb" title="overloded output operator">O_Stream::operator &lt;&lt; </a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ival) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span> &lt;&lt; (<span class="keywordtype">unsigned</span> long) ival;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// display of a digit as a long</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="classO__Stream.html#a8748a58fdfd7e9d88a52c99663b49db0">   60</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="classO__Stream.html#a54c3b6ba3682176472dfc7a1a9e421bb" title="overloded output operator">O_Stream::operator &lt;&lt; </a>(<span class="keywordtype">long</span> ival) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// if value is negative a minus is outputed first</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">if</span> (ival &lt; 0) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer">put</a> (<span class="charliteral">&#39;-&#39;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    ival = -ival;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// than the absolute value of the digit is outputed</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span> &lt;&lt; (<span class="keywordtype">unsigned</span> long) ival;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="classO__Stream.html#a052ea7823415b7df21b2bfb144389821">   70</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="classO__Stream.html#a54c3b6ba3682176472dfc7a1a9e421bb" title="overloded output operator">O_Stream::operator &lt;&lt; </a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> ival) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> div;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">char</span> digit;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;   </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classO__Stream.html#a5f91e369b3c8ee5f4f9ffd85a6c4b84d" title="current selected base">base</a> == 8)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer">put</a> (<span class="charliteral">&#39;0&#39;</span>);              <span class="comment">// oktal digits start with a NULL</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classO__Stream.html#a5f91e369b3c8ee5f4f9ffd85a6c4b84d" title="current selected base">base</a> == 16) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer">put</a> (<span class="charliteral">&#39;0&#39;</span>);              <span class="comment">// hexadezimal digits start with 0x</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer">put</a> (<span class="charliteral">&#39;x&#39;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="comment">// computes the max power of the choosen basis, that is smaler than the value</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="comment">// of the digit</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordflow">for</span> (div = 1; ival/div &gt;= (<span class="keywordtype">unsigned</span> long) <a class="code" href="classO__Stream.html#a5f91e369b3c8ee5f4f9ffd85a6c4b84d" title="current selected base">base</a>; div *= <a class="code" href="classO__Stream.html#a5f91e369b3c8ee5f4f9ffd85a6c4b84d" title="current selected base">base</a>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="comment">// prints the digit character after character</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">for</span> (; div &gt; 0; div /= (<span class="keywordtype">unsigned</span> long) <a class="code" href="classO__Stream.html#a5f91e369b3c8ee5f4f9ffd85a6c4b84d" title="current selected base">base</a>) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    digit = ival / div;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (digit &lt; 10)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <a class="code" href="classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer">put</a> (<span class="charliteral">&#39;0&#39;</span> + digit);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <a class="code" href="classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer">put</a> (<span class="charliteral">&#39;a&#39;</span> + digit - 10);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    ival %= div;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">// display of a counter as hexadezimal digit</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="classO__Stream.html#a586ba0526257a7a1ead596b803748af5">   98</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="classO__Stream.html#a54c3b6ba3682176472dfc7a1a9e421bb" title="overloded output operator">O_Stream::operator &lt;&lt; </a>(<span class="keywordtype">void</span>* ptr) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="classO__Stream.html#a88078ccf712cd1c8b4b8803ee8900a66" title="basis for display of digits eg. 2, 8, 10 or 16">Base</a> oldbase = <a class="code" href="classO__Stream.html#a5f91e369b3c8ee5f4f9ffd85a6c4b84d" title="current selected base">base</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <a class="code" href="classO__Stream.html#a5f91e369b3c8ee5f4f9ffd85a6c4b84d" title="current selected base">base</a> = <a class="code" href="classO__Stream.html#a88078ccf712cd1c8b4b8803ee8900a66a8b1cd041b930edadd8f69e3c83cfe2e7">hex</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  *<span class="keyword">this</span> &lt;&lt; (<span class="keywordtype">unsigned</span> long) ptr;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <a class="code" href="classO__Stream.html#a5f91e369b3c8ee5f4f9ffd85a6c4b84d" title="current selected base">base</a> = oldbase;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">// call of a manipulator</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="code" href="classO__Stream.html#acb2d01aa4a11600523cb2720e24ab501">  107</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="classO__Stream.html#a54c3b6ba3682176472dfc7a1a9e421bb" title="overloded output operator">O_Stream::operator &lt;&lt; </a>(<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; (*f) (<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp;)) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordflow">return</span> f(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="code" href="classO__Stream.html#a83440ac06a30022bcdc130d830e6c29a">  111</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="classO__Stream.html#a54c3b6ba3682176472dfc7a1a9e421bb" title="overloded output operator">O_Stream::operator &lt;&lt; </a>(<a class="code" href="classFGColor.html" title="Manipulation object to set foreground color.">FGColor</a> color){</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <a class="code" href="classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen">flush</a>();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="classO__Stream.html#a0d8b6853d8d92d8da6ac68382bc801de">fgColor</a> = color.<a class="code" href="classFGColor.html#a90e4952167cf26a4bc78696453bf1c04" title="internal color to be passed to driver">color</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="classO__Stream.html#a1b189e9a440026ef0b0f9361dcc6a4ff" title="ermöglicht dem O_Stream das setzen der Attribute">setAttributes</a>(<a class="code" href="classO__Stream.html#a0d8b6853d8d92d8da6ac68382bc801de">fgColor</a>, <a class="code" href="classO__Stream.html#ab18e01037e78b3dd987a8b13462864ca">bgColor</a>, <a class="code" href="classO__Stream.html#a60ae8df3294b9c008097282737211bc6">blink</a>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="code" href="classO__Stream.html#a4ae6839cd9598904e68ef1a0cb8bd04d">  118</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="classO__Stream.html#a54c3b6ba3682176472dfc7a1a9e421bb" title="overloded output operator">O_Stream::operator &lt;&lt; </a>(<a class="code" href="classBGColor.html" title="Manipulation object to set background color.">BGColor</a> color){</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <a class="code" href="classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen">flush</a>();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <a class="code" href="classO__Stream.html#ab18e01037e78b3dd987a8b13462864ca">bgColor</a> = color.<a class="code" href="classBGColor.html#a7d34e97e47e41f5c0b22306563f2a545" title="internal color to be passed to driver">color</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="classO__Stream.html#a1b189e9a440026ef0b0f9361dcc6a4ff" title="ermöglicht dem O_Stream das setzen der Attribute">setAttributes</a>(<a class="code" href="classO__Stream.html#a0d8b6853d8d92d8da6ac68382bc801de">fgColor</a>, <a class="code" href="classO__Stream.html#ab18e01037e78b3dd987a8b13462864ca">bgColor</a>, <a class="code" href="classO__Stream.html#a60ae8df3294b9c008097282737211bc6">blink</a>);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="code" href="classO__Stream.html#ad893a41884c682550fdd4c64f08742a0">  125</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="classO__Stream.html#a54c3b6ba3682176472dfc7a1a9e421bb" title="overloded output operator">O_Stream::operator &lt;&lt; </a>(<a class="code" href="classBlink.html" title="Manipulation object to set blinking.">Blink</a> blink){</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen">flush</a>();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  this-&gt;blink = blink.<a class="code" href="classBlink.html#a7063cebf6f72b8c3570f9ddad4631e8b" title="internal state to be passed to driver">blink</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <a class="code" href="classO__Stream.html#a1b189e9a440026ef0b0f9361dcc6a4ff" title="ermöglicht dem O_Stream das setzen der Attribute">setAttributes</a>(<a class="code" href="classO__Stream.html#a0d8b6853d8d92d8da6ac68382bc801de">fgColor</a>, <a class="code" href="classO__Stream.html#ab18e01037e78b3dd987a8b13462864ca">bgColor</a>, this-&gt;blink);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">// ENDL: prints buffer after adding a newline at the end of the buffer</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="code" href="o__stream_8cc.html#a7844754334bb96cf512ffa84bf4700e5">  134</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline">endl</a> (<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; os) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  os &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  os.<a class="code" href="classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen">flush</a> ();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="keywordflow">return</span> os;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">// BIN: choose binary basis for display</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="code" href="o__stream_8cc.html#aac59323e6e2e7a4dd8bbed0c139523d2">  141</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="o__stream_8h.html#a53efad1d7227486b7c2208929d9b4390" title="switch basis of o_stream to binary">bin</a> (<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; os) {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  os.<a class="code" href="classO__Stream.html#a5f91e369b3c8ee5f4f9ffd85a6c4b84d" title="current selected base">base</a> = <a class="code" href="classO__Stream.html#a88078ccf712cd1c8b4b8803ee8900a66a242fe0dee5103dc117c0e1e2486e1c4b">O_Stream::bin</a>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordflow">return</span> os;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">// OCT: choose oktale basis for display</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="code" href="o__stream_8cc.html#a850a6d784b13427ff8ad60bf9d445b39">  147</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="o__stream_8h.html#a198bc31ba911fa2be13dbf61afd3392e" title="switch basis of o_stream to octal">oct</a> (<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; os) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  os.<a class="code" href="classO__Stream.html#a5f91e369b3c8ee5f4f9ffd85a6c4b84d" title="current selected base">base</a> = <a class="code" href="classO__Stream.html#a88078ccf712cd1c8b4b8803ee8900a66a81eb700c6a86f893517cde20b5319146">O_Stream::oct</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordflow">return</span> os;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">// DEC: choose dezimal basis for display</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="code" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">  153</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="o__stream_8h.html#a143762d59413d6d7cae38fb25104c5c4" title="switch basis of o_stream to decimal">dec</a> (<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; os) {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  os.<a class="code" href="classO__Stream.html#a5f91e369b3c8ee5f4f9ffd85a6c4b84d" title="current selected base">base</a> = <a class="code" href="classO__Stream.html#a88078ccf712cd1c8b4b8803ee8900a66aadde3391dd1c158226f30d754fae879b">O_Stream::dec</a>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keywordflow">return</span> os;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">// HEX: choose hexadezimal basis for display</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="code" href="o__stream_8cc.html#a533f08ea10adea936d3eae43f618fd32">  159</a></span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="o__stream_8h.html#ac9bf4a3a6b7a2f0105d73ce270f5e69d" title="switch basis of o_stream to hexadecimal">hex</a> (<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; os) {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  os.<a class="code" href="classO__Stream.html#a5f91e369b3c8ee5f4f9ffd85a6c4b84d" title="current selected base">base</a> = <a class="code" href="classO__Stream.html#a88078ccf712cd1c8b4b8803ee8900a66a8b1cd041b930edadd8f69e3c83cfe2e7">O_Stream::hex</a>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordflow">return</span> os;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Don Mai 2 2013 02:26:29 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

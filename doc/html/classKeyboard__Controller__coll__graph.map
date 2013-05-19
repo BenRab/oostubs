@@ -1,0 +1,4 @@
+<map id="Keyboard_Controller" name="Keyboard_Controller">
+<area shape="rect" id="node2" href="$classIO__Port.html" title="Accessor for I/O&#45;Space." alt="" coords="5,5,69,32"/>
+<area shape="rect" id="node3" href="$classKey.html" title="Translator between scancodes ASCII&#45;code and modifier bits." alt="" coords="107,5,149,32"/>
+</map>

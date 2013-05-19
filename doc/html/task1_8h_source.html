@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>OOStuBS - Technische Informatik II (TI-II): include/user/task1.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.3.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_2da6b4920bffa0d563fb54046b25229a.html">user</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">task1.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="task1_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *                                 Technische Informatik II                                      *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                                                                                               *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *                                       T A S K 1                                               *</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *                                                                                               *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef __task1_header__</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __task1_header__</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="multiboot_8h.html">machine/multiboot.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="appl_8h.html" title="Grundklasse für Anwendungen, für die einzelnen Aufgaben benötigt.">user/appl.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;stdint.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="classTask1.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTask1.html" title="Erste Testanwendung.">Task1</a> : <span class="keyword">public</span> <a class="code" href="classApplication.html" title="Basis of OOStuBs-Applications.">Application</a>{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="classTask1.html#a4e1250659d8e00a78482a97f6e21c751">   37</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="classTask1.html#a4e1250659d8e00a78482a97f6e21c751" title="Information flags describing provided infromation.">Flags</a>{</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="classTask1.html#a4e1250659d8e00a78482a97f6e21c751ac89e8aa31525e66864ad13ac70ecb0f7">   38</a></span>&#160;      <a class="code" href="classTask1.html#a4e1250659d8e00a78482a97f6e21c751ac89e8aa31525e66864ad13ac70ecb0f7">memSize</a>=1&lt;&lt;0,  </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="classTask1.html#a4e1250659d8e00a78482a97f6e21c751acb96ad55187036c981b41b058b377695">   39</a></span>&#160;      <a class="code" href="classTask1.html#a4e1250659d8e00a78482a97f6e21c751acb96ad55187036c981b41b058b377695">bootDev</a>=1&lt;&lt;1,  </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="classTask1.html#a4e1250659d8e00a78482a97f6e21c751ab1f284e010576c75c6da22d6c0f2c786">   40</a></span>&#160;      <a class="code" href="classTask1.html#a4e1250659d8e00a78482a97f6e21c751ab1f284e010576c75c6da22d6c0f2c786">cmdLine</a>=1&lt;&lt;2,  </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="classTask1.html#a4e1250659d8e00a78482a97f6e21c751a1cc1dc46720f99b215cacb151c638f50">   41</a></span>&#160;      <a class="code" href="classTask1.html#a4e1250659d8e00a78482a97f6e21c751a1cc1dc46720f99b215cacb151c638f50">modules</a>=1&lt;&lt;3,  </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="classTask1.html#a4e1250659d8e00a78482a97f6e21c751a3a90ca15506ac0f3a920e3103d110d2f">   42</a></span>&#160;      <a class="code" href="classTask1.html#a4e1250659d8e00a78482a97f6e21c751a3a90ca15506ac0f3a920e3103d110d2f">aOut</a>=1&lt;&lt;4,     </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="classTask1.html#a4e1250659d8e00a78482a97f6e21c751a92a376cdb7f84cc4532cb89efb422c3b">   43</a></span>&#160;      <a class="code" href="classTask1.html#a4e1250659d8e00a78482a97f6e21c751a92a376cdb7f84cc4532cb89efb422c3b">elf</a>=1&lt;&lt;5,      </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="classTask1.html#a4e1250659d8e00a78482a97f6e21c751a94fe1be86201b5eeff28e7b4179a615f">   44</a></span>&#160;      <a class="code" href="classTask1.html#a4e1250659d8e00a78482a97f6e21c751a94fe1be86201b5eeff28e7b4179a615f">memMap</a>=1&lt;&lt;6    </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="structTask1_1_1AOut__Symbol__Table.html">   49</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structTask1_1_1AOut__Symbol__Table.html" title="Symbol table for a.out executables.">AOut_Symbol_Table</a>{</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="structTask1_1_1AOut__Symbol__Table.html#aa8030f4829b36ee82b9696a4e5d4fddc">   50</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1AOut__Symbol__Table.html#aa8030f4829b36ee82b9696a4e5d4fddc">tabsize</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="structTask1_1_1AOut__Symbol__Table.html#ad9748019d6b679753a014ac476423c44">   51</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1AOut__Symbol__Table.html#ad9748019d6b679753a014ac476423c44">strsize</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="structTask1_1_1AOut__Symbol__Table.html#af7b96698c4e4d835a69c8cfcbf90361f">   52</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1AOut__Symbol__Table.html#af7b96698c4e4d835a69c8cfcbf90361f">addr</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="structTask1_1_1AOut__Symbol__Table.html#a7ee25ccb68bc5cab7c192112e94747da">   53</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1AOut__Symbol__Table.html#a7ee25ccb68bc5cab7c192112e94747da">reserved</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    };</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="structTask1_1_1ELF__Section__Header__Table.html">   57</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structTask1_1_1ELF__Section__Header__Table.html" title="Section header table for ELF executables.">ELF_Section_Header_Table</a>{</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="structTask1_1_1ELF__Section__Header__Table.html#aac09b3fd51ed090ce7a1d92e0023ad5b">   58</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1ELF__Section__Header__Table.html#aac09b3fd51ed090ce7a1d92e0023ad5b">num</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="structTask1_1_1ELF__Section__Header__Table.html#a367ce5a3e634051779980e53b14b3528">   59</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1ELF__Section__Header__Table.html#a367ce5a3e634051779980e53b14b3528">size</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="structTask1_1_1ELF__Section__Header__Table.html#a4f6c7dd9f6082f622911983d927fc908">   60</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1ELF__Section__Header__Table.html#a4f6c7dd9f6082f622911983d927fc908">addr</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="structTask1_1_1ELF__Section__Header__Table.html#aae2b89a338d643a10ab9c7173bdba7d7">   61</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1ELF__Section__Header__Table.html#aae2b89a338d643a10ab9c7173bdba7d7">shndx</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    };</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="structTask1_1_1Module.html">   65</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structTask1_1_1Module.html" title="Loaded module information.">Module</a>{</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="structTask1_1_1Module.html#a30680d80d0ff7dda8f2f9f6a97a4abaf">   66</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Module.html#a30680d80d0ff7dda8f2f9f6a97a4abaf">mod_start</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="structTask1_1_1Module.html#ae3a1918a7fc620f817e1eefffd95690a">   67</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Module.html#ae3a1918a7fc620f817e1eefffd95690a">mod_end</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="structTask1_1_1Module.html#a38a3d618393c9f7d9b28ddb6d3d2b52c">   68</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Module.html#a38a3d618393c9f7d9b28ddb6d3d2b52c">string</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="structTask1_1_1Module.html#a592953eec78a9ffb82245bb95d30bb7f">   69</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Module.html#a592953eec78a9ffb82245bb95d30bb7f">reserved</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    };</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="structTask1_1_1Memory__Map.html">   76</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structTask1_1_1Memory__Map.html" title="Memory map information.">Memory_Map</a>{</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="structTask1_1_1Memory__Map.html#a0a35922b9359366c12f176f450737a15">   77</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Memory__Map.html#a0a35922b9359366c12f176f450737a15">size</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="structTask1_1_1Memory__Map.html#a8bcccf13d1f5bef249638d7a932f53cc">   78</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Memory__Map.html#a8bcccf13d1f5bef249638d7a932f53cc">base_addr_low</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="structTask1_1_1Memory__Map.html#a1e23106521269bf3ed18970274cd5f0b">   79</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Memory__Map.html#a1e23106521269bf3ed18970274cd5f0b">base_addr_high</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="structTask1_1_1Memory__Map.html#a4121eb21079864df89358cbcb3e55127">   80</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Memory__Map.html#a4121eb21079864df89358cbcb3e55127">length_low</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="structTask1_1_1Memory__Map.html#af77002e4d5ea91e549cbab8493497827">   81</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Memory__Map.html#af77002e4d5ea91e549cbab8493497827">length_high</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="structTask1_1_1Memory__Map.html#af747d08a5d3e778e82fe004cee5e19d3">   82</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Memory__Map.html#af747d08a5d3e778e82fe004cee5e19d3">type</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    };</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="structTask1_1_1Multiboot__Info.html">   87</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structTask1_1_1Multiboot__Info.html" title="Multiboot information.">Multiboot_Info</a>{</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="structTask1_1_1Multiboot__Info.html#ac2a60693e6349d1f664b06152003adb7">   88</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Multiboot__Info.html#ac2a60693e6349d1f664b06152003adb7">flags</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="structTask1_1_1Multiboot__Info.html#a69adf60ffcf0470094bddc707be67d66">   89</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Multiboot__Info.html#a69adf60ffcf0470094bddc707be67d66">mem_lower</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="code" href="structTask1_1_1Multiboot__Info.html#ac977a3dff6017be82de4c0ce3ea33625">   90</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Multiboot__Info.html#ac977a3dff6017be82de4c0ce3ea33625">mem_upper</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="structTask1_1_1Multiboot__Info.html#af7de5a7ffc6f9882f950c47343201908">   91</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Multiboot__Info.html#af7de5a7ffc6f9882f950c47343201908">boot_device</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="code" href="structTask1_1_1Multiboot__Info.html#a5f116d0d34f71ddf046f29078df8ccb9">   92</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Multiboot__Info.html#a5f116d0d34f71ddf046f29078df8ccb9">cmdline</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="structTask1_1_1Multiboot__Info.html#a103f62ff0ace6c459a28250d77b4caef">   93</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Multiboot__Info.html#a103f62ff0ace6c459a28250d77b4caef">mods_count</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="structTask1_1_1Multiboot__Info.html#ac6afc205a8fca53e2e1af2a888e3cf18">   94</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Multiboot__Info.html#ac6afc205a8fca53e2e1af2a888e3cf18">mods_addr</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keyword">union</span>{</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="code" href="structTask1_1_1Multiboot__Info.html#a207194ddd796481a71822518c5f2c88c">   96</a></span>&#160;        <a class="code" href="structTask1_1_1AOut__Symbol__Table.html" title="Symbol table for a.out executables.">AOut_Symbol_Table</a> <a class="code" href="structTask1_1_1Multiboot__Info.html#a207194ddd796481a71822518c5f2c88c">aout</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="structTask1_1_1Multiboot__Info.html#aaeb3bc5579ee147d002b38dbbe261f99">   97</a></span>&#160;        <a class="code" href="structTask1_1_1ELF__Section__Header__Table.html" title="Section header table for ELF executables.">ELF_Section_Header_Table</a> <a class="code" href="structTask1_1_1Multiboot__Info.html#aaeb3bc5579ee147d002b38dbbe261f99">elf</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      } <a class="code" href="structTask1_1_1Multiboot__Info.html#a5bbe3529e0bcada1314802ae4492c10b">executable_info</a>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="code" href="structTask1_1_1Multiboot__Info.html#a2110dec482d8be15381248ade0b55c18">   99</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Multiboot__Info.html#a2110dec482d8be15381248ade0b55c18">mmap_length</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="code" href="structTask1_1_1Multiboot__Info.html#af6079690c1574e6db329d8b0890f37a1">  100</a></span>&#160;      uint32_t <a class="code" href="structTask1_1_1Multiboot__Info.html#af6079690c1574e6db329d8b0890f37a1">mmap_addr</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    };</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    </div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="code" href="classTask1.html#af4c283ccf6c6501b281652c439f688d3">  106</a></span>&#160;    uint32_t <a class="code" href="classTask1.html#af4c283ccf6c6501b281652c439f688d3" title="magic value provided by multiboot compliant bootloaders">magic</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    </div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="code" href="classTask1.html#accd7bfa427a348db9784a484439bf721">  109</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="structTask1_1_1Multiboot__Info.html" title="Multiboot information.">Multiboot_Info</a>* <a class="code" href="classTask1.html#accd7bfa427a348db9784a484439bf721" title="pointer to multiboot information structure">mbi</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classTask1.html#a33f61914bf73c0cb7d159db1152dfe29" title="check the multiboot infromation struct for provided information">checkFlag</a>(<a class="code" href="classTask1.html#a4e1250659d8e00a78482a97f6e21c751" title="Information flags describing provided infromation.">Flags</a> flag);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTask1.html#af4e3f3b3085e350a5e939da4dba2738d" title="parse and print the multiboot information">parseAndPrint</a>();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTask1.html#a48ca608ac9cdc03ab6614a4f61e2448e" title="test the functionality of the Kout object">testKout</a>();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object">testKeyboard</a>();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="classTask1.html#a0de62dbd0a90da294302980e1f194049" title="Constructor.">Task1</a>(uint32_t <a class="code" href="classTask1.html#af4c283ccf6c6501b281652c439f688d3" title="magic value provided by multiboot compliant bootloaders">magic</a>, const ::Multiboot_Info* <a class="code" href="classTask1.html#accd7bfa427a348db9784a484439bf721" title="pointer to multiboot information structure">mbi</a>);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information">action</a>();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;};</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Don Mai 2 2013 02:26:29 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

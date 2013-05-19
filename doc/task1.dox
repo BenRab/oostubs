@@ -1,0 +1,415 @@
+/**
+ * \~german
+ * \page task1 Aufgabe 1 - Ausgabefunktionen und Tastatursteuerung
+ * \tableofcontents
+ * 
+ * \section task1_sec1 Ziele
+ *   \li Kennenlernen oder Auffrischen der Programmiersprache C++
+ *   \li Kennenlernen der Entwicklungsumgebung
+ *   \li Kennenlernen einiger Mechanismen hardwarenaher Programmierung (CGA Bildschirm und Tastatur)
+ * 
+ * \section task1_sec2 Aufgabe
+ * Testausgaben können die Fehlersuche vereinfachen und bieten eine gute Gelegenheit, 
+ * sich in eine vorgegebene Entwicklungsumgebung einzuarbeiten. Aus diesem Grund soll 
+ * unser Übungsbetriebssystem OOStuBS als erstes solche Ausgabefunktionen erhalten. 
+ * Die zu implementierenden Ausgabefunktionen sollen ähnlich wie die IO-Streams der 
+ * C++ Bibliothek verwendet werden können und mit Hilfe der Klassen IO_Port (wird von 
+ * uns vorgegeben), CGA_Screen, Stringbuffer, O_Stream und CGA_Stream umgesetzt werden. 
+ * Damit die Ausgabefunktionen auch überall in OOStuBS verwendet werden können, soll ein 
+ * globales CGA_Stream Objekt kout erzeugt werden. Um darüber hinaus auch interaktive 
+ * Anwendungsprogramme zu erlauben, sollt ihr zusätzlich noch die Klasse Keyboard_Controller 
+ * vervollständigen, die neben Key in der Vorgabe enthalten ist.
+\dot
+  digraph task1 {
+    size="4.2,4.2";
+    node [shape=box, style="solid,filled", fillcolor=white];
+    
+      kernelF [label="kernel(...)", shape=oval, URL="\ref kernel"];
+    
+    subgraph cluster_subuser {
+      rank="source";
+      style=filled;
+      color=lightgray;
+      label = "user";
+      labeljust=l;
+      task1C [label="Task1", URL="\ref Task1"];
+    }
+    
+    subgraph cluster_subdevice {
+      style=filled;
+      color=lightgray;
+      label = "device";
+      labeljust=r;
+      cgastrC [label="CGA_Stream", URL="\ref CGA_Stream", color=blue];
+    }
+    
+    subgraph cluster_submachine {
+      style=filled;
+      color=lightgray;
+      label = "machine";
+      labeljust=l;
+      keyctrlC [label="Keyboard_Controller", URL="\ref Keyboard_Controller", color=blue];
+      cgascrC [label="CGA_Screen", URL="\ref CGA_Screen", color=blue];
+      ioportC [label="IO_Port", URL="\ref IO_Port"];
+      keyC [label="Key", URL="\ref Key"];
+      {rank=max; keyC;}
+      keyctrlC -> ioportC [arrowhead="open"];
+      cgascrC -> ioportC [arrowhead="open"];
+      keyC -> keyctrlC [arrowhead="ediamond"];
+    }
+    
+    subgraph cluster_subobject {
+      style=filled;
+      color=lightgray;
+      label = "object";
+      labeljust=r;
+      ostrC [label="O_Stream", URL="\ref O_Stream", color=blue];
+      strbufC [label="Stringbuffer", URL="\ref Stringbuffer", color=blue];
+      ostrC -> strbufC [arrowhead="empty"];
+    }
+    
+    kernelF -> task1C [arrowhead="open", constraint=false];
+    task1C -> cgastrC [arrowhead="open"];
+    task1C -> keyctrlC [arrowhead="open"];
+    cgastrC -> cgascrC [arrowhead="empty"];
+    cgastrC -> ostrC [arrowhead="empty"];
+  }
+\enddot
+ * 
+ * \section task1_sec3 Implementierung
+ * Die erste Aufgabe besteht im Wesentlichen aus zwei Teilen Ausgabe und Eingabe, 
+ * wobei der Test der Eingabe ohne eine Ausgabe nicht möglich ist. Die Teilaufgabe 
+ * Ausgabe kann zudem in drei voneinander unabhängige Teile gegliedert werden, 
+ * die sehr gut einzeln gelöst und getestet werden können. Daher empfehlen wir 
+ * euch die folgende Bearbeitungsreihenfolge:
+ * -# Ausgabe
+ *   -# Umsetzung der Klasse CGA_Screen und Test in einer kleinen Anwendung.
+ *   -# Umsetzung der Klassen Stringbuffer und O_Stream.
+ *   -# Umsetzung der Klasse CGA_Stream und Validierung mit einem kleinen Testprogramm.
+ * -# Eingabe
+ *   -# Vervollständigung der Klasse Keyboard_Controller und Umsetzung der entgültigen Testanwendung. 
+ * 
+ * \attention Achtet auf eine saubere Verwaltung aller von euch allozierten Puffer. 
+ *            Achtet außerdem darauf, dass Funktionen und Variablen, die modullokal 
+ *            gültig sind, als static gekennzeichnet werden sollten.
+ * 
+ * \section task1_sec4 Hilfestellung
+ *   \li \subpage task1_cgaInfo
+ *   \li \subpage task1_keyboardInfo
+ * 
+ * \~english
+ * \page task1 Task 1 - Input and Output
+ * 
+ * There is no english describtion. Use the german one.
+ */
+
+/**
+ * \~german
+ * \page task1_cgaInfo Informationen zu CGA
+ * \tableofcontents
+ * 
+ * \section task1_cga_sec1 Video-RAM
+ * Jede Grafikkarte verfügt über einen Video-RAM, einen eigenen Speicherbereich mit 
+ * dessen Hilfe der Bildschirminhalt programmiert werden kann. Im Grafikmodus müssen 
+ * dazu für jeden Bildpunkt je nach Anzahl der möglichen Farben ein oder mehrere Bits 
+ * im Video-RAM gesetzt bzw. gelöscht werden. Im Textmodus genügt es dagegen, den 
+ * ASCII-Code des gewünschten Zeichens, zusammen mit dessen Darstellungsattributen in 
+ * den Video-RAM zu übertragen. Die Umsetzung des ASCII-Codes in eine Pixelmatrix wird 
+ * dann eigenständig von der Grafikkarte vorgenommen.
+ *
+ * In der Übung zur Vorlesung sollen alle Ausgaben des Betriebssystems OOStuBS im 
+ * CGA-Textmodus erfolgen. Dieser Modus wird von fast allen Grafikkarten unterstützt, 
+ * ist einfach zu programmieren und für ein Übungsbetriebssystem vollkommen ausreichend.
+ * 
+ * Im CGA Textmodus belegt jede Bildschirmposition zwei Bytes im Video-RAM. Das erste der 
+ * beiden Bytes (gerade Offsetadresse) nimmt den ASCII-Code des darzustellenden Zeichens 
+ * auf, das zweite (ungerade Offsetadresse) die gewünschte Vorder- und Hintergrundfarbe. 
+ * Die Abbildung der Bildschirmpositionen auf die Einträge im Video-RAM erfolgt nach Zeilen 
+ * und Spalten geordnet. Bei einer Auflösung von 80 Zeichen pro Zeile und 25 Zeilen belegt 
+ * das Zeichen in der linken oberen Ecke die Bytes 0 und 1, das Zeichen rechts daneben die 
+ * Bytes 2 und 3 und das Zeichen am Ende der ersten Zeile die Bytes 158 und 159. Diese 
+ * Zählung wird dann mit dem ersten Zeichen der zweiten Zeile fortgesetzt usw..
+ * 
+ * Da der Video-RAM in den Hauptspeicher des Computers eingeblendet wird, kann er mit Hilfe 
+ * normaler Speicherzugriffe beschrieben werden. Offset 0 im Video-RAM wird mit (hexadezimal) 
+ * B8000 addressiert.
+ * 
+ * \section task1_cga_sec2 Darstellungsattribute
+ * Zu jedem Zeichen können die Merkmale Vordergrundfarbe, Hintergrundfarbe sowie Blinken 
+ * einzeln festgelegt werden. Für diese Attribute steht pro Zeichen ein Byte zur Verfügung, 
+ * dessen Bits haben für die Darstellungsattribute folgende Bedeutung:
+ * 
+ * <table rules="all" border="1">
+ *   <tr>
+ *     <td><strong>Bits</strong></td>
+ *     <td><strong>Bedeutung</strong></td>
+ *   </tr>
+ *   <tr>
+ *     <td>0-3</td>
+ *     <td>Vordergrundfarbe</td>
+ *   </tr>
+ *   <tr>
+ *     <td>4-6</td>
+ *     <td>Hintergrundfarbe</td>
+ *   </tr>
+ *   <tr>
+ *     <td>  7</td>
+ *     <td>Blinken</td>
+ *   </tr>
+ * </table>
+ * 
+ * Für die Darstellung im CGA-Textmodus stehen dem Anwender die folgenden 16 Farben 
+ * zur Verfügung. Die folgende Tabelle zeigt die zur Verfügung stehende Farbpalette. 
+ * Da für die Hintergrundfarbe im Attributbyte nur drei Bits zur Verfügung stehen, 
+ * können auch nur die ersten acht Farben als Hintergrundfarbe gewählt werden.
+ * 
+ * <table rules="all" border="1">
+ *   <tr>
+ *     <td>00</td>
+ *     <td>Schwarz</td>
+ *     <td style="background-color:#000000;">&nbsp;&nbsp;</td>
+ *     <td></td>
+ *     <td>08</td>
+ *     <td>Dunkelgrau</td>
+ *     <td style="background-color:#555555;">&nbsp;&nbsp;</td>
+ *   </tr>
+ *   <tr>
+ *     <td>01</td>
+ *     <td>Blau</td>
+ *     <td style="background-color:#0000AA;">&nbsp;&nbsp;</td>
+ *     <td></td>
+ *     <td>09</td>
+ *     <td>Hellblau</td>
+ *     <td style="background-color:#5555FF;">&nbsp;&nbsp;</td>
+ *   </tr>
+ *   <tr>
+ *     <td>02</td>
+ *     <td>Grün</td>
+ *     <td style="background-color:#00AA00;">&nbsp;&nbsp;</td>
+ *     <td></td>
+ *     <td>10</td>
+ *     <td>Hellgrün</td>
+ *     <td style="background-color:#55FF55;">&nbsp;&nbsp;</td>
+ *   </tr>
+ *   <tr>
+ *     <td>03</td>
+ *     <td>Cyan</td>
+ *     <td style="background-color:#00AAAA;">&nbsp;&nbsp;</td>
+ *     <td></td>
+ *     <td>11</td>
+ *     <td>Hellcyan</td></tr>
+ *     <td style="background-color:#55FFFF;">&nbsp;&nbsp;</td>
+ *   <tr>
+ *     <td>04</td>
+ *     <td>Rot</td>
+ *     <td style="background-color:#AA0000;">&nbsp;&nbsp;</td>
+ *     <td></td>
+ *     <td>12</td>
+ *     <td>Hellrot</td>
+ *     <td style="background-color:#FF5555;">&nbsp;&nbsp;</td>
+ *   </tr>
+ *   <tr>
+ *     <td>05</td>
+ *     <td>Magenta</td>
+ *     <td style="background-color:#AA00AA;">&nbsp;&nbsp;</td>
+ *     <td></td>
+ *     <td>13</td>
+ *     <td>Hellmagenta</td>
+ *     <td style="background-color:#FF55FF;">&nbsp;&nbsp;</td>
+ *   </tr>
+ *   <tr>
+ *     <td>06</td>
+ *     <td>Braun</td>
+ *     <td style="background-color:#AA5500;">&nbsp;&nbsp;</td>
+ *     <td></td>
+ *     <td>14</td>
+ *     <td>Gelb</td>
+ *     <td style="background-color:#FFFF55;">&nbsp;&nbsp;</td>
+ *   </tr>
+ *   <tr>
+ *     <td>07</td>
+ *     <td>Hellgrau</td>
+ *     <td style="background-color:#AAAAAA;">&nbsp;&nbsp;</td>
+ *     <td></td>
+ *     <td>15</td>
+ *     <td>Weiß</td>
+ *     <td style="background-color:#FFFFFF;">&nbsp;&nbsp;</td>
+ *   </tr>
+ * </table>
+ * 
+ * \section task1_cga_sec3 Cursor
+ * Um die aktuelle Position des Cursors abfragen oder setzen zu können, muss der 
+ * Videocontroller der Grafikkarte programmiert werden. Der Videocontroller einer 
+ * CGA-Karte stellt zu diesem Zweck insgesamt 18 Steuerregister (8-Bit Wortbreite) 
+ * zur Verfügung. Für die Cursorsteuerung sind jedoch nur die Steuerregister 14 und 15 interessant:
+ * <table rules="all" border="1">
+ *   <tr><td><strong>Index</strong></td><td><strong>Register</strong></td></tr>
+ *   <tr><td>14</td><td>Cursor (high)</td></tr>
+ *   <tr><td>15</td><td>Cursor (low)</td></tr>
+ * </table>
+ * 
+ * Die Steuerregister können jedoch nicht direkt angesprochen werden. Der Zugriff erfolgt 
+ * vielmehr indirekt über ein Index- und ein Datenregister. Dazu wird in das Indexregister 
+ * zunächst die Nummer des Steuerregisters geschrieben, das gelesen oder geschrieben werden 
+ * soll. Der eigentliche Zugriff auf den Inhalt des Steuerregisters (lesen/schreiben) erfolgt 
+ * dann über das Datenregister. Daten- und Indexregister können direkt mit Hilfe der in und 
+ * out Befehle angesprochen werden, da ihnen eigenständige Portadressen zugeordnet sind:
+ * <table rules="all" border="1">
+ *   <tr><th><strong>Port</strong></th><th><strong>Register</strong></th><th><strong>Zugriffsart</strong></th></tr>
+ *   <tr><td>3d4</td><td>Indexregister</td><td>nur schreiben</td></tr>
+ *   <tr><td>3d5</td><td>Datenregister</td><td>lesen und schreiben</td></tr>
+ * </table>
+ * 
+ * \~english
+ * \page task1_cgaInfo information about CGA
+ * 
+ * There is no english describtion. Use the german one.
+ */
+
+/**
+ * \~german
+ * \page task1_keyboardInfo Informationen zum Tastaturkontroller
+ * \tableofcontents
+ * 
+ * \section task1_keyboard_sec1 Zeichen- und Tastaturcodes
+ * Zur Programmierung des Tastaturkontrollers und der Verwendung von Tastaturabfragen sind 
+ * verschiedene Codes von Bedeutung.
+ * 
+ * \subsection task1_keyboard_sec1_sub1 ASCII Code
+ * Zeichen und Zeichenketten werden üblicherweise im ASCII-Code abgespeichert. Der <b>American 
+ * Standard Code for Information Interchange</b> ist eine in der Computerwelt sehr weit verbreitete 
+ * Zuordnungstabelle für die Darstellung von Buchstaben, Ziffern und Sonderzeichen. Ursprünglich 
+ * waren pro Zeichen 7 Bits vorgesehen, mittlerweile haben sich aber 8 Bits, also die Darstellung 
+ * in einem Byte durchgesetzt.
+ * 
+ * \subsection task1_keyboard_sec1_sub2 Scancode
+ * Der Scancode ordnet den Tasten einer PC Tastatur eindeutige Nummern zu. 
+ * Dadurch ist es auch möglich Tasten zu identifizieren, die keinem druckbaren 
+ * Zeichen entsprechen (z.B. Cursortasten). Bei der Verwendung von Scancodes ist 
+ * darauf zu achten, dass nicht zwischen Groß- und Kleinbuchstaben unterschieden 
+ * wird, da beide mit derselben Taste erreicht werden (Groß- und Kleinschreibung 
+ * ergibt sich aus der Kombination des Scancodes mit den Make- und Breakcodes). 
+ * Im Laufe der PC Entwicklungsgeschichte wurden unterschiedliche Tastaturen mit 
+ * einer unterschiedlichen Anzahl und Bedeutung von Tasten herausgebracht. Gerade 
+ * bei den Funktions- und Spezialtasten gibt es daher auch unterschiedliche 
+ * Scancodes. Da PC Tastaturen jedoch nur wenig mehr als 100 Tasten besitzen, 
+ * genügen 7 Bits, um den Scancode einer PC Tastatur darzustellen.
+ * 
+ * \subsection task1_keyboard_sec1_sub3 Make- und Breakcodes
+ * Programme müssen nicht nur feststellen können, welche der normalen Tasten gedrückt 
+ * wurden, sondern auch, ob gleichzeitig die Shift (Umschalt)-Taste, die Control 
+ * (Steuerungs)-Taste oder die ALT-Taste festgehalten wurden. Daher sendet die Tastatur 
+ * statt eines einfachen Scancodes einen oder mehrere sogenannte Makecodes für jedes 
+ * Drücken und einen oder mehrere Breakcodes für jedes Loslassen einer Taste. Wenn eine 
+ * Taste länger als eine bestimmte Zeitspanne festgehalten wird, werden darüberhinaus 
+ * zusätzliche Makecodes gesendet, durch die die Wiederholungsfunktion realisiert wird. 
+ * Bei den meisten Tasten entspricht sowohl der Makecode als auch der Breakcode dem 
+ * Scancode mit gesetztem 7. Bit. Einige Tasten erzeugen jedoch aus historischen Gründen 
+ * schon beim einmaligen Drücken und Loslassen mehrere Make- und Breakcodes. Der 
+ * Tastaturtreiber (siehe \ref Keyboard_Controller::key_decoded) muss aus den Make- und 
+ * Breakcodes der gedrückten Tasten die gewünschten Zeichen ermitteln.
+ * 
+ * \attention
+ * Da die Interpretation der Make- und Breakcodes ziemlich mühsam, langweilig und 
+ * wenig lehrreich ist, haben wir euch die Dekodierung bereits abgenommen. Es kann 
+ * allerdings sein, dass diese Funktion bei eurer Tastatur nicht alle Zeichen, 
+ * insbesondere die deutschen Umlaute korrekt erkennt. In diesem Fall müsst ihr 
+ * entweder mit ein paar falschen Zeichen leben oder die Tabellen der Dekodierfunktion 
+ * entsprechend anpassen.
+ * 
+ * \section task1_keyboard_sec2 Tastaturkontroller
+ * Wenn bei einer PC-Tastatur eine Taste gedrückt wird, werden zwei sich kreuzende 
+ * Leitungen der Scan-Matrix innerhalb der Tastatur verbunden. Der Tastaturprozessor 
+ * (8042 für PC/XT-, 8048 für AT und MF II-Tastaturen) ermittelt die Position der 
+ * gedrückten Taste und daraus den Scancode. Über eine serielle Schnittstelle wird 
+ * der Code dann zum Motherboard des PCs gesendet. Auf dem Motherboard des PCs befindet 
+ * sich ein Tastaturcontroller, der einerseits über einen Eingabe- und einen Ausgabeport 
+ * mit der Tastatur kommuniziert (Tastaturkommandos). Andererseits verwendet der 
+ * Kontroller Register, die mit Hilfe von in und out-Befehlen über den Systembus gelesen 
+ * und beschrieben werden können.
+ * <table rules="all" border="1">
+ *   <tr><td><strong>Port</strong></td><td><strong>R / W</strong></td><td><strong>Register</strong></td><td><strong>Bedeutung</strong></td></tr>
+ *   <tr><td>0x60</td><td>R</td><td>Ausgabepuffer</td><td>Make/Breakcode von der Tastatur</td></tr>
+ *   <tr><td>0x60</td><td>W</td><td>Eingabepuffer</td><td>Befehle für die Tastatur (<em>z.B. LEDs setzen</em>)</td></tr>
+ *   <tr><td>0x64</td><td>W</td><td>Steuerregister</td><td>Befehle für den Tastaturcontroller</td></tr>
+ *   <tr><td>0x64</td><td>R</td><td>Statusregister</td><td>Zustand des Tastaturcontrollers (z.B. Ausgabepuffer voll?)</td></tr>
+ * </table><br>
+ * 
+ * Das Schreiben eines Bytes vom Tastaturontroller in seinen Ausgabepuffer wird immer 
+ * durch das Setzen einer Interruptanforderung signalisiert. Auf diese Anforderung reagiert 
+ * der Prozessor, indem er das ankommende Byte aus dem Ausgabepuffer ausliest und im 
+ * Statusregister vermerkt, dass der Ausgabepuffer wieder leer ist. Erst jetzt können 
+ * neue Zeichen von der Tastatur entgegengenommen werden. Wird die Tastatur im Pollingbetrieb 
+ * benutzt, kann durch Bit 0 überprüft werden, ob sich auch tatsächlich ein Zeichen im 
+ * Ausgabepuffer des Tastaturcontrollers befinden. Soll ein Byte an den Kontroller geschickt 
+ * werden (z.B. Tastaturkommando), muss immer gewartet werden, bis der Eingabepuffer des 
+ * Kontrollers leer ist (Bit 1 gelöscht), bevor der Buffer erneut beschrieben werden kann.
+ * 
+ * Beachtet werden sollte, dass bei PS/2 PCs die Maus ebenfalls an den Tastaturkontroller 
+ * angeschlossen ist. Dadurch landen sowohl die Codes der Tastatur als auch die der Maus 
+ * im Ausgabepuffer. Damit die Quelle der Codes unterschieden werden kann, steht im 
+ * Statusregister das <b>Bit 5</b> (AUXB) zur Verfügung (1 = Maus, 0 = Tastatur). 
+ * 
+ * <table rules="all" border="1">
+ *   <tr><td><strong>Bit</strong></td><td><strong>Maske</strong></td><td><strong>Name</strong></td><td><strong>Bedeutung</strong></td></tr>
+ *   <tr><td>0</td><td>0x01</td><td>outb</td><td>Gesetzt, wenn ein Zeichen im Ausgabepuffer des Tastaturcontrollers zum Lesen bereit steht</td></tr>
+ *   <tr><td>1</td><td>0x02</td><td>inpb</td><td>Gesetzt, solange der Tastaturcontroller ein von der %CPU geschriebenes Zeichen noch nicht abgeholt hat</td></tr>
+ *   <tr><td>5</td><td>0x20</td><td>auxb</td><td>Gesetzt, wenn der Wert im Ausgabepuffer von der Maus und nicht von der Tastatur stammt</td></tr>
+ * </table>
+ * 
+ * \subsection task1_keyboard_sec2_sub1 Tastaturcontroller programmieren
+ * Der Tastaturcontroller kann durch das Senden von Befehlscodes an den Eingabepuffer 
+ * konfiguriert werden. Zuvor sollte man jedoch sicherstellen, das der Eingabepuffer 
+ * des Tastaturcontrollers leer ist (inpb). Danach wird der Befehlscode (siehe Tabelle) 
+ * in den Datenport geschrieben. Danach sollte man warten, bis der Tastaturcontroller 
+ * geantwortet hat und der Ausgabepuffer das Bestätigungsbyte \c 0xfa (ACK) enthält (wieder 
+ * vor dem Lesen outb prüfen). Wir werden von den etwa 20 Befehlen, die der Tastaturcontroller 
+ * versteht, nur zwei verwenden:
+ * 
+ * <table rules="all" border="1">
+ *   <tr><td><strong>Befehl</strong></td><td><strong>Steuercode</strong></td></tr>
+ *   <tr><td>set_led</td><td><code>0xed</code></td></tr>
+ *   <tr><td>set_speed</td><td><code>0xf3</code></td></tr>
+ * </table>
+ * 
+ * Die folgende Tabelle zeigt den Aufbau des Steuerbytes von set_led zum Ansteuern der 
+ * Tastatur-LEDs. <b>MSB</b> bedeutet hierbei most significant bit (entspricht also \c 0x80 
+ * in Hexadezimal-Darstellung) und <b>LSB</b> least significant bit (also \c 0x01).
+ * 
+ * <table rules="all" border="1">
+ *   <tr><td><strong>MSB</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td><strong>LSB</strong></td></tr>
+ *   <tr><td>Always 0</td><td>Always 0</td><td>Always 0</td><td>Always 0</td><td>Always 0</td><td>Caps Lock</td><td>Num Lock</td><td>Scroll Lock</td></tr>
+ * </table>
+ * 
+ * Der Aufbau des Konfigurationsbyte von set_speed ist in diesen zwei Tabellen beschrieben. 
+ * Die Wiederholungsrate wird durch die Bits 0-4 spezifiziert, die Verzögerung durch Bit 5 und 6. 
+ * 
+ * <table rules="all" border="1">
+ *   <tr><td><strong>Bits 0-4 (hex)</strong></td><td><strong>Wiederholungsrate (Zeichen pro Sekunde)</strong></td></tr>
+ *   <tr><td>0x00</td><td>30</td></tr>
+ *   <tr><td>0x02</td><td>25</td></tr>
+ *   <tr><td>0x04</td><td>20</td></tr>
+ *   <tr><td>0x08</td><td>15</td></tr>
+ *   <tr><td>0x0c</td><td>10</td></tr>
+ *   <tr><td>0x10</td><td> 7</td></tr>
+ *   <tr><td>0x14</td><td> 5</td></tr>
+ *   <tr><td><strong>Bits 5 und 6 (hex)</strong></td><td><strong>Verzögerung (in Sekunden)</strong></td></tr>
+ *   <tr><td>0x00</td><td>0.25</td></tr>
+ *   <tr><td>0x01</td><td>0.5</td></tr>
+ *   <tr><td>0x02</td><td>0.75</td></tr>
+ *   <tr><td>0x03</td><td>1.0</td></tr>
+ * </table>
+ * 
+ * 
+ * \section task1_keyboard_sec3 Weiterführende Informationen und Referenzen
+ *  - Messmer, Hans Peter: PC-Hardwarebuch - Aufbau, Funktionsweise, Programmierung., Addison-Wesley, 1994
+ *  - The AT keyboard controller
+ *  - <a href="http://wiki.osdev.org/%228042%22_PS/2_Controller">"8042" PS/2 Controller</a> auf osdev.org
+ *  - <a href="http://www.lowlevel.eu/wiki/Keyboard_Controller">Keyboard Controller</a> auf lowlevel.eu
+ * 
+ * \~english
+ * \page task1_keyboardInfo information about the keyboard controller
+ * 
+ * There is no english describtion. Use the german one.
+ */
+ 

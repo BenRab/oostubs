@@ -1,0 +1,13 @@
+<map id="CPU::disable_int" name="CPU::disable_int">
+<area shape="rect" id="node2" href="$guardian_8cc.html#afe78f34c7c65df79376008e0d23c1afd" title="This function is called if a normal exception is raised by the cpu." alt="" coords="197,5,312,32"/>
+<area shape="rect" id="node3" href="$guardian_8cc.html#a70466c5bd3ffac85265c22f65e9a4ef9" title="This function is called if a normal exception with error code is raised by the cpu." alt="" coords="194,56,315,83"/>
+<area shape="rect" id="node4" href="$guardian_8cc.html#a390d383038610b600ab986ec9b54879a" title="This function is called if a reserved exception is raised by the cpu." alt="" coords="171,107,338,133"/>
+<area shape="rect" id="node5" href="$classKeyboard__Controller.html#aa213c738efd52d7986fb925e6aaa7d95" title="set the speed and delay of repeats of the keyboard." alt="" coords="185,158,324,199"/>
+<area shape="rect" id="node7" href="$classKeyboard__Controller.html#a36dfc2c73c4031c8662e37159238d5b0" title="switch the specified LED of the keyboard on or off." alt="" coords="185,223,324,265"/>
+<area shape="rect" id="node12" href="$classTask2.html#a794cc6220efa649fe31504bf3e9fd819" title="Destructor." alt="" coords="200,289,309,316"/>
+<area shape="rect" id="node6" href="$classKeyboard__Controller.html#a13a0e454bd8c6ee99182d05770d7c44a" title="Default constructor, turns all LEDs off and set speed and delay maximal." alt="" coords="387,158,535,199"/>
+<area shape="rect" id="node8" href="$classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2" title="interpret the reveived scancode and modifier bits" alt="" coords="392,223,531,265"/>
+<area shape="rect" id="node9" href="$classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21" title="get the last pressed key" alt="" coords="584,223,723,265"/>
+<area shape="rect" id="node10" href="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object" alt="" coords="771,231,911,257"/>
+<area shape="rect" id="node11" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information" alt="" coords="961,231,1061,257"/>
+</map>

@@ -1,0 +1,26 @@
+<map id="Keyboard_Controller::key_decoded" name="Keyboard_Controller::key_decoded">
+<area shape="rect" id="node2" href="$classKey.html#a62e735f4121d8984d994a508bdd6a74b" title="Key::shift" alt="" coords="414,5,490,32"/>
+<area shape="rect" id="node4" href="$classKey.html#af4fa809960860523573abd695e3f8fbe" title="Key::alt_right" alt="" coords="403,208,501,235"/>
+<area shape="rect" id="node6" href="$classKey.html#ab1199ecfd588b567053543b6715ba19a" title="Key::alt_left" alt="" coords="216,309,307,336"/>
+<area shape="rect" id="node8" href="$classKey.html#a90ea541bc6d1286a517eaccd700c4ba0" title="Key::ctrl_right" alt="" coords="210,360,313,387"/>
+<area shape="rect" id="node10" href="$classKey.html#af1c7ef33119f0c10909a2de246de7854" title="Key::ctrl_left" alt="" coords="214,411,309,437"/>
+<area shape="rect" id="node12" href="$classKey.html#a45fb60e270f30b9f23e28259e851b14a" title="Key::caps_lock" alt="" coords="399,259,505,285"/>
+<area shape="rect" id="node14" href="$classKeyboard__Controller.html#a36dfc2c73c4031c8662e37159238d5b0" title="switch the specified LED of the keyboard on or off." alt="" coords="192,513,331,554"/>
+<area shape="rect" id="node19" href="$classKey.html#af3d96c346d2e6088cafbc94fe7c783ef" title="Key::scroll_lock" alt="" coords="206,629,317,656"/>
+<area shape="rect" id="node21" href="$classKeyboard__Controller.html#ac2b33ffe1e2794c81249861aa792513a" title="convert the received scancode and modfier bits to an ascii char" alt="" coords="192,91,331,133"/>
+<area shape="rect" id="node24" href="$classKey.html#a4a8da77b0cb57bf89bffa3903c2f79ce" title="Key::num_lock" alt="" coords="399,157,505,184"/>
+<area shape="rect" id="node3" href="$classKey.html#a19b48c665bdda438c55de7399eb4a631" title="Key::shift" alt="" coords="589,5,665,32"/>
+<area shape="rect" id="node5" href="$classKey.html#af12fb21a12c35fb89f6ff43db96759ba" title="Key::alt_right" alt="" coords="577,208,676,235"/>
+<area shape="rect" id="node7" href="$classKey.html#a8d41de9c5f54ed629bfd7a7f4742fbbc" title="Key::alt_left" alt="" coords="407,309,497,336"/>
+<area shape="rect" id="node9" href="$classKey.html#a8c4d5f648534aa271a9582d53382e54f" title="Key::ctrl_right" alt="" coords="401,360,503,387"/>
+<area shape="rect" id="node11" href="$classKey.html#aaa434afc90ecb93a28a0e5e6e8c58e87" title="Key::ctrl_left" alt="" coords="405,411,499,437"/>
+<area shape="rect" id="node13" href="$classKey.html#a8a4da1819e66bb141c4dea2934845fab" title="Key::caps_lock" alt="" coords="573,259,680,285"/>
+<area shape="rect" id="node15" href="$classCPU.html#a23c8f5e46dac3304f1d8def9c612b88e" title="Interupts werden global deaktiviert." alt="" coords="394,579,510,605"/>
+<area shape="rect" id="node16" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="402,629,502,656"/>
+<area shape="rect" id="node17" href="$classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port." alt="" coords="406,461,498,488"/>
+<area shape="rect" id="node18" href="$classCPU.html#a725124d36e67ea9e9539e4828ce54847" title="stellt den letzten bekannten Zustand des Interrupt&#45;Flags der CPU wieder her" alt="" coords="379,513,525,554"/>
+<area shape="rect" id="node20" href="$classKey.html#a5f85f2e72598824e028162ec53890260" title="Key::scroll_lock" alt="" coords="397,680,507,707"/>
+<area shape="rect" id="node22" href="$classKey.html#abb65ed9de2b4a8c24f557416b484df34" title="set ascii value" alt="" coords="413,56,491,83"/>
+<area shape="rect" id="node23" href="$classKey.html#ae67075af1a5c0a7f585e8e61fc8515f8" title="set scancode value" alt="" coords="399,107,505,133"/>
+<area shape="rect" id="node25" href="$classKey.html#aab1b4f9446a6db6fc4a6a1f7824d51b5" title="Key::num_lock" alt="" coords="573,157,680,184"/>
+</map>

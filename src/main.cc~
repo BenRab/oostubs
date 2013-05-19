@@ -1,0 +1,78 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
+ *                                 Technische Informatik II                                      *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *                                                                                               *
+ *                                         M A I N                                               *
+ *                                                                                               *
+\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *\
+#                   INCLUDES                      #
+\* * * * * * * * * * * * * * * * * * * * * * * * */
+#include "machine/multiboot.h"
+#include "machine/cpu.h"
+#include "machine/pic.h"
+#include "machine/plugbox.h"
+
+#include "device/keyboard.h"
+#include "device/cgastr.h"
+#include "device/panic.h"
+
+#include "user/task1.h"
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *\
+#                    MACROS                       #
+\* * * * * * * * * * * * * * * * * * * * * * * * */
+/// \~german  festlegen, welche Aufgabenanwendung verwendet werden soll
+/// \~english define which task is desired
+#define USE_TASK           20
+
+//load the necessary header and define the class name of the task
+#if USE_TASK == 10
+  #include "user/task1.h"
+  typedef Task1 TaskClass;
+  
+#elif USE_TASK == 20
+  #include "user/task2.h"
+  typedef Task2 TaskClass;
+
+#endif
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *\
+#                GLOBAL OBJECTS                   #
+\* * * * * * * * * * * * * * * * * * * * * * * * */
+CPU cpu;
+PIC pic;
+Panic panic;
+Plugbox plugbox;
+CGA_Stream kout;
+Keyboard keyboard;
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *\
+#                   METHODS                       #
+\* * * * * * * * * * * * * * * * * * * * * * * * */
+extern "C" void kernel(uint32_t magic, const Multiboot_Info* info);
+
+/** \brief kernel entry point
+ *
+ * \param magic bootloader magic value
+ * \param info address of multiboot info structure
+ *
+ * This is the entry point of the operating system.  If this function returns
+ * all interrupts will be disabled and the cpu will be halted.
+ * 
+ **/
+void kernel(uint32_t magic, const Multiboot_Info* info){
+  
+  #if USE_TASK == 10
+    TaskClass task(magic, info);
+  #else
+    TaskClass task;
+  #endif
+  task.action();
+
+}
+
+
+

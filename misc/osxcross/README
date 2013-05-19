@@ -1,0 +1,7 @@
+Installation:
+=============
+
+1) Linux CrossCompiler von laden: http://crossgcc.rts-software.org/doku.php?id=compiling_for_linux
+2.1) linux32 Ordner in misc/osxcross/ kopieren und zweite Zeile der misc/osxcross/config.mk Datei auskommentieren (# davor) und die andere mit CPREFIX einbringen (# davor weg)
+2.2) linux32 Ordner irgendwo anders hinkopieren und die CPREFIX-Zeile in misc/osxcross/config.mk entsprechend anpassen
+3) qemu mit Homebrew (http://mxcl.github.io/homebrew/) kompilieren

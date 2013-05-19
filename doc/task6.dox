@@ -1,0 +1,16 @@
+/**
+ * \~german
+ * \page task6 Aufgabe 6 - Netzwerk
+ * \tableofcontents
+ * 
+ * Diese Aufgabe basiert auf dem neuen Grundsystem von \ref task4 "Aufgabe 4". Dieses läuft nicht 
+ * mehr als eigenständiges Betriebssystem, sondern als normales Programm unter Linux. \n
+ * 
+ * Die Informationen dieser Aufgabe erscheinen mit dem entsprechenden Patch.
+ * 
+ * \~english
+ * \page task6 Task 6 - Network
+ * 
+ * There is no english describtion. Use the german one.
+ */
+

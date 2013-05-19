@@ -1,0 +1,4 @@
+<map id="Gate" name="Gate">
+<area shape="rect" id="node2" href="$classKeyboard.html" title="Treiber für die Tastatur, incl. Interruptunterstützung." alt="" coords="5,80,80,107"/>
+<area shape="rect" id="node3" href="$classPanic.html" title="Standardinterruptbehandlungsroutine." alt="" coords="105,80,156,107"/>
+</map>

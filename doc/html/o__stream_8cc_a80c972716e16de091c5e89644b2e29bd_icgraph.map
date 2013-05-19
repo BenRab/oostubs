@@ -1,0 +1,7 @@
+<map id="dec" name="dec">
+<area shape="rect" id="node2" href="$guardian_8cc.html#afe78f34c7c65df79376008e0d23c1afd" title="This function is called if a normal exception is raised by the cpu." alt="" coords="112,5,227,32"/>
+<area shape="rect" id="node3" href="$guardian_8cc.html#a70466c5bd3ffac85265c22f65e9a4ef9" title="This function is called if a normal exception with error code is raised by the cpu." alt="" coords="109,56,230,83"/>
+<area shape="rect" id="node4" href="$classTask1.html#af4e3f3b3085e350a5e939da4dba2738d" title="parse and print the multiboot information" alt="" coords="96,107,243,133"/>
+<area shape="rect" id="node6" href="$classTask1.html#a48ca608ac9cdc03ab6614a4f61e2448e" title="test the functionality of the Kout object" alt="" coords="113,157,225,184"/>
+<area shape="rect" id="node5" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information" alt="" coords="291,132,391,159"/>
+</map>

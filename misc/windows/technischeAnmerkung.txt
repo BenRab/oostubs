@@ -1,0 +1,6 @@
+Technische Anmerkungen - zum Verstehen für Gewillte:
+
+
+Der Minimal-Bootloader von QEMU (gilt für einige andere auch) ist in der Lage ELF-Dateien (ausführbare Dateien unter Linux) zu laden, aber keine PE-Dateien (ausführbare Dateien unter Windows). Wird OOStuBS unter Linux entwickelt, werden ELF-Dateien erstellt, unter Windows jedoch PE-Dateien. Somit könnte die unter Windows erstellte OOStuBS-Datei eigentlich nicht geladen werden. 
+Der Bootloader ist jedoch auch in der Lage Dateien "komplett" zu laden, sollten bestimmte Angaben (Multi-Boot-Header) gemacht werden. Die Programme, die die OOStuBS-Datei erstellen, gehen aber davon aus, dass die Datei nach dem Laden noch einmal verändert wird, gewisse Teile der Datei umsortiert werden. Da dies beim Laden mit QEMU oder von einem USB-Stick nicht passiert, muss die OOStuBS-Datei gleich so aussehen, wie die erstellenden Programme sie nach dem laden sehen. Dies geschieht mit den "ALIGN" Angaben. 
+Damit QEMU die PE-Datei laden kann, muss wie gesagt der Multi-Boot-Header in der Datei vorhanden sein. Dieser hat allerdings in den ersten 8 KiB der Datei zu sein. Um dies sicher zu stellen werden die ganzen ".debug"- und ".stab"-Sektionen nach hinten gepackt. Somit steht der Multi-Boot-Header, welcher am Anfang der ".text"-Sektion ist, so weit vorne wie möglich.

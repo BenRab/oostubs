@@ -1,0 +1,18 @@
+digraph "Keyboard_Controller::set_led"
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Keyboard_Controller\l::set_led",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="Keyboard_Controller\l::key_decoded",height=0.2,width=0.4,color="black",URL="$classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2",tooltip="interpret the reveived scancode and modifier bits"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="Keyboard_Controller\l::key_hit",height=0.2,width=0.4,color="black",URL="$classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21",tooltip="get the last pressed key"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="Task1::testKeyboard",height=0.2,width=0.4,color="black",URL="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e",tooltip="test the functionality of the Keyboard_Controller object"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="Task1::action",height=0.2,width=0.4,color="black",URL="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c",tooltip="parse and print multiboot information"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="Keyboard_Controller\l::Keyboard_Controller",height=0.2,width=0.4,color="black",URL="$classKeyboard__Controller.html#a13a0e454bd8c6ee99182d05770d7c44a",tooltip="Default constructor, turns all LEDs off and set speed and delay maximal."];
+}

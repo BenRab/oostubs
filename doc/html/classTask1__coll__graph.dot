@@ -1,0 +1,15 @@
+digraph "Task1"
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="Task1",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="Application",height=0.2,width=0.4,color="black",URL="$classApplication.html",tooltip="Basis of OOStuBs-Applications."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" mbi" ,fontname="FreeSans"];
+  Node3 [label="Task1::Multiboot_Info",height=0.2,width=0.4,color="black",URL="$structTask1_1_1Multiboot__Info.html",tooltip="Multiboot information."];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" aout" ,fontname="FreeSans"];
+  Node4 [label="Task1::AOut_Symbol\l_Table",height=0.2,width=0.4,color="black",URL="$structTask1_1_1AOut__Symbol__Table.html",tooltip="Symbol table for a.out executables."];
+  Node5 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" elf" ,fontname="FreeSans"];
+  Node5 [label="Task1::ELF_Section\l_Header_Table",height=0.2,width=0.4,color="black",URL="$structTask1_1_1ELF__Section__Header__Table.html",tooltip="Section header table for ELF executables."];
+}

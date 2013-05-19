@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>OOStuBS - Technische Informatik II (TI-II): include/machine/pic.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.3.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_c25c118f76a81c77ceea021073727baa.html">machine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">pic.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="machine_2pic_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *                                   Technische Informatik II                                    * </span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * </span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                                                                                               * </span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *                                            P I C                                              * </span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *                                                                                               * </span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef __pic_include__</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __pic_include__</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">#                    INCLUDES                     #</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="io__port_8h.html">machine/io_port.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">#                    CLASSES                      #</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="classPIC.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPIC.html" title="Treiber für den PIC (Programmable Interrupt Controller)">PIC</a>{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5a">   59</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5a" title="externe Interruptquellen">Interrupts</a>{</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aad3d4fa0bb32b916b09544441efa400dd">   60</a></span>&#160;      <a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aad3d4fa0bb32b916b09544441efa400dd" title="Intervallzähler (PIT)">timer</a>         = 0,  </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa06a1851736f0221a7a3bfd499cfc5818">   61</a></span>&#160;      <a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa06a1851736f0221a7a3bfd499cfc5818" title="Tastaturkontroller.">keyboard</a>      = 1,  </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa0a12831b6cfae83340d2ac03436be5cb">   62</a></span>&#160;      <a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa0a12831b6cfae83340d2ac03436be5cb" title="Anschluss von Slave-PIC.">pic2</a>          = 2,  </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa809b0a3522a43825240d7cb4885d19b5">   63</a></span>&#160;      <a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa809b0a3522a43825240d7cb4885d19b5" title="RS-232 Port 2 und 4.">serial2</a>       = 3,  </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa39d9a89df87b7a1274cdd3ade837e6bf">   64</a></span>&#160;      <a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa39d9a89df87b7a1274cdd3ade837e6bf" title="RS-232 Port 1 und 3.">serial1</a>       = 4,  </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aae4c63d043d123105ca80424fab48d49c">   65</a></span>&#160;      <a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aae4c63d043d123105ca80424fab48d49c" title="Soundkarte oder LPT 2.">soundcard</a>     = 5,  </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa39c350818c1d7a4c115d34048a2ecf07">   66</a></span>&#160;      <a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa39c350818c1d7a4c115d34048a2ecf07" title="Diskettenkontroller.">floppy</a>        = 6,  </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aad2dc69b57dd6cc7493d6f0dc4b009209">   67</a></span>&#160;      <a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aad2dc69b57dd6cc7493d6f0dc4b009209" title="LPT 1 und unechter Interrupt.">parallelport</a>  = 7,  </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa7ab825d7d33819b59b4b3a5d6254874a">   68</a></span>&#160;      <a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa7ab825d7d33819b59b4b3a5d6254874a" title="Echtzeituhr vom CMOS (RTC)">rtc</a>           = 8,  </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa0b3c02b804f082f1c1a91f5f3f22d40c">   69</a></span>&#160;      <a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa0b3c02b804f082f1c1a91f5f3f22d40c" title="verschiedene">misc</a>          = 9,  </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa480e71333fbdea65af7cfd9ac91f8957">   70</a></span>&#160;      <a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa480e71333fbdea65af7cfd9ac91f8957" title="vierter ATA(PI)/IDE">ata4</a>          = 10, </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa12e239bf4d3b87f676c856ab8c4274f1">   71</a></span>&#160;      <a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa12e239bf4d3b87f676c856ab8c4274f1" title="dritter ATA(PI)/IDE">ata3</a>          = 11, </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa9e2d476fa5f1b2c69c3b7225d0f35d7a">   72</a></span>&#160;      <a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa9e2d476fa5f1b2c69c3b7225d0f35d7a" title="zweiter Tastaturkontrolleranschluss">secondps2</a>     = 12, </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aabc1186a1ba18abe84a170b0d91a04daf">   73</a></span>&#160;      <a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aabc1186a1ba18abe84a170b0d91a04daf" title="Gleitkommazahleneinheit.">fpu</a>           = 13, </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aabde240b27e3d1716c42d3b86cbb74f89">   74</a></span>&#160;      <a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aabde240b27e3d1716c42d3b86cbb74f89" title="erster ATA(PI)/IDE">ata1</a>          = 14, </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa1247d44acad5046967cc45798de24b04">   75</a></span>&#160;      <a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa1247d44acad5046967cc45798de24b04" title="zweiter ATA(PI)/IDE und unechter Interrupt">ata2</a>          = 15  </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    };</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="classPIC.html#a17f4ad355d60ae1fefa1ef70625d530c" title="Standardkonstruktor.">PIC</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPIC.html#a62ac9996c8ecfca65e2529655050b26b" title="erlaubt einen speziellen Interrupt von der Hardware">allow</a>(<a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5a" title="externe Interruptquellen">Interrupts</a> interrupt);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPIC.html#a62503865c7a32537d9cc3e71d4c439cd" title="verbietet einen speziellen Interrupt der Hardware">forbid</a>(<a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5a" title="externe Interruptquellen">Interrupts</a> interrupt); </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPIC.html#a2fc19a597848b6b646123aad76ab3505" title="sendet ein &quot;Acknowledgement&quot; eines ausstehenden Interrupts">ack</a>(<span class="keywordtype">bool</span> secondPIC);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classPIC.html#a691d33c865b84bcb82e2a70a54cc3977" title="den ISR eines der beiden PICs ermitteln">getISR</a>(<span class="keywordtype">bool</span> secondPIC = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;};</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Don Mai 2 2013 02:26:29 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,11 @@
+digraph "include/user/task2.h"
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="include/user/task2.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="src/main.cc",height=0.2,width=0.4,color="black",URL="$main_8cc.html",tooltip="Grunddatei von OOStuBS."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="src/user/task2.cc",height=0.2,width=0.4,color="black",URL="$task2_8cc.html"];
+}

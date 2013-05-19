@@ -1,0 +1,83 @@
+SECTIONS 
+ {
+   . = 0x100000;     /* Startadresse des Systems */
+   _start = .;
+
+   .text :
+    {
+      *(".text")
+      *(".text$")
+      *(".init")
+      *(".fini") 
+      *(".gnu.linkonce.*")
+    }
+    
+   .init_array : ALIGN(0x200) 
+    {
+      ConstructorListStart = .;
+      *(".init_array")
+      *(".ctors")
+      *(".ctor")
+      ConstructorListEnd = .;
+    }
+    
+   .fini_array : ALIGN(0x200) 
+    {
+      DestructorListStart = .;
+      *(".fini_array")
+      *(".dtors")
+      *(".dtor")
+      DestructorListEnd = .;
+    }
+
+   .data : ALIGN(0x200)
+    {
+      *(".data")
+      *(".data$")
+      *(".got")
+      *(".got.plt")
+      *(".jcr")
+    }
+    .rdata  : ALIGN(0x200) {  *(".rdata")  }
+    .rodata : ALIGN(0x200) {  *(".rodata") }
+    
+    _edata = .;
+    
+    
+    .debug_line     : ALIGN(0x200) { *(".debug_line")     }
+    .debug_abbrev   : ALIGN(0x200) { *(".debug_abbrev")   }
+    .debug_info     : ALIGN(0x200) { *(".debug_info")     }
+    .debug_frame    : ALIGN(0x200) { *(".debug_frame")    }
+    .debug_loc      : ALIGN(0x200) { *(".debug_loc")      }
+    .debug_pubnames : ALIGN(0x200) { *(".debug_pubnames") }
+    .debug_aranges  : ALIGN(0x200) { *(".debug_aranges")  }
+    .debug_str      : ALIGN(0x200) { *(".debug_str")      }
+    .debug_ranges   : ALIGN(0x200) { *(".debug_ranges")   }
+    .debug_pubtypes : ALIGN(0x200) { *(".debug_pubtypes") }
+    .gnu_debuglink  : ALIGN(0x200) { *(".gnu_debuglink")  }
+    
+    _edbg = .;
+    
+    
+    .stab     : ALIGN(0x200) { *(".stab")    }
+    .stabstr  : ALIGN(0x200) { *(".stabstr") }
+    
+    _estab = .;
+    
+    
+   .bss : 
+    {
+      *(".bss")
+    }
+
+   _ebss = .;
+
+   /DISCARD/ :
+    {
+      *(".note")
+      *(".comment")
+    }
+
+    _end = .;
+ }
+

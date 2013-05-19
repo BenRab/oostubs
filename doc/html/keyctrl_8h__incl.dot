@@ -1,0 +1,11 @@
+digraph "include/machine/keyctrl.h"
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="include/machine/keyctrl.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="machine/io_port.h",height=0.2,width=0.4,color="black",URL="$io__port_8h.html"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="machine/key.h",height=0.2,width=0.4,color="black",URL="$key_8h.html"];
+}

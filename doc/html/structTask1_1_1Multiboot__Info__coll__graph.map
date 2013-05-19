@@ -1,0 +1,4 @@
+<map id="Task1::Multiboot_Info" name="Task1::Multiboot_Info">
+<area shape="rect" id="node2" href="$structTask1_1_1AOut__Symbol__Table.html" title="Symbol table for a.out executables." alt="" coords="5,6,147,47"/>
+<area shape="rect" id="node3" href="$structTask1_1_1ELF__Section__Header__Table.html" title="Section header table for ELF executables." alt="" coords="171,6,305,47"/>
+</map>

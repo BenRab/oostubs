@@ -1,0 +1,12 @@
+<map id="endl" name="endl">
+<area shape="rect" id="node2" href="$guardian_8cc.html#afe78f34c7c65df79376008e0d23c1afd" title="This function is called if a normal exception is raised by the cpu." alt="" coords="128,5,243,32"/>
+<area shape="rect" id="node3" href="$guardian_8cc.html#a70466c5bd3ffac85265c22f65e9a4ef9" title="This function is called if a normal exception with error code is raised by the cpu." alt="" coords="125,56,246,83"/>
+<area shape="rect" id="node4" href="$guardian_8cc.html#a390d383038610b600ab986ec9b54879a" title="This function is called if a reserved exception is raised by the cpu." alt="" coords="102,107,269,133"/>
+<area shape="rect" id="node5" href="$classTask1.html#af4e3f3b3085e350a5e939da4dba2738d" title="parse and print the multiboot information" alt="" coords="112,157,259,184"/>
+<area shape="rect" id="node7" href="$classTask1.html#a48ca608ac9cdc03ab6614a4f61e2448e" title="test the functionality of the Kout object" alt="" coords="129,208,241,235"/>
+<area shape="rect" id="node8" href="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object" alt="" coords="115,259,255,285"/>
+<area shape="rect" id="node6" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information" alt="" coords="318,233,418,260"/>
+<area shape="rect" id="node9" href="$classTask2.html#a4adb42b6119375dfec56808c158dd7dc" title="Default constructor." alt="" coords="135,360,235,387"/>
+<area shape="rect" id="node10" href="$classTask2.html#aa5de17846032b02d6d0819cdc78b1b3e" title="prints the line" alt="" coords="135,411,235,437"/>
+<area shape="rect" id="node11" href="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point" alt="" coords="339,411,397,437"/>
+</map>

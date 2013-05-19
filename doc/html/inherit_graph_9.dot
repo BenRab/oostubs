@@ -1,0 +1,8 @@
+digraph "Grafische Darstellung der Klassenhierarchie"
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Key::scan",height=0.2,width=0.4,color="black",URL="$structKey_1_1scan.html",tooltip="spezielle scan codes"];
+}

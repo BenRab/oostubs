@@ -1,0 +1,12 @@
+digraph "Keyboard_Controller::reboot"
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Keyboard_Controller\l::reboot",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="IO_Port::inb",height=0.2,width=0.4,color="black",URL="$classIO__Port.html#a77b7915e167487c31150a4c4b9a15496",tooltip="read a byte value from the associated port."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="IO_Port::outb",height=0.2,width=0.4,color="black",URL="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c",tooltip="write a byte value to the associated port."];
+}

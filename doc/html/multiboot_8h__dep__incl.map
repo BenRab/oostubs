@@ -1,0 +1,6 @@
+<map id="include/machine/multiboot.h" name="include/machine/multiboot.h">
+<area shape="rect" id="node2" href="$task1_8h.html" title="Klassendeklaration für erste Aufgabe." alt="" coords="5,80,144,107"/>
+<area shape="rect" id="node5" href="$boot_8S.html" title="enthält Start&#45;Code" alt="" coords="169,80,297,107"/>
+<area shape="rect" id="node3" href="$main_8cc.html" title="Grunddatei von OOStuBS." alt="" coords="225,155,313,181"/>
+<area shape="rect" id="node4" href="$task1_8cc.html" title="src/user/task1.cc" alt="" coords="15,155,135,181"/>
+</map>
