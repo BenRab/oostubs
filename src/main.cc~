@@ -70,7 +70,8 @@ void kernel(uint32_t magic, const Multiboot_Info* info){
   #else
     TaskClass task;
   #endif
-  task.action();
+  //task.action();
+kout.clear();
 
 }
 

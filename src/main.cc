@@ -26,7 +26,7 @@
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 /// \~german  festlegen, welche Aufgabenanwendung verwendet werden soll
 /// \~english define which task is desired
-#define USE_TASK           10
+#define USE_TASK           20
 
 //load the necessary header and define the class name of the task
 #if USE_TASK == 10

@@ -11,4 +11,5 @@ build/main.o: src/main.cc include/machine/multiboot.h \
  include/machine/keyctrl.h include/machine/key.h include/device/cgastr.h \
  include/object/o_stream.h include/object/strbuf.h include/config.h \
  include/machine/cgascr.h include/machine/io_port.h \
- include/device/panic.h include/user/task1.h include/user/appl.h
+ include/device/panic.h include/user/task1.h include/user/appl.h \
+ include/user/task2.h
