@@ -40,7 +40,7 @@ class Panic  : public Gate {
      * \~english
      * \brief constructor only calls constructor of base classes up to now
      */
-    Panic(): Gate() {};
+    Panic(): Gate();
     
     /**  
      * \~german

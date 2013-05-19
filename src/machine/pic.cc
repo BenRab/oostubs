@@ -95,7 +95,7 @@ void PIC::ack(bool secondPIC){//ACK aka EOI (End of Interrupt)
 }
 
 /** \todo \~german implementieren \~english write implementation*/
-unsigned char PIC::getISR(bool secondPIC){
+unsigned char PIC::getISR(bool secondPIC){//TODO superior INT, Ack senden?
   IO_Port ctrl_1(0x20),//Befehlsport Master
           ctrl_2(0xa0);//Befehlsport Slave
   

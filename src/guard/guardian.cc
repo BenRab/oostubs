@@ -9,6 +9,8 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #                    INCLUDES                     #
 \* * * * * * * * * * * * * * * * * * * * * * * * */
+#include "machine/plugbox.h"
+#include "device/panic.h"
 #include "useful/kout.h"
 #include "useful/cpu.h"
 
@@ -21,6 +23,8 @@ extern "C" void handleException(unsigned short slot, void* eip, unsigned int efl
 extern "C" void handleExceptionE(unsigned short slot, void* eip, unsigned int eflags, unsigned short cs, unsigned int errorCode);
 extern "C" void handleExceptionReserved(unsigned short slot);
 
+extern Panic panic;
+extern Plugbox plugbox;
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #                    METHODS                      #
@@ -47,8 +51,15 @@ extern "C" void handleExceptionReserved(unsigned short slot);
  * \todo write implementation
  */
 void guardian (unsigned short slot) {
-  kout.setpos(0,23);
-  kout << "Interrupt Nr.:" << slot <<endl;
+  //kout.setpos(0,23);
+  //kout << "Interrupt Nr.:" << slot <<endl;
+
+  if(slot >= 0 && slot < 256){
+    Gate *gate = &plugbox.report(slot);
+    gate->trigger();
+  } else{
+    panic.trigger();
+  }
 }
 
 

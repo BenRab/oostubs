@@ -13,7 +13,7 @@
 #include "useful/cpu.h"
 
 Task2::Task2(){
-  kout.clear();//hinzugefügt
+  kout.clear();
   kout.setpos(31,1);
   kout << "OOStuBs - Task 2" << endl << endl;
   

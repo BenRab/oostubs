@@ -49,7 +49,7 @@ class Plugbox {
      *
      * \todo write declaration
      **/
-    Gate* interruptArray[256];
+    
   public:
     /** 
      * \~german
