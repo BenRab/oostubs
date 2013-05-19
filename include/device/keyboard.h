@@ -32,6 +32,11 @@
  * for the keyboard.
  */
 class Keyboard : public Keyboard_Controller, public Gate  {
+  private:
+    Key key_buf[1024];
+    unsigned int length;
+
+
   public:
      
      /** 

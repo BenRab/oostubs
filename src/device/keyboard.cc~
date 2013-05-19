@@ -10,18 +10,33 @@
 #                    INCLUDES                     #
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 #include "device/keyboard.h"
+#include "machine/key.h"
+#include "machine/pic.h"
+#include "machine/plugbox.h"
 
-/* * * * * * * * * * * * * * * * * * * * * * * * *\
-#                    METHODS                      # 
-\* * * * * * * * * * * * * * * * * * * * * * * * */
+//extern CGA_Stream kout;
+extern PIC pic;
+extern Plugbox plugbox;
+
 /** \todo \~german implementieren \~english write implementation */
-Keyboard::Keyboard(){
-}
+//Keyboard::Keyboard(){
+//}
 
 /** \todo \~german implementieren \~english write implementation */
 void Keyboard::plugin(){
+  length = 0;
+  plugbox.assign(gateInterruptNumber, *this); 
+  pic.allow(PIC::keyboard);
 }
 
 /** \todo \~german implementieren \~english write implementation */
 void Keyboard::trigger(){
+    /*unsigned short x,y;
+    kout.getpos(x,y);
+    kout.setpos(4,10);
+    kout << "$ ";
+    while (length > 0)
+        kout << key_buffer[--length].ascii();
+    kout.flush();
+    kout.setpos(x,y);*/
 }
