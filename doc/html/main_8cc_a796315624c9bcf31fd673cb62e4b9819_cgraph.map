@@ -1,13 +1,13 @@
 <map id="kernel" name="kernel">
-<area shape="rect" id="node2" href="$classTask2.html#aa5de17846032b02d6d0819cdc78b1b3e" title="prints the line" alt="" coords="113,81,213,108"/>
-<area shape="rect" id="node3" href="$classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position" alt="" coords="624,5,765,32"/>
-<area shape="rect" id="node6" href="$classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position" alt="" coords="625,56,765,83"/>
-<area shape="rect" id="node7" href="$classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers" alt="" coords="262,107,394,133"/>
-<area shape="rect" id="node11" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="305,157,351,184"/>
-<area shape="rect" id="node4" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="833,56,933,83"/>
-<area shape="rect" id="node5" href="$classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port." alt="" coords="837,5,929,32"/>
-<area shape="rect" id="node8" href="$classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus" alt="" coords="443,107,573,133"/>
-<area shape="rect" id="node9" href="$classCGA__Screen.html#a8176499ecb3ce4e9eb05910e66aee9d2" title="print a character to a specific position" alt="" coords="816,132,949,159"/>
-<area shape="rect" id="node10" href="$classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt" alt="" coords="621,107,768,133"/>
-<area shape="rect" id="node12" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="445,157,571,184"/>
+<area shape="rect" id="node3" href="$classTask2.html#aa5de17846032b02d6d0819cdc78b1b3e" title="prints the line" alt="" coords="112,131,211,159"/>
+<area shape="rect" id="node5" href="$classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position" alt="" coords="620,5,761,33"/>
+<area shape="rect" id="node7" href="$classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position" alt="" coords="620,157,761,185"/>
+<area shape="rect" id="node11" href="$classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers" alt="" coords="259,106,389,134"/>
+<area shape="rect" id="node22" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="301,207,347,235"/>
+<area shape="rect" id="node9" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="831,157,929,185"/>
+<area shape="rect" id="node13" href="$classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus" alt="" coords="439,106,567,134"/>
+<area shape="rect" id="node16" href="$classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt" alt="" coords="617,55,764,83"/>
+<area shape="rect" id="node18" href="$classCGA__Screen.html#a8176499ecb3ce4e9eb05910e66aee9d2" title="print a character to a specific position" alt="" coords="813,81,947,109"/>
+<area shape="rect" id="node24" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer" alt="" coords="448,207,557,235"/>
+<area shape="rect" id="node26" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="632,207,749,235"/>
 </map>

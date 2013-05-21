@@ -3,7 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.3.1"/>
 <title>OOStuBS - Technische Informatik II (TI-II): include/device/keyboard.h Quellcode</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -26,7 +25,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Erzeugt von Doxygen 1.8.3.1 -->
+<!-- Erzeugt von Doxygen 1.8.1.2 -->
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Hauptseite</span></a></li>
@@ -73,22 +72,27 @@
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">#                    CLASSES                      #</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="classKeyboard.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classKeyboard.html" title="Treiber für die Tastatur, incl. Interruptunterstützung.">Keyboard</a> : <span class="keyword">public</span> <a class="code" href="classKeyboard__Controller.html" title="(PS/2) Tastaturtreiber">Keyboard_Controller</a>, <span class="keyword">public</span> <a class="code" href="classGate.html" title="Basisklasse für die Interruptbehandlung.">Gate</a>  {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;     </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;     <a class="code" href="classKeyboard.html#ad6b0bb849d6bb7cdf63091e40b5f5f7f" title="Der Konstruktor ruft die vorherigen Konstruktoren auf.">Keyboard</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;     </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur">plugin</a> ();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353" title="einen auftretenden Tastaturinterrupt behandeln">trigger</a> ();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classKeyboard.html#a03296ab878aeeb7fa3b566ab25aa1b9c">   36</a></span>&#160;    <a class="code" href="classKey.html" title="Translator between scancodes ASCII-code and modifier bits.">Key</a> <a class="code" href="classKeyboard.html#a03296ab878aeeb7fa3b566ab25aa1b9c">key_buf</a>[1024];</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="classKeyboard.html#a51c101bebcd08c112e2851fce644059c">   37</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classKeyboard.html#a51c101bebcd08c112e2851fce644059c">length</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;     </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="classKeyboard.html#ad6b0bb849d6bb7cdf63091e40b5f5f7f">   49</a></span>&#160;     <a class="code" href="classKeyboard.html#ad6b0bb849d6bb7cdf63091e40b5f5f7f" title="Der Konstruktor ruft die vorherigen Konstruktoren auf.">Keyboard</a>(): <a class="code" href="classGate.html" title="Basisklasse für die Interruptbehandlung.">Gate</a>(){};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;     </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur">plugin</a> ();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353" title="einen auftretenden Tastaturinterrupt behandeln">trigger</a> ();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Don Mai 2 2013 02:26:29 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mon Mai 20 2013 12:56:27 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.3.1
+</a> 1.8.1.2
 </small></address>
 </body>
 </html>

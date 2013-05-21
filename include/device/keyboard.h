@@ -46,7 +46,7 @@ class Keyboard : public Keyboard_Controller, public Gate  {
       * \~english
       * \brief constructor only calls constructor of base classes up to now
       */
-     Keyboard(): Gate(){};
+     Keyboard();
      
     /** 
      * \~german

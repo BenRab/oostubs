@@ -3,7 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.3.1"/>
 <title>OOStuBS - Technische Informatik II (TI-II): Enwicklungsumgebung</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -26,7 +25,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Erzeugt von Doxygen 1.8.3.1 -->
+<!-- Erzeugt von Doxygen 1.8.1.2 -->
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Hauptseite</span></a></li>
@@ -74,13 +73,13 @@ OOStuBS bauen</h1>
 <h2><a class="anchor" id="devenv_sec1_1"></a>
 Makefile</h2>
 <p>In der <code>Makefile</code> unter <code>PLATFORM</code> muss das Betriebssystem unter dem entwickelt wird spezifiziert werden. Unter einem 32-Bit Linux ist es <code>linux</code> und unter 64 Bit entsprechend <code>linux64</code>. </p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment"># one of linux, linux64</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># the platforms osxcross and windows are also possible but are not supported</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;PLATFORM=linux</div>
+<div class="fragment"><div class="line"><span class="comment"># one of linux, linux64</span></div>
+<div class="line"><span class="comment"># the platforms osxcross and windows are also possible but are not supported</span></div>
+<div class="line">PLATFORM=linux</div>
 </div><!-- fragment --><h2><a class="anchor" id="devenv_sec1_2"></a>
 misc/[PLATFORM]/config.mk</h2>
 <p>Unter dem Ordner <code>misc</code> sind die einzelnen Konfigurationen abgelegt. Im Unterordner der gewählten Plattform gibt es eine Datei <code>config.mk</code>. Diese speichert welche Dateien vorhanden sind. Bei QEMU gibt es ab und zu das Problem der Bezeichnung des Programms. In der Konfigurationsdatei gibt es eine Zeile, die mit EMU anfängt: </p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;EMU=qemu-system-i386</div>
+<div class="fragment"><div class="line">EMU=qemu-system-i386</div>
 </div><!-- fragment --><p> Diese muss u.U. auf die richtige QEMU-Datei umgeschrieben werden. Dies hängt definitiv vom System ab. Unter Gentoo ist es z.B. "<code>qemu-kvm</code>".</p>
 <h1><a class="anchor" id="devenv_sec1"></a>
 OOStuBS bauen</h1>
@@ -135,26 +134,26 @@ patching file src/user/task1.cc
 patching file src/user/task2.cc
 ubuntu@ubuntuPC:/data/oostubs/oostubs$ 
 </pre><p> Die Datei <a class="el" href="main_8cc.html" title="Grunddatei von OOStuBS.">main.cc</a> konnte nicht erfolgreich aktualisiert werden. Die letzte der drei Änderungen schlug fehl, vermutlich um Zeile 65. Durch den Fehler gibt es jetzt drei verschiedene Dateien: <a class="el" href="main_8cc.html" title="Grunddatei von OOStuBS.">main.cc</a>, main.cc.rej und main.cc.orig. Die erste Datei enthält alle erfolgreichen Änderungen, die Datei .rej enthält die Fehler und orig enthält den Zustand der Datei vor dem Einspielen der patch-Datei. Die rej-Datei könnte Aufschluss geben:</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; --- src/main.cc  2013-04-27 09:04:58.609128500 +0200</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;+++ src/main.cc 2013-05-01 19:13:16.249563000 +0200</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;@@ -65,7 +80,11 @@</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; void <a class="code" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point">kernel</a>(uint32_t magic, const Multiboot_Info* info){</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;   </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;+  <span class="comment">#if USE_TASK == 10</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;   TaskClass task(magic, info);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;+  <span class="comment">#else</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;+    TaskClass task;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;+  <span class="comment">#endif</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;   </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;   task.action();</div>
+<div class="fragment"><div class="line"> --- src/main.cc  2013-04-27 09:04:58.609128500 +0200</div>
+<div class="line">+++ src/main.cc 2013-05-01 19:13:16.249563000 +0200</div>
+<div class="line">@@ -65,7 +80,11 @@</div>
+<div class="line"> void <a class="code" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point">kernel</a>(uint32_t magic, const Multiboot_Info* info){</div>
+<div class="line">   </div>
+<div class="line">+  <span class="comment">#if USE_TASK == 10</span></div>
+<div class="line">   TaskClass task(magic, info);</div>
+<div class="line">+  <span class="comment">#else</span></div>
+<div class="line">+    TaskClass task;</div>
+<div class="line">+  <span class="comment">#endif</span></div>
+<div class="line">   </div>
+<div class="line">   task.action();</div>
 </div><!-- fragment --><p>Offenbar konnte der Codeabschnitt nicht in der Datei gefunden werden. In der neuen Datei hätte der gezeigte Quellcodeabschnitt von Zeile 65 bis Zeile 80 gehen und der Teil mit dem Plus hätte eingefügt werden sollen.</p>
 <p>Ein Blick in die aktuelle <a class="el" href="main_8cc.html" title="Grunddatei von OOStuBS.">main.cc</a>-Datei ab Zeile 65 ergibt: </p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;void <a class="code" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point">kernel</a>(uint32_t magic, const Multiboot_Info* info){</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;  TaskClass task( magic, info);</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  task.action();</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
+<div class="fragment"><div class="line">void <a class="code" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point">kernel</a>(uint32_t magic, const Multiboot_Info* info){</div>
+<div class="line">  TaskClass task( magic, info);</div>
+<div class="line">  </div>
+<div class="line">  task.action();</div>
+<div class="line">  </div>
+<div class="line">}</div>
 </div><!-- fragment --><p>In der Datei gibt es kleine Änderungen bzgl. Leerzeilen und Leertasten. Die vier neuen Zeilen können leicht eingefügt werden und dann ist auch der Patch komplett.</p>
 <h4>Bilder</h4>
  
@@ -173,9 +172,9 @@ ubuntu@ubuntuPC:/data/oostubs/oostubs$
   </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Don Mai 2 2013 02:26:30 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mon Mai 20 2013 12:56:28 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.3.1
+</a> 1.8.1.2
 </small></address>
 </body>
 </html>

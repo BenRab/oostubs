@@ -3,7 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.3.1"/>
 <title>OOStuBS - Technische Informatik II (TI-II): src/main.cc Quellcode</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -26,7 +25,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Erzeugt von Doxygen 1.8.3.1 -->
+<!-- Erzeugt von Doxygen 1.8.1.2 -->
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Hauptseite</span></a></li>
@@ -83,11 +82,11 @@
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#if USE_TASK == 10</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span><span class="preprocessor">  #include &quot;<a class="code" href="task1_8h.html" title="Klassendeklaration für erste Aufgabe.">user/task1.h</a>&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">typedef</span> <a class="code" href="classTask1.html" title="Erste Testanwendung.">Task1</a> <a class="code" href="main_8cc.html#a0d2b4b390fc40e74d8056beab77f7437">TaskClass</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#elif USE_TASK == 20</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span><span class="preprocessor">  #include &quot;<a class="code" href="task2_8h.html">user/task2.h</a>&quot;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="main_8cc.html#a0d2b4b390fc40e74d8056beab77f7437">   38</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="classTask2.html" title="Second test application.">Task2</a> <a class="code" href="main_8cc.html#a0d2b4b390fc40e74d8056beab77f7437">TaskClass</a>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span></div>
@@ -105,23 +104,25 @@
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keywordtype">void</span> <a class="code" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point">kernel</a>(uint32_t magic, <span class="keyword">const</span> Multiboot_Info* info);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819">   65</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point">kernel</a>(uint32_t magic, <span class="keyword">const</span> Multiboot_Info* info){</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">  #if USE_TASK == 10</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor"></span>    <a class="code" href="classTask2.html" title="Second test application.">TaskClass</a> task(magic, info);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">  #else</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor"></span>    <a class="code" href="classTask2.html" title="Second test application.">TaskClass</a> task;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">  #endif</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor"></span>  </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  task.<a class="code" href="classTask2.html#aa5de17846032b02d6d0819cdc78b1b3e" title="prints the line">action</a>();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819">   66</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point">kernel</a>(uint32_t magic, <span class="keyword">const</span> Multiboot_Info* info){</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">  #if USE_TASK == 10</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor"></span>    <a class="code" href="classTask2.html" title="Second test application.">TaskClass</a> task(magic, info);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">  #else</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor"></span>    <a class="code" href="classTask2.html" title="Second test application.">TaskClass</a> task;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">  #endif</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span>  task.<a class="code" href="classTask2.html#aa5de17846032b02d6d0819cdc78b1b3e" title="prints the line">action</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Don Mai 2 2013 02:26:29 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mon Mai 20 2013 12:56:27 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.3.1
+</a> 1.8.1.2
 </small></address>
 </body>
 </html>

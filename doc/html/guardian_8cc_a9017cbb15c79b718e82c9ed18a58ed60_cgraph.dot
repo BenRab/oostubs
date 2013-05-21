@@ -1,0 +1,24 @@
+digraph "guardian"
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="guardian",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="Plugbox::report",height=0.2,width=0.4,color="black",URL="$classPlugbox.html#a94a04c50b59ce8ce9ba0578b9d5831d9",tooltip="gibt eine Referenz auf das für den Interrupt richtige Gate -Objekt zurück"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="Gate::trigger",height=0.2,width=0.4,color="black",URL="$classGate.html#a02e9dccfd4136f7152b531a024dcd37a",tooltip="abstrakte Funktion zur Interruptbehandlung"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="Panic::trigger",height=0.2,width=0.4,color="black",URL="$classPanic.html#a2b509a675cded39f5422ef625261c6ba",tooltip="handelt unbekannte oder nicht-registrierte Interrupts"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="CPU::disable_int",height=0.2,width=0.4,color="black",URL="$classCPU.html#a23c8f5e46dac3304f1d8def9c612b88e",tooltip="Interupts werden global deaktiviert."];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="endl",height=0.2,width=0.4,color="black",URL="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d",tooltip="print buffer after adding a newline"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="Stringbuffer::put",height=0.2,width=0.4,color="black",URL="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480",tooltip="insert a character into the buffer"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node8 [label="Stringbuffer::flush",height=0.2,width=0.4,color="black",URL="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac",tooltip="flush the content of the buffer to the screen"];
+  Node4 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node9 [label="CPU::halt",height=0.2,width=0.4,color="black",URL="$classCPU.html#a189729f4ca240ff52004a34b9057d448",tooltip="hält die CPU an"];
+}

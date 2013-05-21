@@ -1,8 +1,13 @@
 <map id="Task2::Task2" name="Task2::Task2">
-<area shape="rect" id="node2" href="$classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position" alt="" coords="155,5,295,32"/>
-<area shape="rect" id="node4" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="202,56,249,83"/>
-<area shape="rect" id="node6" href="$classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur" alt="" coords="166,107,285,133"/>
-<area shape="rect" id="node7" href="$classCPU.html#ab5e5a2260ef84a433c181786f11c4609" title="Interrupts werden global aktiviert." alt="" coords="168,157,283,184"/>
-<area shape="rect" id="node3" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="358,5,458,32"/>
-<area shape="rect" id="node5" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="345,56,471,83"/>
+<area shape="rect" id="node3" href="$classCGA__Screen.html#a622bc3a2822e3006579167343d639353" title="leert den aktuellen Bildschirm" alt="" coords="153,5,284,33"/>
+<area shape="rect" id="node5" href="$classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position" alt="" coords="333,106,475,134"/>
+<area shape="rect" id="node9" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="196,55,241,83"/>
+<area shape="rect" id="node15" href="$classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur" alt="" coords="161,157,276,185"/>
+<area shape="rect" id="node21" href="$classCPU.html#ab5e5a2260ef84a433c181786f11c4609" title="Interrupts werden global aktiviert." alt="" coords="525,233,640,261"/>
+<area shape="rect" id="node7" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="533,106,632,134"/>
+<area shape="rect" id="node11" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer" alt="" coords="349,55,459,83"/>
+<area shape="rect" id="node13" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="524,55,641,83"/>
+<area shape="rect" id="node17" href="$classPlugbox.html#a7f48e4645e6709fe2030aaa79eb0d3f1" title="bindet ein Gate &#45;Objekt an einen speziellen Interrupt" alt="" coords="349,207,459,235"/>
+<area shape="rect" id="node19" href="$classPIC.html#a62ac9996c8ecfca65e2529655050b26b" title="erlaubt einen speziellen Interrupt von der Hardware" alt="" coords="365,157,443,185"/>
+<area shape="rect" id="node23" href="$classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port." alt="" coords="537,157,628,185"/>
 </map>

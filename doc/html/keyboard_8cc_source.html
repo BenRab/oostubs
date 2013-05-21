@@ -3,7 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.3.1"/>
 <title>OOStuBS - Technische Informatik II (TI-II): src/device/keyboard.cc Quellcode</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -26,7 +25,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Erzeugt von Doxygen 1.8.3.1 -->
+<!-- Erzeugt von Doxygen 1.8.1.2 -->
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Hauptseite</span></a></li>
@@ -63,24 +62,32 @@
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">#                    INCLUDES                     #</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="device_2keyboard_8h.html">device/keyboard.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">#                    METHODS                      # </span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="classKeyboard.html#ad6b0bb849d6bb7cdf63091e40b5f5f7f">   18</a></span>&#160;<a class="code" href="classKeyboard.html#ad6b0bb849d6bb7cdf63091e40b5f5f7f" title="Der Konstruktor ruft die vorherigen Konstruktoren auf.">Keyboard::Keyboard</a>(){</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="key_8h.html">machine/key.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="machine_2pic_8h.html">machine/pic.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="machine_2plugbox_8h.html">machine/plugbox.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//extern CGA_Stream kout;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">extern</span> <a class="code" href="classPIC.html" title="Treiber für den PIC (Programmable Interrupt Controller)">PIC</a> <a class="code" href="useful_2pic_8h.html#a5df8263917aec96d469d1c5d00ae364c">pic</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">extern</span> <a class="code" href="classPlugbox.html" title="Administrationseinheit für die Interruptweitergabe.">Plugbox</a> <a class="code" href="useful_2plugbox_8h.html#aa0c53aa97b3dec9b04fa8e566e706e4c">plugbox</a>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61">   22</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur">Keyboard::plugin</a>(){</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//Keyboard::Keyboard(){</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//}</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353">   26</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353" title="einen auftretenden Tastaturinterrupt behandeln">Keyboard::trigger</a>(){</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61">   26</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur">Keyboard::plugin</a>(){</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="classKeyboard.html#a51c101bebcd08c112e2851fce644059c">length</a> = 0;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  plugbox.<a class="code" href="classPlugbox.html#a7f48e4645e6709fe2030aaa79eb0d3f1" title="bindet ein Gate -Objekt an einen speziellen Interrupt">assign</a>(<a class="code" href="classGate.html#a1f87a36c2df50efd46d09c388625a7e1" title="Nummer des Interrupts, der die Behandlung durch dieses Gates ausgelöst hat.">gateInterruptNumber</a>, *<span class="keyword">this</span>); </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  pic.<a class="code" href="classPIC.html#a62ac9996c8ecfca65e2529655050b26b" title="erlaubt einen speziellen Interrupt von der Hardware">allow</a>(<a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa06a1851736f0221a7a3bfd499cfc5818" title="Tastaturkontroller.">PIC::keyboard</a>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353" title="einen auftretenden Tastaturinterrupt behandeln">Keyboard::trigger</a>(){</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">//Interreupt-Behandlung, schreibe Zeichen an bestimmte Stelle</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Don Mai 2 2013 02:26:29 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mon Mai 20 2013 12:56:27 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.3.1
+</a> 1.8.1.2
 </small></address>
 </body>
 </html>

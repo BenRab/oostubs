@@ -29,8 +29,4 @@ digraph "CGA_Screen::show"
   Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
   Node12 [label="CGA_Screen::scrollup",height=0.2,width=0.4,color="black",URL="$classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652",tooltip="das aktuelle Display wird eine Zeile nach oben gescrollt"];
   Node12 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
-  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
-  Node13 [label="CGA_Screen::clear",height=0.2,width=0.4,color="black",URL="$classCGA__Screen.html#a622bc3a2822e3006579167343d639353",tooltip="leert den aktuellen Bildschirm"];
-  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
-  Node14 [label="CGA_Screen::CGA_Screen",height=0.2,width=0.4,color="black",URL="$classCGA__Screen.html#a4415c1855a6afdc5cd3116e5fa054252",tooltip="Constructor."];
 }

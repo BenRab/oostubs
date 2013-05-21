@@ -1,4 +1,4 @@
-digraph "src/object" {
+digraph "src/object/" {
   bgcolor=transparent;
   compound=true
   node [ fontsize="10", fontname="FreeSans"];

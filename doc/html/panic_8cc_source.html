@@ -3,7 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.3.1"/>
 <title>OOStuBS - Technische Informatik II (TI-II): src/device/panic.cc Quellcode</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -26,7 +25,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Erzeugt von Doxygen 1.8.3.1 -->
+<!-- Erzeugt von Doxygen 1.8.1.2 -->
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Hauptseite</span></a></li>
@@ -63,23 +62,34 @@
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">#                    INCLUDES                     #</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="device_2panic_8h.html">device/panic.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">#                    METHODS                      # </span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="machine_2cpu_8h.html">machine/cpu.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cgastr_8h.html">device/cgastr.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">extern</span> <a class="code" href="classCPU.html" title="Zugriff auf einige spezielle CPU-Anweisungen.">CPU</a> <a class="code" href="useful_2cpu_8h.html#a0b2a3530e9a5998456be351b4251b878">cpu</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">extern</span> <a class="code" href="classCGA__Stream.html" title="CGA basierte Ausgabe, ählich zu std::cout von C++.">CGA_Stream</a> <a class="code" href="kout_8h.html#af177bb20a527a2c8f2df3a4a2ddb5d38">kout</a>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="classPanic.html#a39418654c04e9aee71ad79351a8d3250">   20</a></span>&#160;<a class="code" href="classPanic.html#a39418654c04e9aee71ad79351a8d3250" title="Der Konstruktor ruft die vorherigen Konstruktoren auf.">Panic::Panic</a>(){</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">#                    METHODS                      # </span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="classPanic.html#a2b509a675cded39f5422ef625261c6ba">   24</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classPanic.html#a2b509a675cded39f5422ef625261c6ba" title="handelt unbekannte oder nicht-registrierte Interrupts">Panic::trigger</a>(){</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//Panic::Panic(){</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//}</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="classPanic.html#a2b509a675cded39f5422ef625261c6ba">   30</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classPanic.html#a2b509a675cded39f5422ef625261c6ba" title="handelt unbekannte oder nicht-registrierte Interrupts">Panic::trigger</a>(){</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  cpu.<a class="code" href="classCPU.html#a23c8f5e46dac3304f1d8def9c612b88e" title="Interupts werden global deaktiviert.">disable_int</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  kout &lt;&lt; <span class="stringliteral">&quot;Interrupt: &quot;</span> &lt;&lt; <a class="code" href="classGate.html#a1f87a36c2df50efd46d09c388625a7e1" title="Nummer des Interrupts, der die Behandlung durch dieses Gates ausgelöst hat.">gateInterruptNumber</a> &lt;&lt; <a class="code" href="o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline">endl</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  cpu.<a class="code" href="classCPU.html#a189729f4ca240ff52004a34b9057d448" title="hält die CPU an">halt</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Don Mai 2 2013 02:26:29 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mon Mai 20 2013 12:56:27 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.3.1
+</a> 1.8.1.2
 </small></address>
 </body>
 </html>

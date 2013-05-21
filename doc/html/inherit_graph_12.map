@@ -1,3 +1,6 @@
 <map id="Grafische Darstellung der Klassenhierarchie" name="Grafische Darstellung der Klassenhierarchie">
-<area shape="rect" id="node1" href="$classPlugbox.html" title="Administrationseinheit für die Interruptweitergabe." alt="" coords="5,5,72,32"/>
+<area shape="rect" id="node1" href="$classCGA__Screen.html" title="CGA&#45;Dispaly driver." alt="" coords="141,5,240,33"/>
+<area shape="rect" id="node3" href="$classCGA__Stream.html" title="CGA basierte Ausgabe, ählich zu std::cout von C++." alt="" coords="288,30,387,58"/>
+<area shape="rect" id="node4" href="$classStringbuffer.html" title="Puffer für die Textausgabe." alt="" coords="7,55,92,83"/>
+<area shape="rect" id="node6" href="$classO__Stream.html" title="Manipulation class providing formatted output support." alt="" coords="151,55,231,83"/>
 </map>

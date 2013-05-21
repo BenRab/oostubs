@@ -10,8 +10,4 @@ digraph "CGA_Stream"
   Node3 [label="Stringbuffer",height=0.2,width=0.4,color="black",URL="$classStringbuffer.html",tooltip="Puffer für die Textausgabe."];
   Node4 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
   Node4 [label="CGA_Screen",height=0.2,width=0.4,color="black",URL="$classCGA__Screen.html",tooltip="CGA-Dispaly driver."];
-  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" data_port\nindex_port" ,fontname="FreeSans"];
-  Node5 [label="IO_Port",height=0.2,width=0.4,color="black",URL="$classIO__Port.html",tooltip="Accessor for I/O-Space."];
-  Node6 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" screen" ,fontname="FreeSans"];
-  Node6 [label="CGA_Screen::ScreenChar",height=0.2,width=0.4,color="black",URL="$structCGA__Screen_1_1ScreenChar.html"];
 }

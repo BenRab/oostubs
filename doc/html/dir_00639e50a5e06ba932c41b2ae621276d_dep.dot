@@ -1,4 +1,4 @@
-digraph "include/device" {
+digraph "include/device/" {
   bgcolor=transparent;
   compound=true
   node [ fontsize="10", fontname="FreeSans"];

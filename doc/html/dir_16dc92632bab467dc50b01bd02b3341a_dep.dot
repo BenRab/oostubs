@@ -1,4 +1,4 @@
-digraph "src/device" {
+digraph "src/device/" {
   bgcolor=transparent;
   compound=true
   node [ fontsize="10", fontname="FreeSans"];
@@ -8,5 +8,5 @@ digraph "src/device" {
   dir_16dc92632bab467dc50b01bd02b3341a [shape=box, label="device", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_16dc92632bab467dc50b01bd02b3341a.html"];
   }
   dir_d44c64559bbebec7f509842c48db8b23 [shape=box label="include" color="red" URL="dir_d44c64559bbebec7f509842c48db8b23.html"];
-  dir_16dc92632bab467dc50b01bd02b3341a->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="4", labeldistance=1.5 headhref="dir_000008_000000.html"];
+  dir_16dc92632bab467dc50b01bd02b3341a->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="8", labeldistance=1.5 headhref="dir_000008_000000.html"];
 }

@@ -3,7 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.3.1"/>
 <title>OOStuBS - Technische Informatik II (TI-II): Aufgabe 1 - Ausgabefunktionen und Tastatursteuerung</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -26,7 +25,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Erzeugt von Doxygen 1.8.3.1 -->
+<!-- Erzeugt von Doxygen 1.8.1.2 -->
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Hauptseite</span></a></li>
@@ -60,7 +59,7 @@ Aufgabe</h1>
 <p>Testausgaben können die Fehlersuche vereinfachen und bieten eine gute Gelegenheit, sich in eine vorgegebene Entwicklungsumgebung einzuarbeiten. Aus diesem Grund soll unser Übungsbetriebssystem OOStuBS als erstes solche Ausgabefunktionen erhalten. Die zu implementierenden Ausgabefunktionen sollen ähnlich wie die IO-Streams der C++ Bibliothek verwendet werden können und mit Hilfe der Klassen <a class="el" href="classIO__Port.html" title="Accessor for I/O-Space.">IO_Port</a> (wird von uns vorgegeben), <a class="el" href="classCGA__Screen.html" title="CGA-Dispaly driver.">CGA_Screen</a>, <a class="el" href="classStringbuffer.html" title="Puffer für die Textausgabe.">Stringbuffer</a>, <a class="el" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a> und <a class="el" href="classCGA__Stream.html" title="CGA basierte Ausgabe, ählich zu std::cout von C++.">CGA_Stream</a> umgesetzt werden. Damit die Ausgabefunktionen auch überall in OOStuBS verwendet werden können, soll ein globales <a class="el" href="classCGA__Stream.html" title="CGA basierte Ausgabe, ählich zu std::cout von C++.">CGA_Stream</a> Objekt kout erzeugt werden. Um darüber hinaus auch interaktive Anwendungsprogramme zu erlauben, sollt ihr zusätzlich noch die Klasse <a class="el" href="classKeyboard__Controller.html" title="(PS/2) Tastaturtreiber">Keyboard_Controller</a> vervollständigen, die neben <a class="el" href="classKey.html" title="Translator between scancodes ASCII-code and modifier bits.">Key</a> in der Vorgabe enthalten ist. </p>
 <div align="center">
 <img src="dot_inline_dotgraph_1.png" alt="dot_inline_dotgraph_1.png" border="0" usemap="#dot_inline_dotgraph_1.map"/>
-<map name="dot_inline_dotgraph_1.map" id="dot_inline_dotgraph_1.map"><area shape="poly" id="node1" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel(...)" alt="" coords="141,62,138,57,132,52,121,47,108,45,94,44,80,45,67,47,56,52,50,57,48,62,50,68,56,73,67,77,80,80,94,81,108,80,121,77,132,73,138,68"/><area shape="rect" id="node2" href="classTask1.html" title="Task1" alt="" coords="158,44,214,81"/><area shape="rect" id="node3" href="classCGA__Stream.html" title="CGA_Stream" alt="" coords="177,129,272,166"/><area shape="rect" id="node4" href="classKeyboard__Controller.html" title="Keyboard_Controller" alt="" coords="20,214,159,250"/><area shape="rect" id="node5" href="classCGA__Screen.html" title="CGA_Screen" alt="" coords="178,214,272,250"/><area shape="rect" id="node8" href="classO__Stream.html" title="O_Stream" alt="" coords="298,214,374,250"/><area shape="rect" id="node6" href="classIO__Port.html" title="IO_Port" alt="" coords="164,287,228,324"/><area shape="rect" id="node7" href="classKey.html" title="Key" alt="" coords="62,287,118,324"/><area shape="rect" id="node9" href="classStringbuffer.html" title="Stringbuffer" alt="" coords="297,287,381,324"/></map>
+<map name="dot_inline_dotgraph_1.map" id="dot_inline_dotgraph_1.map"><area shape="poly" id="node1" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel(...)" alt="" coords="145,59 143,53 135,49 123,45 108,43 92,42 75,43 60,45 48,49 40,53 38,59 40,64 48,68 60,72 75,75 92,75 108,75 123,72 135,68 143,64"/><area shape="rect" id="node3" href="classTask1.html" title="Task1" alt="" coords="161,42,212,75"/><area shape="rect" id="node5" href="classCGA__Stream.html" title="CGA_Stream" alt="" coords="177,121,272,154"/><area shape="rect" id="node7" href="classKeyboard__Controller.html" title="Keyboard_Controller" alt="" coords="18,200,161,232"/><area shape="rect" id="node8" href="classCGA__Screen.html" title="CGA_Screen" alt="" coords="178,200,271,232"/><area shape="rect" id="node16" href="classO__Stream.html" title="O_Stream" alt="" coords="296,200,374,232"/><area shape="rect" id="node9" href="classIO__Port.html" title="IO_Port" alt="" coords="162,265,224,298"/><area shape="rect" id="node10" href="classKey.html" title="Key" alt="" coords="65,265,114,298"/><area shape="rect" id="node17" href="classStringbuffer.html" title="Stringbuffer" alt="" coords="293,265,384,298"/></map>
 </div>
 <h1><a class="anchor" id="task1_sec3"></a>
 Implementierung</h1>
@@ -87,9 +86,9 @@ Hilfestellung</h1>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Don Mai 2 2013 02:26:30 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mon Mai 20 2013 12:56:28 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.3.1
+</a> 1.8.1.2
 </small></address>
 </body>
 </html>

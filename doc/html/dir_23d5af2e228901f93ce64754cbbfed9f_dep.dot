@@ -1,4 +1,4 @@
-digraph "include/object" {
+digraph "include/object/" {
   bgcolor=transparent;
   compound=true
   node [ fontsize="10", fontname="FreeSans"];

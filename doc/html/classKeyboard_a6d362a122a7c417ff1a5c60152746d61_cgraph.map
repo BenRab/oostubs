@@ -1,0 +1,7 @@
+<map id="Keyboard::plugin" name="Keyboard::plugin">
+<area shape="rect" id="node3" href="$classPlugbox.html#a7f48e4645e6709fe2030aaa79eb0d3f1" title="bindet ein Gate &#45;Objekt an einen speziellen Interrupt" alt="" coords="172,5,281,33"/>
+<area shape="rect" id="node5" href="$classPIC.html#a62ac9996c8ecfca65e2529655050b26b" title="erlaubt einen speziellen Interrupt von der Hardware" alt="" coords="188,55,265,83"/>
+<area shape="rect" id="node7" href="$classCPU.html#ab5e5a2260ef84a433c181786f11c4609" title="Interrupts werden global aktiviert." alt="" coords="331,5,445,33"/>
+<area shape="rect" id="node9" href="$classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port." alt="" coords="343,55,433,83"/>
+<area shape="rect" id="node11" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="339,106,437,134"/>
+</map>

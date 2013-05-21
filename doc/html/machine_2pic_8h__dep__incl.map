@@ -1,5 +1,6 @@
 <map id="include/machine/pic.h" name="include/machine/pic.h">
-<area shape="rect" id="node2" href="$useful_2pic_8h.html" title="include/useful/pic.h" alt="" coords="5,80,139,107"/>
-<area shape="rect" id="node3" href="$pic_8cc.html" title="src/machine/pic.cc" alt="" coords="163,80,292,107"/>
-<area shape="rect" id="node4" href="$main_8cc.html" title="Grunddatei von OOStuBS." alt="" coords="317,80,405,107"/>
+<area shape="rect" id="node3" href="$useful_2pic_8h.html" title="include/useful/pic.h" alt="" coords="5,83,136,111"/>
+<area shape="rect" id="node5" href="$keyboard_8cc.html" title="src/device/keyboard.cc" alt="" coords="160,83,312,111"/>
+<area shape="rect" id="node7" href="$pic_8cc.html" title="src/machine/pic.cc" alt="" coords="336,83,467,111"/>
+<area shape="rect" id="node9" href="$main_8cc.html" title="Grunddatei von OOStuBS." alt="" coords="491,83,579,111"/>
 </map>

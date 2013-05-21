@@ -24,11 +24,15 @@ digraph "include/guard/gate.h"
   Node10 [label="src/machine/plugbox.cc",height=0.2,width=0.4,color="black",URL="$plugbox_8cc.html"];
   Node8 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
   Node11 [label="src/device/panic.cc",height=0.2,width=0.4,color="black",URL="$panic_8cc.html"];
+  Node8 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node12 [label="src/guard/guardian.cc",height=0.2,width=0.4,color="black",URL="$guardian_8cc.html",tooltip="Interrupt-Behandlungsfunktionen."];
   Node8 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
-  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
-  Node12 [label="include/machine/plugbox.h",height=0.2,width=0.4,color="black",URL="$machine_2plugbox_8h.html"];
-  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
-  Node13 [label="include/useful/plugbox.h",height=0.2,width=0.4,color="black",URL="$useful_2plugbox_8h.html"];
-  Node12 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
-  Node12 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node13 [label="include/machine/plugbox.h",height=0.2,width=0.4,color="black",URL="$machine_2plugbox_8h.html"];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node14 [label="include/useful/plugbox.h",height=0.2,width=0.4,color="black",URL="$useful_2plugbox_8h.html"];
+  Node13 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node13 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node13 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node13 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
 }

@@ -3,7 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.3.1"/>
 <title>OOStuBS - Technische Informatik II (TI-II): Enwicklungsumgebung Windows aufsetzen</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -26,7 +25,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Erzeugt von Doxygen 1.8.3.1 -->
+<!-- Erzeugt von Doxygen 1.8.1.2 -->
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Hauptseite</span></a></li>
@@ -238,12 +237,12 @@ Schritt 5 - Visual Studio</h1>
 <p>Prinzipiell existiert bereits alles, um OOStuBS zu bauen, dokumentieren, auszuführen und zu debuggen. Allerdings ist dafür noch einige "Handarbeit" notwendig, um jedes Mal die Einzelteile zusammen zu führen. Diese Arbeit soll Visual Studio abnehmen. Weitere Vorteile sind die Code-Vervollständigung und die Syntaxhervorhebung.<br/>
  Dazu ist <a href="oostubs_VS.zip">dieses vorbereitete Paket</a> herunter zu laden und nach "F:\Daten\oostubs" zu entpacken. Somit müssten sich dann unter "F:\Daten\oostubs" drei Ordner befinden, "code", in dem die OOStuBS-Vorgaben liegen, "scripts", in dem einige Hilfs-Batch-Dateien liegen und "vsproject", in dem die Visual Studio Projekte liegen.</p>
 <p>Bevor nun Visual Studio gestartet wird, sollte die Datei "F:\Daten\oostubs\scripts\setVariable.bat" überprüft werden. In dieser sind die Orte eingetragen, an denen die verschiedenen Programme vorzufinden sind. Die Datei müsste wie folgt aussehen: </p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;@set <span class="stringliteral">&quot;CYGWINPATH=F:\Programme\CygWin&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;@set <span class="stringliteral">&quot;DOXYGENPATH=F:\Programme\Doxygen&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;@set <span class="stringliteral">&quot;QEMUPATH=F:\Programme\QEMU&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;@set <span class="stringliteral">&quot;GRAPHVIZPATH=F:\Programme\Graphviz&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;@set <span class="stringliteral">&quot;CROSSPATH=F:\Programme\CygWin\usr\src\cross&quot;</span></div>
+<div class="fragment"><div class="line">@set <span class="stringliteral">&quot;CYGWINPATH=F:\Programme\CygWin&quot;</span></div>
+<div class="line">@set <span class="stringliteral">&quot;DOXYGENPATH=F:\Programme\Doxygen&quot;</span></div>
+<div class="line">@set <span class="stringliteral">&quot;QEMUPATH=F:\Programme\QEMU&quot;</span></div>
+<div class="line">@set <span class="stringliteral">&quot;GRAPHVIZPATH=F:\Programme\Graphviz&quot;</span></div>
+<div class="line"></div>
+<div class="line">@set <span class="stringliteral">&quot;CROSSPATH=F:\Programme\CygWin\usr\src\cross&quot;</span></div>
 </div><!-- fragment --><p>Wurden andere Orte als die in dieser Anleitung verwendet, so gilt es nun diese Pfade zu korrigieren. Es ist wichtig darauf zu achten, dass alles vor dem Gleichheitszeichen (incl.) und die Anführungszeichen am Ende unverändert bleiben. "CROSSPATH" muss an dieser Stelle nicht verändert werden, es dient nur einer alternativen Variante (siehe <a class="el" href="devenv_win.html#devenv_win_sec8">Alternativen</a>). <br/>
  Wurde alles kontrolliert und notfalls angepasst, kann nun Visual Studio gestartet werden, indem entweder die Datei "F:\Daten\oostubs\vsproject\oostubs.sln" oder "F:\Daten\oostubs\vsproject\oostubs.vcxproj" geöffnet wird. Sollte eine neuere Version von Visual Studio verwendet werden, so wird nun vermutlich eine Konvertierung stattfinden, die hoffentlich auch korrekt funktioniert. Da aktuell keine neuere Visual Studio Version existiert, kann dies natürlich momentan nicht getestet werden. <br/>
  Nach dem Start kann nun die Entwicklung losgehen.</p>
@@ -415,58 +414,58 @@ F:\Temp\Syslinux\win32&gt;</pre><p>Der USB-Stick müsste nun außer den drei Ord
                0 Verzeichnis(se),  8.018.268.160 Bytes frei</pre><h2><a class="anchor" id="devenv_win_sec6_3"></a>
 Syslinux für OOStuBS konfigurieren</h2>
 <p>Die Dateien "F:\Temp\Syslinux\com32\mboot\mboot.c32" und "F:\Temp\Syslinux\com32\lib\libcom32.c32" werden nach "G:\boot\syslinux\" kopiert. Dort wird auch eine Text-Datei mit dem Namen "syslinux.cfg" angelegt. Der Inhalt dieser müsste dann wie folgt gesetzt werden: </p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;PROMPT 1</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;TIMEOUT 10</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;DEFAULT oostubs</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;DISPLAY bootmenu.lst</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;LABEL oostubs</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  KERNEL /boot/syslinux/mboot.c32</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  APPEND /boot/kernel/oostubs</div>
+<div class="fragment"><div class="line">PROMPT 1</div>
+<div class="line">TIMEOUT 10</div>
+<div class="line">DEFAULT oostubs</div>
+<div class="line">DISPLAY bootmenu.lst</div>
+<div class="line"></div>
+<div class="line">LABEL oostubs</div>
+<div class="line">  KERNEL /boot/syslinux/mboot.c32</div>
+<div class="line">  APPEND /boot/kernel/oostubs</div>
 </div><!-- fragment --><p> Es folgt das Anlegen der Datei "G:\boot\syslinux\bootmenu.lst":</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;oostubs   - aktuelle OOStuBS-Version [DEFAULT]</div>
+<div class="fragment"><div class="line">oostubs   - aktuelle OOStuBS-Version [DEFAULT]</div>
 </div><!-- fragment --><p> Nachdem dies erledigt ist, muss nur noch die oostubs-Datei von "F:\Daten\oostubs\code\bin\oostubs" nach "G:\boot\kernel\" kopiert werden. <br/>
  Der Stick ist nun bereit und es kann OOStuBS gestartet werden. Beim Booten mit dem Stick startet das Betriebssystem nahezu sofort. Dies ist dank des geringen <code>TIMEOUTs</code> der Fall.</p>
 <h2><a class="anchor" id="devenv_win_sec6_4"></a>
 Optional: mehrere Versionen</h2>
 <p>Möchte man für jede Aufgabe eine eigene Bootoption haben - beispielsweise um später in Nostalgie zu schwelgen oder nachzusehen, ob bestimmte Fehler auch schon in früheren Versionen auftreten, kann ein Menü angelegt werden. In diesem Beispiel wurde Aufgabe 1 und 2 bereits bearbeitet wurde und Aufgabe 3 teilweise. Die aktuelle Version ist immer noch "G:\boot\kernel\oostubs". Die fertige Aufgabe 1 liegt als "G:\boot\kernel\oostubs.A1" vor und Aufgabe 2 als \"G:\boot\kernel\oostubs.A2". <br/>
  Nun werden zuerst die Datei "F:\Temp\Syslinux\com32\menu\menu.c32" und "F:\Temp\Syslinux\com32\libutil\libutil.c32" zusätzlich nach "G:\boot\syslinux\" kopiert. Im Anschluss wird die "G:\boot\syslinux\syslinux.cfg"-Datei bearbeitet, diese müsste dann wie folgt aussehen: </p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;PROMPT 1</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;TIMEOUT 100</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;DEFAULT oostubs</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;UI /boot/menu.c32</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;MENU TITLE OOStuBS Bootmenue mit Syslinux</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;LABEL -</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  MENU LABEL OOStuBS:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  MENU DISABLE</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;LABEL oostubs</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  MENU LABEL ^oostubs   - aktuelle Version [DEFAULT]</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  MENU INDENT 1</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  TEXT HELP</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;Dies ist die aktuelle Entwicklungsversion von OOStuBS.</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  ENDTEXT</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  KERNEL /boot/mboot.c32</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  APPEND /boot/kernel/oostubs</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;LABEL oostubsA1</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  MENU LABEL oostubsA^1 - fertige Aufgabe 1</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  MENU INDENT 1</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  TEXT HELP</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;Diese Version von OOStuBS beeinhaltet nur die abgeschlossene Aufgabe 1.</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  ENDTEXT</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  KERNEL /boot/mboot.c32</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  APPEND /boot/kernel/oostubs.A1</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;LABEL oostubsA2</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  MENU LABEL oostubsA^2 - fertige Aufgabe 2</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  MENU INDENT 1</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  TEXT HELP</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;Diese Version von OOStuBS beeinhaltet nur die abgeschlossenen Aufgaben 1 bis 2.</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  ENDTEXT</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  KERNEL /boot/mboot.c32</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  APPEND /boot/kernel/oostubs.A2</div>
+<div class="fragment"><div class="line">PROMPT 1</div>
+<div class="line">TIMEOUT 100</div>
+<div class="line">DEFAULT oostubs</div>
+<div class="line">UI /boot/menu.c32</div>
+<div class="line">MENU TITLE OOStuBS Bootmenue mit Syslinux</div>
+<div class="line"></div>
+<div class="line">LABEL -</div>
+<div class="line">  MENU LABEL OOStuBS:</div>
+<div class="line">  MENU DISABLE</div>
+<div class="line"></div>
+<div class="line">LABEL oostubs</div>
+<div class="line">  MENU LABEL ^oostubs   - aktuelle Version [DEFAULT]</div>
+<div class="line">  MENU INDENT 1</div>
+<div class="line">  TEXT HELP</div>
+<div class="line">Dies ist die aktuelle Entwicklungsversion von OOStuBS.</div>
+<div class="line">  ENDTEXT</div>
+<div class="line">  KERNEL /boot/mboot.c32</div>
+<div class="line">  APPEND /boot/kernel/oostubs</div>
+<div class="line"></div>
+<div class="line">LABEL oostubsA1</div>
+<div class="line">  MENU LABEL oostubsA^1 - fertige Aufgabe 1</div>
+<div class="line">  MENU INDENT 1</div>
+<div class="line">  TEXT HELP</div>
+<div class="line">Diese Version von OOStuBS beeinhaltet nur die abgeschlossene Aufgabe 1.</div>
+<div class="line">  ENDTEXT</div>
+<div class="line">  KERNEL /boot/mboot.c32</div>
+<div class="line">  APPEND /boot/kernel/oostubs.A1</div>
+<div class="line"></div>
+<div class="line">LABEL oostubsA2</div>
+<div class="line">  MENU LABEL oostubsA^2 - fertige Aufgabe 2</div>
+<div class="line">  MENU INDENT 1</div>
+<div class="line">  TEXT HELP</div>
+<div class="line">Diese Version von OOStuBS beeinhaltet nur die abgeschlossenen Aufgaben 1 bis 2.</div>
+<div class="line">  ENDTEXT</div>
+<div class="line">  KERNEL /boot/mboot.c32</div>
+<div class="line">  APPEND /boot/kernel/oostubs.A2</div>
 </div><!-- fragment --><p>Der Wert bei <code>TIMEOUT</code> gibt an, wie lange gewartet wird, bis die Standard-Option genutzt wird. Die Angabe ist in 1/10 Sekunden, der Wert 100 besagt also 10 Sekunden. <br/>
  Bei den Namen gilt die "8+3"-Regel zu beachten, max. acht Zeichen vor und drei Zeichen nach dem Punkt. <br/>
  Der Lohn der Mühe sieht dann wie folgt aus:</p>
@@ -551,39 +550,39 @@ Hunk #3 FAILED at 37.
 patching file src/user/task2.cc</pre><p> In der Makefile, vermutlich ab Zeile 9, konnte er den "Hunk", also die Änderung nicht durchführen. Genauso verhält es sich mit der Datei "code/src/main.cc" ab vermutlich Zeile 9 und Zeile 37. In der <a class="el" href="main_8cc.html" title="Grunddatei von OOStuBS.">main.cc</a>-Datei konnte er aber eine von drei Änderungen erfolgreich durchführen. Vermutlich bedeutet dabei, dass das Programm patch davon ausging, dass dort der Bereich der Änderungen anfängt, da er aber nicht erfolgreich war, kann diese Zeilenangabe nur als Anhaltspunkt genommen werden. <br/>
  In dieser Anleitung wird die Fehlerbehebung am Beispiel von der Makefile gezeigt. <br/>
  Nach der Einspielung des Patches gibt es drei Dateien in dem Ordner "/code/", Makefile, Makefile.orig und Makefile.rej. Die erste Datei enthält alle erfolgreichen Änderungen, die zweite Datei ist in der Form vor dem Einspielen des Patches und die dritte Datei gibt die nicht erfolgreichen Veränderungen an. In diesem Beispiel sind Makefile und Makefile.orig gleich, da es nur eine Veränderung in der makefile gab und die fehlgeschlagen ist. Die reject-Datei Makefile.rej sieht so aus: </p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;    9,15 ****</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;  LDFLAGS=-O0</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  ASMFLAGS=-g</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;- OBJECT_IGNORE= task1.o</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  INCPATHS=</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  LDPATHS=</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;--- 9,15 ----</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  LDFLAGS=-O0</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  ASMFLAGS=-g</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;+ OBJECT_IGNORE= task1.o task2.o</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  INCPATHS=</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  LDPATHS=</div>
+<div class="fragment"><div class="line">    9,15 ****</div>
+<div class="line">  LDFLAGS=-O0</div>
+<div class="line">  ASMFLAGS=-g</div>
+<div class="line">  </div>
+<div class="line">- OBJECT_IGNORE= task1.o</div>
+<div class="line">  </div>
+<div class="line">  INCPATHS=</div>
+<div class="line">  LDPATHS=</div>
+<div class="line">--- 9,15 ----</div>
+<div class="line">  LDFLAGS=-O0</div>
+<div class="line">  ASMFLAGS=-g</div>
+<div class="line">  </div>
+<div class="line">+ OBJECT_IGNORE= task1.o task2.o</div>
+<div class="line">  </div>
+<div class="line">  INCPATHS=</div>
+<div class="line">  LDPATHS=</div>
 </div><!-- fragment --><p>Die obere Hälfte gibt an, die patch sich die Originaldatei in Zeile 9-15 vorstellt. Das Minus gibt an, dass diese Zeile entfernt werden soll. Die zweite Hälfte gibt an, wie er sich die fertig veränderte Datei vorstellt, das Plus gibt dabei an, dass die Zeile eingefügt wurde. <br/>
  Schauen wir uns nun die Makefile dieses Beispiels von Zeile 9-15 an: </p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;LDFLAGS=-O0</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;ASMFLAGS=-g</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">#OBJECT_IGNORE= task1.o</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;OBJECT_IGNORE= </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;INCPATHS=</div>
+<div class="fragment"><div class="line">LDFLAGS=-O0</div>
+<div class="line">ASMFLAGS=-g</div>
+<div class="line"></div>
+<div class="line"><span class="comment">#OBJECT_IGNORE= task1.o</span></div>
+<div class="line">OBJECT_IGNORE= </div>
+<div class="line"></div>
+<div class="line">INCPATHS=</div>
 </div><!-- fragment --><p>Ganz offenbar ist das schon die richtige Stelle, sie muss nur leicht abgeändert werden:</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;LDFLAGS=-O0</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;ASMFLAGS=-g</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">#OBJECT_IGNORE= task1.o</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;OBJECT_IGNORE= task1.o task2.o</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;INCPATHS=</div>
+<div class="fragment"><div class="line">LDFLAGS=-O0</div>
+<div class="line">ASMFLAGS=-g</div>
+<div class="line"></div>
+<div class="line"><span class="comment">#OBJECT_IGNORE= task1.o</span></div>
+<div class="line">OBJECT_IGNORE= task1.o task2.o</div>
+<div class="line"></div>
+<div class="line">INCPATHS=</div>
 </div><!-- fragment --><p>Schon ist der Patch bei dieser Datei erfolgreich durchgeführt wurden. Jetzt können die .orig und .rej-Dateien gelöscht werden. <br/>
  So muss auch bei anderen Fehlern vorgegangen werden.</p>
 <h2><a class="anchor" id="devenv_win_sec7_2"></a>
@@ -598,8 +597,8 @@ Alternativen</h1>
 ELF-Cross-Compiler</h2>
 <p>Bei einem ELF-Cross-Compiler handelt es sich in diesem Fall um eine Entwicklungsumgebung, bei der die Ausführbaren Dateien nicht für das laufende Betriebssystem (hier Windows), sondern für ein anderes - hier mit ELF-Dateiformat (Linux) - geeignet sind. Die Webseite <a href="http://wiki.osdev.org/GCC_Cross-Compiler">OSDev.org</a> stellt eine gute Anleitung für die Erstellung eines Cross-Compilers bereit. Diese Anleitung wurde auch für die Tests an dieser Stelle verwendet. Sie wurde jedoch nur bis einschließlich "gcc" abgearbeitet, mehr ist für die hier verwendeten Zwecke nicht notwendig. <br/>
  Auch wurden einige Änderungen vorgenommen. Gleich zu Beginn bei "Preperation" wurden die beiden exports verändert: </p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;export PREFIX==/usr/src/cross</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;export TARGET=i686-pc-linux </div>
+<div class="fragment"><div class="line">export PREFIX==/usr/src/cross</div>
+<div class="line">export TARGET=i686-pc-linux </div>
 </div><!-- fragment --><p>binutils wurde auch leicht anders konfiguriert: </p>
 <pre class="fragment">../binutils-2.21.1/configure --target=$TARGET --prefix=$PREFIX --with-gnu-as --with-gnu-ld --disable-nls</pre><p> Und zu guter letzt wurde auch gcc anders konfiguriert: </p>
 <pre class="fragment">../gcc-4.6.1/configure --prefix=$PREFIX --target=$TARGET --disable-nls --enable-language=c,c++ --without-headers \
@@ -688,9 +687,9 @@ VS-Hilfsdateien angepasst </li>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Don Mai 2 2013 02:26:30 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mon Mai 20 2013 12:56:28 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.3.1
+</a> 1.8.1.2
 </small></address>
 </body>
 </html>

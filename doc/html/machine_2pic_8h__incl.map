@@ -1,3 +1,4 @@
 <map id="include/machine/pic.h" name="include/machine/pic.h">
-<area shape="rect" id="node2" href="$io__port_8h.html" title="machine/io_port.h" alt="" coords="15,80,141,107"/>
+<area shape="rect" id="node3" href="$io__port_8h.html" title="machine/io_port.h" alt="" coords="5,83,128,111"/>
+<area shape="rect" id="node5" href="$machine_2cpu_8h.html" title="machine/cpu.h" alt="" coords="152,83,259,111"/>
 </map>

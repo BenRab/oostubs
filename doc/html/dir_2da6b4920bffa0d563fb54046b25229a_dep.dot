@@ -1,4 +1,4 @@
-digraph "include/user" {
+digraph "include/user/" {
   bgcolor=transparent;
   compound=true
   node [ fontsize="10", fontname="FreeSans"];

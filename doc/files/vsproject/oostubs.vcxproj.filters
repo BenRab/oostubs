@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="include\device">
+      <UniqueIdentifier>{bd157fac-d7c4-4925-9fc4-acd5e1ca69eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\machine">
+      <UniqueIdentifier>{79ec8e39-44a6-4009-97a9-9185f2b85c05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\object">
+      <UniqueIdentifier>{0c52db88-4dd0-42a8-98d4-50a523bf83ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\user">
+      <UniqueIdentifier>{187d5906-8fa2-4ab6-bc34-671795daab51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="src\device">
+      <UniqueIdentifier>{d59df152-b1c2-43e6-a36a-25e26b6d8837}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\guard">
+      <UniqueIdentifier>{196b03b5-8d42-4253-b187-3525a91ac6e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\internal">
+    </Filter>
+    <Filter Include="src\machine">
+      <UniqueIdentifier>{326fb5de-390e-43da-a994-c6066c8cad97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\object">
+      <UniqueIdentifier>{f34eaa1b-d3e1-4631-a72f-8e9d8dff3d6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\user">
+      <UniqueIdentifier>{85720e12-b2ab-4a4e-8c5b-6b401064be13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="misc">
+      <UniqueIdentifier>{8e42619b-0ade-4de1-9d3b-b28cc802b353}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="misc\windows">
+      <UniqueIdentifier>{0bbd90a0-dbbc-48a3-b780-d74856ae4330}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="misc\windowscross">
+      <UniqueIdentifier>{480c0641-ea06-4369-9cbb-ff2a9cf378ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="doc">
+      <UniqueIdentifier>{90218c15-9984-4bf2-a26c-8a8de7eb3e2a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\code\include\device\cgastr.h">
+      <Filter>include\device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\include\machine\cgascr.h">
+      <Filter>include\machine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\include\machine\io_port.h">
+      <Filter>include\machine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\include\machine\key.h">
+      <Filter>include\machine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\include\machine\keyctrl.h">
+      <Filter>include\machine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\include\machine\multiboot.h">
+      <Filter>include\machine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\include\config.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\include\user\appl.h">
+      <Filter>include\user</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\include\user\task1.h">
+      <Filter>include\user</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\include\object\o_stream.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\include\object\strbuf.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\code\src\main.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\src\device\cgastr.cc">
+      <Filter>src\device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\src\guard\guardian.cc">
+      <Filter>src\guard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\src\machine\cgascr.cc">
+      <Filter>src\machine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\src\machine\keyctrl.cc">
+      <Filter>src\machine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\src\object\o_stream.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\src\object\strbuf.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\src\user\task1.cc">
+      <Filter>src\user</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\code\src\internal\boot.S">
+      <Filter>src\internal</Filter>
+    </None>
+    <None Include="..\code\src\internal\compat.S">
+      <Filter>src\internal</Filter>
+    </None>
+    <None Include="..\code\src\internal\pow.S">
+      <Filter>src\internal</Filter>
+    </None>
+    <None Include="..\code\src\internal\cppInit.c">
+      <Filter>src\internal</Filter>
+    </None>
+    <None Include="..\code\misc\rules.mk">
+      <Filter>misc</Filter>
+    </None>
+    <None Include="..\code\misc\sections">
+      <Filter>misc</Filter>
+    </None>
+    <None Include="..\code\misc\gdb.script">
+      <Filter>misc</Filter>
+    </None>
+    <None Include="..\code\misc\windows\config.mk">
+      <Filter>misc\windows</Filter>
+    </None>
+    <None Include="..\code\misc\windows\sections.txt">
+      <Filter>misc\windows</Filter>
+    </None>
+    <None Include="..\code\misc\windowscross\config.mk">
+      <Filter>misc\windowscross</Filter>
+    </None>
+    <None Include="..\code\Makefile" />
+    <None Include="..\code\doc\Doxyfile">
+      <Filter>doc</Filter>
+    </None>
+    <None Include="..\code\doc\mainpage.dox">
+      <Filter>doc</Filter>
+    </None>
+    <None Include="..\code\doc\devenv.dox">
+      <Filter>doc</Filter>
+    </None>
+    <None Include="..\code\doc\directories.dox">
+      <Filter>doc</Filter>
+    </None>
+    <None Include="..\code\doc\files.dox">
+      <Filter>doc</Filter>
+    </None>
+    <None Include="..\code\doc\task1.dox">
+      <Filter>doc</Filter>
+    </None>
+    <None Include="..\code\doc\task2.dox">
+      <Filter>doc</Filter>
+    </None>
+    <None Include="..\code\doc\task3.dox">
+      <Filter>doc</Filter>
+    </None>
+    <None Include="..\code\doc\task4.dox">
+      <Filter>doc</Filter>
+    </None>
+    <None Include="..\code\doc\task5.dox">
+      <Filter>doc</Filter>
+    </None>
+    <None Include="..\code\doc\task6.dox">
+      <Filter>doc</Filter>
+    </None>
+  </ItemGroup>
+</Project>

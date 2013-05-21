@@ -6,7 +6,7 @@ digraph "Key::ctrl_right"
   rankdir="LR";
   Node1 [label="Key::ctrl_right",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
-  Node2 [label="Keyboard_Controller\l::key_decoded",height=0.2,width=0.4,color="black",URL="$classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2",tooltip="interpret the reveived scancode and modifier bits"];
+  Node2 [label="Keyboard_Controller\l::key_decoded",height=0.2,width=0.4,color="black",URL="$classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2",tooltip="interpret the received scancode and modifier bits"];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
   Node3 [label="Keyboard_Controller\l::key_hit",height=0.2,width=0.4,color="black",URL="$classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21",tooltip="get the last pressed key"];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];

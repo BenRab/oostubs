@@ -5,6 +5,8 @@ Searching for files in directory /home/ubuntu/oostubs/doc/pics
 Searching for dot files...
 Searching for files in directory /home/ubuntu/oostubs/doc
 Searching for files in directory /home/ubuntu/oostubs/doc/files
+Searching for files in directory /home/ubuntu/oostubs/doc/files/scripts
+Searching for files in directory /home/ubuntu/oostubs/doc/files/vsproject
 Searching for files in directory /home/ubuntu/oostubs/doc/html
 Searching for files in directory /home/ubuntu/oostubs/doc/pics
 Searching for msc files...
@@ -26,12 +28,20 @@ Searching for files in directory /home/ubuntu/oostubs/src/object
 Searching for files in directory /home/ubuntu/oostubs/src/user
 Searching for files in directory /home/ubuntu/oostubs/doc
 Searching for files in directory /home/ubuntu/oostubs/doc/files
+Searching for files in directory /home/ubuntu/oostubs/doc/files/scripts
+Searching for files in directory /home/ubuntu/oostubs/doc/files/vsproject
 Searching for files in directory /home/ubuntu/oostubs/doc/pics
 Reading and parsing tag files
 Preprocessing /home/ubuntu/oostubs/include/config.h...
 Parsing file /home/ubuntu/oostubs/include/config.h...
 Preprocessing /home/ubuntu/oostubs/include/device/cgastr.h...
 Parsing file /home/ubuntu/oostubs/include/device/cgastr.h...
+Preprocessing /home/ubuntu/oostubs/include/device/keyboard.h...
+Parsing file /home/ubuntu/oostubs/include/device/keyboard.h...
+Preprocessing /home/ubuntu/oostubs/include/device/panic.h...
+Parsing file /home/ubuntu/oostubs/include/device/panic.h...
+Preprocessing /home/ubuntu/oostubs/include/guard/gate.h...
+Parsing file /home/ubuntu/oostubs/include/guard/gate.h...
 Preprocessing /home/ubuntu/oostubs/include/machine/cgascr.h...
 Parsing file /home/ubuntu/oostubs/include/machine/cgascr.h...
 Preprocessing /home/ubuntu/oostubs/include/machine/cpu.h...
@@ -44,20 +54,38 @@ Preprocessing /home/ubuntu/oostubs/include/machine/keyctrl.h...
 Parsing file /home/ubuntu/oostubs/include/machine/keyctrl.h...
 Preprocessing /home/ubuntu/oostubs/include/machine/multiboot.h...
 Parsing file /home/ubuntu/oostubs/include/machine/multiboot.h...
+Preprocessing /home/ubuntu/oostubs/include/machine/pic.h...
+Parsing file /home/ubuntu/oostubs/include/machine/pic.h...
+Preprocessing /home/ubuntu/oostubs/include/machine/plugbox.h...
+Parsing file /home/ubuntu/oostubs/include/machine/plugbox.h...
 Preprocessing /home/ubuntu/oostubs/include/object/o_stream.h...
 Parsing file /home/ubuntu/oostubs/include/object/o_stream.h...
 Preprocessing /home/ubuntu/oostubs/include/object/strbuf.h...
 Parsing file /home/ubuntu/oostubs/include/object/strbuf.h...
 Preprocessing /home/ubuntu/oostubs/include/useful/cpu.h...
 Parsing file /home/ubuntu/oostubs/include/useful/cpu.h...
+Preprocessing /home/ubuntu/oostubs/include/useful/keyboard.h...
+Parsing file /home/ubuntu/oostubs/include/useful/keyboard.h...
 Preprocessing /home/ubuntu/oostubs/include/useful/kout.h...
 Parsing file /home/ubuntu/oostubs/include/useful/kout.h...
+Preprocessing /home/ubuntu/oostubs/include/useful/panic.h...
+Parsing file /home/ubuntu/oostubs/include/useful/panic.h...
+Preprocessing /home/ubuntu/oostubs/include/useful/pic.h...
+Parsing file /home/ubuntu/oostubs/include/useful/pic.h...
+Preprocessing /home/ubuntu/oostubs/include/useful/plugbox.h...
+Parsing file /home/ubuntu/oostubs/include/useful/plugbox.h...
 Preprocessing /home/ubuntu/oostubs/include/user/appl.h...
 Parsing file /home/ubuntu/oostubs/include/user/appl.h...
 Preprocessing /home/ubuntu/oostubs/include/user/task1.h...
 Parsing file /home/ubuntu/oostubs/include/user/task1.h...
+Preprocessing /home/ubuntu/oostubs/include/user/task2.h...
+Parsing file /home/ubuntu/oostubs/include/user/task2.h...
 Preprocessing /home/ubuntu/oostubs/src/device/cgastr.cc...
 Parsing file /home/ubuntu/oostubs/src/device/cgastr.cc...
+Preprocessing /home/ubuntu/oostubs/src/device/keyboard.cc...
+Parsing file /home/ubuntu/oostubs/src/device/keyboard.cc...
+Preprocessing /home/ubuntu/oostubs/src/device/panic.cc...
+Parsing file /home/ubuntu/oostubs/src/device/panic.cc...
 Preprocessing /home/ubuntu/oostubs/src/guard/guardian.cc...
 Parsing file /home/ubuntu/oostubs/src/guard/guardian.cc...
 Preprocessing /home/ubuntu/oostubs/src/internal/boot.S...
@@ -72,6 +100,10 @@ Preprocessing /home/ubuntu/oostubs/src/machine/cgascr.cc...
 Parsing file /home/ubuntu/oostubs/src/machine/cgascr.cc...
 Preprocessing /home/ubuntu/oostubs/src/machine/keyctrl.cc...
 Parsing file /home/ubuntu/oostubs/src/machine/keyctrl.cc...
+Preprocessing /home/ubuntu/oostubs/src/machine/pic.cc...
+Parsing file /home/ubuntu/oostubs/src/machine/pic.cc...
+Preprocessing /home/ubuntu/oostubs/src/machine/plugbox.cc...
+Parsing file /home/ubuntu/oostubs/src/machine/plugbox.cc...
 Preprocessing /home/ubuntu/oostubs/src/main.cc...
 Parsing file /home/ubuntu/oostubs/src/main.cc...
 Preprocessing /home/ubuntu/oostubs/src/object/o_stream.cc...
@@ -80,6 +112,8 @@ Preprocessing /home/ubuntu/oostubs/src/object/strbuf.cc...
 Parsing file /home/ubuntu/oostubs/src/object/strbuf.cc...
 Preprocessing /home/ubuntu/oostubs/src/user/task1.cc...
 Parsing file /home/ubuntu/oostubs/src/user/task1.cc...
+Preprocessing /home/ubuntu/oostubs/src/user/task2.cc...
+Parsing file /home/ubuntu/oostubs/src/user/task2.cc...
 Preprocessing /home/ubuntu/oostubs/doc/devenv.dox...
 Parsing file /home/ubuntu/oostubs/doc/devenv.dox...
 Preprocessing /home/ubuntu/oostubs/doc/directories.dox...
@@ -161,6 +195,11 @@ Parsing code for file doc/task5.dox...
 Parsing code for file doc/task6.dox...
 Generating code for file include/config.h...
 Generating code for file include/device/cgastr.h...
+Generating code for file include/device/keyboard.h...
+Generating code for file include/useful/keyboard.h...
+Generating code for file include/device/panic.h...
+Generating code for file include/useful/panic.h...
+Generating code for file include/guard/gate.h...
 Generating code for file include/machine/cgascr.h...
 Generating code for file include/machine/cpu.h...
 Generating code for file include/useful/cpu.h...
@@ -168,12 +207,19 @@ Generating code for file include/machine/io_port.h...
 Generating code for file include/machine/key.h...
 Generating code for file include/machine/keyctrl.h...
 Generating code for file include/machine/multiboot.h...
+Generating code for file include/machine/pic.h...
+Generating code for file include/useful/pic.h...
+Generating code for file include/machine/plugbox.h...
+Generating code for file include/useful/plugbox.h...
 Generating code for file include/object/o_stream.h...
 Generating code for file include/object/strbuf.h...
 Generating code for file include/useful/kout.h...
 Generating code for file include/user/appl.h...
 Generating code for file include/user/task1.h...
+Generating code for file include/user/task2.h...
 Generating code for file src/device/cgastr.cc...
+Generating code for file src/device/keyboard.cc...
+Generating code for file src/device/panic.cc...
 Generating code for file src/guard/guardian.cc...
 Generating code for file src/internal/boot.S...
 Generating code for file src/internal/compat.S...
@@ -181,10 +227,13 @@ Generating code for file src/internal/cppInit.c...
 Generating code for file src/internal/pow.S...
 Generating code for file src/machine/cgascr.cc...
 Generating code for file src/machine/keyctrl.cc...
+Generating code for file src/machine/pic.cc...
+Generating code for file src/machine/plugbox.cc...
 Generating code for file src/main.cc...
 Generating code for file src/object/o_stream.cc...
 Generating code for file src/object/strbuf.cc...
 Generating code for file src/user/task1.cc...
+Generating code for file src/user/task2.cc...
 Generating file documentation...
 Generating docs for file doc/devenv.dox...
 Generating docs for file doc/directories.dox...
@@ -198,6 +247,11 @@ Generating docs for file doc/task5.dox...
 Generating docs for file doc/task6.dox...
 Generating docs for file include/config.h...
 Generating docs for file include/device/cgastr.h...
+Generating docs for file include/device/keyboard.h...
+Generating docs for file include/useful/keyboard.h...
+Generating docs for file include/device/panic.h...
+Generating docs for file include/useful/panic.h...
+Generating docs for file include/guard/gate.h...
 Generating docs for file include/machine/cgascr.h...
 Generating docs for file include/machine/cpu.h...
 Generating docs for file include/useful/cpu.h...
@@ -205,17 +259,26 @@ Generating docs for file include/machine/io_port.h...
 Generating docs for file include/machine/key.h...
 Generating docs for file include/machine/keyctrl.h...
 Generating docs for file include/machine/multiboot.h...
+Generating docs for file include/machine/pic.h...
+Generating docs for file include/useful/pic.h...
+Generating docs for file include/machine/plugbox.h...
+Generating docs for file include/useful/plugbox.h...
 Generating docs for file include/object/o_stream.h...
 Generating caller graph for function bin
 Generating caller graph for function dec
+Generating call graph for function endl
 Generating caller graph for function endl
 Generating caller graph for function hex
 Generating docs for file include/object/strbuf.h...
 Generating docs for file include/useful/kout.h...
 Generating docs for file include/user/appl.h...
 Generating docs for file include/user/task1.h...
+Generating docs for file include/user/task2.h...
 Generating docs for file src/device/cgastr.cc...
+Generating docs for file src/device/keyboard.cc...
+Generating docs for file src/device/panic.cc...
 Generating docs for file src/guard/guardian.cc...
+Generating call graph for function guardian
 Generating call graph for function handleException
 Generating call graph for function handleExceptionE
 Generating call graph for function handleExceptionReserved
@@ -225,15 +288,20 @@ Generating docs for file src/internal/cppInit.c...
 Generating docs for file src/internal/pow.S...
 Generating docs for file src/machine/cgascr.cc...
 Generating docs for file src/machine/keyctrl.cc...
+Generating docs for file src/machine/pic.cc...
+Generating docs for file src/machine/plugbox.cc...
 Generating docs for file src/main.cc...
 Generating call graph for function kernel
 Generating docs for file src/object/o_stream.cc...
 Generating caller graph for function bin
 Generating caller graph for function dec
+Generating call graph for function endl
 Generating caller graph for function endl
 Generating caller graph for function hex
+Generating caller graph for function ulongToChar
 Generating docs for file src/object/strbuf.cc...
 Generating docs for file src/user/task1.cc...
+Generating docs for file src/user/task2.cc...
 Generating page documentation...
 Generating docs for page devenv...
 Generating docs for page devenv_win...
@@ -242,6 +310,7 @@ Generating docs for page task1...
 Generating docs for page task1_cgaInfo...
 Generating docs for page task1_keyboardInfo...
 Generating docs for page task2...
+Generating docs for page task2_pic...
 Generating docs for page task3...
 Generating docs for page task4...
 Generating docs for page task5...
@@ -253,14 +322,27 @@ Generating docs for compound Application...
 Generating docs for compound BGColor...
 Generating docs for compound Blink...
 Generating docs for compound CGA_Screen...
+Generating call graph for function CGA_Screen::CGA_Screen
+Generating caller graph for function CGA_Screen::clear
 Generating caller graph for function CGA_Screen::getpos
+Generating call graph for function CGA_Screen::print
+Generating caller graph for function CGA_Screen::print
+Generating call graph for function CGA_Screen::scrollup
+Generating caller graph for function CGA_Screen::scrollup
+Generating call graph for function CGA_Screen::setCursorAttributes
+Generating call graph for function CGA_Screen::setpos
 Generating caller graph for function CGA_Screen::setpos
+Generating caller graph for function CGA_Screen::show
 Generating docs for compound CGA_Stream...
+Generating call graph for function CGA_Stream::flush
 Generating caller graph for function CGA_Stream::flush
 Generating docs for compound CPU...
 Generating caller graph for function CPU::disable_int
+Generating caller graph for function CPU::enable_int
 Generating caller graph for function CPU::halt
 Generating docs for compound FGColor...
+Generating docs for compound Gate...
+Generating caller graph for function Gate::trigger
 Generating docs for compound IO_Port...
 Generating caller graph for function IO_Port::inb
 Generating caller graph for function IO_Port::outb
@@ -296,20 +378,58 @@ Generating caller graph for function Key::shift
 Generating caller graph for function Key::valid
 Generating docs for nested compound Key::mbit...
 Generating docs for nested compound Key::scan...
+Generating docs for compound Keyboard...
+Generating call graph for function Keyboard::plugin
+Generating caller graph for function Keyboard::plugin
 Generating docs for compound Keyboard_Controller...
 Generating call graph for function Keyboard_Controller::Keyboard_Controller
 Generating call graph for function Keyboard_Controller::get_ascii_code
 Generating caller graph for function Keyboard_Controller::get_ascii_code
 Generating call graph for function Keyboard_Controller::key_decoded
+Generating caller graph for function Keyboard_Controller::key_decoded
+Generating call graph for function Keyboard_Controller::key_hit
 Generating caller graph for function Keyboard_Controller::key_hit
 Generating call graph for function Keyboard_Controller::reboot
+Generating call graph for function Keyboard_Controller::set_led
 Generating caller graph for function Keyboard_Controller::set_led
+Generating call graph for function Keyboard_Controller::set_repeat_rate
 Generating caller graph for function Keyboard_Controller::set_repeat_rate
 Generating docs for compound O_Stream...
+Generating call graph for function O_Stream::operator<<
+Generating caller graph for function O_Stream::operator<<
+Generating call graph for function O_Stream::operator<<
+Generating call graph for function O_Stream::operator<<
+Generating call graph for function O_Stream::operator<<
+Generating call graph for function O_Stream::operator<<
+Generating call graph for function O_Stream::operator<<
+Generating call graph for function O_Stream::operator<<
+Generating call graph for function O_Stream::operator<<
+Generating call graph for function O_Stream::operator<<
+Generating call graph for function O_Stream::operator<<
+Generating call graph for function O_Stream::operator<<
+Generating call graph for function O_Stream::operator<<
+Generating call graph for function O_Stream::operator<<
+Generating call graph for function O_Stream::operator<<
+Generating caller graph for function O_Stream::setAttributes
+Generating docs for compound Panic...
+Generating call graph for function Panic::trigger
+Generating caller graph for function Panic::trigger
+Generating docs for compound PIC...
+Generating call graph for function PIC::PIC
+Generating call graph for function PIC::ack
+Generating call graph for function PIC::allow
+Generating caller graph for function PIC::allow
+Generating call graph for function PIC::forbid
+Generating call graph for function PIC::getISR
+Generating docs for compound Plugbox...
+Generating caller graph for function Plugbox::assign
+Generating caller graph for function Plugbox::report
 Generating docs for compound Stringbuffer...
+Generating caller graph for function Stringbuffer::flush
+Generating call graph for function Stringbuffer::put
+Generating caller graph for function Stringbuffer::put
 Generating docs for compound Task1...
 Generating call graph for function Task1::action
-Generating caller graph for function Task1::action
 Generating caller graph for function Task1::checkFlag
 Generating call graph for function Task1::parseAndPrint
 Generating caller graph for function Task1::parseAndPrint
@@ -322,12 +442,18 @@ Generating docs for nested compound Task1::ELF_Section_Header_Table...
 Generating docs for nested compound Task1::Memory_Map...
 Generating docs for nested compound Task1::Module...
 Generating docs for nested compound Task1::Multiboot_Info...
+Generating docs for compound Task2...
+Generating call graph for function Task2::Task2
+Generating call graph for function Task2::~Task2
+Generating call graph for function Task2::action
+Generating caller graph for function Task2::action
 Generating namespace index...
 Generating graph info page...
 Generating directory documentation...
 Generating dependency graph for directory src/device/
 Generating dependency graph for directory include/device/
 Generating dependency graph for directory src/guard/
+Generating dependency graph for directory include/guard/
 Generating dependency graph for directory include/
 Generating dependency graph for directory src/internal/
 Generating dependency graph for directory src/machine/
@@ -353,191 +479,302 @@ Generating file member index...
 Generating example index...
 finalizing index lists...
 Generating dot graphs using 2 parallel threads...
-Running dot for graph 1/137
-Running dot for graph 2/137
-Running dot for graph 3/137
-Running dot for graph 4/137
-Running dot for graph 5/137
-Running dot for graph 6/137
-Running dot for graph 7/137
-Running dot for graph 8/137
-Running dot for graph 9/137
-Running dot for graph 10/137
-Running dot for graph 11/137
-Running dot for graph 12/137
-Running dot for graph 13/137
-Running dot for graph 14/137
-Running dot for graph 15/137
-Running dot for graph 16/137
-Running dot for graph 17/137
-Running dot for graph 18/137
-Running dot for graph 19/137
-Running dot for graph 20/137
-Running dot for graph 21/137
-Running dot for graph 22/137
-Running dot for graph 23/137
-Running dot for graph 24/137
-Running dot for graph 25/137
-Running dot for graph 26/137
-Running dot for graph 27/137
-Running dot for graph 28/137
-Running dot for graph 29/137
-Running dot for graph 30/137
-Running dot for graph 31/137
-Running dot for graph 32/137
-Running dot for graph 33/137
-Running dot for graph 34/137
-Running dot for graph 35/137
-Running dot for graph 36/137
-Running dot for graph 37/137
-Running dot for graph 38/137
-Running dot for graph 39/137
-Running dot for graph 40/137
-Running dot for graph 41/137
-Running dot for graph 42/137
-Running dot for graph 43/137
-Running dot for graph 44/137
-Running dot for graph 45/137
-Running dot for graph 46/137
-Running dot for graph 47/137
-Running dot for graph 48/137
-Running dot for graph 49/137
-Running dot for graph 50/137
-Running dot for graph 51/137
-Running dot for graph 52/137
-Running dot for graph 53/137
-Running dot for graph 54/137
-Running dot for graph 55/137
-Running dot for graph 56/137
-Running dot for graph 57/137
-Running dot for graph 58/137
-Running dot for graph 59/137
-Running dot for graph 60/137
-Running dot for graph 61/137
-Running dot for graph 62/137
-Running dot for graph 63/137
-Running dot for graph 64/137
-Running dot for graph 65/137
-Running dot for graph 66/137
-Running dot for graph 67/137
-Running dot for graph 68/137
-Running dot for graph 69/137
-Running dot for graph 70/137
-Running dot for graph 71/137
-Running dot for graph 72/137
-Running dot for graph 73/137
-Running dot for graph 74/137
-Running dot for graph 75/137
-Running dot for graph 76/137
-Running dot for graph 77/137
-Running dot for graph 78/137
-Running dot for graph 79/137
-Running dot for graph 80/137
-Running dot for graph 81/137
-Running dot for graph 82/137
-Running dot for graph 83/137
-Running dot for graph 84/137
-Running dot for graph 85/137
-Running dot for graph 86/137
-Running dot for graph 87/137
-Running dot for graph 88/137
-Running dot for graph 89/137
-Running dot for graph 90/137
-Running dot for graph 91/137
-Running dot for graph 92/137
-Running dot for graph 93/137
-Running dot for graph 94/137
-Running dot for graph 95/137
-Running dot for graph 96/137
-Running dot for graph 97/137
-Running dot for graph 98/137
-Running dot for graph 99/137
-Running dot for graph 100/137
-Running dot for graph 101/137
-Running dot for graph 102/137
-Running dot for graph 103/137
-Running dot for graph 104/137
-Running dot for graph 105/137
-Running dot for graph 106/137
-Running dot for graph 107/137
-Running dot for graph 108/137
-Running dot for graph 109/137
-Running dot for graph 110/137
-Running dot for graph 111/137
-Running dot for graph 112/137
-Running dot for graph 113/137
-Running dot for graph 114/137
-Running dot for graph 115/137
-Running dot for graph 116/137
-Running dot for graph 117/137
-Running dot for graph 118/137
-Running dot for graph 119/137
-Running dot for graph 120/137
-Running dot for graph 121/137
-Running dot for graph 122/137
-Running dot for graph 123/137
-Running dot for graph 124/137
-Running dot for graph 125/137
-Running dot for graph 126/137
-Running dot for graph 127/137
-Running dot for graph 128/137
-Running dot for graph 129/137
-Running dot for graph 130/137
-Running dot for graph 131/137
-Running dot for graph 132/137
-Running dot for graph 133/137
-Running dot for graph 134/137
-Running dot for graph 135/137
-Running dot for graph 136/137
-Running dot for graph 137/137
-Patching output file 1/48
-Patching output file 2/48
-Patching output file 3/48
-Patching output file 4/48
-Patching output file 5/48
-Patching output file 6/48
-Patching output file 7/48
-Patching output file 8/48
-Patching output file 9/48
-Patching output file 10/48
-Patching output file 11/48
-Patching output file 12/48
-Patching output file 13/48
-Patching output file 14/48
-Patching output file 15/48
-Patching output file 16/48
-Patching output file 17/48
-Patching output file 18/48
-Patching output file 19/48
-Patching output file 20/48
-Patching output file 21/48
-Patching output file 22/48
-Patching output file 23/48
-Patching output file 24/48
-Patching output file 25/48
-Patching output file 26/48
-Patching output file 27/48
-Patching output file 28/48
-Patching output file 29/48
-Patching output file 30/48
-Patching output file 31/48
-Patching output file 32/48
-Patching output file 33/48
-Patching output file 34/48
-Patching output file 35/48
-Patching output file 36/48
-Patching output file 37/48
-Patching output file 38/48
-Patching output file 39/48
-Patching output file 40/48
-Patching output file 41/48
-Patching output file 42/48
-Patching output file 43/48
-Patching output file 44/48
-Patching output file 45/48
-Patching output file 46/48
-Patching output file 47/48
-Patching output file 48/48
-symbol cache used 278/65536 hits=18428 misses=278
-lookup cache used 431/65536 hits=4753 misses=456
+Running dot for graph 1/226
+Running dot for graph 2/226
+Running dot for graph 3/226
+Running dot for graph 4/226
+Running dot for graph 5/226
+Running dot for graph 6/226
+Running dot for graph 7/226
+Running dot for graph 8/226
+Running dot for graph 9/226
+Running dot for graph 10/226
+Running dot for graph 11/226
+Running dot for graph 12/226
+Running dot for graph 13/226
+Running dot for graph 14/226
+Running dot for graph 15/226
+Running dot for graph 16/226
+Running dot for graph 17/226
+Running dot for graph 18/226
+Running dot for graph 19/226
+Running dot for graph 20/226
+Running dot for graph 21/226
+Running dot for graph 22/226
+Running dot for graph 23/226
+Running dot for graph 24/226
+Running dot for graph 25/226
+Running dot for graph 26/226
+Running dot for graph 27/226
+Running dot for graph 28/226
+Running dot for graph 29/226
+Running dot for graph 30/226
+Running dot for graph 31/226
+Running dot for graph 32/226
+Running dot for graph 33/226
+Running dot for graph 34/226
+Running dot for graph 35/226
+Running dot for graph 36/226
+Running dot for graph 37/226
+Running dot for graph 38/226
+Running dot for graph 39/226
+Running dot for graph 40/226
+Running dot for graph 41/226
+Running dot for graph 42/226
+Running dot for graph 43/226
+Running dot for graph 44/226
+Running dot for graph 45/226
+Running dot for graph 46/226
+Running dot for graph 47/226
+Running dot for graph 48/226
+Running dot for graph 49/226
+Running dot for graph 50/226
+Running dot for graph 51/226
+Running dot for graph 52/226
+Running dot for graph 53/226
+Running dot for graph 54/226
+Running dot for graph 55/226
+Running dot for graph 56/226
+Running dot for graph 57/226
+Running dot for graph 58/226
+Running dot for graph 59/226
+Running dot for graph 60/226
+Running dot for graph 61/226
+Running dot for graph 62/226
+Running dot for graph 63/226
+Running dot for graph 64/226
+Running dot for graph 65/226
+Running dot for graph 66/226
+Running dot for graph 67/226
+Running dot for graph 68/226
+Running dot for graph 69/226
+Running dot for graph 70/226
+Running dot for graph 71/226
+Running dot for graph 72/226
+Running dot for graph 73/226
+Running dot for graph 74/226
+Running dot for graph 75/226
+Running dot for graph 76/226
+Running dot for graph 77/226
+Running dot for graph 78/226
+Running dot for graph 79/226
+Running dot for graph 80/226
+Running dot for graph 81/226
+Running dot for graph 82/226
+Running dot for graph 83/226
+Running dot for graph 84/226
+Running dot for graph 85/226
+Running dot for graph 86/226
+Running dot for graph 87/226
+Running dot for graph 88/226
+Running dot for graph 89/226
+Running dot for graph 90/226
+Running dot for graph 91/226
+Running dot for graph 92/226
+Running dot for graph 93/226
+Running dot for graph 94/226
+Running dot for graph 95/226
+Running dot for graph 96/226
+Running dot for graph 97/226
+Running dot for graph 98/226
+Running dot for graph 99/226
+Running dot for graph 100/226
+Running dot for graph 101/226
+Running dot for graph 102/226
+Running dot for graph 103/226
+Running dot for graph 104/226
+Running dot for graph 105/226
+Running dot for graph 106/226
+Running dot for graph 107/226
+Running dot for graph 108/226
+Running dot for graph 109/226
+Running dot for graph 110/226
+Running dot for graph 111/226
+Running dot for graph 112/226
+Running dot for graph 113/226
+Running dot for graph 114/226
+Running dot for graph 115/226
+Running dot for graph 116/226
+Running dot for graph 117/226
+Running dot for graph 118/226
+Running dot for graph 119/226
+Running dot for graph 120/226
+Running dot for graph 121/226
+Running dot for graph 122/226
+Running dot for graph 123/226
+Running dot for graph 124/226
+Running dot for graph 125/226
+Running dot for graph 126/226
+Running dot for graph 127/226
+Running dot for graph 128/226
+Running dot for graph 129/226
+Running dot for graph 130/226
+Running dot for graph 131/226
+Running dot for graph 132/226
+Running dot for graph 133/226
+Running dot for graph 134/226
+Running dot for graph 135/226
+Running dot for graph 136/226
+Running dot for graph 137/226
+Running dot for graph 138/226
+Running dot for graph 139/226
+Running dot for graph 140/226
+Running dot for graph 141/226
+Running dot for graph 142/226
+Running dot for graph 143/226
+Running dot for graph 144/226
+Running dot for graph 145/226
+Running dot for graph 146/226
+Running dot for graph 147/226
+Running dot for graph 148/226
+Running dot for graph 149/226
+Running dot for graph 150/226
+Running dot for graph 151/226
+Running dot for graph 152/226
+Running dot for graph 153/226
+Running dot for graph 154/226
+Running dot for graph 155/226
+Running dot for graph 156/226
+Running dot for graph 157/226
+Running dot for graph 158/226
+Running dot for graph 159/226
+Running dot for graph 160/226
+Running dot for graph 161/226
+Running dot for graph 162/226
+Running dot for graph 163/226
+Running dot for graph 164/226
+Running dot for graph 165/226
+Running dot for graph 166/226
+Running dot for graph 167/226
+Running dot for graph 168/226
+Running dot for graph 169/226
+Running dot for graph 170/226
+Running dot for graph 171/226
+Running dot for graph 172/226
+Running dot for graph 173/226
+Running dot for graph 174/226
+Running dot for graph 175/226
+Running dot for graph 176/226
+Running dot for graph 177/226
+Running dot for graph 178/226
+Running dot for graph 179/226
+Running dot for graph 180/226
+Running dot for graph 181/226
+Running dot for graph 182/226
+Running dot for graph 183/226
+Running dot for graph 184/226
+Running dot for graph 185/226
+Running dot for graph 186/226
+Running dot for graph 187/226
+Running dot for graph 188/226
+Running dot for graph 189/226
+Running dot for graph 190/226
+Running dot for graph 191/226
+Running dot for graph 192/226
+Running dot for graph 193/226
+Running dot for graph 194/226
+Running dot for graph 195/226
+Running dot for graph 196/226
+Running dot for graph 197/226
+Running dot for graph 198/226
+Running dot for graph 199/226
+Running dot for graph 200/226
+Running dot for graph 201/226
+Running dot for graph 202/226
+Running dot for graph 203/226
+Running dot for graph 204/226
+Running dot for graph 205/226
+Running dot for graph 206/226
+Running dot for graph 207/226
+Running dot for graph 208/226
+Running dot for graph 209/226
+Running dot for graph 210/226
+Running dot for graph 211/226
+Running dot for graph 212/226
+Running dot for graph 213/226
+Running dot for graph 214/226
+Running dot for graph 215/226
+Running dot for graph 216/226
+Running dot for graph 217/226
+Running dot for graph 218/226
+Running dot for graph 219/226
+Running dot for graph 220/226
+Running dot for graph 221/226
+Running dot for graph 222/226
+Running dot for graph 223/226
+Running dot for graph 224/226
+Running dot for graph 225/226
+Running dot for graph 226/226
+Patching output file 1/70
+Patching output file 2/70
+Patching output file 3/70
+Patching output file 4/70
+Patching output file 5/70
+Patching output file 6/70
+Patching output file 7/70
+Patching output file 8/70
+Patching output file 9/70
+Patching output file 10/70
+Patching output file 11/70
+Patching output file 12/70
+Patching output file 13/70
+Patching output file 14/70
+Patching output file 15/70
+Patching output file 16/70
+Patching output file 17/70
+Patching output file 18/70
+Patching output file 19/70
+Patching output file 20/70
+Patching output file 21/70
+Patching output file 22/70
+Patching output file 23/70
+Patching output file 24/70
+Patching output file 25/70
+Patching output file 26/70
+Patching output file 27/70
+Patching output file 28/70
+Patching output file 29/70
+Patching output file 30/70
+Patching output file 31/70
+Patching output file 32/70
+Patching output file 33/70
+Patching output file 34/70
+Patching output file 35/70
+Patching output file 36/70
+Patching output file 37/70
+Patching output file 38/70
+Patching output file 39/70
+Patching output file 40/70
+Patching output file 41/70
+Patching output file 42/70
+Patching output file 43/70
+Patching output file 44/70
+Patching output file 45/70
+Patching output file 46/70
+Patching output file 47/70
+Patching output file 48/70
+Patching output file 49/70
+Patching output file 50/70
+Patching output file 51/70
+Patching output file 52/70
+Patching output file 53/70
+Patching output file 54/70
+Patching output file 55/70
+Patching output file 56/70
+Patching output file 57/70
+Patching output file 58/70
+Patching output file 59/70
+Patching output file 60/70
+Patching output file 61/70
+Patching output file 62/70
+Patching output file 63/70
+Patching output file 64/70
+Patching output file 65/70
+Patching output file 66/70
+Patching output file 67/70
+Patching output file 68/70
+Patching output file 69/70
+Patching output file 70/70
+symbol cache used 346/65536 hits=26429 misses=346
+lookup cache used 584/65536 hits=6047 misses=614
 finished...

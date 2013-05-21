@@ -3,7 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.3.1"/>
 <title>OOStuBS - Technische Informatik II (TI-II): include/machine/cgascr.h Quellcode</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -26,7 +25,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Erzeugt von Doxygen 1.8.3.1 -->
+<!-- Erzeugt von Doxygen 1.8.1.2 -->
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Hauptseite</span></a></li>
@@ -63,66 +62,51 @@
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __screen_include__</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/* INCLUDES */</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="io__port_8h.html">machine/io_port.h</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/* CLASSES */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classCGA__Screen.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCGA__Screen.html" title="CGA-Dispaly driver.">CGA_Screen</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="structCGA__Screen_1_1ScreenChar.html">   29</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structCGA__Screen_1_1ScreenChar.html">ScreenChar</a>{</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="structCGA__Screen_1_1ScreenChar.html#af5e9279f2c9e245800f5222aa28dc17a">   30</a></span>&#160;      <span class="keywordtype">char</span> <a class="code" href="structCGA__Screen_1_1ScreenChar.html#af5e9279f2c9e245800f5222aa28dc17a">c</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="structCGA__Screen_1_1ScreenChar.html#a2126e687da0fc01728879b26363a2137">   31</a></span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structCGA__Screen_1_1ScreenChar.html#a2126e687da0fc01728879b26363a2137">attrib</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    };</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="classCGA__Screen.html#a888008b433b7ba1aa5aa985cf7b7f190">   38</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="classCGA__Screen.html#a888008b433b7ba1aa5aa985cf7b7f190">Ports</a>{</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="classCGA__Screen.html#a888008b433b7ba1aa5aa985cf7b7f190a60455537a655cd6912adda6cb9d8a840">   39</a></span>&#160;      <a class="code" href="classCGA__Screen.html#a888008b433b7ba1aa5aa985cf7b7f190a60455537a655cd6912adda6cb9d8a840">indexPortNum</a>=0x3d4, </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="classCGA__Screen.html#a888008b433b7ba1aa5aa985cf7b7f190a77751e72225a9e05d657ff5866d41f2f">   40</a></span>&#160;      <a class="code" href="classCGA__Screen.html#a888008b433b7ba1aa5aa985cf7b7f190a77751e72225a9e05d657ff5866d41f2f">dataPortNum</a>=0x3d5,</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="classCGA__Screen.html#a888008b433b7ba1aa5aa985cf7b7f190a3295a24f587484acecf2f2ba6aaa7d75">   41</a></span>&#160;      <a class="code" href="classCGA__Screen.html#a888008b433b7ba1aa5aa985cf7b7f190a3295a24f587484acecf2f2ba6aaa7d75">memoryBase</a>=0xb8000</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    };</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="classCGA__Screen.html#abadf635c274d46c1270d3174dc687d53">   47</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="classCGA__Screen.html#abadf635c274d46c1270d3174dc687d53">Constants</a>{</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="classCGA__Screen.html#abadf635c274d46c1270d3174dc687d53ab1ab9af07dd62f5486abe5f4310db7e8">   48</a></span>&#160;      <a class="code" href="classCGA__Screen.html#abadf635c274d46c1270d3174dc687d53ab1ab9af07dd62f5486abe5f4310db7e8">COLUMNS</a>=80,</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="classCGA__Screen.html#abadf635c274d46c1270d3174dc687d53a00aa54ffdbb489295119ea05102db9b7">   49</a></span>&#160;      <a class="code" href="classCGA__Screen.html#abadf635c274d46c1270d3174dc687d53a00aa54ffdbb489295119ea05102db9b7">ROWS</a>=25</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    };</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="classCGA__Screen.html#a3652f91b1c2344712528d1d69bad51fd">   52</a></span>&#160;    <a class="code" href="structCGA__Screen_1_1ScreenChar.html">ScreenChar</a>* <span class="keyword">const</span> <a class="code" href="classCGA__Screen.html#a3652f91b1c2344712528d1d69bad51fd">screen</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="classCGA__Screen.html#ab24b3bc4a85251fa5cdb7088c34daa03">   53</a></span>&#160;    <a class="code" href="classIO__Port.html" title="Accessor for I/O-Space.">IO_Port</a> <a class="code" href="classCGA__Screen.html#ab24b3bc4a85251fa5cdb7088c34daa03">index_port</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="classCGA__Screen.html#ac8f7cdb3ef805e7efa1866761366c2ad">   54</a></span>&#160;    <a class="code" href="classIO__Port.html" title="Accessor for I/O-Space.">IO_Port</a> <a class="code" href="classCGA__Screen.html#ac8f7cdb3ef805e7efa1866761366c2ad">data_port</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="classCGA__Screen.html#ab97db47ccdd3713a15369d77bd1210fb">   67</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classCGA__Screen.html#ab97db47ccdd3713a15369d77bd1210fb" title="Attribut, welches genommen wird, wenn sonst nichts spezifiziert ist.">attribute</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="classCGA__Screen.html#a4415c1855a6afdc5cd3116e5fa054252" title="Constructor.">CGA_Screen</a>();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="classCGA__Screen.html#a8bfd69c9fc770359fb8d6e3a02cbdd1e" title="Destructor.">~CGA_Screen</a>();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position">setpos</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> x, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> y);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position">getpos</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>&amp; x, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>&amp; y) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCGA__Screen.html#a8176499ecb3ce4e9eb05910e66aee9d2" title="print a character to a specific position">show</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> x, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> y, <span class="keywordtype">char</span> c, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> attrib);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus">print</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keywordtype">string</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt">scrollup</a>();</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCGA__Screen.html#a622bc3a2822e3006579167343d639353" title="leert den aktuellen Bildschirm">clear</a>();</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCGA__Screen.html#a3eb2b4abe79b48d8b7b26b85fc857691" title="ändert die aktuellen Standardattribute.">setAttributes</a>(<span class="keywordtype">int</span> fgColor, <span class="keywordtype">int</span> bgColor, <span class="keywordtype">bool</span> blink);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;};</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="io__port_8h.html">io_port.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/* CLASSES */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="classCGA__Screen.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCGA__Screen.html" title="CGA-Dispaly driver.">CGA_Screen</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">private</span>:    </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="classCGA__Screen.html#ab6bf2fe22db5b899945958441befa7b4">   24</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="classCGA__Screen.html#ab6bf2fe22db5b899945958441befa7b4">cursorX</a>; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classCGA__Screen.html#a5e2d658263b1be821db3bd773cec05f3">   25</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="classCGA__Screen.html#a5e2d658263b1be821db3bd773cec05f3">cursorY</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classCGA__Screen.html#a73c054d31dff535a4d3d86df6357a639">   27</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="classCGA__Screen.html#a73c054d31dff535a4d3d86df6357a639">INDEXREGISTER</a> = 0x3d4;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classCGA__Screen.html#a667806c93d6501b27979d1cbb0cc9bfd">   28</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="classCGA__Screen.html#a667806c93d6501b27979d1cbb0cc9bfd">DATENREGISTER</a> = 0x3d5;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCGA__Screen.html#a711f314b5cba813e4e18adb6a1b3c327">setCursorAttributes</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> start, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> end);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="classCGA__Screen.html#a64c89e7ff98e21829e26c068380a00b0">   33</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classCGA__Screen.html#a64c89e7ff98e21829e26c068380a00b0">attribut</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classCGA__Screen.html#a4415c1855a6afdc5cd3116e5fa054252" title="Constructor.">CGA_Screen</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classCGA__Screen.html#a8bfd69c9fc770359fb8d6e3a02cbdd1e" title="Destructor.">~CGA_Screen</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position">setpos</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> x, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> y);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position">getpos</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>&amp; x, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>&amp; y) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCGA__Screen.html#a8176499ecb3ce4e9eb05910e66aee9d2" title="print a character to a specific position">show</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> x, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> y, <span class="keywordtype">char</span> c, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> attrib);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus">print</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keywordtype">string</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt">scrollup</a>();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCGA__Screen.html#a622bc3a2822e3006579167343d639353" title="leert den aktuellen Bildschirm">clear</a>();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCGA__Screen.html#ad459bca4929f7f7172a41e62c3e72458" title="ändert die aktuellen Standardattribute.">setAttributes</a>(<span class="keywordtype">int</span> fgColor, <span class="keywordtype">int</span> bgColor, <span class="keywordtype">bool</span> blink, <span class="keywordtype">bool</span> enableblink);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;};</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Don Mai 2 2013 02:26:29 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mon Mai 20 2013 12:56:27 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.3.1
+</a> 1.8.1.2
 </small></address>
 </body>
 </html>

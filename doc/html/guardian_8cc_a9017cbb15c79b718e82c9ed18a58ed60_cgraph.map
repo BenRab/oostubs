@@ -1,0 +1,10 @@
+<map id="guardian" name="guardian">
+<area shape="rect" id="node3" href="$classPlugbox.html#a94a04c50b59ce8ce9ba0578b9d5831d9" title="gibt eine Referenz auf das für den Interrupt richtige Gate &#45;Objekt zurück" alt="" coords="125,5,232,33"/>
+<area shape="rect" id="node5" href="$classGate.html#a02e9dccfd4136f7152b531a024dcd37a" title="abstrakte Funktion zur Interruptbehandlung" alt="" coords="133,55,224,83"/>
+<area shape="rect" id="node7" href="$classPanic.html#a2b509a675cded39f5422ef625261c6ba" title="handelt unbekannte oder nicht&#45;registrierte Interrupts" alt="" coords="131,106,227,134"/>
+<area shape="rect" id="node9" href="$classCPU.html#a23c8f5e46dac3304f1d8def9c612b88e" title="Interupts werden global deaktiviert." alt="" coords="281,55,396,83"/>
+<area shape="rect" id="node11" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="316,106,361,134"/>
+<area shape="rect" id="node17" href="$classCPU.html#a189729f4ca240ff52004a34b9057d448" title="hält die CPU an" alt="" coords="301,157,376,185"/>
+<area shape="rect" id="node13" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer" alt="" coords="447,106,556,134"/>
+<area shape="rect" id="node15" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="607,106,724,134"/>
+</map>

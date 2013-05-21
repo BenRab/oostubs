@@ -1,7 +1,7 @@
 <map id="include/device/cgastr.h" name="include/device/cgastr.h">
-<area shape="rect" id="node2" href="$o__stream_8h.html" title="object/o_stream.h" alt="" coords="5,80,131,107"/>
-<area shape="rect" id="node5" href="$cgascr_8h.html" title="machine/cgascr.h" alt="" coords="156,80,279,107"/>
-<area shape="rect" id="node3" href="$strbuf_8h.html" title="object/strbuf.h" alt="" coords="15,155,121,181"/>
-<area shape="rect" id="node4" href="$config_8h.html" title="verschiedene defines für Einstellungen" alt="" coords="35,229,101,256"/>
-<area shape="rect" id="node6" href="$io__port_8h.html" title="machine/io_port.h" alt="" coords="154,155,280,181"/>
+<area shape="rect" id="node3" href="$o__stream_8h.html" title="object/o_stream.h" alt="" coords="5,83,128,111"/>
+<area shape="rect" id="node9" href="$cgascr_8h.html" title="machine/cgascr.h" alt="" coords="152,83,275,111"/>
+<area shape="rect" id="node5" href="$strbuf_8h.html" title="object/strbuf.h" alt="" coords="16,161,117,189"/>
+<area shape="rect" id="node7" href="$config_8h.html" title="verschiedene defines für Einstellungen" alt="" coords="33,238,100,266"/>
+<area shape="rect" id="node11" href="$io__port_8h.html" title="io_port.h" alt="" coords="179,161,248,189"/>
 </map>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="oostubs|Win32">
+      <Configuration>oostubs</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BBF4DDD9-B5AA-4FE1-B46B-3BB4E84EF47F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>oostubs</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='oostubs|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='oostubs|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='oostubs|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IntDir>$(SolutionDir)$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine>$(SolutionDir)..\scripts\build.bat BUILD $(SolutionDir)</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>$(SolutionDir)..\scripts\build.bat BUILD $(SolutionDir)</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)..\scripts\build.bat CLEAN $(SolutionDir)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>..\code\include;..\code\include\device;..\code\include\guard;..\code\include\library;..\code\include\machine;..\code\include\meeting;..\code\include\object;..\code\include\syscall;..\code\include\thread;..\code\include\user</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>..\code\include;..\code\include\device;..\code\include\guard;..\code\include\library;..\code\include\machine;..\code\include\meeting;..\code\include\object;..\code\include\syscall;..\code\include\thread;..\code\include\user</NMakeForcedIncludes>
+    <ExecutablePath />
+    <IncludePath>..\code\include;..\code\include\device;..\code\include\guard;..\code\include\library;..\code\include\machine;..\code\include\meeting;..\code\include\object;..\code\include\syscall;..\code\include\thread;..\code\include\user</IncludePath>
+    <ReferencePath />
+    <LibraryPath />
+    <SourcePath>..\code\src;..\code\src\asm;..\code\src\internal;..\code\src\device;..\code\src\guard;..\code\src\machine;..\code\src\object;..\code\src\user</SourcePath>
+    <ExcludePath />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='oostubs|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <BuildLog>
+      <Path>$(SolutionDir)$(Configuration)\$(MSBuildProjectName).log</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\code\include\config.h" />
+    <ClInclude Include="..\code\include\device\cgastr.h" />
+    <ClInclude Include="..\code\include\machine\cgascr.h" />
+    <ClInclude Include="..\code\include\machine\io_port.h" />
+    <ClInclude Include="..\code\include\machine\key.h" />
+    <ClInclude Include="..\code\include\machine\keyctrl.h" />
+    <ClInclude Include="..\code\include\machine\multiboot.h" />
+    <ClInclude Include="..\code\include\object\o_stream.h" />
+    <ClInclude Include="..\code\include\object\strbuf.h" />
+    <ClInclude Include="..\code\include\user\appl.h" />
+    <ClInclude Include="..\code\include\user\task1.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\code\src\device\cgastr.cc" />
+    <ClCompile Include="..\code\src\guard\guardian.cc" />
+    <ClCompile Include="..\code\src\machine\cgascr.cc" />
+    <ClCompile Include="..\code\src\machine\keyctrl.cc" />
+    <ClCompile Include="..\code\src\main.cc" />
+    <ClCompile Include="..\code\src\object\o_stream.cc" />
+    <ClCompile Include="..\code\src\object\strbuf.cc" />
+    <ClCompile Include="..\code\src\user\task1.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\code\Makefile" />
+    <None Include="..\code\misc\gdb.script" />
+    <None Include="..\code\misc\rules.mk" />
+    <None Include="..\code\misc\sections" />
+    <None Include="..\code\misc\windows\config.mk" />
+    <None Include="..\code\misc\windows\sections.txt" />
+    <None Include="..\code\misc\windowscross\config.mk" />
+    <None Include="..\code\src\internal\cppInit.c" />
+    <None Include="..\code\src\internal\boot.S" />
+    <None Include="..\code\src\internal\compat.S" />
+    <None Include="..\code\src\internal\pow.S" />
+    <None Include="..\code\doc\Doxyfile" />
+    <None Include="..\code\doc\mainpage.dox" />
+    <None Include="..\code\doc\files.dox" />
+    <None Include="..\code\doc\directories.dox" />
+    <None Include="..\code\doc\devenv.dox" />
+    <None Include="..\code\doc\task1.dox" />
+    <None Include="..\code\doc\task2.dox" />
+    <None Include="..\code\doc\task3.dox" />
+    <None Include="..\code\doc\task4.dox" />
+    <None Include="..\code\doc\task5.dox" />
+    <None Include="..\code\doc\task6.dox" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='oostubs|Win32'">
+    <LocalDebuggerCommand>C:\Windows\write.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments>$(SolutionDir)no.txt</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerDebuggerType>NativeOnly</LocalDebuggerDebuggerType>
+    <LocalDebuggerMergeEnvironment>false</LocalDebuggerMergeEnvironment>
+  </PropertyGroup>
+</Project>

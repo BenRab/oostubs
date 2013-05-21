@@ -1,4 +1,4 @@
-digraph "src/machine" {
+digraph "src/machine/" {
   bgcolor=transparent;
   compound=true
   node [ fontsize="10", fontname="FreeSans"];
@@ -8,5 +8,5 @@ digraph "src/machine" {
   dir_06b062a9f15ff3f22ddc9473dee1a1a4 [shape=box, label="machine", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_06b062a9f15ff3f22ddc9473dee1a1a4.html"];
   }
   dir_d44c64559bbebec7f509842c48db8b23 [shape=box label="include" color="red" URL="dir_d44c64559bbebec7f509842c48db8b23.html"];
-  dir_06b062a9f15ff3f22ddc9473dee1a1a4->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="8", labeldistance=1.5 headhref="dir_000011_000000.html"];
+  dir_06b062a9f15ff3f22ddc9473dee1a1a4->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="7", labeldistance=1.5 headhref="dir_000011_000000.html"];
 }

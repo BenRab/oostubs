@@ -51,8 +51,9 @@ extern Plugbox plugbox;
  * \todo write implementation
  */
 void guardian (unsigned short slot) {
-  //kout.setpos(0,23);
-  //kout << "Interrupt Nr.:" << slot <<endl;
+ /* kout.setpos(0,9);
+  kout << "Interrupt Nr.:" << slot-32 <<endl;
+  kout.setpos(0, 0);*/
 
   if(slot >= 0 && slot < 256){
     Gate *gate = &plugbox.report(slot);
@@ -60,6 +61,7 @@ void guardian (unsigned short slot) {
   } else{
     panic.trigger();
   }
+
 }
 
 

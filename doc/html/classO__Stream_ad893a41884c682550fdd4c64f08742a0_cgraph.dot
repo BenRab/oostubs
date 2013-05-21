@@ -6,7 +6,7 @@ digraph "O_Stream::operator&lt;&lt;"
   rankdir="LR";
   Node1 [label="O_Stream::operator\<\<",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
-  Node2 [label="Stringbuffer::flush",height=0.2,width=0.4,color="black",URL="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac",tooltip="flush the content of the buffer to the screen"];
+  Node2 [label="O_Stream::setAttributes",height=0.2,width=0.4,color="black",URL="$classO__Stream.html#aaa3d397e29ee71236ed0167ca63992bd",tooltip="ermöglicht dem O_Stream das setzen der Attribute"];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
-  Node3 [label="O_Stream::setAttributes",height=0.2,width=0.4,color="black",URL="$classO__Stream.html#a1b189e9a440026ef0b0f9361dcc6a4ff",tooltip="ermöglicht dem O_Stream das setzen der Attribute"];
+  Node3 [label="Stringbuffer::flush",height=0.2,width=0.4,color="black",URL="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac",tooltip="flush the content of the buffer to the screen"];
 }

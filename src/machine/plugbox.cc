@@ -25,7 +25,9 @@ Plugbox::Plugbox(){
 
 /** \todo \~german implementieren \~english write implementation*/
 void Plugbox::assign(unsigned short slot, Gate& gate){
-  interruptArray[slot] = &gate;
+  if(slot >= 0 && slot < 256){
+    interruptArray[slot] = &gate;
+  } 
 }
 
 /** \todo \~german implementieren \~english write implementation*/
