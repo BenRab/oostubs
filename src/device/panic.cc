@@ -21,8 +21,8 @@ extern CGA_Stream kout;
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 
 /** \todo \~german implementieren \~english write implementation*/
-//Panic::Panic(){
-//}
+Panic::Panic(){
+}
 
 
 

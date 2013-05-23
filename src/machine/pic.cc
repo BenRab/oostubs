@@ -47,7 +47,6 @@ PIC::PIC(){
   mask_2.outb(0xFF);//Maskierung Slave (alle IRQ verbieten)
 }
 
-/** \todo \~german implementieren \~english write implementation*/
 void PIC::allow(Interrupts interrupt){//setzt Bit vom zu erlaubenden INT auf 0
   IO_Port mask_1(0x21), //Datenport Master
           mask_2(0xa1); //Datenport Slave
@@ -66,7 +65,6 @@ void PIC::allow(Interrupts interrupt){//setzt Bit vom zu erlaubenden INT auf 0
   } 
 }
 
-/** \todo \~german implementieren \~english write implementation*/
 void PIC::forbid(Interrupts interrupt){//setzt Bit vom zu verbietenden INT auf 1
   IO_Port mask_1(0x21), //Datenport Master
           mask_2(0xa1); //Datenport Slave
@@ -83,7 +81,6 @@ void PIC::forbid(Interrupts interrupt){//setzt Bit vom zu verbietenden INT auf 1
 
 }
 
-/** \todo \~german implementieren \~english write implementation*/
 void PIC::ack(bool secondPIC){//ACK aka EOI (End of Interrupt)
   IO_Port ctrl_1(0x20),//Befehlsport Master
           ctrl_2(0xa0);//Befehlsport Slave
@@ -94,17 +91,13 @@ void PIC::ack(bool secondPIC){//ACK aka EOI (End of Interrupt)
   }
 }
 
-/** \todo \~german implementieren \~english write implementation*/
 unsigned char PIC::getISR(bool secondPIC){//TODO superior INT, Ack senden?
   IO_Port ctrl_1(0x20),//Befehlsport Master
           ctrl_2(0xa0);//Befehlsport Slave
   
   if(secondPIC){
     return ctrl_2.inb();
-  } else{
+  } else
     return ctrl_1.inb();
-  }
 }
-
-
 

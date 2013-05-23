@@ -55,7 +55,7 @@ void guardian (unsigned short slot) {
   kout << "Interrupt Nr.:" << slot-32 <<endl;
   kout.setpos(0, 0);*/
 
-  if(slot >= 0 && slot < 256){
+  if(slot >= 0 && slot < 256){ //fuehre interrupt behandlung durch
     Gate *gate = &plugbox.report(slot);
     gate->trigger();
   } else{

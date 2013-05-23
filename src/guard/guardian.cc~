@@ -13,6 +13,7 @@
 #include "device/panic.h"
 #include "useful/kout.h"
 #include "useful/cpu.h"
+#include "useful/pic.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #            declare methods as c-like            #
@@ -51,16 +52,21 @@ extern Plugbox plugbox;
  * \todo write implementation
  */
 void guardian (unsigned short slot) {
-  kout.setpos(0,9);
+ /* kout.setpos(0,9);
   kout << "Interrupt Nr.:" << slot-32 <<endl;
-  kout.setpos(0, 0);
+  kout.setpos(0, 0);*/
 
-  if(slot >= 0 && slot < 256){
+  if(slot >= 0 && slot < 256){ //fuehre interrupt behandlung durch
     Gate *gate = &plugbox.report(slot);
     gate->trigger();
   } else{
     panic.trigger();
   }
+  
+  if (slot >=40 && slot <=47) 
+    pic.ack(true);
+  else
+    pic.ack(false);
 
 }
 
