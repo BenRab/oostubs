@@ -16,9 +16,9 @@ Task2::Task2(){
   kout.clear();//hinzugefügt
   kout.setpos(31,1);
   kout << "OOStuBs - Task 2" << endl << endl;
-  cpu.enable_int();
-  keyboard.plugin();
   
+  keyboard.plugin();
+  //cpu.enable_int();
 }
 
 Task2::~Task2(){

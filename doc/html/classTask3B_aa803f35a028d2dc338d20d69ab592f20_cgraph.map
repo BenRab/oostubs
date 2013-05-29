@@ -1,0 +1,10 @@
+<map id="Task3B::action" name="Task3B::action">
+<area shape="rect" id="node3" href="$task3B_8cc.html#a5874bf2c7fd779b0760c4d5f16bb2d08" title="doTask3BAction" alt="" coords="160,30,277,58"/>
+<area shape="rect" id="node5" href="$task3B_8cc.html#a619f56d2ece0fd67e26e11da6c052e95" title="outputAckermannResult" alt="" coords="325,5,485,33"/>
+<area shape="rect" id="node13" href="$task3B_8cc.html#aca93d1551a065652079d5ff2ae3b2539" title="doAckermann" alt="" coords="355,55,456,83"/>
+<area shape="rect" id="node7" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="571,5,616,33"/>
+<area shape="rect" id="node9" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer" alt="" coords="703,5,812,33"/>
+<area shape="rect" id="node11" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="863,5,980,33"/>
+<area shape="rect" id="node15" href="$task3B_8cc.html#a14ee0807c6f73199cdce10829f021544" title="alphaAckermann" alt="" coords="535,55,652,83"/>
+<area shape="rect" id="node17" href="$task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4" title="gotoAnalyse" alt="" coords="712,55,803,83"/>
+</map>

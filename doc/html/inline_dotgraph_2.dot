@@ -1,6 +1,6 @@
  
   digraph task1 {
-    size="5.9,5.5";
+    size="5.0,5.0";
     node [shape=box, style="solid,filled", fillcolor=white];
     
     
@@ -26,7 +26,6 @@
       cpuC [label="CPU", URL="\ref CPU"];
       cgascrC [label="CGA_Screen", URL="\ref CGA_Screen"];
       keyC [label="Key", URL="\ref Key"];
-      {rank=max; keyC;}
       keyC -> keyctrlC [arrowhead="ediamond"];
     }
     

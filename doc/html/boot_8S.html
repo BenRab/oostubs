@@ -75,111 +75,112 @@ Makrodefinitionen</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Funktionen</h2></td></tr>
-<tr class="memitem:ad9262432da5399fd6224c72200dff57d"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
-wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp <br class="typebreak"/>
-callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <br class="typebreak"/>
-<a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs <br class="typebreak"/>
-$<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <br class="typebreak"/>
-<a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <br class="typebreak"/>
-<a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#a2d3583e547158b12cf139920c005272c">loop</a> lidt IDTR <br class="typebreak"/>
-<a class="el" href="boot_8S.html#a120dcb1a498079e1fbb0a8e414752c9d">al</a> out <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#ad9262432da5399fd6224c72200dff57d">and</a> (-1-0x04)</td></tr>
-<tr class="memitem:aed0edaf7a9f9542fe8d84e5217620080"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
-wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp <br class="typebreak"/>
-callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <br class="typebreak"/>
-<a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs <br class="typebreak"/>
-$<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> (int_wrapper_0-<a class="el" href="boot_8S.html#ae4045f33f677b81f6047a39fc9053e71">INT_WRAPPER_END</a>+<a class="el" href="boot_8S.html#ab59b207d7128ace888297774731b86d3">INT_WRAPPER_START</a>)</td></tr>
+<tr class="memitem:a5e5ef984ba5f83a4701b4cddd64254d0"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
+wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp <br class="typebreak"/>
+callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <br class="typebreak"/>
+<a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs <br class="typebreak"/>
+$<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#ae522a0cd9baa6e46af1a745b46fe929d">loop</a> lidt IDTR <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a8b7d0b4a1cdede682ba85324d7d7fbdf">al</a> out <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a5e5ef984ba5f83a4701b4cddd64254d0">and</a> (-1-0x04)</td></tr>
+<tr class="memitem:a06f814cacbea993e74f9fded03bf8df8"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
+wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp <br class="typebreak"/>
+callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <br class="typebreak"/>
+<a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs <br class="typebreak"/>
+$<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> (int_wrapper_0-<a class="el" href="boot_8S.html#a312b507f06e2c4351d12f7b515c888f2">INT_WRAPPER_END</a>+<a class="el" href="boot_8S.html#a9e6ac1eb44e68fee177b3bb0d78f6a70">INT_WRAPPER_START</a>)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
 Variablen</h2></td></tr>
-<tr class="memitem:afb62e42d422f503bfc9d7ea1ce028702"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
-wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp <br class="typebreak"/>
-callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <br class="typebreak"/>
-<a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs <br class="typebreak"/>
-$<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <br class="typebreak"/>
-<a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#afb62e42d422f503bfc9d7ea1ce028702">add</a></td></tr>
-<tr class="memitem:a120dcb1a498079e1fbb0a8e414752c9d"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
-wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp <br class="typebreak"/>
-callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <br class="typebreak"/>
-<a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs <br class="typebreak"/>
-$<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <br class="typebreak"/>
-<a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <br class="typebreak"/>
-<a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#a2d3583e547158b12cf139920c005272c">loop</a> lidt IDTR <br class="typebreak"/>
-al out&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a120dcb1a498079e1fbb0a8e414752c9d">al</a></td></tr>
-<tr class="memitem:abb847124ab91c84675cf45ea5d858807"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
-wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp <br class="typebreak"/>
-callGuardian ifeq cx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a></td></tr>
-<tr class="memitem:a6d9acb0e6f8443a21f0a468870022a17"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
-wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp <br class="typebreak"/>
-callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <br class="typebreak"/>
-<a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs <br class="typebreak"/>
-$<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <br class="typebreak"/>
-<a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <br class="typebreak"/>
-<a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#a2d3583e547158b12cf139920c005272c">loop</a> lidt IDTR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a6d9acb0e6f8443a21f0a468870022a17">disableNMI</a></td></tr>
-<tr class="memitem:a81cc0d72065afb3131a4f613d9bb9b12"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
+<tr class="memitem:a06c8ca731d95b9a76485ec149c9ee955"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
+wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp <br class="typebreak"/>
+callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <br class="typebreak"/>
+<a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs <br class="typebreak"/>
+$<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a06c8ca731d95b9a76485ec149c9ee955">add</a></td></tr>
+<tr class="memitem:a8b7d0b4a1cdede682ba85324d7d7fbdf"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
+wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp <br class="typebreak"/>
+callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <br class="typebreak"/>
+<a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs <br class="typebreak"/>
+$<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#ae522a0cd9baa6e46af1a745b46fe929d">loop</a> lidt IDTR <br class="typebreak"/>
+al out&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a8b7d0b4a1cdede682ba85324d7d7fbdf">al</a></td></tr>
+<tr class="memitem:a16fed93bb8fdfe3fe18f72504b0e6a46"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
+wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp <br class="typebreak"/>
+callGuardian ifeq cx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a></td></tr>
+<tr class="memitem:a57eff1cd2174014fc3589f57a83c3c90"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
+wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp <br class="typebreak"/>
+callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <br class="typebreak"/>
+<a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs <br class="typebreak"/>
+$<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#ae522a0cd9baa6e46af1a745b46fe929d">loop</a> lidt IDTR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a57eff1cd2174014fc3589f57a83c3c90">disableNMI</a></td></tr>
+<tr class="memitem:a6baed073e0781854e2369fb00b23c2c2"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
 wrapperGen ifeq eax jmp <br class="typebreak"/>
-callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <br class="typebreak"/>
-<a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs <br class="typebreak"/>
-$<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp eax dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <br class="typebreak"/>
-<a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> eax ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> eax <br class="typebreak"/>
-eax <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#a2d3583e547158b12cf139920c005272c">loop</a> lidt IDTR <br class="typebreak"/>
-<a class="el" href="boot_8S.html#a120dcb1a498079e1fbb0a8e414752c9d">al</a> out eax eax eax <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a></td></tr>
-<tr class="memitem:af8c3dad903dc5ce31f1b569dc396f91a"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
-wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp <br class="typebreak"/>
-callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <br class="typebreak"/>
-<a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs <br class="typebreak"/>
-$<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx ebx ebx <br class="typebreak"/>
-<a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a></td></tr>
-<tr class="memitem:a08d131fbb61d353c17f998c81f95ad03"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
-wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp <br class="typebreak"/>
-callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <br class="typebreak"/>
-<a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs <br class="typebreak"/>
-$<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <br class="typebreak"/>
-<a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <br class="typebreak"/>
-<a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#a2d3583e547158b12cf139920c005272c">loop</a> lidt IDTR <br class="typebreak"/>
-<a class="el" href="boot_8S.html#a120dcb1a498079e1fbb0a8e414752c9d">al</a> out&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a08d131fbb61d353c17f998c81f95ad03">initFPU</a></td></tr>
-<tr class="memitem:ae4045f33f677b81f6047a39fc9053e71"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
-wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp <br class="typebreak"/>
-callGuardian ifeq&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#ae4045f33f677b81f6047a39fc9053e71">INT_WRAPPER_END</a></td></tr>
-<tr class="memitem:ab59b207d7128ace888297774731b86d3"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
-wrapperGen ifeq&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#ab59b207d7128ace888297774731b86d3">INT_WRAPPER_START</a></td></tr>
-<tr class="memitem:acfa959174e457286ef1afd932bdbef60"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
-wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp <br class="typebreak"/>
-callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <br class="typebreak"/>
-<a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#acfa959174e457286ef1afd932bdbef60">ljmpl</a></td></tr>
-<tr class="memitem:a2d3583e547158b12cf139920c005272c"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
-wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp <br class="typebreak"/>
-callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <br class="typebreak"/>
-<a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs <br class="typebreak"/>
-$<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a2d3583e547158b12cf139920c005272c">loop</a></td></tr>
-<tr class="memitem:ae8831afb134363de048745378706f178"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
-wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp <br class="typebreak"/>
-callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> mov ss <br class="typebreak"/>
+callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <br class="typebreak"/>
+<a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs <br class="typebreak"/>
+$<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp eax dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> eax ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> eax <br class="typebreak"/>
+eax <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#ae522a0cd9baa6e46af1a745b46fe929d">loop</a> lidt IDTR <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a8b7d0b4a1cdede682ba85324d7d7fbdf">al</a> out eax eax eax <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a></td></tr>
+<tr class="memitem:a2798bbadf3ff26e25a1cdc5d7c542797"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
+wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp <br class="typebreak"/>
+callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <br class="typebreak"/>
+<a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs <br class="typebreak"/>
+$<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx ebx ebx <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a></td></tr>
+<tr class="memitem:a9ce58d54ecebb6ed09d1d9d213184260"><td class="memItemLeft" align="right" valign="top">text globl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a9ce58d54ecebb6ed09d1d9d213184260">entry</a></td></tr>
+<tr class="memitem:abf3bdba7ca3d8367d19001e1cffc8850"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
+wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp <br class="typebreak"/>
+callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <br class="typebreak"/>
+<a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs <br class="typebreak"/>
+$<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#ae522a0cd9baa6e46af1a745b46fe929d">loop</a> lidt IDTR <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a8b7d0b4a1cdede682ba85324d7d7fbdf">al</a> out&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#abf3bdba7ca3d8367d19001e1cffc8850">initFPU</a></td></tr>
+<tr class="memitem:a312b507f06e2c4351d12f7b515c888f2"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
+wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp <br class="typebreak"/>
+callGuardian ifeq&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a312b507f06e2c4351d12f7b515c888f2">INT_WRAPPER_END</a></td></tr>
+<tr class="memitem:a9e6ac1eb44e68fee177b3bb0d78f6a70"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
+wrapperGen ifeq&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a9e6ac1eb44e68fee177b3bb0d78f6a70">INT_WRAPPER_START</a></td></tr>
+<tr class="memitem:a6a2ad912bf5c0bb7df09baa9a6a8077f"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
+wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp <br class="typebreak"/>
+callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <br class="typebreak"/>
+<a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a6a2ad912bf5c0bb7df09baa9a6a8077f">ljmpl</a></td></tr>
+<tr class="memitem:ae522a0cd9baa6e46af1a745b46fe929d"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
+wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp <br class="typebreak"/>
+callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <br class="typebreak"/>
+<a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs <br class="typebreak"/>
+$<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#ae522a0cd9baa6e46af1a745b46fe929d">loop</a></td></tr>
+<tr class="memitem:afed9ccb3db76558040261066337185cd"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
+wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp <br class="typebreak"/>
+callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> mov ss <br class="typebreak"/>
 mov ds mov es mov gs mov fs <br class="typebreak"/>
-$<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a></td></tr>
-<tr class="memitem:adb57c81c2c1827e06a7015cc230f8aae"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
-wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp <br class="typebreak"/>
-callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <br class="typebreak"/>
-<a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs <br class="typebreak"/>
-$<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#adb57c81c2c1827e06a7015cc230f8aae">multibootSetup</a></td></tr>
-<tr class="memitem:a82a2b84ec1e71d3db2ec43370c863f6c"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
-wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp <br class="typebreak"/>
-callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <br class="typebreak"/>
-<a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs <br class="typebreak"/>
-$<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <br class="typebreak"/>
-<a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <br class="typebreak"/>
-<a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#a2d3583e547158b12cf139920c005272c">loop</a> lidt IDTR <br class="typebreak"/>
-<a class="el" href="boot_8S.html#a120dcb1a498079e1fbb0a8e414752c9d">al</a> out <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a82a2b84ec1e71d3db2ec43370c863f6c">or</a></td></tr>
-<tr class="memitem:a61723cd2f668c45cc83ab7dab81734d0"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
-wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp <br class="typebreak"/>
-callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <br class="typebreak"/>
-<a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs <br class="typebreak"/>
-$<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <br class="typebreak"/>
-<a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a61723cd2f668c45cc83ab7dab81734d0">shr</a></td></tr>
-<tr class="memitem:a309bf8d094cdf04e19838b37c5f2f981"><td class="memItemLeft" align="right" valign="top">text globl entry macro <br class="typebreak"/>
-wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp <br class="typebreak"/>
-callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <br class="typebreak"/>
-<a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs <br class="typebreak"/>
-$stackSetup&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a></td></tr>
+$<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a></td></tr>
+<tr class="memitem:acb122a82a81cbb8431c2ec04806d8b6a"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
+wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp <br class="typebreak"/>
+callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <br class="typebreak"/>
+<a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs <br class="typebreak"/>
+$<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#acb122a82a81cbb8431c2ec04806d8b6a">multibootSetup</a></td></tr>
+<tr class="memitem:a8a396f634853349b7555a7f01d58e62c"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
+wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp <br class="typebreak"/>
+callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <br class="typebreak"/>
+<a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs <br class="typebreak"/>
+$<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#ae522a0cd9baa6e46af1a745b46fe929d">loop</a> lidt IDTR <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a8b7d0b4a1cdede682ba85324d7d7fbdf">al</a> out <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a8a396f634853349b7555a7f01d58e62c">or</a></td></tr>
+<tr class="memitem:aed19021fa1f30c9638bd12bc917af472"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
+wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp <br class="typebreak"/>
+callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <br class="typebreak"/>
+<a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs <br class="typebreak"/>
+$<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <br class="typebreak"/>
+<a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#aed19021fa1f30c9638bd12bc917af472">shr</a></td></tr>
+<tr class="memitem:a25dde79da329eeceb77597a0685b55ec"><td class="memItemLeft" align="right" valign="top">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro <br class="typebreak"/>
+wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp <br class="typebreak"/>
+callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <br class="typebreak"/>
+<a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs <br class="typebreak"/>
+$stackSetup&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Ausführliche Beschreibung</h2>
 <div class="textblock"><p>enthält Start-Code </p>
@@ -201,12 +202,12 @@ $stackSetup&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </div>
 </div>
 <h2>Dokumentation der Funktionen</h2>
-<a class="anchor" id="ad9262432da5399fd6224c72200dff57d"></a>
+<a class="anchor" id="a5e5ef984ba5f83a4701b4cddd64254d0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs $<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#a2d3583e547158b12cf139920c005272c">loop</a> lidt IDTR <a class="el" href="boot_8S.html#a120dcb1a498079e1fbb0a8e414752c9d">al</a> out <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> and </td>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs $<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#ae522a0cd9baa6e46af1a745b46fe929d">loop</a> lidt IDTR <a class="el" href="boot_8S.html#a8b7d0b4a1cdede682ba85324d7d7fbdf">al</a> out <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> and </td>
           <td>(</td>
           <td class="paramtype">-1-&#160;</td>
           <td class="paramname"><em>0x04</em></td><td>)</td>
@@ -217,14 +218,14 @@ $stackSetup&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 </div>
 </div>
-<a class="anchor" id="aed0edaf7a9f9542fe8d84e5217620080"></a>
+<a class="anchor" id="a06f814cacbea993e74f9fded03bf8df8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs $<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx movl </td>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs $<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx movl </td>
           <td>(</td>
-          <td class="paramtype">int_wrapper_0-<a class="el" href="boot_8S.html#ae4045f33f677b81f6047a39fc9053e71">INT_WRAPPER_END</a>+&#160;</td>
+          <td class="paramtype">int_wrapper_0-<a class="el" href="boot_8S.html#a312b507f06e2c4351d12f7b515c888f2">INT_WRAPPER_END</a>+&#160;</td>
           <td class="paramname"><em>INT_WRAPPER_START</em></td><td>)</td>
           <td></td>
         </tr>
@@ -234,12 +235,12 @@ $stackSetup&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </div>
 </div>
 <h2>Variablen-Dokumentation</h2>
-<a class="anchor" id="afb62e42d422f503bfc9d7ea1ce028702"></a>
+<a class="anchor" id="a06c8ca731d95b9a76485ec149c9ee955"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs $<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> add</td>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs $<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> add</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -248,12 +249,12 @@ $stackSetup&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 </div>
 </div>
-<a class="anchor" id="a120dcb1a498079e1fbb0a8e414752c9d"></a>
+<a class="anchor" id="a8b7d0b4a1cdede682ba85324d7d7fbdf"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs $<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#a2d3583e547158b12cf139920c005272c">loop</a> lidt IDTR al out al</td>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs $<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#ae522a0cd9baa6e46af1a745b46fe929d">loop</a> lidt IDTR al out al</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -262,26 +263,26 @@ $stackSetup&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 </div>
 </div>
-<a class="anchor" id="abb847124ab91c84675cf45ea5d858807"></a>
+<a class="anchor" id="a16fed93bb8fdfe3fe18f72504b0e6a46"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp callGuardian ifeq cx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs $<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> cx</td>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp callGuardian ifeq cx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs $<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> cx</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definiert in Zeile <a class="el" href="boot_8S_source.html#l00028">28</a> der Datei <a class="el" href="boot_8S_source.html">boot.S</a>.</p>
+<p>Definiert in Zeile <a class="el" href="boot_8S_source.html#l00018">18</a> der Datei <a class="el" href="boot_8S_source.html">boot.S</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a6d9acb0e6f8443a21f0a468870022a17"></a>
+<a class="anchor" id="a57eff1cd2174014fc3589f57a83c3c90"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs $<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#a2d3583e547158b12cf139920c005272c">loop</a> lidt IDTR disableNMI</td>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs $<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#ae522a0cd9baa6e46af1a745b46fe929d">loop</a> lidt IDTR disableNMI</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -290,12 +291,12 @@ $stackSetup&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 </div>
 </div>
-<a class="anchor" id="a81cc0d72065afb3131a4f613d9bb9b12"></a>
+<a class="anchor" id="a6baed073e0781854e2369fb00b23c2c2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq eax jmp callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs $<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp eax dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> eax ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> eax eax <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#a2d3583e547158b12cf139920c005272c">loop</a> lidt IDTR <a class="el" href="boot_8S.html#a120dcb1a498079e1fbb0a8e414752c9d">al</a> out eax eax eax <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> eax</td>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq eax jmp callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs $<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp eax dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> eax ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> eax eax <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#ae522a0cd9baa6e46af1a745b46fe929d">loop</a> lidt IDTR <a class="el" href="boot_8S.html#a8b7d0b4a1cdede682ba85324d7d7fbdf">al</a> out eax eax eax <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> eax</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -304,12 +305,12 @@ $stackSetup&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 </div>
 </div>
-<a class="anchor" id="af8c3dad903dc5ce31f1b569dc396f91a"></a>
+<a class="anchor" id="a2798bbadf3ff26e25a1cdc5d7c542797"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs $<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx ebx ebx <a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ebx</td>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs $<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx ebx ebx <a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ebx</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -318,12 +319,26 @@ $stackSetup&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 </div>
 </div>
-<a class="anchor" id="a08d131fbb61d353c17f998c81f95ad03"></a>
+<a class="anchor" id="a9ce58d54ecebb6ed09d1d9d213184260"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs $<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#a2d3583e547158b12cf139920c005272c">loop</a> lidt IDTR <a class="el" href="boot_8S.html#a120dcb1a498079e1fbb0a8e414752c9d">al</a> out initFPU</td>
+          <td class="memname">text globl entry</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="boot_8S_source.html#l00018">18</a> der Datei <a class="el" href="boot_8S_source.html">boot.S</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abf3bdba7ca3d8367d19001e1cffc8850"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs $<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#ae522a0cd9baa6e46af1a745b46fe929d">loop</a> lidt IDTR <a class="el" href="boot_8S.html#a8b7d0b4a1cdede682ba85324d7d7fbdf">al</a> out initFPU</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -332,54 +347,54 @@ $stackSetup&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 </div>
 </div>
-<a class="anchor" id="ae4045f33f677b81f6047a39fc9053e71"></a>
+<a class="anchor" id="a312b507f06e2c4351d12f7b515c888f2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp callGuardian ifeq INT_WRAPPER_END</td>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp callGuardian ifeq INT_WRAPPER_END</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definiert in Zeile <a class="el" href="boot_8S_source.html#l00028">28</a> der Datei <a class="el" href="boot_8S_source.html">boot.S</a>.</p>
+<p>Definiert in Zeile <a class="el" href="boot_8S_source.html#l00018">18</a> der Datei <a class="el" href="boot_8S_source.html">boot.S</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab59b207d7128ace888297774731b86d3"></a>
+<a class="anchor" id="a9e6ac1eb44e68fee177b3bb0d78f6a70"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq INT_WRAPPER_START</td>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq INT_WRAPPER_START</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definiert in Zeile <a class="el" href="boot_8S_source.html#l00028">28</a> der Datei <a class="el" href="boot_8S_source.html">boot.S</a>.</p>
+<p>Definiert in Zeile <a class="el" href="boot_8S_source.html#l00018">18</a> der Datei <a class="el" href="boot_8S_source.html">boot.S</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="acfa959174e457286ef1afd932bdbef60"></a>
+<a class="anchor" id="a6a2ad912bf5c0bb7df09baa9a6a8077f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs ljmpl</td>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs ljmpl</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definiert in Zeile <a class="el" href="boot_8S_source.html#l00028">28</a> der Datei <a class="el" href="boot_8S_source.html">boot.S</a>.</p>
+<p>Definiert in Zeile <a class="el" href="boot_8S_source.html#l00018">18</a> der Datei <a class="el" href="boot_8S_source.html">boot.S</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2d3583e547158b12cf139920c005272c"></a>
+<a class="anchor" id="ae522a0cd9baa6e46af1a745b46fe929d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs $<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> loop</td>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs $<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> loop</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -388,40 +403,40 @@ $stackSetup&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 </div>
 </div>
-<a class="anchor" id="ae8831afb134363de048745378706f178"></a>
+<a class="anchor" id="afed9ccb3db76558040261066337185cd"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> mov ss mov ds mov es mov gs mov fs $<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> mov</td>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> mov ss mov ds mov es mov gs mov fs $<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> mov</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definiert in Zeile <a class="el" href="boot_8S_source.html#l00028">28</a> der Datei <a class="el" href="boot_8S_source.html">boot.S</a>.</p>
+<p>Definiert in Zeile <a class="el" href="boot_8S_source.html#l00018">18</a> der Datei <a class="el" href="boot_8S_source.html">boot.S</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="adb57c81c2c1827e06a7015cc230f8aae"></a>
+<a class="anchor" id="acb122a82a81cbb8431c2ec04806d8b6a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs $<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp multibootSetup</td>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs $<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp multibootSetup</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definiert in Zeile <a class="el" href="boot_8S_source.html#l00028">28</a> der Datei <a class="el" href="boot_8S_source.html">boot.S</a>.</p>
+<p>Definiert in Zeile <a class="el" href="boot_8S_source.html#l00018">18</a> der Datei <a class="el" href="boot_8S_source.html">boot.S</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a82a2b84ec1e71d3db2ec43370c863f6c"></a>
+<a class="anchor" id="a8a396f634853349b7555a7f01d58e62c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs $<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#a2d3583e547158b12cf139920c005272c">loop</a> lidt IDTR <a class="el" href="boot_8S.html#a120dcb1a498079e1fbb0a8e414752c9d">al</a> out <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> or</td>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs $<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <a class="el" href="o__stream_8cc.html#a80c972716e16de091c5e89644b2e29bd">dec</a> dx jnz <a class="el" href="boot_8S.html#ae522a0cd9baa6e46af1a745b46fe929d">loop</a> lidt IDTR <a class="el" href="boot_8S.html#a8b7d0b4a1cdede682ba85324d7d7fbdf">al</a> out <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> or</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -430,12 +445,12 @@ $stackSetup&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 </div>
 </div>
-<a class="anchor" id="a61723cd2f668c45cc83ab7dab81734d0"></a>
+<a class="anchor" id="aed19021fa1f30c9638bd12bc917af472"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs $<a class="el" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a> esp <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> dx <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a> <a class="el" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> ecx <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> shr</td>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs $<a class="el" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a> esp <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> dx <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a> <a class="el" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> ecx <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> shr</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -444,24 +459,24 @@ $stackSetup&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 </div>
 </div>
-<a class="anchor" id="a309bf8d094cdf04e19838b37c5f2f981"></a>
+<a class="anchor" id="a25dde79da329eeceb77597a0685b55ec"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">text globl entry macro wrapperGen ifeq <a class="el" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a> <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ss <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> ds <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> es <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> gs <a class="el" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> fs $stackSetup stackSetup</td>
+          <td class="memname">text globl <a class="el" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a> macro wrapperGen ifeq <a class="el" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> jmp callGuardian ifeq <a class="el" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a> <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ss <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> ds <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> es <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> gs <a class="el" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> fs $stackSetup stackSetup</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definiert in Zeile <a class="el" href="boot_8S_source.html#l00028">28</a> der Datei <a class="el" href="boot_8S_source.html">boot.S</a>.</p>
+<p>Definiert in Zeile <a class="el" href="boot_8S_source.html#l00018">18</a> der Datei <a class="el" href="boot_8S_source.html">boot.S</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Mon Mai 20 2013 12:56:28 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Mai 29 2013 23:52:15 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

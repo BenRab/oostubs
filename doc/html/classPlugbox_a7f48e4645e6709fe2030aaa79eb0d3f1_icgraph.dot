@@ -9,4 +9,8 @@ digraph "Plugbox::assign"
   Node2 [label="Keyboard::plugin",height=0.2,width=0.4,color="black",URL="$classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61",tooltip="aktiviert den Interruptmechanismus für die Tastatur"];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
   Node3 [label="Task2::Task2",height=0.2,width=0.4,color="black",URL="$classTask2.html#a4adb42b6119375dfec56808c158dd7dc",tooltip="Default constructor."];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="Task3A::Task3A",height=0.2,width=0.4,color="black",URL="$classTask3A.html#a86233712775d9b45fe3d8a5eae09334d",tooltip="Default constructor."];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="Task3B::Task3B",height=0.2,width=0.4,color="black",URL="$classTask3B.html#a7ec400d4732dfb10f86b72a9b767f36e",tooltip="Default constructor."];
 }

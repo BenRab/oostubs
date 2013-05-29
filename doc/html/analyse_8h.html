@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>OOStuBS - Technische Informatik II (TI-II): include/user/analyse.h-Dateireferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.1.2 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_2da6b4920bffa0d563fb54046b25229a.html">user</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funktionen</a>  </div>
+  <div class="headertitle">
+<div class="title">analyse.h-Dateireferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><div class="dynheader">
+Dieser Graph zeigt, welche Datei direkt oder indirekt diese Datei enthält:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyse_8h__dep__incl.png" border="0" usemap="#include_2user_2analyse_8hdep" alt=""/></div>
+<map name="include_2user_2analyse_8hdep" id="include_2user_2analyse_8hdep">
+<area shape="rect" id="node3" href="analyse_8cc.html" title="src/user/analyse.cc" alt="" coords="13,83,144,111"/></map>
+</div>
+</div>
+<p><a href="analyse_8h_source.html">gehe zum Quellcode dieser Datei</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
+Funktionen</h2></td></tr>
+<tr class="memitem:a07755aa59f817c8a4e46336d1c1a15eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analyse_8h.html#a07755aa59f817c8a4e46336d1c1a15eb">analyseException</a> (unsigned short slot, void **esp)</td></tr>
+<tr class="memdesc:a07755aa59f817c8a4e46336d1c1a15eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funktion zur Analyse einer Fehlerbehandlungsroutine.  <a href="#a07755aa59f817c8a4e46336d1c1a15eb"></a><br/></td></tr>
+<tr class="memitem:abc6c5d595df60f1c6df14f547f5b03d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analyse_8h.html#abc6c5d595df60f1c6df14f547f5b03d6">analyseProcedureStack</a> (void **esp)</td></tr>
+<tr class="memdesc:abc6c5d595df60f1c6df14f547f5b03d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diese Funktion dient der Analyse des Prozedurstacks.  <a href="#abc6c5d595df60f1c6df14f547f5b03d6"></a><br/></td></tr>
+</table>
+<h2>Dokumentation der Funktionen</h2>
+<a class="anchor" id="a07755aa59f817c8a4e46336d1c1a15eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void analyseException </td>
+          <td>(</td>
+          <td class="paramtype">unsigned short&#160;</td>
+          <td class="paramname"><em>slot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **&#160;</td>
+          <td class="paramname"><em>esp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funktion zur Analyse einer Fehlerbehandlungsroutine. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">slot</td><td>Dies ist die ID des Interrupts, wie er auch der Funktion <a class="el" href="guardian_8cc.html#a9017cbb15c79b718e82c9ed18a58ed60">guardian</a> übergeben worden wäre.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">esp</td><td>Dieser Zeiger geht auf den Anfang des Stacks, wie er beim Aufruf der Funktion <a class="el" href="guardian_8cc.html#afe78f34c7c65df79376008e0d23c1afd">handleException</a> wäre. Zu dem festgehaltenem Zeitpunkt wurde zwar die Funktion schon aufgerufen, es wurde aber noch keine einzige Zeile abgearbeitet. Die Funktion selber hat den Stack also noch nicht verändert.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000048">Noch zu erledigen:</a></b></dt><dd>den markierten ToDo-Bereich ausfüllen</dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="analyse_8cc_source.html#l00033">33</a> der Datei <a class="el" href="analyse_8cc_source.html">analyse.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyse_8h_a07755aa59f817c8a4e46336d1c1a15eb_cgraph.png" border="0" usemap="#analyse_8h_a07755aa59f817c8a4e46336d1c1a15eb_cgraph" alt=""/></div>
+<map name="analyse_8h_a07755aa59f817c8a4e46336d1c1a15eb_cgraph" id="analyse_8h_a07755aa59f817c8a4e46336d1c1a15eb_cgraph">
+<area shape="rect" id="node3" href="o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="212,5,257,33"/><area shape="rect" id="node9" href="classCPU.html#a23c8f5e46dac3304f1d8def9c612b88e" title="Interupts werden global deaktiviert." alt="" coords="177,55,292,83"/><area shape="rect" id="node11" href="classCPU.html#a189729f4ca240ff52004a34b9057d448" title="hält die CPU an" alt="" coords="197,106,272,134"/><area shape="rect" id="node5" href="classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer" alt="" coords="343,5,452,33"/><area shape="rect" id="node7" href="classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="503,5,620,33"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abc6c5d595df60f1c6df14f547f5b03d6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void analyseProcedureStack </td>
+          <td>(</td>
+          <td class="paramtype">void **&#160;</td>
+          <td class="paramname"><em>esp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Diese Funktion dient der Analyse des Prozedurstacks. </p>
+<p>Es werden die ersten 60 32-Bit-Worte vom Stack ausgegeben. Dabei erscheinen je vier der Worte in einer Zeile.</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">esp</td><td>Dis ist ein Zeiger auf den Anfang des Stacks. Er ist aufgebaut, wie kurz vor dem Aufruf der Funktion gotoAnalyse innerhalb von <a class="el" href="task3B_8cc.html#a14ee0807c6f73199cdce10829f021544">alphaAckermann</a> in der Datei <a class="el" href="task3B_8cc.html">task3B.cc</a>. Auf diese Weise kann der Prozedurstack gut analysiert werden.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000049">Noch zu erledigen:</a></b></dt><dd>Funktion fuer Analyse ausfuellen.</dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="analyse_8cc_source.html#l00077">77</a> der Datei <a class="el" href="analyse_8cc_source.html">analyse.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyse_8h_abc6c5d595df60f1c6df14f547f5b03d6_cgraph.png" border="0" usemap="#analyse_8h_abc6c5d595df60f1c6df14f547f5b03d6_cgraph" alt=""/></div>
+<map name="analyse_8h_abc6c5d595df60f1c6df14f547f5b03d6_cgraph" id="analyse_8h_abc6c5d595df60f1c6df14f547f5b03d6_cgraph">
+<area shape="rect" id="node3" href="o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="215,5,260,33"/><area shape="rect" id="node5" href="classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer" alt="" coords="311,5,420,33"/><area shape="rect" id="node7" href="classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="471,5,588,33"/></map>
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Mit Mai 29 2013 23:52:15 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
+</body>
+</html>

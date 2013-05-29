@@ -1,13 +1,19 @@
 <map id="include/object/strbuf.h" name="include/object/strbuf.h">
-<area shape="rect" id="node3" href="$o__stream_8h.html" title="include/object/o_stream.h" alt="" coords="476,83,644,111"/>
-<area shape="rect" id="node23" href="$strbuf_8cc.html" title="src/object/strbuf.cc" alt="" coords="668,83,799,111"/>
-<area shape="rect" id="node5" href="$cgastr_8h.html" title="include/device/cgastr.h" alt="" coords="396,161,548,189"/>
-<area shape="rect" id="node21" href="$o__stream_8cc.html" title="src/object/o_stream.cc" alt="" coords="572,161,724,189"/>
-<area shape="rect" id="node7" href="$kout_8h.html" title="alles notwendige zum nutzen der in main.cc deklarierten globalen Variable kout" alt="" coords="163,238,301,266"/>
-<area shape="rect" id="node15" href="$cgastr_8cc.html" title="CGA_Stream ist hier implementiert" alt="" coords="325,238,461,266"/>
-<area shape="rect" id="node17" href="$panic_8cc.html" title="src/device/panic.cc" alt="" coords="485,238,616,266"/>
-<area shape="rect" id="node19" href="$main_8cc.html" title="Grunddatei von OOStuBS." alt="" coords="640,238,728,266"/>
-<area shape="rect" id="node9" href="$guardian_8cc.html" title="Interrupt&#45;Behandlungsfunktionen." alt="" coords="5,315,149,343"/>
-<area shape="rect" id="node11" href="$task1_8cc.html" title="src/user/task1.cc" alt="" coords="173,315,291,343"/>
-<area shape="rect" id="node13" href="$task2_8cc.html" title="src/user/task2.cc" alt="" coords="315,315,432,343"/>
+<area shape="rect" id="node3" href="$o__stream_8h.html" title="include/object/o_stream.h" alt="" coords="875,83,1043,111"/>
+<area shape="rect" id="node36" href="$strbuf_8cc.html" title="src/object/strbuf.cc" alt="" coords="1067,83,1197,111"/>
+<area shape="rect" id="node5" href="$cgastr_8h.html" title="include/device/cgastr.h" alt="" coords="795,161,947,189"/>
+<area shape="rect" id="node34" href="$o__stream_8cc.html" title="src/object/o_stream.cc" alt="" coords="971,161,1123,189"/>
+<area shape="rect" id="node7" href="$fixedPointNumber_8h.html" title="include/object/fixedPoint\lNumber.h" alt="" coords="212,238,375,282"/>
+<area shape="rect" id="node13" href="$kout_8h.html" title="alles notwendige zum nutzen der in main.cc deklarierten globalen Variable kout" alt="" coords="640,246,779,274"/>
+<area shape="rect" id="node28" href="$cgastr_8cc.html" title="CGA_Stream ist hier implementiert" alt="" coords="803,246,939,274"/>
+<area shape="rect" id="node30" href="$panic_8cc.html" title="src/device/panic.cc" alt="" coords="963,246,1093,274"/>
+<area shape="rect" id="node32" href="$main_8cc.html" title="Grunddatei von OOStuBS." alt="" coords="1117,246,1205,274"/>
+<area shape="rect" id="node9" href="$fixedPointNumber_8cc.html" title="src/object/fixedPointNumber.cc" alt="" coords="5,331,205,359"/>
+<area shape="rect" id="node11" href="$task3A_8cc.html" title="src/user/task3A.cc" alt="" coords="229,331,357,359"/>
+<area shape="rect" id="node15" href="$keyboard_8cc.html" title="src/device/keyboard.cc" alt="" coords="381,331,533,359"/>
+<area shape="rect" id="node17" href="$guardian_8cc.html" title="Interrupt&#45;Behandlungsfunktionen." alt="" coords="557,331,701,359"/>
+<area shape="rect" id="node19" href="$analyse_8cc.html" title="src/user/analyse.cc" alt="" coords="725,331,856,359"/>
+<area shape="rect" id="node21" href="$task1_8cc.html" title="src/user/task1.cc" alt="" coords="880,331,997,359"/>
+<area shape="rect" id="node23" href="$task2_8cc.html" title="src/user/task2.cc" alt="" coords="1021,331,1139,359"/>
+<area shape="rect" id="node26" href="$task3B_8cc.html" title="src/user/task3B.cc" alt="" coords="1163,331,1291,359"/>
 </map>

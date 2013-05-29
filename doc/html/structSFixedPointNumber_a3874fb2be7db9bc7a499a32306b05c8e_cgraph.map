@@ -1,0 +1,6 @@
+<map id="SFixedPointNumber::operator^" name="SFixedPointNumber::operator^">
+<area shape="rect" id="node3" href="$structSFixedPointNumber.html#a7cd7537e3e4d0e9d89ace9e6300d6a6b" title="power of the Number" alt="" coords="196,63,361,91"/>
+<area shape="rect" id="node5" href="$pow_8S.html#a962039e712cade9da9760c9b1c6bb39e" title="Diese Funktion berechnet mit Hilfe der x86 FPU die Potenz zweier Zahlen." alt="" coords="456,5,507,33"/>
+<area shape="rect" id="node7" href="$structSFixedPointNumber.html#a6fd94c2ecb4538f8e53160e535f83672" title="convert SFixedPointNumber to float" alt="" coords="412,55,551,99"/>
+<area shape="rect" id="node9" href="$structSFixedPointNumber.html#a1cccbd6ed4903fcdbadb313348c856fe" title="convert float to SFixedPointNumber" alt="" coords="412,122,551,166"/>
+</map>

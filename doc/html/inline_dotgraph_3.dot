@@ -1,0 +1,60 @@
+ 
+  digraph task1 {
+    size="8.5,7.5";
+    node [shape=box, style="solid,filled", fillcolor=white];
+    
+    
+    kernelF [label="kernel(...)", shape=oval, URL="\ref kernel"];
+    gotoAnalyseF [label="gotoAnalyse(...)", shape=oval];
+    cpuH [label="HW CPU", shape=doubleoctagon];
+    
+    subgraph cluster_subuser {
+      rank="source";
+      style=filled;
+      color=lightgray;
+      label = "user";
+      labeljust=l;
+      task3AC [label="Task3A", URL="\ref Task3A"];
+      task3BC [label="Task3B", URL="\ref Task3B"];
+      analyseEF [label="analyseException(...)", shape=oval, URL="\ref analyseException", color=blue];
+      analysePSF [label="analyseProcedureStack(...)", shape=oval, URL="\ref analyseProcedureStack", color=blue];
+    }
+    
+    subgraph cluster_submachine {
+      style=filled;
+      color=lightgray;
+      label = "machine";
+      labeljust=l;
+      cpuC [label="CPU", URL="\ref CPU"];
+      cgascrC [label="CGA_Screen", URL="\ref CGA_Screen"];
+    }
+    
+    subgraph cluster_subobject {
+      style=filled;
+      color=lightgray;
+      label = "object";
+      labeljust=c;
+      FPNS [label="SFixedPointNumber", URL="\ref SFixedPointNumber"];
+      ostrC [label="O_Stream", URL="\ref O_Stream", color=blue];
+    }
+    
+    subgraph cluster_subdevice {
+      style=filled;
+      color=lightgray;
+      label = "device";
+      labeljust=c;
+      keyboardC [label="Keyboard", URL="\ref Keyboard", color=blue];
+    }
+    
+    
+    kernelF -> task3AC [arrowhead="open"];
+    kernelF -> task3BC [arrowhead="open"];
+    task3AC -> cgascrC [arrowhead="open"];
+    task3AC -> cpuC [arrowhead="open"];
+    FPNS -> task3AC [arrowhead="ediamond"];
+    task3BC -> cgascrC [arrowhead="open"];
+    task3BC -> cpuC [arrowhead="open"];
+    task3BC -> gotoAnalyseF [arrowhead="open"];
+    gotoAnalyseF -> analysePSF [arrowhead="open"];
+    cpuH -> analyseEF [arrowhead="open"];
+  }

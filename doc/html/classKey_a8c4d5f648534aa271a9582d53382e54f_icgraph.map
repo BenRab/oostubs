@@ -1,8 +1,9 @@
 <map id="Key::ctrl_right" name="Key::ctrl_right">
-<area shape="rect" id="node3" href="$classKey.html#a90ea541bc6d1286a517eaccd700c4ba0" title="Key::ctrl_right" alt="" coords="156,13,255,41"/>
-<area shape="rect" id="node13" href="$classKey.html#ace132391315a2fb7d4f4fb3ebcae0f59" title="Key::ctrl" alt="" coords="172,63,239,91"/>
+<area shape="rect" id="node3" href="$classKey.html#a90ea541bc6d1286a517eaccd700c4ba0" title="Key::ctrl_right" alt="" coords="156,15,255,43"/>
+<area shape="rect" id="node15" href="$classKey.html#ace132391315a2fb7d4f4fb3ebcae0f59" title="Key::ctrl" alt="" coords="340,71,407,99"/>
 <area shape="rect" id="node5" href="$classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2" title="interpret the received scancode and modifier bits" alt="" coords="304,5,443,49"/>
 <area shape="rect" id="node7" href="$classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21" title="get the last pressed key" alt="" coords="491,5,629,49"/>
-<area shape="rect" id="node9" href="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object" alt="" coords="677,13,816,41"/>
-<area shape="rect" id="node11" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information" alt="" coords="864,13,963,41"/>
+<area shape="rect" id="node9" href="$classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353" title="einen auftretenden Tastaturinterrupt behandeln" alt="" coords="688,67,805,95"/>
+<area shape="rect" id="node11" href="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object" alt="" coords="677,13,816,41"/>
+<area shape="rect" id="node13" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information" alt="" coords="864,13,963,41"/>
 </map>

@@ -123,9 +123,6 @@ Weitere Geerbte Elemente</h2></td></tr>
 <a class="anchor" id="ad6b0bb849d6bb7cdf63091e40b5f5f7f"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Keyboard::Keyboard </td>
@@ -134,16 +131,12 @@ Weitere Geerbte Elemente</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Der Konstruktor ruft die vorherigen Konstruktoren auf. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000015">Noch zu erledigen:</a></b></dt><dd>implementieren</dd></dl>
 
-<p>Definiert in Zeile <a class="el" href="device_2keyboard_8h_source.html#l00049">49</a> der Datei <a class="el" href="device_2keyboard_8h_source.html">keyboard.h</a>.</p>
+<p>Definiert in Zeile <a class="el" href="keyboard_8cc_source.html#l00022">22</a> der Datei <a class="el" href="keyboard_8cc_source.html">keyboard.cc</a>.</p>
 
 </div>
 </div>
@@ -163,7 +156,6 @@ Weitere Geerbte Elemente</h2></td></tr>
 
 <p>aktiviert den Interruptmechanismus für die Tastatur </p>
 <p>Die Methode aktiviert die <a class="el" href="classKeyboard.html" title="Treiber für die Tastatur, incl. Interruptunterstützung.">Keyboard</a> Interrupts. Nach dem Aufruf werden die Interrupts, welche durch die Tastatur generiert werden, weitergereicht. Die Behandlung ist dann mit trigger möglich.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000015">Noch zu erledigen:</a></b></dt><dd>implementieren</dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000016">Noch zu erledigen:</a></b></dt><dd>implementieren</dd></dl>
 
 <p>Definiert in Zeile <a class="el" href="keyboard_8cc_source.html#l00026">26</a> der Datei <a class="el" href="keyboard_8cc_source.html">keyboard.cc</a>.</p>
@@ -182,7 +174,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
 <div class="center"><img src="classKeyboard_a6d362a122a7c417ff1a5c60152746d61_icgraph.png" border="0" usemap="#classKeyboard_a6d362a122a7c417ff1a5c60152746d61_icgraph" alt=""/></div>
 <map name="classKeyboard_a6d362a122a7c417ff1a5c60152746d61_icgraph" id="classKeyboard_a6d362a122a7c417ff1a5c60152746d61_icgraph">
-<area shape="rect" id="node3" href="classTask2.html#a4adb42b6119375dfec56808c158dd7dc" title="Default constructor." alt="" coords="171,5,269,33"/></map>
+<area shape="rect" id="node3" href="classTask2.html#a4adb42b6119375dfec56808c158dd7dc" title="Default constructor." alt="" coords="180,5,279,33"/><area shape="rect" id="node5" href="classTask3A.html#a86233712775d9b45fe3d8a5eae09334d" title="Default constructor." alt="" coords="172,55,287,83"/><area shape="rect" id="node7" href="classTask3B.html#a7ec400d4732dfb10f86b72a9b767f36e" title="Default constructor." alt="" coords="172,106,287,134"/></map>
 </div>
 </p>
 
@@ -216,7 +208,16 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 
 <p>Implementiert <a class="el" href="classGate.html#a02e9dccfd4136f7152b531a024dcd37a">Gate</a>.</p>
 
-<p>Definiert in Zeile <a class="el" href="keyboard_8cc_source.html#l00033">33</a> der Datei <a class="el" href="keyboard_8cc_source.html">keyboard.cc</a>.</p>
+<p>Definiert in Zeile <a class="el" href="keyboard_8cc_source.html#l00032">32</a> der Datei <a class="el" href="keyboard_8cc_source.html">keyboard.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="classKeyboard_a0d0359a4df20db7eb38dd769e2322353_cgraph.png" border="0" usemap="#classKeyboard_a0d0359a4df20db7eb38dd769e2322353_cgraph" alt=""/></div>
+<map name="classKeyboard_a0d0359a4df20db7eb38dd769e2322353_cgraph" id="classKeyboard_a0d0359a4df20db7eb38dd769e2322353_cgraph">
+<area shape="rect" id="node3" href="classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21" title="get the last pressed key" alt="" coords="173,545,312,589"/><area shape="rect" id="node46" href="classKey.html#ae67075af1a5c0a7f585e8e61fc8515f8" title="set scancode value" alt="" coords="759,251,863,279"/><area shape="rect" id="node56" href="classKey.html#a4292f24b142a697e610fb7780a0dc9d5" title="test for validity." alt="" coords="205,157,280,185"/><area shape="rect" id="node58" href="classKey.html#ae422a2a2113c5ba1ed46ddaa7bf3ecd8" title="Key::alt" alt="" coords="589,5,653,33"/><area shape="rect" id="node62" href="classKey.html#ace132391315a2fb7d4f4fb3ebcae0f59" title="Key::ctrl" alt="" coords="588,106,655,134"/><area shape="rect" id="node67" href="classKeyboard__Controller.html#a686dd47e66ae9c2d9ccf1b9f84d3e99d" title="reboots the computer" alt="" coords="552,746,691,790"/><area shape="rect" id="node71" href="classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers" alt="" coords="177,898,308,926"/><area shape="rect" id="node75" href="classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position" alt="" coords="551,813,692,841"/><area shape="rect" id="node82" href="classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position" alt="" coords="551,863,692,891"/><area shape="rect" id="node5" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port." alt="" coords="765,695,856,723"/><area shape="rect" id="node7" href="classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2" title="interpret the received scancode and modifier bits" alt="" coords="360,410,499,454"/><area shape="rect" id="node9" href="classKey.html#a62e735f4121d8984d994a508bdd6a74b" title="Key::shift" alt="" coords="773,473,848,501"/><area shape="rect" id="node13" href="classKey.html#af4fa809960860523573abd695e3f8fbe" title="Key::alt_right" alt="" coords="763,309,859,337"/><area shape="rect" id="node17" href="classKey.html#ab1199ecfd588b567053543b6715ba19a" title="Key::alt_left" alt="" coords="577,55,665,83"/><area shape="rect" id="node21" href="classKey.html#a90ea541bc6d1286a517eaccd700c4ba0" title="Key::ctrl_right" alt="" coords="572,157,671,185"/><area shape="rect" id="node25" href="classKey.html#af1c7ef33119f0c10909a2de246de7854" title="Key::ctrl_left" alt="" coords="575,258,668,286"/><area shape="rect" id="node29" href="classKey.html#a45fb60e270f30b9f23e28259e851b14a" title="Key::caps_lock" alt="" coords="757,526,864,554"/><area shape="rect" id="node33" href="classKeyboard__Controller.html#a36dfc2c73c4031c8662e37159238d5b0" title="switch the specified LED of the keyboard on or off." alt="" coords="552,629,691,673"/><area shape="rect" id="node38" href="classKey.html#af3d96c346d2e6088cafbc94fe7c783ef" title="Key::scroll_lock" alt="" coords="567,578,676,606"/><area shape="rect" id="node42" href="classKeyboard__Controller.html#ac2b33ffe1e2794c81249861aa792513a" title="convert the received scancode and modfier bits to an ascii char" alt="" coords="552,410,691,454"/><area shape="rect" id="node48" href="classKey.html#a4a8da77b0cb57bf89bffa3903c2f79ce" title="Key::num_lock" alt="" coords="757,363,864,391"/><area shape="rect" id="node11" href="classKey.html#a19b48c665bdda438c55de7399eb4a631" title="Key::shift" alt="" coords="943,473,1017,501"/><area shape="rect" id="node15" href="classKey.html#af12fb21a12c35fb89f6ff43db96759ba" title="Key::alt_right" alt="" coords="932,157,1028,185"/><area shape="rect" id="node19" href="classKey.html#a8d41de9c5f54ed629bfd7a7f4742fbbc" title="Key::alt_left" alt="" coords="767,55,855,83"/><area shape="rect" id="node23" href="classKey.html#a8c4d5f648534aa271a9582d53382e54f" title="Key::ctrl_right" alt="" coords="761,113,860,141"/><area shape="rect" id="node27" href="classKey.html#aaa434afc90ecb93a28a0e5e6e8c58e87" title="Key::ctrl_left" alt="" coords="764,175,857,203"/><area shape="rect" id="node31" href="classKey.html#a8a4da1819e66bb141c4dea2934845fab" title="Key::caps_lock" alt="" coords="927,526,1033,554"/><area shape="rect" id="node36" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="761,754,860,782"/><area shape="rect" id="node40" href="classKey.html#a5f85f2e72598824e028162ec53890260" title="Key::scroll_lock" alt="" coords="756,578,865,606"/><area shape="rect" id="node44" href="classKey.html#abb65ed9de2b4a8c24f557416b484df34" title="set ascii value" alt="" coords="773,418,848,446"/><area shape="rect" id="node50" href="classKey.html#aab1b4f9446a6db6fc4a6a1f7824d51b5" title="Key::num_lock" alt="" coords="927,363,1033,391"/><area shape="rect" id="node73" href="classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus" alt="" coords="365,898,493,926"/><area shape="rect" id="node77" href="classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt" alt="" coords="548,965,695,993"/><area shape="rect" id="node79" href="classCGA__Screen.html#a8176499ecb3ce4e9eb05910e66aee9d2" title="print a character to a specific position" alt="" coords="744,939,877,967"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -272,7 +273,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Mon Mai 20 2013 12:56:28 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Mai 29 2013 23:52:16 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

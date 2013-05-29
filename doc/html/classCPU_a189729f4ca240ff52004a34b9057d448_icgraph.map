@@ -3,5 +3,7 @@
 <area shape="rect" id="node7" href="$guardian_8cc.html#afe78f34c7c65df79376008e0d23c1afd" title="This function is called if a normal exception is raised by the cpu." alt="" coords="159,55,273,83"/>
 <area shape="rect" id="node9" href="$guardian_8cc.html#a70466c5bd3ffac85265c22f65e9a4ef9" title="This function is called if a normal exception with error code is raised by the cpu." alt="" coords="155,106,277,134"/>
 <area shape="rect" id="node11" href="$guardian_8cc.html#a390d383038610b600ab986ec9b54879a" title="This function is called if a reserved exception is raised by the cpu." alt="" coords="132,157,300,185"/>
+<area shape="rect" id="node13" href="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point" alt="" coords="188,207,244,235"/>
+<area shape="rect" id="node15" href="$analyse_8cc.html#a07755aa59f817c8a4e46336d1c1a15eb" title="Funktion zur Analyse einer Fehlerbehandlungsroutine." alt="" coords="156,258,276,286"/>
 <area shape="rect" id="node5" href="$guardian_8cc.html#a9017cbb15c79b718e82c9ed18a58ed60" title="Einsprungspunkt für Interrupts." alt="" coords="351,5,420,33"/>
 </map>

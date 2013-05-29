@@ -3,6 +3,9 @@
 <area shape="rect" id="node7" href="$guardian_8cc.html#afe78f34c7c65df79376008e0d23c1afd" title="This function is called if a normal exception is raised by the cpu." alt="" coords="199,55,313,83"/>
 <area shape="rect" id="node9" href="$guardian_8cc.html#a70466c5bd3ffac85265c22f65e9a4ef9" title="This function is called if a normal exception with error code is raised by the cpu." alt="" coords="195,106,317,134"/>
 <area shape="rect" id="node11" href="$guardian_8cc.html#a390d383038610b600ab986ec9b54879a" title="This function is called if a reserved exception is raised by the cpu." alt="" coords="172,157,340,185"/>
-<area shape="rect" id="node13" href="$classTask2.html#a794cc6220efa649fe31504bf3e9fd819" title="Destructor." alt="" coords="204,207,308,235"/>
+<area shape="rect" id="node13" href="$analyse_8cc.html#a07755aa59f817c8a4e46336d1c1a15eb" title="Funktion zur Analyse einer Fehlerbehandlungsroutine." alt="" coords="196,207,316,235"/>
+<area shape="rect" id="node15" href="$classTask2.html#a794cc6220efa649fe31504bf3e9fd819" title="Destructor." alt="" coords="204,258,308,286"/>
+<area shape="rect" id="node17" href="$classTask3A.html#ae4727e82fb8e4d80a8d6ef1a2a33f767" title="Destructor." alt="" coords="195,309,317,337"/>
+<area shape="rect" id="node19" href="$classTask3B.html#a98c04ad76505f28d73fa9bb964dd27c9" title="Destructor." alt="" coords="195,359,317,387"/>
 <area shape="rect" id="node5" href="$guardian_8cc.html#a9017cbb15c79b718e82c9ed18a58ed60" title="Einsprungspunkt für Interrupts." alt="" coords="391,5,460,33"/>
 </map>

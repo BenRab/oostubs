@@ -221,10 +221,9 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </div><div class="memdoc">
 
 <p>sendet ein "Acknowledgement" eines ausstehenden Interrupts </p>
-<p>Die Funktion bestätigt die Behandlung eines aufgetretenen Interrupts. Dies sagt dem <a class="el" href="classPIC.html" title="Treiber für den PIC (Programmable Interrupt Controller)">PIC</a>, dass der letzte gemeldete Interrupt abgearbeitet wurde</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000029">Noch zu erledigen:</a></b></dt><dd>implementieren</dd></dl>
+<p>Die Funktion bestätigt die Behandlung eines aufgetretenen Interrupts. Dies sagt dem <a class="el" href="classPIC.html" title="Treiber für den PIC (Programmable Interrupt Controller)">PIC</a>, dass der letzte gemeldete Interrupt abgearbeitet wurde </p>
 
-<p>Definiert in Zeile <a class="el" href="pic_8cc_source.html#l00087">87</a> der Datei <a class="el" href="pic_8cc_source.html">pic.cc</a>.</p>
+<p>Definiert in Zeile <a class="el" href="pic_8cc_source.html#l00084">84</a> der Datei <a class="el" href="pic_8cc_source.html">pic.cc</a>.</p>
 
 <p><div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
@@ -252,10 +251,9 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </div><div class="memdoc">
 
 <p>erlaubt einen speziellen Interrupt von der Hardware </p>
-<p>Die Funktion ermöglich dem System Interrupts von speziellen Geräten mit Hilfe des PICs zu behandeln. Damit überhaupt ein Interrupt behandelt werden kann muss vorher <a class="el" href="classCPU.html#ab5e5a2260ef84a433c181786f11c4609">CPU::enable_int()</a> aufgerufen werden um die Interrupts global zu erlauben.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000027">Noch zu erledigen:</a></b></dt><dd>implementieren</dd></dl>
+<p>Die Funktion ermöglich dem System Interrupts von speziellen Geräten mit Hilfe des PICs zu behandeln. Damit überhaupt ein Interrupt behandelt werden kann muss vorher <a class="el" href="classCPU.html#ab5e5a2260ef84a433c181786f11c4609">CPU::enable_int()</a> aufgerufen werden um die Interrupts global zu erlauben. </p>
 
-<p>Definiert in Zeile <a class="el" href="pic_8cc_source.html#l00051">51</a> der Datei <a class="el" href="pic_8cc_source.html">pic.cc</a>.</p>
+<p>Definiert in Zeile <a class="el" href="pic_8cc_source.html#l00050">50</a> der Datei <a class="el" href="pic_8cc_source.html">pic.cc</a>.</p>
 
 <p><div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
@@ -271,7 +269,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPIC_a62ac9996c8ecfca65e2529655050b26b_icgraph.png" border="0" usemap="#classPIC_a62ac9996c8ecfca65e2529655050b26b_icgraph" alt=""/></div>
 <map name="classPIC_a62ac9996c8ecfca65e2529655050b26b_icgraph" id="classPIC_a62ac9996c8ecfca65e2529655050b26b_icgraph">
-<area shape="rect" id="node3" href="classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur" alt="" coords="135,5,249,33"/><area shape="rect" id="node5" href="classTask2.html#a4adb42b6119375dfec56808c158dd7dc" title="Default constructor." alt="" coords="299,5,397,33"/></map>
+<area shape="rect" id="node3" href="classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur" alt="" coords="135,55,249,83"/><area shape="rect" id="node5" href="classTask2.html#a4adb42b6119375dfec56808c158dd7dc" title="Default constructor." alt="" coords="308,5,407,33"/><area shape="rect" id="node7" href="classTask3A.html#a86233712775d9b45fe3d8a5eae09334d" title="Default constructor." alt="" coords="300,55,415,83"/><area shape="rect" id="node9" href="classTask3B.html#a7ec400d4732dfb10f86b72a9b767f36e" title="Default constructor." alt="" coords="300,106,415,134"/></map>
 </div>
 </p>
 
@@ -292,10 +290,9 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 </div><div class="memdoc">
 
 <p>verbietet einen speziellen Interrupt der Hardware </p>
-<p>Diese Funktion deaktiviert einen bestimmten Interrupt mit Hilfe des PICs.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000028">Noch zu erledigen:</a></b></dt><dd>implementieren</dd></dl>
+<p>Diese Funktion deaktiviert einen bestimmten Interrupt mit Hilfe des PICs. </p>
 
-<p>Definiert in Zeile <a class="el" href="pic_8cc_source.html#l00070">70</a> der Datei <a class="el" href="pic_8cc_source.html">pic.cc</a>.</p>
+<p>Definiert in Zeile <a class="el" href="pic_8cc_source.html#l00068">68</a> der Datei <a class="el" href="pic_8cc_source.html">pic.cc</a>.</p>
 
 <p><div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
@@ -332,10 +329,9 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Rückgabe</dt><dd>Der ISR des angefragten PICs.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000030">Noch zu erledigen:</a></b></dt><dd>implementieren</dd></dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Der ISR des angefragten PICs. </dd></dl>
 
-<p>Definiert in Zeile <a class="el" href="pic_8cc_source.html#l00098">98</a> der Datei <a class="el" href="pic_8cc_source.html">pic.cc</a>.</p>
+<p>Definiert in Zeile <a class="el" href="pic_8cc_source.html#l00094">94</a> der Datei <a class="el" href="pic_8cc_source.html">pic.cc</a>.</p>
 
 <p><div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
@@ -355,7 +351,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Mon Mai 20 2013 12:56:28 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Mai 29 2013 23:52:16 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

@@ -13,6 +13,7 @@
 #include "device/panic.h"
 #include "useful/kout.h"
 #include "useful/cpu.h"
+#include "useful/pic.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #            declare methods as c-like            #
@@ -61,7 +62,6 @@ void guardian (unsigned short slot) {
   } else{
     panic.trigger();
   }
-
 }
 
 

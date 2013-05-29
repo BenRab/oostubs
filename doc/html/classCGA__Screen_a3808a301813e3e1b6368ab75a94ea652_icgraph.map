@@ -1,12 +1,13 @@
 <map id="CGA_Screen::scrollup" name="CGA_Screen::scrollup">
-<area shape="rect" id="node3" href="$classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus" alt="" coords="204,131,332,159"/>
-<area shape="rect" id="node5" href="$classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers" alt="" coords="381,131,512,159"/>
-<area shape="rect" id="node7" href="$guardian_8cc.html#afe78f34c7c65df79376008e0d23c1afd" title="This function is called if a normal exception is raised by the cpu." alt="" coords="588,5,703,33"/>
-<area shape="rect" id="node9" href="$guardian_8cc.html#a70466c5bd3ffac85265c22f65e9a4ef9" title="This function is called if a normal exception with error code is raised by the cpu." alt="" coords="584,55,707,83"/>
-<area shape="rect" id="node11" href="$guardian_8cc.html#a390d383038610b600ab986ec9b54879a" title="This function is called if a reserved exception is raised by the cpu." alt="" coords="561,106,729,134"/>
-<area shape="rect" id="node13" href="$classTask1.html#a48ca608ac9cdc03ab6614a4f61e2448e" title="test the functionality of the Kout object" alt="" coords="591,157,700,185"/>
-<area shape="rect" id="node17" href="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object" alt="" coords="576,207,715,235"/>
-<area shape="rect" id="node20" href="$classTask2.html#aa5de17846032b02d6d0819cdc78b1b3e" title="prints the line" alt="" coords="596,258,695,286"/>
-<area shape="rect" id="node15" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information" alt="" coords="779,182,877,210"/>
-<area shape="rect" id="node22" href="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point" alt="" coords="800,258,856,286"/>
+<area shape="rect" id="node3" href="$classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus" alt="" coords="204,182,332,210"/>
+<area shape="rect" id="node5" href="$classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers" alt="" coords="381,182,512,210"/>
+<area shape="rect" id="node7" href="$classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353" title="einen auftretenden Tastaturinterrupt behandeln" alt="" coords="587,5,704,33"/>
+<area shape="rect" id="node9" href="$guardian_8cc.html#afe78f34c7c65df79376008e0d23c1afd" title="This function is called if a normal exception is raised by the cpu." alt="" coords="588,55,703,83"/>
+<area shape="rect" id="node11" href="$guardian_8cc.html#a70466c5bd3ffac85265c22f65e9a4ef9" title="This function is called if a normal exception with error code is raised by the cpu." alt="" coords="584,106,707,134"/>
+<area shape="rect" id="node13" href="$guardian_8cc.html#a390d383038610b600ab986ec9b54879a" title="This function is called if a reserved exception is raised by the cpu." alt="" coords="561,157,729,185"/>
+<area shape="rect" id="node15" href="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point" alt="" coords="617,207,673,235"/>
+<area shape="rect" id="node17" href="$classTask1.html#a48ca608ac9cdc03ab6614a4f61e2448e" title="test the functionality of the Kout object" alt="" coords="591,258,700,286"/>
+<area shape="rect" id="node21" href="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object" alt="" coords="576,309,715,337"/>
+<area shape="rect" id="node24" href="$classTask2.html#aa5de17846032b02d6d0819cdc78b1b3e" title="prints the line" alt="" coords="596,359,695,387"/>
+<area shape="rect" id="node19" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information" alt="" coords="779,283,877,311"/>
 </map>

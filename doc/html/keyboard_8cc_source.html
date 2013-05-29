@@ -65,27 +65,46 @@
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="key_8h.html">machine/key.h</a>&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="machine_2pic_8h.html">machine/pic.h</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="machine_2plugbox_8h.html">machine/plugbox.h</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//extern CGA_Stream kout;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="kout_8h.html" title="alles notwendige zum nutzen der in main.cc deklarierten globalen Variable kout">useful/kout.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">extern</span> <a class="code" href="classPIC.html" title="Treiber für den PIC (Programmable Interrupt Controller)">PIC</a> <a class="code" href="useful_2pic_8h.html#a5df8263917aec96d469d1c5d00ae364c">pic</a>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">extern</span> <a class="code" href="classPlugbox.html" title="Administrationseinheit für die Interruptweitergabe.">Plugbox</a> <a class="code" href="useful_2plugbox_8h.html#aa0c53aa97b3dec9b04fa8e566e706e4c">plugbox</a>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//Keyboard::Keyboard(){</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//}</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="classKeyboard.html#ad6b0bb849d6bb7cdf63091e40b5f5f7f">   22</a></span>&#160;<a class="code" href="classKeyboard.html#ad6b0bb849d6bb7cdf63091e40b5f5f7f" title="Der Konstruktor ruft die vorherigen Konstruktoren auf.">Keyboard::Keyboard</a>(){</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61">   26</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur">Keyboard::plugin</a>(){</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="classKeyboard.html#a51c101bebcd08c112e2851fce644059c">length</a> = 0;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  plugbox.<a class="code" href="classPlugbox.html#a7f48e4645e6709fe2030aaa79eb0d3f1" title="bindet ein Gate -Objekt an einen speziellen Interrupt">assign</a>(<a class="code" href="classGate.html#a1f87a36c2df50efd46d09c388625a7e1" title="Nummer des Interrupts, der die Behandlung durch dieses Gates ausgelöst hat.">gateInterruptNumber</a>, *<span class="keyword">this</span>); </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  pic.<a class="code" href="classPIC.html#a62ac9996c8ecfca65e2529655050b26b" title="erlaubt einen speziellen Interrupt von der Hardware">allow</a>(<a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa06a1851736f0221a7a3bfd499cfc5818" title="Tastaturkontroller.">PIC::keyboard</a>);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353" title="einen auftretenden Tastaturinterrupt behandeln">Keyboard::trigger</a>(){</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">//Interreupt-Behandlung, schreibe Zeichen an bestimmte Stelle</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  plugbox.<a class="code" href="classPlugbox.html#a7f48e4645e6709fe2030aaa79eb0d3f1" title="bindet ein Gate -Objekt an einen speziellen Interrupt">assign</a>(<a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa06a1851736f0221a7a3bfd499cfc5818" title="Tastaturkontroller.">PIC::keyboard</a> + 32, *<span class="keyword">this</span>); </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  pic.<a class="code" href="classPIC.html#a62ac9996c8ecfca65e2529655050b26b" title="erlaubt einen speziellen Interrupt von der Hardware">allow</a>(<a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5aa06a1851736f0221a7a3bfd499cfc5818" title="Tastaturkontroller.">PIC::keyboard</a>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353">   32</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353" title="einen auftretenden Tastaturinterrupt behandeln">Keyboard::trigger</a>(){</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">//Interreupt-Behandlung, schreibe Zeichen an bestimmte Stelle</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="classKey.html" title="Translator between scancodes ASCII-code and modifier bits.">Key</a> k = <a class="code" href="classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21" title="get the last pressed key">key_hit</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> x;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> y;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">if</span>(k.<a class="code" href="classKey.html#a4292f24b142a697e610fb7780a0dc9d5" title="test for validity.">valid</a>() &amp;&amp; k.<a class="code" href="classKey.html#ae422a2a2113c5ba1ed46ddaa7bf3ecd8">alt</a>() &amp;&amp; k.<a class="code" href="classKey.html#ace132391315a2fb7d4f4fb3ebcae0f59">ctrl</a>() &amp;&amp; k.<a class="code" href="classKey.html#ae67075af1a5c0a7f585e8e61fc8515f8" title="set scancode value">scancode</a>() == 0x53)<span class="comment">//k.scan.del)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classKeyboard__Controller.html#a686dd47e66ae9c2d9ccf1b9f84d3e99d" title="reboots the computer">reboot</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  } </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>(k.<a class="code" href="classKey.html#a4292f24b142a697e610fb7780a0dc9d5" title="test for validity.">valid</a>())</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="kout_8h.html#af177bb20a527a2c8f2df3a4a2ddb5d38">kout</a>.<a class="code" href="classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers">flush</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="kout_8h.html#af177bb20a527a2c8f2df3a4a2ddb5d38">kout</a>.<a class="code" href="classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position">getpos</a>(x, y);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="kout_8h.html#af177bb20a527a2c8f2df3a4a2ddb5d38">kout</a>.<a class="code" href="classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position">setpos</a>(0, 10);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="kout_8h.html#af177bb20a527a2c8f2df3a4a2ddb5d38">kout</a> &lt;&lt; k;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="kout_8h.html#af177bb20a527a2c8f2df3a4a2ddb5d38">kout</a>.<a class="code" href="classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers">flush</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="kout_8h.html#af177bb20a527a2c8f2df3a4a2ddb5d38">kout</a>.<a class="code" href="classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position">setpos</a>(x, y);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Mon Mai 20 2013 12:56:27 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Mai 29 2013 23:52:15 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

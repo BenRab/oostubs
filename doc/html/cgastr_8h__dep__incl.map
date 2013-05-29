@@ -1,9 +1,15 @@
 <map id="include/device/cgastr.h" name="include/device/cgastr.h">
-<area shape="rect" id="node3" href="$kout_8h.html" title="alles notwendige zum nutzen der in main.cc deklarierten globalen Variable kout" alt="" coords="163,83,301,111"/>
-<area shape="rect" id="node11" href="$cgastr_8cc.html" title="CGA_Stream ist hier implementiert" alt="" coords="325,83,461,111"/>
-<area shape="rect" id="node13" href="$panic_8cc.html" title="src/device/panic.cc" alt="" coords="485,83,616,111"/>
-<area shape="rect" id="node15" href="$main_8cc.html" title="Grunddatei von OOStuBS." alt="" coords="640,83,728,111"/>
-<area shape="rect" id="node5" href="$guardian_8cc.html" title="Interrupt&#45;Behandlungsfunktionen." alt="" coords="5,161,149,189"/>
-<area shape="rect" id="node7" href="$task1_8cc.html" title="src/user/task1.cc" alt="" coords="173,161,291,189"/>
-<area shape="rect" id="node9" href="$task2_8cc.html" title="src/user/task2.cc" alt="" coords="315,161,432,189"/>
+<area shape="rect" id="node3" href="$fixedPointNumber_8h.html" title="include/object/fixedPoint\lNumber.h" alt="" coords="212,83,375,127"/>
+<area shape="rect" id="node9" href="$kout_8h.html" title="alles notwendige zum nutzen der in main.cc deklarierten globalen Variable kout" alt="" coords="640,91,779,119"/>
+<area shape="rect" id="node24" href="$cgastr_8cc.html" title="CGA_Stream ist hier implementiert" alt="" coords="803,91,939,119"/>
+<area shape="rect" id="node26" href="$panic_8cc.html" title="src/device/panic.cc" alt="" coords="963,91,1093,119"/>
+<area shape="rect" id="node28" href="$main_8cc.html" title="Grunddatei von OOStuBS." alt="" coords="1117,91,1205,119"/>
+<area shape="rect" id="node5" href="$fixedPointNumber_8cc.html" title="src/object/fixedPointNumber.cc" alt="" coords="5,177,205,205"/>
+<area shape="rect" id="node7" href="$task3A_8cc.html" title="src/user/task3A.cc" alt="" coords="229,177,357,205"/>
+<area shape="rect" id="node11" href="$keyboard_8cc.html" title="src/device/keyboard.cc" alt="" coords="381,177,533,205"/>
+<area shape="rect" id="node13" href="$guardian_8cc.html" title="Interrupt&#45;Behandlungsfunktionen." alt="" coords="557,177,701,205"/>
+<area shape="rect" id="node15" href="$analyse_8cc.html" title="src/user/analyse.cc" alt="" coords="725,177,856,205"/>
+<area shape="rect" id="node17" href="$task1_8cc.html" title="src/user/task1.cc" alt="" coords="880,177,997,205"/>
+<area shape="rect" id="node19" href="$task2_8cc.html" title="src/user/task2.cc" alt="" coords="1021,177,1139,205"/>
+<area shape="rect" id="node22" href="$task3B_8cc.html" title="src/user/task3B.cc" alt="" coords="1163,177,1291,205"/>
 </map>

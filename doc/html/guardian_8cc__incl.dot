@@ -29,4 +29,10 @@ digraph "src/guard/guardian.cc"
   Node12 [label="useful/cpu.h",height=0.2,width=0.4,color="black",URL="$useful_2cpu_8h.html",tooltip="alles notwendige zum nutzen der in main.cc deklarierten globalen Variable cpu"];
   Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
   Node13 [label="machine/cpu.h",height=0.2,width=0.4,color="black",URL="$machine_2cpu_8h.html"];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node14 [label="useful/pic.h",height=0.2,width=0.4,color="black",URL="$useful_2pic_8h.html"];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node15 [label="machine/pic.h",height=0.2,width=0.4,color="black",URL="$machine_2pic_8h.html"];
+  Node15 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node15 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
 }

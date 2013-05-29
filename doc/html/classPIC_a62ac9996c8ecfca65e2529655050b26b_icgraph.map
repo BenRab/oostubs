@@ -1,4 +1,6 @@
 <map id="PIC::allow" name="PIC::allow">
-<area shape="rect" id="node3" href="$classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur" alt="" coords="135,5,249,33"/>
-<area shape="rect" id="node5" href="$classTask2.html#a4adb42b6119375dfec56808c158dd7dc" title="Default constructor." alt="" coords="299,5,397,33"/>
+<area shape="rect" id="node3" href="$classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur" alt="" coords="135,55,249,83"/>
+<area shape="rect" id="node5" href="$classTask2.html#a4adb42b6119375dfec56808c158dd7dc" title="Default constructor." alt="" coords="308,5,407,33"/>
+<area shape="rect" id="node7" href="$classTask3A.html#a86233712775d9b45fe3d8a5eae09334d" title="Default constructor." alt="" coords="300,55,415,83"/>
+<area shape="rect" id="node9" href="$classTask3B.html#a7ec400d4732dfb10f86b72a9b767f36e" title="Default constructor." alt="" coords="300,106,415,134"/>
 </map>

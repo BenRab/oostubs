@@ -42,7 +42,7 @@
 <div class="contents">
 <div class="toc"><h3>Inhaltsverzeichnis</h3>
 <ul><li class="level1"><a href="#task2_sec1">Ziele</a></li>
-<li class="level1"><a href="#task1_sec2">Aufgabe</a></li>
+<li class="level1"><a href="#task2_sec2">Aufgabe</a></li>
 <li class="level1"><a href="#task2_sec3">Implementierung</a><ul><li class="level2"><a href="#task2_sec3_1">Teil A</a></li>
 <li class="level2"><a href="#task2_sec3_2">Teil B</a></li>
 <li class="level2"><a href="#task2_sec3_3">Teil C</a></li>
@@ -58,12 +58,12 @@ Ziele</h1>
 <li>Behandlung asynchroner Ereignisse </li>
 <li>Problematik und Schutz kritischer Abschnitte</li>
 </ul>
-<h1><a class="anchor" id="task1_sec2"></a>
+<h1><a class="anchor" id="task2_sec2"></a>
 Aufgabe</h1>
 <p>Es soll eine einfache Interruptbehandlung für die Unterbrechungen durch Tastaturereignisse umgesetzt werden. Hierzu müssen die Klassen <a class="el" href="classCPU.html">CPU</a> (bereits implementiert), <a class="el" href="classPIC.html">PIC</a>, <a class="el" href="classPlugbox.html">Plugbox</a>, <a class="el" href="classGate.html">Gate</a>, <a class="el" href="classPanic.html">Panic</a>, <a class="el" href="classKeyboard.html">Keyboard</a> sowie die Funktion <a class="el" href="guardian_8cc.html#a9017cbb15c79b718e82c9ed18a58ed60">guardian()</a> implementiert werden. Um die entsprechenden Geräte überall in OOStuBS nutzen zu können, sollen von diesen Klassen die globale Objekte <code>cpu</code>, <code>plugbox</code>, <code>pic</code> und <code>keyboard</code> angelegt werden. Dies ist bereits geschehen.</p>
 <div align="center">
 <img src="dot_inline_dotgraph_2.png" alt="dot_inline_dotgraph_2.png" border="0" usemap="#dot_inline_dotgraph_2.map"/>
-<map name="dot_inline_dotgraph_2.map" id="dot_inline_dotgraph_2.map"><area shape="poly" id="node1" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel(...)" alt="" coords="81,43 79,39 73,36 65,33 54,31 42,31 29,31 18,33 10,36 4,39 2,43 4,47 10,50 18,53 29,55 42,55 54,55 65,53 73,50 79,47"/><area shape="rect" id="node3" href="classTask2.html" title="Task2" alt="" coords="23,89,60,113"/><area shape="rect" id="node8" href="classCPU.html" title="CPU" alt="" coords="205,138,241,162"/><area shape="rect" id="node9" href="classCGA__Screen.html" title="CGA_Screen" alt="" coords="76,138,145,162"/><area shape="rect" id="node5" href="classKeyboard__Controller.html" title="Keyboard_Controller" alt="" coords="147,89,252,113"/><area shape="rect" id="node6" href="classPlugbox.html" title="Plugbox" alt="" coords="253,138,300,162"/><area shape="rect" id="node14" href="classGate.html" title="Gate" alt="" coords="472,89,508,113"/><area shape="rect" id="node7" href="classPIC.html" title="PIC" alt="" coords="312,138,348,162"/><area shape="rect" id="node10" href="classKey.html" title="Key" alt="" coords="157,138,193,162"/><area shape="poly" id="node15" href="guardian_8cc.html#a9017cbb15c79b718e82c9ed18a58ed60" title="guardian(...)" alt="" coords="460,101 457,97 451,94 440,91 427,89 412,89 397,89 384,91 373,94 366,97 364,101 366,105 373,108 384,111 397,113 412,113 427,113 440,111 451,108 457,105"/><area shape="rect" id="node17" href="classPanic.html" title="Panic" alt="" coords="451,31,488,55"/><area shape="rect" id="node18" href="classKeyboard.html" title="Keyboard" alt="" coords="500,31,553,55"/></map>
+<map name="dot_inline_dotgraph_2.map" id="dot_inline_dotgraph_2.map"><area shape="poly" id="node1" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel(...)" alt="" coords="123,65 120,59 111,54 98,50 82,47 63,46 45,47 28,50 15,54 6,59 3,65 6,71 15,76 28,80 45,83 63,84 82,83 98,80 111,76 120,71"/><area shape="rect" id="node3" href="classTask2.html" title="Task2" alt="" coords="35,135,92,172"/><area shape="rect" id="node8" href="classCPU.html" title="CPU" alt="" coords="228,224,283,260"/><area shape="rect" id="node9" href="classCGA__Screen.html" title="CGA_Screen" alt="" coords="106,224,210,260"/><area shape="rect" id="node5" href="classKeyboard__Controller.html" title="Keyboard_Controller" alt="" coords="160,297,318,334"/><area shape="rect" id="node6" href="classPlugbox.html" title="Plugbox" alt="" coords="301,224,372,260"/><area shape="rect" id="node13" href="classGate.html" title="Gate" alt="" coords="311,135,366,172"/><area shape="rect" id="node7" href="classPIC.html" title="PIC" alt="" coords="391,224,446,260"/><area shape="rect" id="node10" href="classKey.html" title="Key" alt="" coords="33,224,87,260"/><area shape="poly" id="node14" href="guardian_8cc.html#a9017cbb15c79b718e82c9ed18a58ed60" title="guardian(...)" alt="" coords="293,154 290,148 279,143 263,138 243,136 221,135 198,136 178,138 162,143 152,148 148,154 152,159 162,165 178,169 198,171 221,172 243,171 263,169 279,165 290,159"/><area shape="rect" id="node16" href="classPanic.html" title="Panic" alt="" coords="281,47,336,83"/><area shape="rect" id="node17" href="classKeyboard.html" title="Keyboard" alt="" coords="354,47,435,83"/></map>
 </div>
 <h1><a class="anchor" id="task2_sec3"></a>
 Implementierung</h1>
@@ -94,7 +94,7 @@ Hilfestellung</h1>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Mon Mai 20 2013 12:56:28 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Mai 29 2013 23:52:16 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

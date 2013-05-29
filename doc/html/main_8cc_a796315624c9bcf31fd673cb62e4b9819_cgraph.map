@@ -1,13 +1,29 @@
 <map id="kernel" name="kernel">
-<area shape="rect" id="node3" href="$classTask2.html#aa5de17846032b02d6d0819cdc78b1b3e" title="prints the line" alt="" coords="112,131,211,159"/>
-<area shape="rect" id="node5" href="$classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position" alt="" coords="620,5,761,33"/>
-<area shape="rect" id="node7" href="$classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position" alt="" coords="620,157,761,185"/>
-<area shape="rect" id="node11" href="$classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers" alt="" coords="259,106,389,134"/>
-<area shape="rect" id="node22" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="301,207,347,235"/>
-<area shape="rect" id="node9" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="831,157,929,185"/>
-<area shape="rect" id="node13" href="$classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus" alt="" coords="439,106,567,134"/>
-<area shape="rect" id="node16" href="$classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt" alt="" coords="617,55,764,83"/>
-<area shape="rect" id="node18" href="$classCGA__Screen.html#a8176499ecb3ce4e9eb05910e66aee9d2" title="print a character to a specific position" alt="" coords="813,81,947,109"/>
-<area shape="rect" id="node24" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer" alt="" coords="448,207,557,235"/>
-<area shape="rect" id="node26" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="632,207,749,235"/>
+<area shape="rect" id="node3" href="$classCGA__Screen.html#a622bc3a2822e3006579167343d639353" title="leert den aktuellen Bildschirm" alt="" coords="113,30,244,58"/>
+<area shape="rect" id="node5" href="$classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position" alt="" coords="481,5,623,33"/>
+<area shape="rect" id="node9" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="740,398,785,426"/>
+<area shape="rect" id="node15" href="$classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers" alt="" coords="113,207,244,235"/>
+<area shape="rect" id="node27" href="$classCPU.html#a189729f4ca240ff52004a34b9057d448" title="hält die CPU an" alt="" coords="141,613,216,641"/>
+<area shape="rect" id="node29" href="$classTask3A.html#a871e4066c1ba233ec3640928b77c09a0" title="main part of the class" alt="" coords="305,334,412,362"/>
+<area shape="rect" id="node58" href="$classTask3B.html#aa803f35a028d2dc338d20d69ab592f20" title="prints the line" alt="" coords="125,562,232,590"/>
+<area shape="rect" id="node7" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="713,5,812,33"/>
+<area shape="rect" id="node11" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer" alt="" coords="895,398,1004,426"/>
+<area shape="rect" id="node13" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="1055,398,1172,426"/>
+<area shape="rect" id="node17" href="$classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus" alt="" coords="295,131,423,159"/>
+<area shape="rect" id="node19" href="$classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position" alt="" coords="481,55,623,83"/>
+<area shape="rect" id="node21" href="$classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt" alt="" coords="479,106,625,134"/>
+<area shape="rect" id="node23" href="$classCGA__Screen.html#a8176499ecb3ce4e9eb05910e66aee9d2" title="print a character to a specific position" alt="" coords="696,131,829,159"/>
+<area shape="rect" id="node31" href="$classTask3A.html#a97a12ea7414c01430232e61fb5ff7744" title="Task3A::testFPN" alt="" coords="493,359,611,387"/>
+<area shape="rect" id="node36" href="$classTask3A.html#a24ddaef8aaccea6d7375c69b51f4ae57" title="Task3A::testFPNAdd" alt="" coords="481,410,623,438"/>
+<area shape="rect" id="node40" href="$classTask3A.html#af8775a5d95a83ded644b110774505d16" title="Task3A::testFPNMul" alt="" coords="483,461,621,489"/>
+<area shape="rect" id="node44" href="$classTask3A.html#aac6d8d8ded4ef22a613c5f73402752bb" title="Task3A::testFPNDiv" alt="" coords="484,258,620,286"/>
+<area shape="rect" id="node48" href="$classTask3A.html#a1be796a230de7133dbb5d4c169ebe310" title="Task3A::testFPNPow" alt="" coords="480,309,624,337"/>
+<area shape="rect" id="node52" href="$classTask3A.html#af7995eb1339c1322974393ffd597715c" title="Task3A::testFPNSqrt" alt="" coords="481,207,623,235"/>
+<area shape="rect" id="node33" href="$fixedPointNumber_8h.html#a832c00376d036efa282dd93a56a79952" title="generate a SFixedPointNumber from two parts, without extra signum" alt="" coords="728,334,797,362"/>
+<area shape="rect" id="node55" href="$structSFixedPointNumber.html#a59a33208466823c71f4881f6629c4b91" title="sqare root of the Number" alt="" coords="681,207,844,235"/>
+<area shape="rect" id="node60" href="$task3B_8cc.html#a5874bf2c7fd779b0760c4d5f16bb2d08" title="doTask3BAction" alt="" coords="300,562,417,590"/>
+<area shape="rect" id="node62" href="$task3B_8cc.html#a619f56d2ece0fd67e26e11da6c052e95" title="outputAckermannResult" alt="" coords="472,562,632,590"/>
+<area shape="rect" id="node65" href="$task3B_8cc.html#aca93d1551a065652079d5ff2ae3b2539" title="doAckermann" alt="" coords="501,613,603,641"/>
+<area shape="rect" id="node67" href="$task3B_8cc.html#a14ee0807c6f73199cdce10829f021544" title="alphaAckermann" alt="" coords="704,613,821,641"/>
+<area shape="rect" id="node69" href="$task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4" title="gotoAnalyse" alt="" coords="904,613,995,641"/>
 </map>

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>OOStuBS - Technische Informatik II (TI-II): include/object/fixedPointNumber.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.1.2 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_23d5af2e228901f93ce64754cbbfed9f.html">object</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">fixedPointNumber.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="fixedPointNumber_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#ifndef FPN_HEADER</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FPN_HEADER</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cgastr_8h.html">device/cgastr.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="structSFixedPointNumber.html">   12</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a>{</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="structSFixedPointNumber.html#a20bfced3af14ccf84c92b20d8265831b">   14</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="structSFixedPointNumber.html#a20bfced3af14ccf84c92b20d8265831b" title="FPN with 21 bin digits before and 10 after dot.">iValue</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="structSFixedPointNumber.html#acab4616b9f839903ca67d34f3d9b63af">   16</a></span>&#160;  <a class="code" href="structSFixedPointNumber.html#acab4616b9f839903ca67d34f3d9b63af">SFixedPointNumber</a>(): <a class="code" href="structSFixedPointNumber.html#a20bfced3af14ccf84c92b20d8265831b" title="FPN with 21 bin digits before and 10 after dot.">iValue</a>(0){</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="structSFixedPointNumber.html#aca2d12a572c630e839f7fce500fa117f">   19</a></span>&#160;  <a class="code" href="structSFixedPointNumber.html#aca2d12a572c630e839f7fce500fa117f">SFixedPointNumber</a>(<a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a>* pVal): <a class="code" href="structSFixedPointNumber.html#a20bfced3af14ccf84c92b20d8265831b" title="FPN with 21 bin digits before and 10 after dot.">iValue</a>(pVal-&gt;<a class="code" href="structSFixedPointNumber.html#a20bfced3af14ccf84c92b20d8265831b" title="FPN with 21 bin digits before and 10 after dot.">iValue</a>){</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="structSFixedPointNumber.html#a19b53d412d2edb135ce77356ed17c9bb">   22</a></span>&#160;  <a class="code" href="structSFixedPointNumber.html#a19b53d412d2edb135ce77356ed17c9bb">SFixedPointNumber</a>(<span class="keywordtype">int</span> iValueV): <a class="code" href="structSFixedPointNumber.html#a20bfced3af14ccf84c92b20d8265831b" title="FPN with 21 bin digits before and 10 after dot.">iValue</a>(iValueV){</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a> <a class="code" href="structSFixedPointNumber.html#a41ef62bdd4d2dbff9e5c2f5be409129c" title="negate the Number">neg</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a> <a class="code" href="structSFixedPointNumber.html#a7cd7537e3e4d0e9d89ace9e6300d6a6b" title="power of the Number">pow</a>(<a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a> uPower);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a> <a class="code" href="structSFixedPointNumber.html#a59a33208466823c71f4881f6629c4b91" title="sqare root of the Number">sqrt</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a> <a class="code" href="structSFixedPointNumber.html#a51494b03ba3fbac6b2626128c03364a7" title="any root of the Number">root</a>(<a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a> uPower);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a> <a class="code" href="structSFixedPointNumber.html#a0bf418570b85de469f4551dfae50c631" title="dummy">operator+</a>(<span class="keyword">const</span> <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a>&amp; uRight);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a> <a class="code" href="structSFixedPointNumber.html#a67b2f76f0fee90fd2bf4939dfa85d755" title="negate number">operator-</a>(<span class="keyword">const</span> <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a>&amp; uRight);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a> <a class="code" href="structSFixedPointNumber.html#a9e34bc4f4409a1f0a7b06e1ca3240735" title="multiply number">operator*</a>(<span class="keyword">const</span> <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a>&amp; uRight);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a> <a class="code" href="structSFixedPointNumber.html#a3fad74b10a787482bf3ca1e44512be0f" title="divide number">operator/</a>(<span class="keyword">const</span> <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a>&amp; uRight);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a> <a class="code" href="structSFixedPointNumber.html#a3874fb2be7db9bc7a499a32306b05c8e" title="calculate power">operator^</a>(<span class="keyword">const</span> <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a>&amp; uRight);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a> <a class="code" href="structSFixedPointNumber.html#a9f3b375b6fc16affa896b98276c2a7e7" title="calculate root">operator%</a>(<span class="keyword">const</span> <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a>&amp; uRight);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a>&amp; <a class="code" href="structSFixedPointNumber.html#a41ce9f474cfefbf96facf54ee187d2f7" title="add to current Value">operator+=</a>(<span class="keyword">const</span> <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a>&amp; uRight);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a>&amp; <a class="code" href="structSFixedPointNumber.html#a02cbe71f7e1db9d050c3d3ac58be8926" title="subtract from current Value">operator-=</a>(<span class="keyword">const</span> <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a>&amp; uRight);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a> <a class="code" href="structSFixedPointNumber.html#a0bf418570b85de469f4551dfae50c631" title="dummy">operator+</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a> <a class="code" href="structSFixedPointNumber.html#a67b2f76f0fee90fd2bf4939dfa85d755" title="negate number">operator-</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">float</span> <a class="code" href="structSFixedPointNumber.html#a6fd94c2ecb4538f8e53160e535f83672" title="convert SFixedPointNumber to float">toFloat</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span>  <a class="code" href="structSFixedPointNumber.html#a1cccbd6ed4903fcdbadb313348c856fe" title="convert float to SFixedPointNumber">fromFloat</a>(<span class="keywordtype">float</span> fValue);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}<a class="code" href="fixedPointNumber_8h.html#a853e90e94419650b904131fea566c1e1" title="This class enclose a fixed point number.">SFixedPointNumber</a>; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a> <a class="code" href="fixedPointNumber_8h.html#a832c00376d036efa282dd93a56a79952" title="generate a SFixedPointNumber from two parts, without extra signum">genFPN</a>(<span class="keywordtype">int</span> iBefore, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> uiAfter);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a> <a class="code" href="fixedPointNumber_8h.html#a832c00376d036efa282dd93a56a79952" title="generate a SFixedPointNumber from two parts, without extra signum">genFPN</a>(<span class="keywordtype">char</span> cSignum, <span class="keywordtype">int</span> iBefore, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> uiAfter);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; <a class="code" href="fixedPointNumber_8h.html#a012e530b8558deb83004468c06a0d954" title="output operation">operator &lt;&lt; </a>(<a class="code" href="classO__Stream.html" title="Manipulation class providing formatted output support.">O_Stream</a>&amp; aStream, <a class="code" href="structSFixedPointNumber.html" title="This class enclose a fixed point number.">SFixedPointNumber</a> aFPN);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Mit Mai 29 2013 23:52:15 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
+</body>
+</html>

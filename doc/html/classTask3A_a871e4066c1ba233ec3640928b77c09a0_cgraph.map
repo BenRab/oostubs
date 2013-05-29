@@ -1,0 +1,13 @@
+<map id="Task3A::action" name="Task3A::action">
+<area shape="rect" id="node3" href="$classTask3A.html#a97a12ea7414c01430232e61fb5ff7744" title="Task3A::testFPN" alt="" coords="173,207,291,235"/>
+<area shape="rect" id="node13" href="$classTask3A.html#a24ddaef8aaccea6d7375c69b51f4ae57" title="Task3A::testFPNAdd" alt="" coords="161,5,303,33"/>
+<area shape="rect" id="node17" href="$classTask3A.html#af8775a5d95a83ded644b110774505d16" title="Task3A::testFPNMul" alt="" coords="163,55,301,83"/>
+<area shape="rect" id="node21" href="$classTask3A.html#aac6d8d8ded4ef22a613c5f73402752bb" title="Task3A::testFPNDiv" alt="" coords="164,106,300,134"/>
+<area shape="rect" id="node25" href="$classTask3A.html#a1be796a230de7133dbb5d4c169ebe310" title="Task3A::testFPNPow" alt="" coords="160,157,304,185"/>
+<area shape="rect" id="node29" href="$classTask3A.html#af7995eb1339c1322974393ffd597715c" title="Task3A::testFPNSqrt" alt="" coords="161,258,303,286"/>
+<area shape="rect" id="node5" href="$fixedPointNumber_8h.html#a832c00376d036efa282dd93a56a79952" title="generate a SFixedPointNumber from two parts, without extra signum" alt="" coords="400,157,469,185"/>
+<area shape="rect" id="node7" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="412,106,457,134"/>
+<area shape="rect" id="node9" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer" alt="" coords="567,106,676,134"/>
+<area shape="rect" id="node11" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="727,106,844,134"/>
+<area shape="rect" id="node32" href="$structSFixedPointNumber.html#a59a33208466823c71f4881f6629c4b91" title="sqare root of the Number" alt="" coords="353,258,516,286"/>
+</map>

@@ -12,9 +12,12 @@ digraph "Key::ctrl_right"
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
   Node4 [label="Keyboard_Controller\l::key_hit",height=0.2,width=0.4,color="black",URL="$classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21",tooltip="get the last pressed key"];
   Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
-  Node5 [label="Task1::testKeyboard",height=0.2,width=0.4,color="black",URL="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e",tooltip="test the functionality of the Keyboard_Controller object"];
-  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
-  Node6 [label="Task1::action",height=0.2,width=0.4,color="black",URL="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c",tooltip="parse and print multiboot information"];
-  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
-  Node7 [label="Key::ctrl",height=0.2,width=0.4,color="black",URL="$classKey.html#ace132391315a2fb7d4f4fb3ebcae0f59"];
+  Node5 [label="Keyboard::trigger",height=0.2,width=0.4,color="black",URL="$classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353",tooltip="einen auftretenden Tastaturinterrupt behandeln"];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="Task1::testKeyboard",height=0.2,width=0.4,color="black",URL="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e",tooltip="test the functionality of the Keyboard_Controller object"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="Task1::action",height=0.2,width=0.4,color="black",URL="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c",tooltip="parse and print multiboot information"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node8 [label="Key::ctrl",height=0.2,width=0.4,color="black",URL="$classKey.html#ace132391315a2fb7d4f4fb3ebcae0f59"];
+  Node8 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
 }

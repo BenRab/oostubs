@@ -8,4 +8,8 @@ digraph "Application"
   Node2 [label="Task1",height=0.2,width=0.4,color="black",URL="$classTask1.html",tooltip="Erste Testanwendung."];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
   Node3 [label="Task2",height=0.2,width=0.4,color="black",URL="$classTask2.html",tooltip="Second test application."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="Task3A",height=0.2,width=0.4,color="black",URL="$classTask3A.html",tooltip="Third test application, part 1."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="Task3B",height=0.2,width=0.4,color="black",URL="$classTask3B.html",tooltip="Third test application, part 2."];
 }

@@ -1,0 +1,16 @@
+digraph "SFixedPointNumber::operator^"
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SFixedPointNumber:\l:operator^",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="SFixedPointNumber::pow",height=0.2,width=0.4,color="black",URL="$structSFixedPointNumber.html#a7cd7537e3e4d0e9d89ace9e6300d6a6b",tooltip="power of the Number"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="_pow",height=0.2,width=0.4,color="black",URL="$pow_8S.html#a962039e712cade9da9760c9b1c6bb39e",tooltip="Diese Funktion berechnet mit Hilfe der x86 FPU die Potenz zweier Zahlen."];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="SFixedPointNumber:\l:toFloat",height=0.2,width=0.4,color="black",URL="$structSFixedPointNumber.html#a6fd94c2ecb4538f8e53160e535f83672",tooltip="convert SFixedPointNumber to float"];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="SFixedPointNumber:\l:fromFloat",height=0.2,width=0.4,color="black",URL="$structSFixedPointNumber.html#a1cccbd6ed4903fcdbadb313348c856fe",tooltip="convert float to SFixedPointNumber"];
+}

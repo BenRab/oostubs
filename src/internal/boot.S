@@ -15,7 +15,7 @@
 .text					          /* The fallowing is code */
 
 	
-.globl  entry	          /* Define the entry point for the bootloader to be exported */
+.globl  entry, gotoAnalyse	/* Define the entry point for the bootloader to be exported */
 
 
 .macro	wrapperGen			/* Assembler macro to create interrupt wrapper  */
@@ -183,8 +183,8 @@ callExcNHandle:					/* handle exception interrupt with no error code */
 	push 16(%ebp)
 	push %eax
 	
-	/*cmp $0x00, %ax
-	je extraCEH*/
+	cmp $0x00, %ax
+	je extraCEH
 	
 	call handleException
 	
@@ -197,10 +197,10 @@ extraCEH:
 	pushl endCEH
 	push %esp
 	push %eax
-	/* call analyseException */
+	call analyseException
 	pop %eax
 	pop %esp
-	pop %eax
+	add $4, %esp
 	jmp endCEH
 
 callExcEHandle:					/* handle exception interrupt with error code */
@@ -231,7 +231,7 @@ gotoAnalyse:
   mov %esp, %ebp
   add $8, %ebp
   push %ebp
-	/* call analyseProcedureStack */
+	call analyseProcedureStack
 	pop %ebp
 	pop %ebp
 	ret

@@ -58,6 +58,8 @@ Preprocessing /home/ubuntu/oostubs/include/machine/pic.h...
 Parsing file /home/ubuntu/oostubs/include/machine/pic.h...
 Preprocessing /home/ubuntu/oostubs/include/machine/plugbox.h...
 Parsing file /home/ubuntu/oostubs/include/machine/plugbox.h...
+Preprocessing /home/ubuntu/oostubs/include/object/fixedPointNumber.h...
+Parsing file /home/ubuntu/oostubs/include/object/fixedPointNumber.h...
 Preprocessing /home/ubuntu/oostubs/include/object/o_stream.h...
 Parsing file /home/ubuntu/oostubs/include/object/o_stream.h...
 Preprocessing /home/ubuntu/oostubs/include/object/strbuf.h...
@@ -74,12 +76,18 @@ Preprocessing /home/ubuntu/oostubs/include/useful/pic.h...
 Parsing file /home/ubuntu/oostubs/include/useful/pic.h...
 Preprocessing /home/ubuntu/oostubs/include/useful/plugbox.h...
 Parsing file /home/ubuntu/oostubs/include/useful/plugbox.h...
+Preprocessing /home/ubuntu/oostubs/include/user/analyse.h...
+Parsing file /home/ubuntu/oostubs/include/user/analyse.h...
 Preprocessing /home/ubuntu/oostubs/include/user/appl.h...
 Parsing file /home/ubuntu/oostubs/include/user/appl.h...
 Preprocessing /home/ubuntu/oostubs/include/user/task1.h...
 Parsing file /home/ubuntu/oostubs/include/user/task1.h...
 Preprocessing /home/ubuntu/oostubs/include/user/task2.h...
 Parsing file /home/ubuntu/oostubs/include/user/task2.h...
+Preprocessing /home/ubuntu/oostubs/include/user/task3A.h...
+Parsing file /home/ubuntu/oostubs/include/user/task3A.h...
+Preprocessing /home/ubuntu/oostubs/include/user/task3B.h...
+Parsing file /home/ubuntu/oostubs/include/user/task3B.h...
 Preprocessing /home/ubuntu/oostubs/src/device/cgastr.cc...
 Parsing file /home/ubuntu/oostubs/src/device/cgastr.cc...
 Preprocessing /home/ubuntu/oostubs/src/device/keyboard.cc...
@@ -106,14 +114,22 @@ Preprocessing /home/ubuntu/oostubs/src/machine/plugbox.cc...
 Parsing file /home/ubuntu/oostubs/src/machine/plugbox.cc...
 Preprocessing /home/ubuntu/oostubs/src/main.cc...
 Parsing file /home/ubuntu/oostubs/src/main.cc...
+Preprocessing /home/ubuntu/oostubs/src/object/fixedPointNumber.cc...
+Parsing file /home/ubuntu/oostubs/src/object/fixedPointNumber.cc...
 Preprocessing /home/ubuntu/oostubs/src/object/o_stream.cc...
 Parsing file /home/ubuntu/oostubs/src/object/o_stream.cc...
 Preprocessing /home/ubuntu/oostubs/src/object/strbuf.cc...
 Parsing file /home/ubuntu/oostubs/src/object/strbuf.cc...
+Preprocessing /home/ubuntu/oostubs/src/user/analyse.cc...
+Parsing file /home/ubuntu/oostubs/src/user/analyse.cc...
 Preprocessing /home/ubuntu/oostubs/src/user/task1.cc...
 Parsing file /home/ubuntu/oostubs/src/user/task1.cc...
 Preprocessing /home/ubuntu/oostubs/src/user/task2.cc...
 Parsing file /home/ubuntu/oostubs/src/user/task2.cc...
+Preprocessing /home/ubuntu/oostubs/src/user/task3A.cc...
+Parsing file /home/ubuntu/oostubs/src/user/task3A.cc...
+Preprocessing /home/ubuntu/oostubs/src/user/task3B.cc...
+Parsing file /home/ubuntu/oostubs/src/user/task3B.cc...
 Preprocessing /home/ubuntu/oostubs/doc/devenv.dox...
 Parsing file /home/ubuntu/oostubs/doc/devenv.dox...
 Preprocessing /home/ubuntu/oostubs/doc/directories.dox...
@@ -211,12 +227,16 @@ Generating code for file include/machine/pic.h...
 Generating code for file include/useful/pic.h...
 Generating code for file include/machine/plugbox.h...
 Generating code for file include/useful/plugbox.h...
+Generating code for file include/object/fixedPointNumber.h...
 Generating code for file include/object/o_stream.h...
 Generating code for file include/object/strbuf.h...
 Generating code for file include/useful/kout.h...
+Generating code for file include/user/analyse.h...
 Generating code for file include/user/appl.h...
 Generating code for file include/user/task1.h...
 Generating code for file include/user/task2.h...
+Generating code for file include/user/task3A.h...
+Generating code for file include/user/task3B.h...
 Generating code for file src/device/cgastr.cc...
 Generating code for file src/device/keyboard.cc...
 Generating code for file src/device/panic.cc...
@@ -230,10 +250,14 @@ Generating code for file src/machine/keyctrl.cc...
 Generating code for file src/machine/pic.cc...
 Generating code for file src/machine/plugbox.cc...
 Generating code for file src/main.cc...
+Generating code for file src/object/fixedPointNumber.cc...
 Generating code for file src/object/o_stream.cc...
 Generating code for file src/object/strbuf.cc...
+Generating code for file src/user/analyse.cc...
 Generating code for file src/user/task1.cc...
 Generating code for file src/user/task2.cc...
+Generating code for file src/user/task3A.cc...
+Generating code for file src/user/task3B.cc...
 Generating file documentation...
 Generating docs for file doc/devenv.dox...
 Generating docs for file doc/directories.dox...
@@ -263,6 +287,9 @@ Generating docs for file include/machine/pic.h...
 Generating docs for file include/useful/pic.h...
 Generating docs for file include/machine/plugbox.h...
 Generating docs for file include/useful/plugbox.h...
+Generating docs for file include/object/fixedPointNumber.h...
+Generating caller graph for function genFPN
+Generating call graph for function operator<<
 Generating docs for file include/object/o_stream.h...
 Generating caller graph for function bin
 Generating caller graph for function dec
@@ -271,9 +298,14 @@ Generating caller graph for function endl
 Generating caller graph for function hex
 Generating docs for file include/object/strbuf.h...
 Generating docs for file include/useful/kout.h...
+Generating docs for file include/user/analyse.h...
+Generating call graph for function analyseException
+Generating call graph for function analyseProcedureStack
 Generating docs for file include/user/appl.h...
 Generating docs for file include/user/task1.h...
 Generating docs for file include/user/task2.h...
+Generating docs for file include/user/task3A.h...
+Generating docs for file include/user/task3B.h...
 Generating docs for file src/device/cgastr.cc...
 Generating docs for file src/device/keyboard.cc...
 Generating docs for file src/device/panic.cc...
@@ -286,12 +318,17 @@ Generating docs for file src/internal/boot.S...
 Generating docs for file src/internal/compat.S...
 Generating docs for file src/internal/cppInit.c...
 Generating docs for file src/internal/pow.S...
+Generating caller graph for function _pow
 Generating docs for file src/machine/cgascr.cc...
 Generating docs for file src/machine/keyctrl.cc...
 Generating docs for file src/machine/pic.cc...
 Generating docs for file src/machine/plugbox.cc...
 Generating docs for file src/main.cc...
 Generating call graph for function kernel
+Generating docs for file src/object/fixedPointNumber.cc...
+Generating caller graph for function genFPN
+Generating caller graph for function getPrecision
+Generating call graph for function operator<<
 Generating docs for file src/object/o_stream.cc...
 Generating caller graph for function bin
 Generating caller graph for function dec
@@ -300,8 +337,22 @@ Generating caller graph for function endl
 Generating caller graph for function hex
 Generating caller graph for function ulongToChar
 Generating docs for file src/object/strbuf.cc...
+Generating docs for file src/user/analyse.cc...
+Generating call graph for function analyseException
+Generating call graph for function analyseProcedureStack
 Generating docs for file src/user/task1.cc...
 Generating docs for file src/user/task2.cc...
+Generating docs for file src/user/task3A.cc...
+Generating docs for file src/user/task3B.cc...
+Generating call graph for function alphaAckermann
+Generating caller graph for function alphaAckermann
+Generating call graph for function doAckermann
+Generating caller graph for function doAckermann
+Generating call graph for function doTask3BAction
+Generating caller graph for function doTask3BAction
+Generating caller graph for function gotoAnalyse
+Generating call graph for function outputAckermannResult
+Generating caller graph for function outputAckermannResult
 Generating page documentation...
 Generating docs for page devenv...
 Generating docs for page devenv_win...
@@ -312,6 +363,8 @@ Generating docs for page task1_keyboardInfo...
 Generating docs for page task2...
 Generating docs for page task2_pic...
 Generating docs for page task3...
+Generating docs for page task3_procstack...
+Generating docs for page task3_exception...
 Generating docs for page task4...
 Generating docs for page task5...
 Generating docs for page task6...
@@ -348,6 +401,7 @@ Generating caller graph for function IO_Port::inb
 Generating caller graph for function IO_Port::outb
 Generating docs for compound Key...
 Generating call graph for function Key::alt
+Generating caller graph for function Key::alt
 Generating call graph for function Key::alt_left
 Generating caller graph for function Key::alt_left
 Generating caller graph for function Key::alt_left
@@ -359,6 +413,7 @@ Generating call graph for function Key::caps_lock
 Generating caller graph for function Key::caps_lock
 Generating caller graph for function Key::caps_lock
 Generating call graph for function Key::ctrl
+Generating caller graph for function Key::ctrl
 Generating call graph for function Key::ctrl_left
 Generating caller graph for function Key::ctrl_left
 Generating caller graph for function Key::ctrl_left
@@ -381,6 +436,7 @@ Generating docs for nested compound Key::scan...
 Generating docs for compound Keyboard...
 Generating call graph for function Keyboard::plugin
 Generating caller graph for function Keyboard::plugin
+Generating call graph for function Keyboard::trigger
 Generating docs for compound Keyboard_Controller...
 Generating call graph for function Keyboard_Controller::Keyboard_Controller
 Generating call graph for function Keyboard_Controller::get_ascii_code
@@ -390,6 +446,7 @@ Generating caller graph for function Keyboard_Controller::key_decoded
 Generating call graph for function Keyboard_Controller::key_hit
 Generating caller graph for function Keyboard_Controller::key_hit
 Generating call graph for function Keyboard_Controller::reboot
+Generating caller graph for function Keyboard_Controller::reboot
 Generating call graph for function Keyboard_Controller::set_led
 Generating caller graph for function Keyboard_Controller::set_led
 Generating call graph for function Keyboard_Controller::set_repeat_rate
@@ -424,6 +481,18 @@ Generating call graph for function PIC::getISR
 Generating docs for compound Plugbox...
 Generating caller graph for function Plugbox::assign
 Generating caller graph for function Plugbox::report
+Generating docs for compound SFixedPointNumber...
+Generating caller graph for function SFixedPointNumber::fromFloat
+Generating caller graph for function SFixedPointNumber::neg
+Generating call graph for function SFixedPointNumber::operator%
+Generating call graph for function SFixedPointNumber::operator-
+Generating call graph for function SFixedPointNumber::operator^
+Generating call graph for function SFixedPointNumber::pow
+Generating caller graph for function SFixedPointNumber::pow
+Generating call graph for function SFixedPointNumber::root
+Generating caller graph for function SFixedPointNumber::root
+Generating caller graph for function SFixedPointNumber::sqrt
+Generating caller graph for function SFixedPointNumber::toFloat
 Generating docs for compound Stringbuffer...
 Generating caller graph for function Stringbuffer::flush
 Generating call graph for function Stringbuffer::put
@@ -446,7 +515,28 @@ Generating docs for compound Task2...
 Generating call graph for function Task2::Task2
 Generating call graph for function Task2::~Task2
 Generating call graph for function Task2::action
-Generating caller graph for function Task2::action
+Generating docs for compound Task3A...
+Generating call graph for function Task3A::Task3A
+Generating call graph for function Task3A::~Task3A
+Generating call graph for function Task3A::action
+Generating caller graph for function Task3A::action
+Generating call graph for function Task3A::testFPN
+Generating caller graph for function Task3A::testFPN
+Generating call graph for function Task3A::testFPNAdd
+Generating caller graph for function Task3A::testFPNAdd
+Generating call graph for function Task3A::testFPNDiv
+Generating caller graph for function Task3A::testFPNDiv
+Generating call graph for function Task3A::testFPNMul
+Generating caller graph for function Task3A::testFPNMul
+Generating call graph for function Task3A::testFPNPow
+Generating caller graph for function Task3A::testFPNPow
+Generating call graph for function Task3A::testFPNSqrt
+Generating caller graph for function Task3A::testFPNSqrt
+Generating docs for compound Task3B...
+Generating call graph for function Task3B::Task3B
+Generating call graph for function Task3B::~Task3B
+Generating call graph for function Task3B::action
+Generating caller graph for function Task3B::action
 Generating namespace index...
 Generating graph info page...
 Generating directory documentation...
@@ -479,302 +569,384 @@ Generating file member index...
 Generating example index...
 finalizing index lists...
 Generating dot graphs using 2 parallel threads...
-Running dot for graph 1/226
-Running dot for graph 2/226
-Running dot for graph 3/226
-Running dot for graph 4/226
-Running dot for graph 5/226
-Running dot for graph 6/226
-Running dot for graph 7/226
-Running dot for graph 8/226
-Running dot for graph 9/226
-Running dot for graph 10/226
-Running dot for graph 11/226
-Running dot for graph 12/226
-Running dot for graph 13/226
-Running dot for graph 14/226
-Running dot for graph 15/226
-Running dot for graph 16/226
-Running dot for graph 17/226
-Running dot for graph 18/226
-Running dot for graph 19/226
-Running dot for graph 20/226
-Running dot for graph 21/226
-Running dot for graph 22/226
-Running dot for graph 23/226
-Running dot for graph 24/226
-Running dot for graph 25/226
-Running dot for graph 26/226
-Running dot for graph 27/226
-Running dot for graph 28/226
-Running dot for graph 29/226
-Running dot for graph 30/226
-Running dot for graph 31/226
-Running dot for graph 32/226
-Running dot for graph 33/226
-Running dot for graph 34/226
-Running dot for graph 35/226
-Running dot for graph 36/226
-Running dot for graph 37/226
-Running dot for graph 38/226
-Running dot for graph 39/226
-Running dot for graph 40/226
-Running dot for graph 41/226
-Running dot for graph 42/226
-Running dot for graph 43/226
-Running dot for graph 44/226
-Running dot for graph 45/226
-Running dot for graph 46/226
-Running dot for graph 47/226
-Running dot for graph 48/226
-Running dot for graph 49/226
-Running dot for graph 50/226
-Running dot for graph 51/226
-Running dot for graph 52/226
-Running dot for graph 53/226
-Running dot for graph 54/226
-Running dot for graph 55/226
-Running dot for graph 56/226
-Running dot for graph 57/226
-Running dot for graph 58/226
-Running dot for graph 59/226
-Running dot for graph 60/226
-Running dot for graph 61/226
-Running dot for graph 62/226
-Running dot for graph 63/226
-Running dot for graph 64/226
-Running dot for graph 65/226
-Running dot for graph 66/226
-Running dot for graph 67/226
-Running dot for graph 68/226
-Running dot for graph 69/226
-Running dot for graph 70/226
-Running dot for graph 71/226
-Running dot for graph 72/226
-Running dot for graph 73/226
-Running dot for graph 74/226
-Running dot for graph 75/226
-Running dot for graph 76/226
-Running dot for graph 77/226
-Running dot for graph 78/226
-Running dot for graph 79/226
-Running dot for graph 80/226
-Running dot for graph 81/226
-Running dot for graph 82/226
-Running dot for graph 83/226
-Running dot for graph 84/226
-Running dot for graph 85/226
-Running dot for graph 86/226
-Running dot for graph 87/226
-Running dot for graph 88/226
-Running dot for graph 89/226
-Running dot for graph 90/226
-Running dot for graph 91/226
-Running dot for graph 92/226
-Running dot for graph 93/226
-Running dot for graph 94/226
-Running dot for graph 95/226
-Running dot for graph 96/226
-Running dot for graph 97/226
-Running dot for graph 98/226
-Running dot for graph 99/226
-Running dot for graph 100/226
-Running dot for graph 101/226
-Running dot for graph 102/226
-Running dot for graph 103/226
-Running dot for graph 104/226
-Running dot for graph 105/226
-Running dot for graph 106/226
-Running dot for graph 107/226
-Running dot for graph 108/226
-Running dot for graph 109/226
-Running dot for graph 110/226
-Running dot for graph 111/226
-Running dot for graph 112/226
-Running dot for graph 113/226
-Running dot for graph 114/226
-Running dot for graph 115/226
-Running dot for graph 116/226
-Running dot for graph 117/226
-Running dot for graph 118/226
-Running dot for graph 119/226
-Running dot for graph 120/226
-Running dot for graph 121/226
-Running dot for graph 122/226
-Running dot for graph 123/226
-Running dot for graph 124/226
-Running dot for graph 125/226
-Running dot for graph 126/226
-Running dot for graph 127/226
-Running dot for graph 128/226
-Running dot for graph 129/226
-Running dot for graph 130/226
-Running dot for graph 131/226
-Running dot for graph 132/226
-Running dot for graph 133/226
-Running dot for graph 134/226
-Running dot for graph 135/226
-Running dot for graph 136/226
-Running dot for graph 137/226
-Running dot for graph 138/226
-Running dot for graph 139/226
-Running dot for graph 140/226
-Running dot for graph 141/226
-Running dot for graph 142/226
-Running dot for graph 143/226
-Running dot for graph 144/226
-Running dot for graph 145/226
-Running dot for graph 146/226
-Running dot for graph 147/226
-Running dot for graph 148/226
-Running dot for graph 149/226
-Running dot for graph 150/226
-Running dot for graph 151/226
-Running dot for graph 152/226
-Running dot for graph 153/226
-Running dot for graph 154/226
-Running dot for graph 155/226
-Running dot for graph 156/226
-Running dot for graph 157/226
-Running dot for graph 158/226
-Running dot for graph 159/226
-Running dot for graph 160/226
-Running dot for graph 161/226
-Running dot for graph 162/226
-Running dot for graph 163/226
-Running dot for graph 164/226
-Running dot for graph 165/226
-Running dot for graph 166/226
-Running dot for graph 167/226
-Running dot for graph 168/226
-Running dot for graph 169/226
-Running dot for graph 170/226
-Running dot for graph 171/226
-Running dot for graph 172/226
-Running dot for graph 173/226
-Running dot for graph 174/226
-Running dot for graph 175/226
-Running dot for graph 176/226
-Running dot for graph 177/226
-Running dot for graph 178/226
-Running dot for graph 179/226
-Running dot for graph 180/226
-Running dot for graph 181/226
-Running dot for graph 182/226
-Running dot for graph 183/226
-Running dot for graph 184/226
-Running dot for graph 185/226
-Running dot for graph 186/226
-Running dot for graph 187/226
-Running dot for graph 188/226
-Running dot for graph 189/226
-Running dot for graph 190/226
-Running dot for graph 191/226
-Running dot for graph 192/226
-Running dot for graph 193/226
-Running dot for graph 194/226
-Running dot for graph 195/226
-Running dot for graph 196/226
-Running dot for graph 197/226
-Running dot for graph 198/226
-Running dot for graph 199/226
-Running dot for graph 200/226
-Running dot for graph 201/226
-Running dot for graph 202/226
-Running dot for graph 203/226
-Running dot for graph 204/226
-Running dot for graph 205/226
-Running dot for graph 206/226
-Running dot for graph 207/226
-Running dot for graph 208/226
-Running dot for graph 209/226
-Running dot for graph 210/226
-Running dot for graph 211/226
-Running dot for graph 212/226
-Running dot for graph 213/226
-Running dot for graph 214/226
-Running dot for graph 215/226
-Running dot for graph 216/226
-Running dot for graph 217/226
-Running dot for graph 218/226
-Running dot for graph 219/226
-Running dot for graph 220/226
-Running dot for graph 221/226
-Running dot for graph 222/226
-Running dot for graph 223/226
-Running dot for graph 224/226
-Running dot for graph 225/226
-Running dot for graph 226/226
-Patching output file 1/70
-Patching output file 2/70
-Patching output file 3/70
-Patching output file 4/70
-Patching output file 5/70
-Patching output file 6/70
-Patching output file 7/70
-Patching output file 8/70
-Patching output file 9/70
-Patching output file 10/70
-Patching output file 11/70
-Patching output file 12/70
-Patching output file 13/70
-Patching output file 14/70
-Patching output file 15/70
-Patching output file 16/70
-Patching output file 17/70
-Patching output file 18/70
-Patching output file 19/70
-Patching output file 20/70
-Patching output file 21/70
-Patching output file 22/70
-Patching output file 23/70
-Patching output file 24/70
-Patching output file 25/70
-Patching output file 26/70
-Patching output file 27/70
-Patching output file 28/70
-Patching output file 29/70
-Patching output file 30/70
-Patching output file 31/70
-Patching output file 32/70
-Patching output file 33/70
-Patching output file 34/70
-Patching output file 35/70
-Patching output file 36/70
-Patching output file 37/70
-Patching output file 38/70
-Patching output file 39/70
-Patching output file 40/70
-Patching output file 41/70
-Patching output file 42/70
-Patching output file 43/70
-Patching output file 44/70
-Patching output file 45/70
-Patching output file 46/70
-Patching output file 47/70
-Patching output file 48/70
-Patching output file 49/70
-Patching output file 50/70
-Patching output file 51/70
-Patching output file 52/70
-Patching output file 53/70
-Patching output file 54/70
-Patching output file 55/70
-Patching output file 56/70
-Patching output file 57/70
-Patching output file 58/70
-Patching output file 59/70
-Patching output file 60/70
-Patching output file 61/70
-Patching output file 62/70
-Patching output file 63/70
-Patching output file 64/70
-Patching output file 65/70
-Patching output file 66/70
-Patching output file 67/70
-Patching output file 68/70
-Patching output file 69/70
-Patching output file 70/70
-symbol cache used 346/65536 hits=26429 misses=346
-lookup cache used 584/65536 hits=6047 misses=614
+Running dot for graph 1/296
+Running dot for graph 2/296
+Running dot for graph 3/296
+Running dot for graph 4/296
+Running dot for graph 5/296
+Running dot for graph 6/296
+Running dot for graph 7/296
+Running dot for graph 8/296
+Running dot for graph 9/296
+Running dot for graph 10/296
+Running dot for graph 11/296
+Running dot for graph 12/296
+Running dot for graph 13/296
+Running dot for graph 14/296
+Running dot for graph 15/296
+Running dot for graph 16/296
+Running dot for graph 17/296
+Running dot for graph 18/296
+Running dot for graph 19/296
+Running dot for graph 20/296
+Running dot for graph 21/296
+Running dot for graph 22/296
+Running dot for graph 23/296
+Running dot for graph 24/296
+Running dot for graph 25/296
+Running dot for graph 26/296
+Running dot for graph 27/296
+Running dot for graph 28/296
+Running dot for graph 29/296
+Running dot for graph 30/296
+Running dot for graph 31/296
+Running dot for graph 32/296
+Running dot for graph 33/296
+Running dot for graph 34/296
+Running dot for graph 35/296
+Running dot for graph 36/296
+Running dot for graph 37/296
+Running dot for graph 38/296
+Running dot for graph 39/296
+Running dot for graph 40/296
+Running dot for graph 41/296
+Running dot for graph 42/296
+Running dot for graph 43/296
+Running dot for graph 44/296
+Running dot for graph 45/296
+Running dot for graph 46/296
+Running dot for graph 47/296
+Running dot for graph 48/296
+Running dot for graph 49/296
+Running dot for graph 50/296
+Running dot for graph 51/296
+Running dot for graph 52/296
+Running dot for graph 53/296
+Running dot for graph 54/296
+Running dot for graph 55/296
+Running dot for graph 56/296
+Running dot for graph 57/296
+Running dot for graph 58/296
+Running dot for graph 59/296
+Running dot for graph 60/296
+Running dot for graph 61/296
+Running dot for graph 62/296
+Running dot for graph 63/296
+Running dot for graph 64/296
+Running dot for graph 65/296
+Running dot for graph 66/296
+Running dot for graph 67/296
+Running dot for graph 68/296
+Running dot for graph 69/296
+Running dot for graph 70/296
+Running dot for graph 71/296
+Running dot for graph 72/296
+Running dot for graph 73/296
+Running dot for graph 74/296
+Running dot for graph 75/296
+Running dot for graph 76/296
+Running dot for graph 77/296
+Running dot for graph 78/296
+Running dot for graph 79/296
+Running dot for graph 80/296
+Running dot for graph 81/296
+Running dot for graph 82/296
+Running dot for graph 83/296
+Running dot for graph 84/296
+Running dot for graph 85/296
+Running dot for graph 86/296
+Running dot for graph 87/296
+Running dot for graph 88/296
+Running dot for graph 89/296
+Running dot for graph 90/296
+Running dot for graph 91/296
+Running dot for graph 92/296
+Running dot for graph 93/296
+Running dot for graph 94/296
+Running dot for graph 95/296
+Running dot for graph 96/296
+Running dot for graph 97/296
+Running dot for graph 98/296
+Running dot for graph 99/296
+Running dot for graph 100/296
+Running dot for graph 101/296
+Running dot for graph 102/296
+Running dot for graph 103/296
+Running dot for graph 104/296
+Running dot for graph 105/296
+Running dot for graph 106/296
+Running dot for graph 107/296
+Running dot for graph 108/296
+Running dot for graph 109/296
+Running dot for graph 110/296
+Running dot for graph 111/296
+Running dot for graph 112/296
+Running dot for graph 113/296
+Running dot for graph 114/296
+Running dot for graph 115/296
+Running dot for graph 116/296
+Running dot for graph 117/296
+Running dot for graph 118/296
+Running dot for graph 119/296
+Running dot for graph 120/296
+Running dot for graph 121/296
+Running dot for graph 122/296
+Running dot for graph 123/296
+Running dot for graph 124/296
+Running dot for graph 125/296
+Running dot for graph 126/296
+Running dot for graph 127/296
+Running dot for graph 128/296
+Running dot for graph 129/296
+Running dot for graph 130/296
+Running dot for graph 131/296
+Running dot for graph 132/296
+Running dot for graph 133/296
+Running dot for graph 134/296
+Running dot for graph 135/296
+Running dot for graph 136/296
+Running dot for graph 137/296
+Running dot for graph 138/296
+Running dot for graph 139/296
+Running dot for graph 140/296
+Running dot for graph 141/296
+Running dot for graph 142/296
+Running dot for graph 143/296
+Running dot for graph 144/296
+Running dot for graph 145/296
+Running dot for graph 146/296
+Running dot for graph 147/296
+Running dot for graph 148/296
+Running dot for graph 149/296
+Running dot for graph 150/296
+Running dot for graph 151/296
+Running dot for graph 152/296
+Running dot for graph 153/296
+Running dot for graph 154/296
+Running dot for graph 155/296
+Running dot for graph 156/296
+Running dot for graph 157/296
+Running dot for graph 158/296
+Running dot for graph 159/296
+Running dot for graph 160/296
+Running dot for graph 161/296
+Running dot for graph 162/296
+Running dot for graph 163/296
+Running dot for graph 164/296
+Running dot for graph 165/296
+Running dot for graph 166/296
+Running dot for graph 167/296
+Running dot for graph 168/296
+Running dot for graph 169/296
+Running dot for graph 170/296
+Running dot for graph 171/296
+Running dot for graph 172/296
+Running dot for graph 173/296
+Running dot for graph 174/296
+Running dot for graph 175/296
+Running dot for graph 176/296
+Running dot for graph 177/296
+Running dot for graph 178/296
+Running dot for graph 179/296
+Running dot for graph 180/296
+Running dot for graph 181/296
+Running dot for graph 182/296
+Running dot for graph 183/296
+Running dot for graph 184/296
+Running dot for graph 185/296
+Running dot for graph 186/296
+Running dot for graph 187/296
+Running dot for graph 188/296
+Running dot for graph 189/296
+Running dot for graph 190/296
+Running dot for graph 191/296
+Running dot for graph 192/296
+Running dot for graph 193/296
+Running dot for graph 194/296
+Running dot for graph 195/296
+Running dot for graph 196/296
+Running dot for graph 197/296
+Running dot for graph 198/296
+Running dot for graph 199/296
+Running dot for graph 200/296
+Running dot for graph 201/296
+Running dot for graph 202/296
+Running dot for graph 203/296
+Running dot for graph 204/296
+Running dot for graph 205/296
+Running dot for graph 206/296
+Running dot for graph 207/296
+Running dot for graph 208/296
+Running dot for graph 209/296
+Running dot for graph 210/296
+Running dot for graph 211/296
+Running dot for graph 212/296
+Running dot for graph 213/296
+Running dot for graph 214/296
+Running dot for graph 215/296
+Running dot for graph 216/296
+Running dot for graph 217/296
+Running dot for graph 218/296
+Running dot for graph 219/296
+Running dot for graph 220/296
+Running dot for graph 221/296
+Running dot for graph 222/296
+Running dot for graph 223/296
+Running dot for graph 224/296
+Running dot for graph 225/296
+Running dot for graph 226/296
+Running dot for graph 227/296
+Running dot for graph 228/296
+Running dot for graph 229/296
+Running dot for graph 230/296
+Running dot for graph 231/296
+Running dot for graph 232/296
+Running dot for graph 233/296
+Running dot for graph 234/296
+Running dot for graph 235/296
+Running dot for graph 236/296
+Running dot for graph 237/296
+Running dot for graph 238/296
+Running dot for graph 239/296
+Running dot for graph 240/296
+Running dot for graph 241/296
+Running dot for graph 242/296
+Running dot for graph 243/296
+Running dot for graph 244/296
+Running dot for graph 245/296
+Running dot for graph 246/296
+Running dot for graph 247/296
+Running dot for graph 248/296
+Running dot for graph 249/296
+Running dot for graph 250/296
+Running dot for graph 251/296
+Running dot for graph 252/296
+Running dot for graph 253/296
+Running dot for graph 254/296
+Running dot for graph 255/296
+Running dot for graph 256/296
+Running dot for graph 257/296
+Running dot for graph 258/296
+Running dot for graph 259/296
+Running dot for graph 260/296
+Running dot for graph 261/296
+Running dot for graph 262/296
+Running dot for graph 263/296
+Running dot for graph 264/296
+Running dot for graph 265/296
+Running dot for graph 266/296
+Running dot for graph 267/296
+Running dot for graph 268/296
+Running dot for graph 269/296
+Running dot for graph 270/296
+Running dot for graph 271/296
+Running dot for graph 272/296
+Running dot for graph 273/296
+Running dot for graph 274/296
+Running dot for graph 275/296
+Running dot for graph 276/296
+Running dot for graph 277/296
+Running dot for graph 278/296
+Running dot for graph 279/296
+Running dot for graph 280/296
+Running dot for graph 281/296
+Running dot for graph 282/296
+Running dot for graph 283/296
+Running dot for graph 284/296
+Running dot for graph 285/296
+Running dot for graph 286/296
+Running dot for graph 287/296
+Running dot for graph 288/296
+Running dot for graph 289/296
+Running dot for graph 290/296
+Running dot for graph 291/296
+Running dot for graph 292/296
+Running dot for graph 293/296
+Running dot for graph 294/296
+Running dot for graph 295/296
+Running dot for graph 296/296
+Patching output file 1/82
+Patching output file 2/82
+Patching output file 3/82
+Patching output file 4/82
+Patching output file 5/82
+Patching output file 6/82
+Patching output file 7/82
+Patching output file 8/82
+Patching output file 9/82
+Patching output file 10/82
+Patching output file 11/82
+Patching output file 12/82
+Patching output file 13/82
+Patching output file 14/82
+Patching output file 15/82
+Patching output file 16/82
+Patching output file 17/82
+Patching output file 18/82
+Patching output file 19/82
+Patching output file 20/82
+Patching output file 21/82
+Patching output file 22/82
+Patching output file 23/82
+Patching output file 24/82
+Patching output file 25/82
+Patching output file 26/82
+Patching output file 27/82
+Patching output file 28/82
+Patching output file 29/82
+Patching output file 30/82
+Patching output file 31/82
+Patching output file 32/82
+Patching output file 33/82
+Patching output file 34/82
+Patching output file 35/82
+Patching output file 36/82
+Patching output file 37/82
+Patching output file 38/82
+Patching output file 39/82
+Patching output file 40/82
+Patching output file 41/82
+Patching output file 42/82
+Patching output file 43/82
+Patching output file 44/82
+Patching output file 45/82
+Patching output file 46/82
+Patching output file 47/82
+Patching output file 48/82
+Patching output file 49/82
+Patching output file 50/82
+Patching output file 51/82
+Patching output file 52/82
+Patching output file 53/82
+Patching output file 54/82
+Patching output file 55/82
+Patching output file 56/82
+Patching output file 57/82
+Patching output file 58/82
+Patching output file 59/82
+Patching output file 60/82
+Patching output file 61/82
+Patching output file 62/82
+Patching output file 63/82
+Patching output file 64/82
+Patching output file 65/82
+Patching output file 66/82
+Patching output file 67/82
+Patching output file 68/82
+Patching output file 69/82
+Patching output file 70/82
+Patching output file 71/82
+Patching output file 72/82
+Patching output file 73/82
+Patching output file 74/82
+Patching output file 75/82
+Patching output file 76/82
+Patching output file 77/82
+Patching output file 78/82
+Patching output file 79/82
+Patching output file 80/82
+Patching output file 81/82
+Patching output file 82/82
+symbol cache used 402/65536 hits=32710 misses=402
+lookup cache used 656/65536 hits=7361 misses=689
 finished...

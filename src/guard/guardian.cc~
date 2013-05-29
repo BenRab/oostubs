@@ -63,11 +63,6 @@ void guardian (unsigned short slot) {
     panic.trigger();
   }
   
-  if (slot >=40 && slot <=47) 
-    pic.ack(true);
-  else
-    pic.ack(false);
-
 }
 
 

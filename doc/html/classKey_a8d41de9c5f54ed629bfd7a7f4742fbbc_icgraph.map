@@ -1,8 +1,9 @@
 <map id="Key::alt_left" name="Key::alt_left">
-<area shape="rect" id="node3" href="$classKey.html#ab1199ecfd588b567053543b6715ba19a" title="Key::alt_left" alt="" coords="145,13,233,41"/>
-<area shape="rect" id="node13" href="$classKey.html#ae422a2a2113c5ba1ed46ddaa7bf3ecd8" title="Key::alt" alt="" coords="157,63,221,91"/>
+<area shape="rect" id="node3" href="$classKey.html#ab1199ecfd588b567053543b6715ba19a" title="Key::alt_left" alt="" coords="145,15,233,43"/>
+<area shape="rect" id="node15" href="$classKey.html#ae422a2a2113c5ba1ed46ddaa7bf3ecd8" title="Key::alt" alt="" coords="320,71,384,99"/>
 <area shape="rect" id="node5" href="$classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2" title="interpret the received scancode and modifier bits" alt="" coords="283,5,421,49"/>
 <area shape="rect" id="node7" href="$classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21" title="get the last pressed key" alt="" coords="469,5,608,49"/>
-<area shape="rect" id="node9" href="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object" alt="" coords="656,13,795,41"/>
-<area shape="rect" id="node11" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information" alt="" coords="843,13,941,41"/>
+<area shape="rect" id="node9" href="$classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353" title="einen auftretenden Tastaturinterrupt behandeln" alt="" coords="667,67,784,95"/>
+<area shape="rect" id="node11" href="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object" alt="" coords="656,13,795,41"/>
+<area shape="rect" id="node13" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information" alt="" coords="843,13,941,41"/>
 </map>

@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>OOStuBS - Technische Informatik II (TI-II): Ausnahmebehandlungen der x86-Architektur</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.1.2 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li class="current"><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="task3.html">Aufgabe 3 - Prozedurstackanalyse</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Ausnahmebehandlungen der x86-Architektur </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>Inhaltsverzeichnis</h3>
+<ul><li class="level1"><a href="#task3_exception_sec1">Grundlagen</a></li>
+<li class="level1"><a href="#task3_exception_sec2">Stackaufbau</a><ul><li class="level2"><a href="#task3_exception_sec2_1">Fehler in Ring 0, kein Fehlercode</a></li>
+<li class="level2"><a href="#task3_exception_sec2_2">Fehler in Ring 0, mit Fehlercode</a></li>
+<li class="level2"><a href="#task3_exception_sec2_3">Fehler in Ring >0, mit Fehlercode</a></li>
+<li class="level2"><a href="#task3_exception_sec2_4">Fehlercode</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#task3_exception_sec3">Liste der Ausnahmebehandlungen</a></li>
+<li class="level1"><a href="#task3_exception_sec4">Informationen zu einigen Exceptions</a><ul><li class="level2"><a href="#task3_exception_sec4_1">Divide Error</a></li>
+<li class="level2"><a href="#task3_exception_sec4_2">Breakpoint</a></li>
+<li class="level2"><a href="#task3_exception_sec4_3">Invalid Opcode</a></li>
+<li class="level2"><a href="#task3_exception_sec4_4">Double Fault</a></li>
+<li class="level2"><a href="#task3_exception_sec4_5">General Protection</a></li>
+<li class="level2"><a href="#task3_exception_sec4_6">Page Fault</a></li>
+<li class="level2"><a href="#task3_exception_sec4_7">Alignment Check</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#task3_exception_sec5">Triple Fault</a></li>
+<li class="level1"><a href="#task3_exception_sec6">Literatur</a></li>
+</ul>
+</div>
+<div class="textblock"><p>Die hier vorgestellten Fehler beziehen sich auf die x86-Architektur von Intel. Andere Plattformen bieten meist ähnliche Ausnahmen an. Basierend auf der Mächtigkeit der Architektur könnte es sich allerdings nur um Auswahl oder gar um mehr Fehler handeln.</p>
+<h1><a class="anchor" id="task3_exception_sec1"></a>
+Grundlagen</h1>
+<p>Während der Prozessor die einzelnen Opcode-Befehle abarbeitet können Fehler auftreten. Ein gutes Beispiel ist die Division durch null bei ganzen Zahlen. Tritt diese auf, so ist das Ergebnis nicht definiert und der Prozessor alleine kann nicht entscheiden, wie damit umgegangen werden muss. Aus diesem Grund gibt es für verschiedene Fehler Interrupts, die für die Behandlung gelten. Da es sich dabei um für die Ausführung essentiell wichtige Anweisungen handelt, können diese Interrupts nicht deaktiviert werden. Auch das globale deaktivieren von Interrupts hat auf die Ausnahmebehandlungen keinen Einfluss. Folglich muss jedes Betriebssystem Routinen für diese bereitstellen.</p>
+<p>Die Ausnahmen lassen sich auf zwei Arten einteilen.<br/>
+ Da wäre zuerst die Klassifikation nach:</p>
+<ul>
+<li><b>Trap</b>, Unterbrechungen werden direkt <em>nach</em> einer auslösenden Anweisung aufgerufen</li>
+<li><b>Fault</b>, Unterbrechungen werden aufgerufen, wenn ein Befehl nicht abgearbeitet werden kann. Nach dem Rückkehr von der Behandlung kann die Anweisung erneut durchgeführt werden. Die Ausnahmebehandlung kann also die Ursache beheben und das Programm danach normal fortsetzen.</li>
+<li><b>Aborts</b>, Dieser Fehler kann nicht behoben werden und ein Abbruch des Systems wird empfohlen.</li>
+</ul>
+<p>Eine andere Möglichkeit ist die Aufteilung danach, ob zusätzlich ein 32-Bit-Fehlercodewort übergeben wird oder ist.</p>
+<h1><a class="anchor" id="task3_exception_sec2"></a>
+Stackaufbau</h1>
+<p>Tritt ein Fehler auf und geht die <a class="el" href="classCPU.html" title="Zugriff auf einige spezielle CPU-Anweisungen.">CPU</a> über die entsprechende Behandlungsroutine aufzurufen, so werden einige Informationen auf den Stack gepackt, um die behandelnde Funktion zu unterstützen.<br/>
+ Zu diesen Informationen zählen der EIP der auslösenden Anweisung, das CS-Register und die EFLAGS. Je nach Umstand und Fehler erscheinen weitere Informationen auf den Stack.</p>
+<p>Befindet sich der ausgeführte Befehl im Kernelmodus, also Sicherheitsring 0, so muss kein Kontextwechsel durchgeführt werden und es müssen weniger Informationen gespeichert werden.</p>
+<h2><a class="anchor" id="task3_exception_sec2_1"></a>
+Fehler in Ring 0, kein Fehlercode</h2>
+<center> <table  border="0" style="border-collapse: collapse;">
+<tr>
+<td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:350px;"><em>niedrige Adresse</em>  </td></tr>
+<tr>
+<td style="width:100px; border:1px solid black;">&#160; </td><td style="width:350px;">&#160;  </td></tr>
+<tr>
+<td style="width:100px; border:1px solid black; text-align:center;">EIP </td><td style="width:350px;">&larr; esp <b>nach</b> dem Wechsel zur Behandlung  </td></tr>
+<tr>
+<td style="width:100px; border:1px solid black; text-align:center;">CS </td><td style="width:350px;"></td></tr>
+<tr>
+<td style="width:100px; border:1px solid black; text-align:center;">EFLAGS </td><td style="width:350px;"></td></tr>
+<tr>
+<td style="width:100px; border:1px solid black; background:silver;">&#160; </td><td style="width:350px;">&larr; esp <b>vor</b> dem Wechsel zur Behandlung  </td></tr>
+<tr>
+<td style="width:100px; border:1px solid black;">&#160; </td><td style="width:350px;">&#160;  </td></tr>
+<tr>
+<td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:350px;"><em>hohe Adresse</em>  </td></tr>
+</table>
+</center><h2><a class="anchor" id="task3_exception_sec2_2"></a>
+Fehler in Ring 0, mit Fehlercode</h2>
+<center> <table  border="0" style="border-collapse: collapse;">
+<tr>
+<td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:350px;"><em>niedrige Adresse</em>  </td></tr>
+<tr>
+<td style="width:100px; border:1px solid black;">&#160; </td><td style="width:350px;">&#160;  </td></tr>
+<tr>
+<td style="width:100px; border:1px solid black; text-align:center;">Fehlercode </td><td style="width:350px;">&larr; esp <b>nach</b> dem Wechsel zur Behandlung  </td></tr>
+<tr>
+<td style="width:100px; border:1px solid black; text-align:center;">EIP </td><td style="width:350px;"></td></tr>
+<tr>
+<td style="width:100px; border:1px solid black; text-align:center;">CS </td><td style="width:350px;"></td></tr>
+<tr>
+<td style="width:100px; border:1px solid black; text-align:center;">EFLAGS </td><td style="width:350px;"></td></tr>
+<tr>
+<td style="width:100px; border:1px solid black; background:silver;">&#160; </td><td style="width:350px;">&larr; esp <b>vor</b> dem Wechsel zur Behandlung  </td></tr>
+<tr>
+<td style="width:100px; border:1px solid black;">&#160; </td><td style="width:350px;">&#160;  </td></tr>
+<tr>
+<td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:350px;"><em>hohe Adresse</em>  </td></tr>
+</table>
+</center><h2><a class="anchor" id="task3_exception_sec2_3"></a>
+Fehler in Ring &gt;0, mit Fehlercode</h2>
+<p>OOStuBS befindet sich durchgehend in Ring 0. Somit sind die folgenden Informationen für keine Aufgabe relevant.<br/>
+ Die folgende Darstellung bezieht sich auf den Kernelspeicher-Stack, der für die Behandlung vorgesehen ist. Die Informationen langen nicht auf dem Stack des gerade ausgeführten Programms, bei dem der Fehler auftrat. </p>
+<center> <table  border="0" style="border-collapse: collapse;">
+<tr>
+<td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:350px;"><em>niedrige Adresse</em>  </td></tr>
+<tr>
+<td style="width:100px; border:1px solid black;">&#160; </td><td style="width:350px;">&#160;  </td></tr>
+<tr>
+<td style="width:100px; border:1px solid black; text-align:center;">Fehlercode </td><td style="width:350px;">&larr; esp <b>nach</b> dem Wechsel zur Behandlung  </td></tr>
+<tr>
+<td style="width:100px; border:1px solid black; text-align:center;">EIP </td><td style="width:350px;"></td></tr>
+<tr>
+<td style="width:100px; border:1px solid black; text-align:center;">CS </td><td style="width:350px;"></td></tr>
+<tr>
+<td style="width:100px; border:1px solid black; text-align:center;">EFLAGS </td><td style="width:350px;"></td></tr>
+<tr>
+<td style="width:100px; border:1px solid black; text-align:center;">ESP </td><td style="width:350px;"></td></tr>
+<tr>
+<td style="width:100px; border:1px solid black; text-align:center;">SS </td><td style="width:350px;"></td></tr>
+<tr>
+<td style="width:100px; border:1px solid black; background:silver;">&#160; </td><td style="width:350px;">&larr; esp <b>vor</b> dem Wechsel zur Behandlung  </td></tr>
+<tr>
+<td style="width:100px; border:1px solid black;">&#160; </td><td style="width:350px;">&#160;  </td></tr>
+<tr>
+<td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:350px;"><em>hohe Adresse</em>  </td></tr>
+</table>
+</center><h2><a class="anchor" id="task3_exception_sec2_4"></a>
+Fehlercode</h2>
+<p>Es gibt kein einheitliches Aussehen des Fehlercode. Stattdessen hängt es vom jeweiligen Fehler ab, wie er aufgebaut ist. Oft hat er allerdings den folgenden oder einen ähnlichen Aufbau. </p>
+<table  border="1" rules="all">
+<tr>
+<th>Bit </th><th>Bedeutung  </th></tr>
+<tr>
+<td>0 </td><td>Falls gesetzt gesetzt, so trat der Fehler nicht im gerade ausgeführten Programm statt - sondern z.B. in einem Interrupt.  </td></tr>
+<tr>
+<td>1 </td><td>Falls Bit 0 nicht gesetzt, so: falls gesetzt, so ist der Index von der IDT<br/>
+ Falls Bit 0 gesetzt, so: Bit 1 vom Segment Selector Index  </td></tr>
+<tr>
+<td>2 </td><td>Falls Bit 1 nicht gesetzt, so: falls gesetzt, so ist der Index von der LDT, sonst GDT<br/>
+ Falls Bit 1 gesetzt, so: Bit 2 vom Segment Selector Index  </td></tr>
+<tr>
+<td>3-15 </td><td>Bits 3-15 vom Segment Selector Index; der Index besagt, welcher Eintrag in der entsprechenden Tabelle ausgewählt war.  </td></tr>
+<tr>
+<td>16-31 </td><td>ungenutzt/reserviert  </td></tr>
+</table>
+<h1><a class="anchor" id="task3_exception_sec3"></a>
+Liste der Ausnahmebehandlungen</h1>
+<p>Die folgende Liste wurde dem Intel-Architektur-Handbuch entnommen. Es gibt mehrere dieser Listen im Handbuch, doch leider sind sie nicht einheitlich. </p>
+<table  border="1" rules="all">
+<tr>
+<th>Interrupt </th><th>Bezeichnung </th><th>Typ </th><th>Fehlercode  </th></tr>
+<tr>
+<td>0 </td><td>Divide Error </td><td>Fault </td><td style="text-align:center;">&times;  </td></tr>
+<tr>
+<td>1 </td><td>Debug/Reserved for Intel </td><td>Fault/Trap </td><td style="text-align:center;">&times;  </td></tr>
+<tr>
+<td>2 </td><td>Nonmaskable Interrupt </td><td>Interrupt </td><td style="text-align:center;">&times;  </td></tr>
+<tr>
+<td>3 </td><td>Breakpoint </td><td>Trap </td><td style="text-align:center;">&times;  </td></tr>
+<tr>
+<td>4 </td><td>Overflow </td><td>Trap </td><td style="text-align:center;">&times;  </td></tr>
+<tr>
+<td>5 </td><td>Bound Range Exceeded </td><td>Fault </td><td style="text-align:center;">&times;  </td></tr>
+<tr>
+<td>6 </td><td>Invalid Opcode </td><td>Fault </td><td style="text-align:center;">&times;  </td></tr>
+<tr>
+<td>7 </td><td>Device Not Available </td><td>Fault </td><td style="text-align:center;">&times;  </td></tr>
+<tr>
+<td>8 </td><td>Double Fault </td><td>Abort </td><td style="text-align:center;">&radic;  </td></tr>
+<tr>
+<td>9 </td><td>Reserved (ehemals Coprocessor Segment Overrun) </td><td>Fault </td><td style="text-align:center;">&times;  </td></tr>
+<tr>
+<td>10 </td><td>Invalid TSS </td><td>Fault </td><td style="text-align:center;">&radic;  </td></tr>
+<tr>
+<td>11 </td><td>Segment Not Present </td><td>Fault </td><td style="text-align:center;">&radic;  </td></tr>
+<tr>
+<td>12 </td><td>Stack-Segment Fault </td><td>Fault </td><td style="text-align:center;">&radic;  </td></tr>
+<tr>
+<td>13 </td><td>General Protection </td><td>Fault </td><td style="text-align:center;">&radic;  </td></tr>
+<tr>
+<td>14 </td><td>Page Fault </td><td>Fault </td><td style="text-align:center;">&radic;  </td></tr>
+<tr>
+<td>15 </td><td>Reserved for Intel </td><td style="text-align:center;">¿ </td><td style="text-align:center;">&times;  </td></tr>
+<tr>
+<td>16 </td><td>x87 FPU Floating-Point Error </td><td>Fault </td><td style="text-align:center;">&radic;  </td></tr>
+<tr>
+<td>17 </td><td>Alignment Check </td><td>Fault </td><td style="text-align:center;">&times;  </td></tr>
+<tr>
+<td>18 </td><td>Machine Check </td><td>Abort </td><td style="text-align:center;">&times;  </td></tr>
+<tr>
+<td>19 </td><td>SIMD Floating-Point Exception </td><td>Fault </td><td style="text-align:center;">&times;  </td></tr>
+<tr>
+<td>20 </td><td>Virtualization Exception </td><td>Fault </td><td style="text-align:center;">&times;  </td></tr>
+<tr>
+<td>21-31 </td><td>Reserviert </td><td></td><td></td></tr>
+</table>
+<h1><a class="anchor" id="task3_exception_sec4"></a>
+Informationen zu einigen Exceptions</h1>
+<p>Im Folgenden werden für einige Fehler etwas genauere Informationen geliefert.</p>
+<h2><a class="anchor" id="task3_exception_sec4_1"></a>
+Divide Error</h2>
+<p>Tritt bei einer Ganzzahl-Divisionsrechnung, wie z.B. das Modulo, ein Fehler auf, so wird dieser Interrupt aufgerufen. In der Regel handelt es sich dabei um eine Division durch null.</p>
+<h2><a class="anchor" id="task3_exception_sec4_2"></a>
+Breakpoint</h2>
+<p>Die Assembleranweisung <code>int 3</code> ist genau ein Byte (0xCC) groß. Dadurch kann der Befehl an jeder Stelle stehen. Dieser Interrupt wird oft von Debuggern verwendet, beispielsweise um einen Breakpoint zu setzen. Dabei wird an der entsprechenden Stelle im Code das 0xCC geschrieben und die eigentliche Anweisung ausgelagert.<br/>
+ Einige Compiler bauen bei einer Debug-Version auch größzügig Blöcke von 0xCC vor und nach lokalen Variablen ein, um z.B. einige Buffer-Overrun-Fehler zu erkennen.</p>
+<h2><a class="anchor" id="task3_exception_sec4_3"></a>
+Invalid Opcode</h2>
+<p>Nicht jedes Byte bzw. Bytereihenfolge im Speicher kann die <a class="el" href="classCPU.html" title="Zugriff auf einige spezielle CPU-Anweisungen.">CPU</a> als Befehl interpretieren. Trifft sie auf ein ungültiges Wort, so wird dieser Fehler ausgelöst. Oft ist es ein Indikator dafür, dass irgendwann ein Sprung an eine ungültige Stelle stattfand und die <a class="el" href="classCPU.html" title="Zugriff auf einige spezielle CPU-Anweisungen.">CPU</a> nun irgendwelchen Datenmüll im Speicher ausführt.<br/>
+ Eine andere Option ist es, dass noch eine ältere <a class="el" href="classCPU.html" title="Zugriff auf einige spezielle CPU-Anweisungen.">CPU</a> verwendet wird, die noch nicht über einen erweiterten Befehlssatz verfügt und damit den eigentlich gültigen Befehl nicht kennt. SIMD-Anweisungen wie von SSE4.2 sind dafür prädestiniert.</p>
+<h2><a class="anchor" id="task3_exception_sec4_4"></a>
+Double Fault</h2>
+<p>Tritt während einer Fehlerbehandlung erneut ein Fehler auf, so wird von der <a class="el" href="classCPU.html" title="Zugriff auf einige spezielle CPU-Anweisungen.">CPU</a> diese Fehlerbehandlung aufgerufen. Ein Fehler in dieser Routine sollte vermieden werden, da ansonsten ein Tripple Fault auftritt und die <a class="el" href="classCPU.html" title="Zugriff auf einige spezielle CPU-Anweisungen.">CPU</a> neu startet.</p>
+<p>Am Besten sollte eine möglichst einfache Funktion hinterlegt werden, die einige Hilfsinformationen ausgibt und danach die <a class="el" href="classCPU.html" title="Zugriff auf einige spezielle CPU-Anweisungen.">CPU</a> dauerhaft anhält. Es ist auch möglich, wichtige Daten vorher zu sichern. Dabei sollte aber ebenfalls darauf geachtet werden, dass einfache und damit möglichst fehlerfreie Funktionen verwendet werden.</p>
+<h2><a class="anchor" id="task3_exception_sec4_5"></a>
+General Protection</h2>
+<p>Viele Zugriffsfehler, die keine andere Exception auslösen, landen hier. Folglich gibt es keine eindeutige Ursache für den Fehler. Einige Assemblerbefehle führen Sicherheitskontrollen durch, schlagen diese Fehl, kann z.B. diese Ausnahme auftreten. Oft gibt es in einem Befehl sogar mehrere Kontrollen, es muss nur eine fehlschlagen. Somit ist sogar bei nur einem Befehl die Ursache nicht eindeutig. In dem Fall kann der Fehlercode einen ersten Ansatz liefern.</p>
+<h2><a class="anchor" id="task3_exception_sec4_6"></a>
+Page Fault</h2>
+<p>Greift ein Programm auf Speicher zu, dessen Speicherseite nicht vorhanden, nur lesbar markiert, reserviert markiert oder nicht für den Sicherheitsring des Programm freigegeben ist, so wird dieser Fehler ausgelöst. Für eine genauere Eingrenzung kann der Fehlercode verwendet werden. Der Fehlercode hat einen komplett anderen Aufbau, als der oben beschriebene.</p>
+<p>Viele Betriebssysteme ermöglichen das Auslagern von Speicherseiten. Auch kann es für Programme erscheinen, dass sie den kompletten Speicher zur Verfügung haben, ohne, dass sie ihn wirklich besitzen. Dies wird umgesetzt, indem die einzelnen Speicherseiten als "nicht vorhanden" markiert werden und erst, wenn das Programm darauf zugreift, werden sie wirklich in den Speicher geladen. <br/>
+ Dieser Fehler ist also ein Mechanismus zur Speicherverwaltung, der auch von vielen Betriebssystemen eingesetzt und bewusst hervorgerufen wird.</p>
+<h2><a class="anchor" id="task3_exception_sec4_7"></a>
+Alignment Check</h2>
+<p>Einige, meist auf Geschwindigkeit optimierte Befehle erwarten eine bestimmte Ausrichtung von Daten, mit denen sie arbeiten. Ist dies nicht der Fall, wird dieser Fehler ausgelöst.</p>
+<p>Für vielen Befehlen können die Tests darauf deaktiviert werden.</p>
+<h1><a class="anchor" id="task3_exception_sec5"></a>
+Triple Fault</h1>
+<p>Eine Art weiterer Fehler ist der sogenannte "Triple Fault". Anders als bei den anderen Exception wird hier kein Interrupt ausgelöst, sondern der Computer startet neu.</p>
+<p>Tritt bei einer Fehlerbehandlung erneut ein Fehler auf, so wird eine Interruptbehandlung eines Double Faults ausgelöst.</p>
+<p>Der Tripple Fault ist meist ein Indikator dafür, dass etwas grundlegendes mit dem im Betriebssystem implementierten Fehlerbehandlungsmechanismus nicht stimmt oder mindestens ein Segmentregister einen falschen Wert hat.</p>
+<h1><a class="anchor" id="task3_exception_sec6"></a>
+Literatur</h1>
+<ul>
+<li><a href="http://www.lowlevel.eu/wiki/Exception">Exceptions auf lowlevel.eu</a> </li>
+<li><a href="http://wiki.osdev.org/Exceptions">Exceptions auf wiki.osdev.org</a> </li>
+<li><a href="http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html">Intel&reg; 64 and IA-32 Architectures Software Developer Manuals</a> </li>
+</ul>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Mit Mai 29 2013 23:52:16 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
+</body>
+</html>

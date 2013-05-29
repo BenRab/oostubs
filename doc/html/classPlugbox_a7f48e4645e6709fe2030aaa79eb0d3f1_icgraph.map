@@ -1,4 +1,6 @@
 <map id="Plugbox::assign" name="Plugbox::assign">
-<area shape="rect" id="node3" href="$classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur" alt="" coords="167,5,281,33"/>
-<area shape="rect" id="node5" href="$classTask2.html#a4adb42b6119375dfec56808c158dd7dc" title="Default constructor." alt="" coords="331,5,429,33"/>
+<area shape="rect" id="node3" href="$classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur" alt="" coords="167,55,281,83"/>
+<area shape="rect" id="node5" href="$classTask2.html#a4adb42b6119375dfec56808c158dd7dc" title="Default constructor." alt="" coords="340,5,439,33"/>
+<area shape="rect" id="node7" href="$classTask3A.html#a86233712775d9b45fe3d8a5eae09334d" title="Default constructor." alt="" coords="332,55,447,83"/>
+<area shape="rect" id="node9" href="$classTask3B.html#a7ec400d4732dfb10f86b72a9b767f36e" title="Default constructor." alt="" coords="332,106,447,134"/>
 </map>

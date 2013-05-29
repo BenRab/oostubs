@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>OOStuBS - Technische Informatik II (TI-II): Stack und Prozeduren und x86-Assembler</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.1.2 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li class="current"><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="task3.html">Aufgabe 3 - Prozedurstackanalyse</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Stack und Prozeduren und x86-Assembler </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>Inhaltsverzeichnis</h3>
+<ul><li class="level1"><a href="#task3_procstack_sec1">Ziel dieser Informationen</a></li>
+<li class="level1"><a href="#task3_procstack_sec2">Was ist ein Assembler?</a></li>
+<li class="level1"><a href="#task3_procstack_sec3">Was kann ein Assembler?</a></li>
+<li class="level1"><a href="#task3_procstack_sec4">Was ist ein Register?</a><ul><li class="level2"><a href="#task3_procstack_sec4_1">Allgemeine Register</a></li>
+<li class="level2"><a href="#task3_procstack_sec4_2">Segmentregister</a></li>
+<li class="level2"><a href="#task3_procstack_sec4_3">Sonstige Register</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#task3_procstack_sec5">Was ist Speicher?</a></li>
+<li class="level1"><a href="#task3_procstack_sec6">Was ist ein Stack?</a><ul><li class="level2"><a href="#task3_procstack_sec6_1">Adressierungsarten</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#task3_procstack_sec7">Prozeduren</a></li>
+<li class="level1"><a href="#task3_procstack_sec8">Flüchtige und nicht-flüchtige Register / Anbindung an C</a></li>
+<li class="level1"><a href="#task3_procstack_sec9">Literatur</a></li>
+</ul>
+</div>
+<div class="textblock"><h1><a class="anchor" id="task3_procstack_sec1"></a>
+Ziel dieser Informationen</h1>
+<p>Ziel dieser Seite ist es, insbesondere für die Teilnehmer von Technische Informatik II, die noch keine Assemblerkenntnisse besitzen, einen Überblick über die Assembler-Programmierung zu geben. Wir bilden uns nicht ein, dass ihr am Ende komplexe Assemblerprogramme schreiben könnt, aber das wird auch nicht nötig sein. Wir hoffen jedoch, dass ihr auf diese Weise zumindest eine gewisse Vorstellung davon erhaltet, wie ein Hochsprachenprogramm in Assembler aussieht und dass ihr bei entsprechender Hilfestellungen auch selbst kleine Funktionen in Assembler schreiben könnt. Die verschiedenen Konzepte werden am Beispiel des 80<b>x86</b> Prozessors erläutert. Diese Prozessorreihe stammt von der Firma Intel und steckt direkt oder als Nachbau u.a. in jedem PC. <br/>
+ Heutige Tabletts und Smartphone verwenden jedoch meist andere Prozessoren.</p>
+<p>Den <em>Rahmenaufbau</em> eines Assemblerprogramms werden wir hier nicht erklären, den schaut ihr euch am besten an einer Assemblerdatei ab.</p>
+<h1><a class="anchor" id="task3_procstack_sec2"></a>
+Was ist ein Assembler?</h1>
+<p>Ein Assembler ist genau genommen ein Compiler, der den Code eines Assemblerprogramms in Maschinensprache, d.h. Nullen und Einsen übersetzt. Anders als ein C-Compiler hat es der Assembler jedoch sehr einfach, da (<em>fast</em> <em>immer</em>) eine Assembleranweisung genau einer Maschinensprachenanweisung entspricht. Das Assemblerprogramm ist also nur eine für Menschen komfortablere Darstellung des Maschinenprogramms.</p>
+<p>Statt <code>000001011110100000000011</code> schreiben zu müssen, kann der Programmierer die Assembleranweisung <code>add ax,1000</code> verwenden, die - bei den 80x86 Prozessoren - genau dasselbe bedeutet.</p>
+<table  border="1" rules="all">
+<tr>
+<th>symbolische Bezeichnung </th><th>Maschinencode  </th></tr>
+<tr>
+<td>add ax </td><td>00000101  </td></tr>
+<tr>
+<td>1000 (dez.) </td><td>0000001111101000  </td></tr>
+</table>
+<p>Zusätzlich vertauscht der Assembler noch die Reihenfolge der Bytes des Offsets.</p>
+<table  border="1" rules="all">
+<tr>
+<td>00000101 </td><td>11101000 </td><td>00000011 </td></tr>
+<tr>
+<td>add ax </td><td>low Byte </td><td>high Byte  </td></tr>
+</table>
+<p>Im üblichen Sprachgebrauch wird unter <em>Assembler</em> jedoch weniger der Compiler verstanden, als die symbolische Notation der Maschinensprache. <code>add ax,1000</code> ist dann also eine Assembleranweisung.</p>
+<h1><a class="anchor" id="task3_procstack_sec3"></a>
+Was kann ein Assembler?</h1>
+<p>Ein Assembler kann eigentlich sehr wenig, nämlich nur das, was der Prozessor direkt versteht. Die ganzen schönen Konstrukte höherer Programmiersprachen, die dem Programmierer erlauben, seine Algorithmen in verständliche, (<em>ziemlich</em>) fehlerfreie Programme zu übertragen, fehlen: </p>
+<ul>
+<li>keine komplexen Anweisungen </li>
+<li>keine komfortablen for, while oder reapeat-until Schleifen </li>
+<li>keine strukturierten Datentypen </li>
+<li>keine Unterprogramme mit Parameterübergabe </li>
+<li>...</li>
+</ul>
+<p><b>Beispiele:</b> </p>
+<ol>
+<li>
+Die C Anweisung <code>summe = a + b + c + d;</code> ist für einen Assembler zu kompliziert und muss daher in mehrere Anweisungen aufgeteilt werden. Der 80x86 Assembler kann immer nur zwei Zahlen addieren und das Ergebnis in einer der beiden verwendeten Variablen (Akkumulatorregister) speichern. Das folgende C Programm entspricht daher eher einem Assemblerprogramm: <div class="fragment"><div class="line">summe = a;</div>
+<div class="line">summe = summe + b;</div>
+<div class="line">summe = summe + c;</div>
+<div class="line">summe = summe + d;</div>
+</div><!-- fragment --> In einem x86 Assembler würde das dann so aussehen: <div class="fragment"><div class="line">mov [a], %eax</div>
+<div class="line">add [b], %eax</div>
+<div class="line">add [c], %eax</div>
+<div class="line">add [d], %eax</div>
+</div><!-- fragment -->  </li>
+<li>
+Einfache if-then-else Konstrukte sind für Assembler auch schon zu schwierig: <div class="fragment"><div class="line"><span class="keywordflow">if</span> (a == 4711){</div>
+<div class="line">  ...</div>
+<div class="line">}<span class="keywordflow">else</span>{</div>
+<div class="line">  ...</div>
+<div class="line">}</div>
+</div><!-- fragment --> <pre class="fragment"> Sie müssen mit Hilfe von gotos ausgedrückt werden: 
+ @code {.cpp}
+</pre> if (a != 4711) goto ungleich gleich: ... goto weiter ungleich: ... weiter: ...  In Assembler umgesetzt sieht es dann so aus: <div class="fragment"><div class="line">  cmpl $4711, %eax</div>
+<div class="line">  jne ungleich</div>
+<div class="line">gleich:   </div>
+<div class="line">  ...</div>
+<div class="line">  jmp weiter</div>
+<div class="line">ungleich: </div>
+<div class="line">  ...</div>
+<div class="line">weiter:   </div>
+<div class="line">  ...</div>
+</div><!-- fragment -->  </li>
+<li>
+Einfache Zählschleifen werden vom 80x86 Prozessor schon besser unterstützt. Das folgende C Programm <div class="fragment"><div class="line"><span class="keywordflow">for</span> (i=100; i!=0; i++) { </div>
+<div class="line">  summe = summe + a;</div>
+<div class="line">}</div>
+</div><!-- fragment --> sieht in einem 80x86 Assembler etwa so aus: <div class="fragment"><div class="line">  mov $100, %ecx</div>
+<div class="line">schleife:  </div>
+<div class="line">  add [a], %eax</div>
+<div class="line">  loop schleife</div>
+</div><!-- fragment --> Der Loop-Befehl dekrementiert implizit das <code>ecx</code> Register und führt den Sprung nur aus, wenn der Inhalt des <code>ecx</code> Registers anschließend nicht 0 ist.  </li>
+</ol>
+<h1><a class="anchor" id="task3_procstack_sec4"></a>
+Was ist ein Register?</h1>
+<p>In den bisher genannten Beispielen wurden anstelle der Variablennamen des C Programms stets die Namen von Registern verwendet. Ein Register ist ein winziges Stückchen Hardware innerhalb des Prozessors, das beim 80386 und höher bis zu 32 Bits, also 32 Ziffern im Bereich 0 und 1 speichern kann.</p>
+<p>Der 80386 besitzt die folgenden Register.</p>
+<h2><a class="anchor" id="task3_procstack_sec4_1"></a>
+Allgemeine Register</h2>
+<table  border="1" rules="all">
+<tr>
+<th>Name </th><th>Bemerkung  </th></tr>
+<tr>
+<td>eax </td><td>allgemein verwendbar, spezielle Bedeutung bei Arithmetikbefehlen  </td></tr>
+<tr>
+<td>ebx </td><td>allgemein verwendbar  </td></tr>
+<tr>
+<td>ecx </td><td>allgemein verwendbar, spezielle Bedeutung bei Schleifen  </td></tr>
+<tr>
+<td>edx </td><td>allgemein verwendbar  </td></tr>
+<tr>
+<td>ebp </td><td>Basepointer  </td></tr>
+<tr>
+<td>esi </td><td>Quelle (eng: source) f&uuml;r Stringoperationen  </td></tr>
+<tr>
+<td>edi </td><td>Ziel (eng: destination) f&uuml;r Stringoperationen  </td></tr>
+<tr>
+<td>esp </td><td>Stackpointer  </td></tr>
+</table>
+<p>Die unteren beiden Bytes der Register <code>eax</code>, <code>ebx</code>, <code>ecx</code> und <code>edx</code> haben eigene Namen, beim <code>eax</code> Register sieht das so aus: </p>
+<center> <table  border="0">
+<tr>
+<td style="width:25px; text-align:left;">31 </td><td style="width:25px;"></td><td style="width:25px;"></td><td style="width:25px;"></td><td style="width:25px;text-align:left;">15 </td><td style="width:25px;"></td><td style="width:25px;text-align:left;">7 </td><td style="width:25px;text-align:right;">0  </td></tr>
+<tr>
+<td colspan="2" style="width:50px; border:1px solid black">&#160; </td><td colspan="2" style="width:50px; border:1px solid black">&#160; </td><td colspan="2" style="width:50px; border:1px solid black">&#160; </td><td colspan="2" style="width:50px; border:1px solid black">&#160;  </td></tr>
+<tr>
+<td colspan="2" style="width:50px; border-left:1px dashed black"></td><td colspan="2" style="width:50px;"></td><td colspan="2" style="width:50px; border-left:1px dashed black"></td><td colspan="2" style="width:50px; text-align:center; border:1px solid black">al  </td></tr>
+<tr>
+<td colspan="2" style="width:50px; border-left:1px dashed black"></td><td colspan="2" style="width:50px;"></td><td colspan="2" style="width:50px; text-align:center; border:1px solid black">ah </td><td colspan="2" style="width:50px; border-right:1px dashed black"></td></tr>
+<tr>
+<td colspan="4" style="width:100px; border-left:1px dashed black"></td><td colspan="4" style="width:100px; text-align:center; border:1px solid black">ax  </td></tr>
+<tr>
+<td colspan="8" style="width:200px; text-align:center; border:1px solid black">eax  </td></tr>
+</table>
+</center><h2><a class="anchor" id="task3_procstack_sec4_2"></a>
+Segmentregister</h2>
+<table  border="1" rules="all">
+<tr>
+<th>Name </th><th>Bemerkung  </th></tr>
+<tr>
+<td>cs </td><td>Codesegment  </td></tr>
+<tr>
+<td>ds </td><td>Datasegment  </td></tr>
+<tr>
+<td>ss </td><td>Stacksegment  </td></tr>
+<tr>
+<td>es </td><td>beliebiges Segment  </td></tr>
+<tr>
+<td>fs </td><td>beliebiges Segment  </td></tr>
+<tr>
+<td>gs </td><td>beliebiges Segment  </td></tr>
+</table>
+<h2><a class="anchor" id="task3_procstack_sec4_3"></a>
+Sonstige Register</h2>
+<table  border="1" rules="all">
+<tr>
+<th>Name </th><th>Bemerkung  </th></tr>
+<tr>
+<td>eip </td><td>Instruction Pointer  </td></tr>
+<tr>
+<td>ef </td><td>Flags  </td></tr>
+</table>
+<h1><a class="anchor" id="task3_procstack_sec5"></a>
+Was ist Speicher?</h1>
+<p>Meistens reichen die Register nicht aus, um ein Problem zu lösen. In diesem Fall muss auf den Hauptspeicher des Computers zugegriffen werden, der erheblich mehr Information speichern kann. Für den Programmierer sieht der Hauptspeicher wie ein riesiges Array von Registern aus, die je nach Wunsch 8, 16 oder 32 Bits breit sind. Die kleinste adressierbare Einheit ist also ein Byte (= 8 Bits). Daher wird auch die Größe des Speichers in Bytes gemessen. Um auf einen bestimmten Eintrag des Arrays Hauptspeicher zugreifen zu können, muss der Programmierer den Index, d.h. die Adresse des Eintrages kennen. Das erste Byte des Hauptspeichers bekommt dabei die Adresse 0, das zweite die Adresse 1 usw..</p>
+<p>In einem Assemblerprogramm können Variablen angelegt werden, indem einer Speicheradresse ein Label zugeordnet und dabei Speicherplatz in der gewünschten Größe reserviert wird.</p>
+<div class="fragment"><div class="line">.data</div>
+<div class="line">gruss:       .ascii <span class="stringliteral">&quot;hello, world\n\0&quot;</span></div>
+<div class="line">unglueck:    .short 13</div>
+<div class="line">million:     .long 1000000</div>
+<div class="line"></div>
+<div class="line">.text</div>
+<div class="line">             movw million, %ax</div>
+<div class="line">             ...</div>
+</div><!-- fragment --><p> Der im Folgenden abgebildete Speicher ist pro Zelle ein Byte groß. Jedes Byte hat jeweils die gleiche Höhe und die Breite. Ist eine Zelle doppelt so hoch wie eine andere, so belegt sie auch doppelt so viel Speicher.</p>
+<center> <table  border="0" style="border-collapse: collapse;">
+<tr>
+<td style="height:25px; width:125px;"></td><td style="height:25px; width:80px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="height:25px; width:125px; text-align:left;">&#160;<em>niedrigste Adresse</em>  </td></tr>
+<tr>
+<td style="height:25px; width:125px; text-align:right;"><b>gruss:&#160;</b> </td><td style="height:25px; width:80px; border:1px solid black; text-align:center;">'h' </td><td style="height:25px; width:125px;"></td></tr>
+<tr>
+<td style="height:25px; width:125px;"></td><td style="height:25px; width:80px; border:1px solid black; text-align:center;">'e' </td><td style="height:25px; width:125px;"></td></tr>
+<tr>
+<td style="height:25px; width:125px;"></td><td style="height:25px; width:80px; border:1px solid black; text-align:center;">'l' </td><td style="height:25px; width:125px;"></td></tr>
+<tr>
+<td style="height:25px; width:125px;"></td><td style="height:25px; width:80px; border:1px solid black; text-align:center;">'l' </td><td style="height:25px; width:125px;"></td></tr>
+<tr>
+<td style="height:25px; width:125px;"></td><td style="height:25px; width:80px; border:1px solid black; text-align:center;">'o' </td><td style="height:25px; width:125px;"></td></tr>
+<tr>
+<td style="height:25px; width:125px;"></td><td style="height:25px; width:80px; border:1px solid black; text-align:center;">',' </td><td style="height:25px; width:125px;"></td></tr>
+<tr>
+<td style="height:25px; width:125px;"></td><td style="height:25px; width:80px; border:1px solid black; text-align:center;">'&#160;' </td><td style="height:25px; width:125px;"></td></tr>
+<tr>
+<td style="height:25px; width:125px;"></td><td style="height:25px; width:80px; border:1px solid black; text-align:center;">'w' </td><td style="height:25px; width:125px;"></td></tr>
+<tr>
+<td style="height:25px; width:125px;"></td><td style="height:25px; width:80px; border:1px solid black; text-align:center;">'o' </td><td style="height:25px; width:125px;"></td></tr>
+<tr>
+<td style="height:25px; width:125px;"></td><td style="height:25px; width:80px; border:1px solid black; text-align:center;">'r' </td><td style="height:25px; width:125px;"></td></tr>
+<tr>
+<td style="height:25px; width:125px;"></td><td style="height:25px; width:80px; border:1px solid black; text-align:center;">'l' </td><td style="height:25px; width:125px;"></td></tr>
+<tr>
+<td style="height:25px; width:125px;"></td><td style="height:25px; width:80px; border:1px solid black; text-align:center;">'d' </td><td style="height:25px; width:125px;"></td></tr>
+<tr>
+<td style="height:25px; width:125px;"></td><td style="height:25px; width:80px; border:1px solid black; text-align:center;">'\n' </td><td style="height:25px; width:125px;"></td></tr>
+<tr>
+<td style="height:25px; width:125px;"></td><td style="height:25px; width:80px; border:1px solid black; text-align:center;">'\0' </td><td style="height:25px; width:125px;"></td></tr>
+<tr>
+<td style="height:50px; width:125px; text-align:right; vertical-align:top;"><b>unglueck:&#160;</b> </td><td style="height:50px; width:80px; border:1px solid black; text-align:center;">13 </td><td style="height:50px; width:125px;"></td></tr>
+<tr>
+<td style="height:100px; width:125px; text-align:right; vertical-align:top;"><b>million:&#160;</b> </td><td style="height:100px; width:80px; border:1px solid black; text-align:center;">1000000 </td><td style="height:100px; width:125px;"></td></tr>
+<tr>
+<td style="height:25px; width:125px;"></td><td style="height:25px; width:80px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="height:25px; width:125px; text-align:left;">&#160;<em>höchste Adresse</em>  </td></tr>
+</table>
+</center><h1><a class="anchor" id="task3_procstack_sec6"></a>
+Was ist ein Stack?</h1>
+<p>Nicht immer will man sich ein neues Label ausdenken, nur um kurzfristig mal den Wert eines Registers zu speichern, beispielsweise, weil man dieses Register für eine bestimmte Anweisung benötigt, den alten Wert aber nicht verlieren möchte. In diesem Fall wünscht man sich so etwas wie einen Schmierzettel. Den bekommt man mit dem Stack. Der Stack ist eigentlich nichts weiter als ein Stück des Hauptspeichers, nur dass dort nicht mit festen Adressen gearbeitet wird, sondern die zu sichernden Daten einfach immer oben drauf geschrieben (push) bzw. von oben heruntergeholt werden (<code>pop</code>). Der Zugriff ist also ganz einfach, vorausgesetzt man erinnert sich daran, in welcher Reihenfolge die Daten auf den Stapel gelegt wurden. Ein spezielles Register, der <b>Stackpointer esp</b> zeigt stets auf das oberste Element des Stacks. Da <code>push</code> und <code>pop</code> immer nur 32 Bits auf einmal transferieren können, ist der Stack in der folgenden Abbildung vier Bytes breit dargestellt. Oben sind die niedrigen Adressen, unten die hohen.</p>
+<center> <table  border="0" style="border-collapse: collapse;">
+<tr>
+<th style="font-size:90%;">eax=10, ebx=47 </th><td></td><th style="font-size:90%;">eax=7, ebx=47 </th><td></td><th style="font-size:90%;">eax=7, ebx=40 </th><td></td><th style="font-size:90%;">eax=7, ebx=47 </th><td style="width:25px;">&#160;  </td></tr>
+<tr>
+<td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:100px;">&#160; </td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:100px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:100px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;">&#160;  </td></tr>
+<tr>
+<td style="width:100px; border:1px solid black;">&#160; </td><td style="width:100px;">&#160; </td><td style="width:100px; border:1px solid black;">&#160; </td><td style="width:100px;">&#160; </td><td style="width:100px; border:1px solid black;">&#160; </td><td style="width:100px;">&#160; </td><td style="width:100px; border:1px solid black;">&#160; </td><td style="width:50px;">&#160;  </td></tr>
+<tr>
+<td style="width:50px; border:1px solid black;">&#160; </td><td style="width:50px;">&#160; </td><td style="width:50px; border:1px solid black;">&#160; </td><td style="width:50px;">&#160; </td><td style="width:50px; border:1px solid black;">&#160; </td><td style="width:50px;">&#160; </td><td style="width:50px; border:1px solid black;">&#160; </td><td style="width:50px;">&#160;  </td></tr>
+<tr>
+<td style="width:50px; border:1px solid black;">&#160; </td><td style="width:50px;">&#160; </td><td style="width:50px; border:1px solid black;">&#160; </td><td style="width:50px;">&#160; </td><td style="width:50px; border:1px solid black; text-align:center;">47 </td><td style="width:50px; text-align:left;">&larr; esp </td><td style="width:50px; border:1px solid black; text-align:center;">47 </td><td style="width:50px;">&#160;  </td></tr>
+<tr>
+<td style="width:100px; border:1px solid black;">&#160; </td><td style="width:100px;">&#160; </td><td style="width:100px; border:1px solid black; text-align:center;">10 </td><td style="width:100px; text-align:left;">&larr; esp </td><td style="width:100px; border:1px solid black; text-align:center;">10 </td><td style="width:100px;">&#160; </td><td style="width:100px; border:1px solid black; text-align:center;">10 </td><td style="width:50px; text-align:left;">&larr; esp  </td></tr>
+<tr>
+<td style="width:100px; border:1px solid black; background:silver;">&#160; </td><td style="width:100px; text-align:left;">&larr; esp </td><td style="width:100px; border:1px solid black; background:silver;">&#160; </td><td style="width:100px;">&#160; </td><td style="width:100px; border:1px solid black; background:silver;">&#160; </td><td style="width:100px;">&#160; </td><td style="width:100px; border:1px solid black; background:silver;">&#160; </td><td style="width:50px; text-align:left;"></td></tr>
+<tr>
+<td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:100px;">&#160; </td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:100px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:100px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;">&#160;  </td></tr>
+<tr>
+<td style="width:100px;">&#160; </td><td style="width:100px; vertical-align:top; font-size:100%">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&rarr;<br/>
+ <code>push %eax</code> <br/>
+ <code>mov $7, %eax</code>  </td><td style="width:100px;">&#160; </td><td style="width:100px; vertical-align:top; font-size:100%">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&rarr;<br/>
+ <code>push %ebx</code> <br/>
+ <code>sub %eax, %ebx</code>  </td><td style="width:100px;">&#160; </td><td style="width:100px; vertical-align:top; font-size:100%">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&rarr;<br/>
+ <code>pop %ebx</code>  </td><td style="width:100px;">&#160; </td><td style="width:50px;">&#160;  </td></tr>
+</table>
+</center><h2><a class="anchor" id="task3_procstack_sec6_1"></a>
+Adressierungsarten</h2>
+<p>Die meisten Befehle des 80x86 können ihre Operanden wahlweise aus Registern, aus dem Speicher oder unmittelbar einer Konstante entnehmen. Beim <code>mov</code> Befehl sind u.a. folgende Formen möglich, wobei der erste Operand stets das Ziel und der zweite stets die Quelle der Kopieraktion angeben: </p>
+<ul>
+<li>
+<b>Register-Adressierung:</b> Der Wert eines Registers wird in ein anderes übertragen. <br/>
+ <code>mov edi, ebx</code>  </li>
+<li>
+<b>Unmittelbare Adressierung:</b> Eine Konstante wird in ein Register übertragen. <br/>
+ <code>mov $1000, ebx</code>  </li>
+<li>
+<b>Direkte Adressierung:</b> Der Wert der an der angegebenen Speicherstelle steht, wird in das Register übertragen. <br/>
+ <code>mov 1000, ebx</code>  </li>
+<li>
+<b>Register-Indirekte Adressierung:</b> Der Wert, der an der Speicherstelle steht, die durch das zweite Register bezeichnet wird, wird in das erste Register übertragen. <br/>
+ <code>mov (eax), ebx</code>  </li>
+<li>
+<b>Basis-Register Adressierung:</b> Der Wert, der an der Speicherstelle steht, die sich durch die Summe des Inhalts des zweiten Registers und der Konstanten ergibt, wird in das erste Register übertragen. <br/>
+ <code>mov 10(esi), eax</code>  </li>
+</ul>
+<dl class="section note"><dt>Zu beachten</dt><dd>Wenn der 80x86 Prozessor im Real-Mode betrieben wird - z.B. bei der Arbeit mit dem Betriebssystem MS DOS - werden Speicheradressen durch ein Segmentregister und einen Offset angegeben. Bei OOStuBS ist das nicht nötig - <b>es ist sogar falsch</b> - da OOStuBS im Protected Mode läuft und die Segmentregister von uns bereits für euch initialisiert wurden.</dd></dl>
+<h1><a class="anchor" id="task3_procstack_sec7"></a>
+Prozeduren</h1>
+<p>Aus den höheren Programmiersprachen ist das Konzept der Funktion oder Prozedur bekannt. Der Vorteil dieses Konzeptes gegenüber einem <code>goto</code> besteht darin, dass die Prozedur von jeder beliebigen Stelle im Programm aufgerufen werden kann und das Programm anschließend an genau der Stelle fortgesetzt wird, die nach dem Prozeduraufruf folgt. Die Prozedur selbst muss nicht wissen, von wo sie aufgerufen wurde und wo es hinterher weiter geht. Das geschieht irgendwie automatisch. Aber wie?</p>
+<p>Die Lösung besteht darin, dass nicht nur die Daten des Programms, sondern auch das Programm selbst im Hauptspeicher liegt und somit zu jeder Maschinencodeanweisung eine eigene Adresse gehört. Damit der Prozessor ein Programm ausführt, muss sein Befehlszeiger auf den Anfang des Programms zeigen, also die Adresse der ersten Maschinencodeanweisung in das spezielle Register Befehlszeiger (<em>instruction pointer, eip</em>) geladen werden. Der Prozessor wird dann den auf diese Weise bezeichneten Befehl ausführen und im Normalfall anschließend den Inhalt des Befehlszeigers um die Länge des Befehls im Speicher erhöhen, so dass er auf die nächste Maschinenanweisung zeigt. Bei einem Sprungbefehl wird der Befehlszeiger nicht um die Länge des Befehls, sondern um die angegebene relative Zieladresse erhöht oder erniedrigt.</p>
+<p>Um nun eine Prozedur oder Funktion (in Assembler dasselbe) aufzurufen, wird zunächst einmal wie beim Sprungbefehl verfahren, nur dass der alte Wert des Befehlszeigers (+ Länge des Befehls) zuvor auf den Stack geschrieben wird. Am Ende der Funktion genügt dann ein Sprung an die auf dem Stack gespeicherte Adresse, um zu dem aufrufenden Programm zurückzukehren.</p>
+<p>Beim 80x86 erfolgt das Speichern der Rücksprungadresse auf dem Stack implizit mit Hilfe des call Befehls. Genauso führt der ret Befehl auch implizit einen Sprung an die auf dem Stack liegende Adresse durch: </p>
+<div class="fragment"><div class="line">; ----- Hauptprogramm -----</div>
+<div class="line">;</div>
+<div class="line">main:  </div>
+<div class="line">  ...</div>
+<div class="line">  call f1</div>
+<div class="line">xy:</div>
+<div class="line">  ...</div>
+<div class="line"></div>
+<div class="line">; ----- Funktion f1</div>
+<div class="line">f1:</div>
+<div class="line">  ...</div>
+<div class="line">  ret</div>
+</div><!-- fragment --><center> <table  border="0" style="border-collapse: collapse;">
+<tr>
+<td></td><th style="font-size:90%;">vor <code>call f1</code> </th><td></td><td></td><th style="font-size:90%;">nach <code>call f1</code> </th><td></td><td></td><th style="font-size:90%;">nach <code>ret</code>  </th><td></td></tr>
+<tr>
+<td style="width:50px;">&#160; </td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:75px;">&#160; </td><td style="width:75px;">&#160; </td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:75px;">&#160; </td><td style="width:75px;">&#160; </td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;">&#160;  </td></tr>
+<tr>
+<td style="width:50px; text-align:right;">main:&#160; </td><td style="width:100px; border:1px solid black; text-align:center;">... </td><td style="width:50px;"></td><td style="width:50px; text-align:right;">main:&#160; </td><td style="width:100px; border:1px solid black; text-align:center;">... </td><td style="width:50px;"></td><td style="width:50px; text-align:right;">main:&#160; </td><td style="width:100px; border:1px solid black; text-align:center;">... </td><td style="width:50px;">&#160;  </td></tr>
+<tr>
+<td style="width:50px;"></td><td style="width:100px; border:1px solid black;">&#160;<code>call f1</code> </td><td style="width:50px; text-align:left;">&larr; eip </td><td style="width:50px;"></td><td style="width:100px; border:1px solid black;">&#160;<code>call f1</code> </td><td style="width:50px;"></td><td style="width:50px;"></td><td style="width:100px; border:1px solid black;">&#160;<code>call f1</code> </td><td style="width:50px;">&#160;  </td></tr>
+<tr>
+<td style="width:50px; text-align:right;">xy:&#160; </td><td style="width:100px; border:1px solid black; text-align:center;">... </td><td style="width:50px;"></td><td style="width:50px; text-align:right;">xy:&#160; </td><td style="width:100px; border:1px solid black; text-align:center;">... </td><td style="width:50px;">&#160; </td><td style="width:50px; text-align:right;">xy:&#160; </td><td style="width:100px; border:1px solid black; text-align:center;">... </td><td style="width:50px; text-align:left;">&larr; eip  </td></tr>
+<tr>
+<td style="width:50px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;"></td><td style="width:50px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;"></td><td style="width:50px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;">&#160;  </td></tr>
+<tr>
+<td style="width:50px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;"></td><td style="width:50px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;"></td><td style="width:50px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;">&#160;  </td></tr>
+<tr>
+<td style="width:50px; text-align:right;">f1:&#160; </td><td style="width:100px; border:1px solid black; text-align:center;">... </td><td style="width:50px;"></td><td style="width:50px; text-align:right;">f1:&#160; </td><td style="width:100px; border:1px solid black; text-align:center;">... </td><td style="width:50px; text-align:left;">&larr; eip </td><td style="width:50px; text-align:right;">f1:&#160; </td><td style="width:100px; border:1px solid black; text-align:center;">... </td><td style="width:50px;">&#160;  </td></tr>
+<tr>
+<td style="width:50px;"></td><td style="width:100px; border:1px solid black;">&#160;<code>ret</code> </td><td style="width:50px;"></td><td style="width:50px;"></td><td style="width:100px; border:1px solid black;">&#160;<code>ret</code> </td><td style="width:50px;"></td><td style="width:50px;"></td><td style="width:100px; border:1px solid black;">&#160;<code>ret</code> </td><td style="width:50px;">&#160;  </td></tr>
+<tr>
+<td style="width:50px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;"></td><td style="width:50px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;"></td><td style="width:50px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;">&#160;  </td></tr>
+<tr>
+<td style="width:50px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;"></td><td style="width:50px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;"></td><td style="width:50px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;">&#160;  </td></tr>
+<tr>
+<td style="width:50px;"></td><td style="width:100px; border:1px solid black;">&#160; </td><td style="width:50px;"></td><td style="width:50px;"></td><td style="width:100px; border:1px solid black;">&#160; </td><td style="width:50px;"></td><td style="width:50px;"></td><td style="width:100px; border:1px solid black;">&#160; </td><td style="width:50px;">&#160;  </td></tr>
+<tr>
+<td style="width:50px;"></td><td style="width:100px; border:1px solid black;">&#160; </td><td style="width:50px;"></td><td style="width:50px;"></td><td style="width:100px; border:1px solid black; text-align:center;"><b>xy</b> </td><td style="width:50px; text-align:left;">&larr; esp </td><td style="width:50px;"></td><td style="width:100px; border:1px solid black; text-align:center;">xy </td><td style="width:50px; text-align:left;"></td></tr>
+<tr>
+<td style="width:50px;"></td><td style="width:100px; border:1px solid black; background:silver;">&#160; </td><td style="width:50px; text-align:left;">&larr; esp </td><td style="width:50px;"></td><td style="width:100px; border:1px solid black; background:silver;">&#160; </td><td style="width:50px;"></td><td style="width:50px;"></td><td style="width:100px; border:1px solid black; background:silver;">&#160; </td><td style="width:50px; text-align:left;">&larr; esp  </td></tr>
+<tr>
+<td style="width:50px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;"></td><td style="width:50px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;"></td><td style="width:50px;"></td><td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:50px;">&#160;  </td></tr>
+</table>
+</center><p>Wenn die Funktion Parameter erhalten soll, werden diese üblicherweise ebenfalls auf den Stack geschrieben, natürlich vor dem call Befehl. Hinterher müssen sie natürlich wieder entfernt werden, entweder mit <code>pop</code>, oder durch direktes Umsetzen des Stackpointers: </p>
+<div class="fragment"><div class="line">push %eax     ; zweiter Parameter fuer f1</div>
+<div class="line">push %ebx     ; erster Parameter  fuer f1</div>
+<div class="line">call f1</div>
+<div class="line">add $8, %esp  ; Parameter vom Stack entfernen</div>
+</div><!-- fragment --><p>Um innerhalb der Funktion auf die Parameter zugreifen zu können, wird üblicherweise der Basepointer ebp zu Hilfe genommen. Wenn er gleich zu Anfang der Funktion gesichert und dann mit dem Wert des Stackpointers belegt wird, kann der erste Parameter immer über <code>8(ebp)</code> und der zweite Parameter über <code>12(ebp)</code> erreicht werden, unabhängig davon, wie viele <code>push</code> und <code>pop</code> Operationen seit Beginn der Funktion verwendet wurden.</p>
+<div class="fragment"><div class="line">f1:   </div>
+<div class="line">  push %ebp</div>
+<div class="line">  mov  %esp, %ebp</div>
+<div class="line">  ...</div>
+<div class="line">  mov 8(%ebp), %ebx    ; 1. Parameter <span class="keywordflow">in</span> ebx laden</div>
+<div class="line">  mov 12(%ebp), %eax   ; 2. Parameter <span class="keywordflow">in</span> eax laden</div>
+<div class="line">  ...</div>
+<div class="line">  pop %ebp</div>
+<div class="line">  ret</div>
+</div><!-- fragment --><p>Bei der folgenden Darstellung wird angenommen: <b>ebx = 47</b>.<br/>
+ Die niedrigste Adresse ist oben, die höchste unten. </p>
+<center> <table  border="0" style="border-collapse: collapse;">
+<tr>
+<td style="width:150px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:150px;">&#160; </td><td style="width:150px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:150px;"></td></tr>
+<tr>
+<td style="width:150px; border:1px solid black;">&#160; </td><td style="width:150px;">&#160; </td><td style="width:150px; border:1px solid black;">&#160; </td><td style="width:150px;">&#160;  </td></tr>
+<tr>
+<td style="width:150px; border:1px solid black; text-align:center;">&#160; </td><td style="width:150px;">&#160; </td><td style="width:150px; border:1px solid black; text-align:center;"><b>47</b> </td><td style="width:150px;">&larr; esp  </td></tr>
+<tr>
+<td style="width:150px; border:1px solid black; text-align:center;">alter ebp </td><td style="width:150px;">&larr; ebp &larr; esp </td><td style="width:150px; border:1px solid black; text-align:center;">alter ebp </td><td style="width:150px;">&larr; ebp  </td></tr>
+<tr>
+<td style="width:150px; border:1px solid black; text-align:center;">Rücksprungadr. </td><td style="width:150px;"></td><td style="width:150px; border:1px solid black; text-align:center;">Rücksprungadr. </td><td style="width:150px;"></td></tr>
+<tr>
+<td style="width:150px; border:1px solid black; text-align:center;">1. Parameter </td><td style="width:150px;">&larr; ebp+8 </td><td style="width:150px; border:1px solid black; text-align:center;">1. Parameter </td><td style="width:150px;">&larr; ebp+8  </td></tr>
+<tr>
+<td style="width:150px; border:1px solid black; text-align:center;">2. Parameter </td><td style="width:150px;">&larr; ebp+16 </td><td style="width:150px; border:1px solid black; text-align:center;">2. Parameter </td><td style="width:150px;">&larr; ebp+16  </td></tr>
+<tr>
+<td style="width:150px; border:1px solid black; background:silver;">&#160; </td><td style="width:150px;">&#160; </td><td style="width:150px; border:1px solid black; background:silver;">&#160; </td><td style="width:150px;">&#160;  </td></tr>
+<tr>
+<td style="width:150px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:150px;">&#160; </td><td style="width:150px; border-left:1px dashed black; border-right:1px dashed black;"></td><td style="width:150px;"></td></tr>
+<tr>
+<td style="width:150px;"></td><td style="width:150px; text-align:center; font-size:110%">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&rarr;<br/>
+ <code style="font-size:108%;">push ebx</code>  </td><td style="width:150px;"></td><td style="width:150px;"></td></tr>
+</table>
+</center><h1><a class="anchor" id="task3_procstack_sec8"></a>
+Flüchtige und nicht-flüchtige Register / Anbindung an C</h1>
+<p>Damit Funktionen von verschiedenen Stellen des Assemblerprogramms heraus aufgerufen werden können, ist es wichtig festzulegen, welche Registerinhalte von der Funktion verändert werden dürfen und welche bei Verlassen der Funktion noch - oder wieder - den alten Wert besitzen müssen. Am sichersten ist es natürlich, grundsätzlich alle Register, die die Funktion zur Erfüllung ihrer Aufgabe benötigt, zu Beginn der Funktion auf dem Stack zu speichern und unmittelbar vor Verlassen der Funktion wieder zu laden.</p>
+<p>Die Assemblerprogramme, die der GNU C Compiler erzeugt, verfolgen jedoch eine etwas andere Strategie: Sie gehen davon aus, dass viele Register sowieso nur kurzfristig verwendet werden, zum Beispiel als Zählvariable von kleinen Schleifen oder um die Parameter für eine Funktion auf den Stack zu schreiben. Hier wäre es reine Verschwendung, die ohnehin längst veralteten Werte zu Beginn einer Funktion mühsam zu sichern und am Ende wiederherzustellen. Da man einem Register nicht ansieht, ob sein Inhalt wertvoll ist oder nicht, haben die Entwickler des GNU C Compilers einfach festgelegt, dass die Register <b>eax</b>, <b>ecx</b> und <b>edx</b> grundsätzlich als <em>flüchtige</em> Register zu betrachten sind, deren Inhalt einfach überschrieben werden darf. Das Register eax hat dabei noch eine besondere Rolle: Es liefert den Rückgabewert der Funktion, soweit erforderlich. Die Werte der übrigen Register müssen dagegen gerettet werden, bevor sie von einer Funktion überschrieben werden dürfen. Sie werden deshalb <em>nicht-flüchtige</em> Register genannt.</p>
+<h1><a class="anchor" id="task3_procstack_sec9"></a>
+Literatur</h1>
+<ul>
+<li><a href="http://www.lowlevel.eu/wiki/Teil_2_-_Assembler_101">"Assembler 101" auf lowlevel.eu</a> </li>
+<li><a href="http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html">Intel&reg; 64 and IA-32 Architectures Software Developer Manuals</a> </li>
+</ul>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Mit Mai 29 2013 23:52:16 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
+</body>
+</html>

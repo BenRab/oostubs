@@ -98,67 +98,64 @@
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  mask_2.<a class="code" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port.">outb</a>(0xFF);<span class="comment">//Maskierung Slave (alle IRQ verbieten)</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="classPIC.html#a62ac9996c8ecfca65e2529655050b26b">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classPIC.html#a62ac9996c8ecfca65e2529655050b26b" title="erlaubt einen speziellen Interrupt von der Hardware">PIC::allow</a>(<a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5a" title="externe Interruptquellen">Interrupts</a> interrupt){<span class="comment">//setzt Bit vom zu erlaubenden INT auf 0</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="classIO__Port.html" title="Accessor for I/O-Space.">IO_Port</a> mask_1(0x21), <span class="comment">//Datenport Master</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;          mask_2(0xa1); <span class="comment">//Datenport Slave</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">//CPU cpu;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  cpu.<a class="code" href="classCPU.html#ab5e5a2260ef84a433c181786f11c4609" title="Interrupts werden global aktiviert.">enable_int</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> status;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">if</span>(interrupt &gt;= 0 &amp;&amp; interrupt &lt;=7){<span class="comment">//Master maskieren</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    status = mask_1.inb();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    mask_1.outb(status &amp; ~(1 &lt;&lt; interrupt));</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(interrupt &gt;7 &amp;&amp; interrupt &lt;= 15){<span class="comment">//Slave maskieren</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    status = mask_2.<a class="code" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port.">inb</a>();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    mask_2.<a class="code" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port.">outb</a>(status &amp; ~(1 &lt;&lt; (interrupt-8)));</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  } </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="classPIC.html#a62503865c7a32537d9cc3e71d4c439cd">   70</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classPIC.html#a62503865c7a32537d9cc3e71d4c439cd" title="verbietet einen speziellen Interrupt der Hardware">PIC::forbid</a>(<a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5a" title="externe Interruptquellen">Interrupts</a> interrupt){<span class="comment">//setzt Bit vom zu verbietenden INT auf 1</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="classIO__Port.html" title="Accessor for I/O-Space.">IO_Port</a> mask_1(0x21), <span class="comment">//Datenport Master</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;          mask_2(0xa1); <span class="comment">//Datenport Slave</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> status;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">if</span>(interrupt &gt;= 0 &amp;&amp; interrupt &lt;=7){<span class="comment">//Master maskieren</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    status = mask_1.inb();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    mask_1.outb(status | (1 &lt;&lt; interrupt));</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(interrupt &gt;7 &amp;&amp; interrupt &lt;= 15){<span class="comment">//Slave maskieren</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    status = mask_2.<a class="code" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port.">inb</a>();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    mask_2.<a class="code" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port.">outb</a>(status | (1 &lt;&lt; (interrupt-8)));</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  } </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="classPIC.html#a62ac9996c8ecfca65e2529655050b26b">   50</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classPIC.html#a62ac9996c8ecfca65e2529655050b26b" title="erlaubt einen speziellen Interrupt von der Hardware">PIC::allow</a>(<a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5a" title="externe Interruptquellen">Interrupts</a> interrupt){<span class="comment">//setzt Bit vom zu erlaubenden INT auf 0</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="classIO__Port.html" title="Accessor for I/O-Space.">IO_Port</a> mask_1(0x21), <span class="comment">//Datenport Master</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;          mask_2(0xa1); <span class="comment">//Datenport Slave</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">//CPU cpu;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  cpu.<a class="code" href="classCPU.html#ab5e5a2260ef84a433c181786f11c4609" title="Interrupts werden global aktiviert.">enable_int</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> status;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">if</span>(interrupt &gt;= 0 &amp;&amp; interrupt &lt;=7){<span class="comment">//Master maskieren</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    status = mask_1.inb();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    mask_1.outb(status &amp; ~(1 &lt;&lt; interrupt));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(interrupt &gt;7 &amp;&amp; interrupt &lt;= 15){<span class="comment">//Slave maskieren</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    status = mask_2.<a class="code" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port.">inb</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    mask_2.<a class="code" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port.">outb</a>(status &amp; ~(1 &lt;&lt; (interrupt-8)));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  } </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="classPIC.html#a62503865c7a32537d9cc3e71d4c439cd">   68</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classPIC.html#a62503865c7a32537d9cc3e71d4c439cd" title="verbietet einen speziellen Interrupt der Hardware">PIC::forbid</a>(<a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5a" title="externe Interruptquellen">Interrupts</a> interrupt){<span class="comment">//setzt Bit vom zu verbietenden INT auf 1</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="classIO__Port.html" title="Accessor for I/O-Space.">IO_Port</a> mask_1(0x21), <span class="comment">//Datenport Master</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;          mask_2(0xa1); <span class="comment">//Datenport Slave</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> status;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">if</span>(interrupt &gt;= 0 &amp;&amp; interrupt &lt;=7){<span class="comment">//Master maskieren</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    status = mask_1.inb();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    mask_1.outb(status | (1 &lt;&lt; interrupt));</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(interrupt &gt;7 &amp;&amp; interrupt &lt;= 15){<span class="comment">//Slave maskieren</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    status = mask_2.<a class="code" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port.">inb</a>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    mask_2.<a class="code" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port.">outb</a>(status | (1 &lt;&lt; (interrupt-8)));</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  } </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="classPIC.html#a2fc19a597848b6b646123aad76ab3505">   87</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classPIC.html#a2fc19a597848b6b646123aad76ab3505" title="sendet ein &quot;Acknowledgement&quot; eines ausstehenden Interrupts">PIC::ack</a>(<span class="keywordtype">bool</span> secondPIC){<span class="comment">//ACK aka EOI (End of Interrupt)</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="classIO__Port.html" title="Accessor for I/O-Space.">IO_Port</a> ctrl_1(0x20),<span class="comment">//Befehlsport Master</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;          ctrl_2(0xa0);<span class="comment">//Befehlsport Slave</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  ctrl_1.outb(0x20);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">if</span>(secondPIC){</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    ctrl_2.<a class="code" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port.">outb</a>(0x20);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="classPIC.html#a691d33c865b84bcb82e2a70a54cc3977">   98</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classPIC.html#a691d33c865b84bcb82e2a70a54cc3977" title="den ISR eines der beiden PICs ermitteln">PIC::getISR</a>(<span class="keywordtype">bool</span> secondPIC){<span class="comment">//TODO superior INT, Ack senden?</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="classIO__Port.html" title="Accessor for I/O-Space.">IO_Port</a> ctrl_1(0x20),<span class="comment">//Befehlsport Master</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;          ctrl_2(0xa0);<span class="comment">//Befehlsport Slave</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordflow">if</span>(secondPIC){</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span> ctrl_2.<a class="code" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port.">inb</a>();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  } <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> ctrl_1.inb();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="classPIC.html#a2fc19a597848b6b646123aad76ab3505">   84</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classPIC.html#a2fc19a597848b6b646123aad76ab3505" title="sendet ein &quot;Acknowledgement&quot; eines ausstehenden Interrupts">PIC::ack</a>(<span class="keywordtype">bool</span> secondPIC){<span class="comment">//ACK aka EOI (End of Interrupt)</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="classIO__Port.html" title="Accessor for I/O-Space.">IO_Port</a> ctrl_1(0x20),<span class="comment">//Befehlsport Master</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;          ctrl_2(0xa0);<span class="comment">//Befehlsport Slave</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  ctrl_1.outb(0x20);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordflow">if</span>(secondPIC){</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    ctrl_2.<a class="code" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port.">outb</a>(0x20);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="classPIC.html#a691d33c865b84bcb82e2a70a54cc3977">   94</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classPIC.html#a691d33c865b84bcb82e2a70a54cc3977" title="den ISR eines der beiden PICs ermitteln">PIC::getISR</a>(<span class="keywordtype">bool</span> secondPIC){<span class="comment">//TODO superior INT, Ack senden?</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="classIO__Port.html" title="Accessor for I/O-Space.">IO_Port</a> ctrl_1(0x20),<span class="comment">//Befehlsport Master</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;          ctrl_2(0xa0);<span class="comment">//Befehlsport Slave</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">if</span>(secondPIC){</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> ctrl_2.<a class="code" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port.">inb</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span> ctrl_1.inb();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Mon Mai 20 2013 12:56:27 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Mai 29 2013 23:52:15 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

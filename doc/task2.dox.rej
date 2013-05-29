@@ -1,0 +1,28 @@
+--- doc/task2.dox	2013-05-02 09:28:11.309334804 +0200
++++ doc/task2.dox	2013-05-21 12:36:52.000000000 +0200
+@@ -7,7 +7,7 @@
+  *   \li Behandlung asynchroner Ereignisse
+  *   \li Problematik und Schutz kritischer Abschnitte
+  * 
+- * \section task1_sec2 Aufgabe
++ * \section task2_sec2 Aufgabe
+  * Es soll eine einfache Interruptbehandlung für die Unterbrechungen durch Tastaturereignisse 
+  * umgesetzt werden. Hierzu müssen die Klassen \ref CPU (bereits implementiert), \ref PIC, 
+  * \ref Plugbox, \ref Gate, \ref Panic, \ref Keyboard sowie die Funktion \ref guardian() 
+@@ -18,7 +18,7 @@
+  * 
+ \dot
+   digraph task1 {
+-    size="5.9,5.5";
++    size="5.0,5.0";
+     node [shape=box, style="solid,filled", fillcolor=white];
+     
+     
+@@ -44,7 +44,6 @@
+       cpuC [label="CPU", URL="\ref CPU"];
+       cgascrC [label="CGA_Screen", URL="\ref CGA_Screen"];
+       keyC [label="Key", URL="\ref Key"];
+-      {rank=max; keyC;}
+       keyC -> keyctrlC [arrowhead="ediamond"];
+     }
+     

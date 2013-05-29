@@ -67,21 +67,21 @@
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;.text                   <span class="comment">/* The fallowing is code */</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;.globl  entry           <span class="comment">/* Define the entry point for the bootloader to be exported */</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">   18</a></span>&#160;.globl  <a class="code" href="boot_8S.html#a9ce58d54ecebb6ed09d1d9d213184260">entry</a>, <a class="code" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a>  <span class="comment">/* Define the entry point for the bootloader to be exported */</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;.macro  wrapperGen      <span class="comment">/* Assembler macro to create interrupt wrapper  */</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  .ifeq \@              <span class="comment">/* \@ is an automatically incremented variable, */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="boot_8S.html#ab59b207d7128ace888297774731b86d3">INT_WRAPPER_START</a>:  <span class="comment">/* it is incremented, everytime the macro   */</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="boot_8S.html#a9e6ac1eb44e68fee177b3bb0d78f6a70">INT_WRAPPER_START</a>:  <span class="comment">/* it is incremented, everytime the macro   */</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  .endif                <span class="comment">/* is expanded.                 */</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  int_wrapper_\@:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  push %<a class="code" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a></div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">   28</a></span>&#160;  <a class="code" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> $\@, %<a class="code" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  push %<a class="code" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> $\@, %<a class="code" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  jmp callGuardian</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  .ifeq \@</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="boot_8S.html#ae4045f33f677b81f6047a39fc9053e71">INT_WRAPPER_END</a>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="boot_8S.html#a312b507f06e2c4351d12f7b515c888f2">INT_WRAPPER_END</a>:</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  .endif</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;.endm</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
@@ -96,57 +96,57 @@
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    .<span class="keywordtype">long</span>   _start</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    .<span class="keywordtype">long</span>   _edata</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    .<span class="keywordtype">long</span>   _end</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    .<span class="keywordtype">long</span>   entry</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    .<span class="keywordtype">long</span>   <a class="code" href="boot_8S.html#a9ce58d54ecebb6ed09d1d9d213184260">entry</a></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;#endif</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;     </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;entry:                  <span class="comment">/* Entry point of the system */</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<a class="code" href="boot_8S.html#a9ce58d54ecebb6ed09d1d9d213184260">entry</a>:                  <span class="comment">/* Entry point of the system */</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;   cli</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;gdtSetup:               <span class="comment">/* Initialize the GDT */</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;   lgdt GDTR            <span class="comment">/* Load the static GDT */</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   <a class="code" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a>  $0x10, %<a class="code" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a>      <span class="comment">/* Setting the segment selectors*/</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;   <a class="code" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a>  %<a class="code" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a>, %ss        <span class="comment">/* stack is data*/</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   <a class="code" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a>  %<a class="code" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a>, %ds    </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;   <a class="code" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a>  %<a class="code" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a>, %es</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   <a class="code" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a>  %<a class="code" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a>, %gs</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;   <a class="code" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a>  %<a class="code" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a>, %fs</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;   <a class="code" href="boot_8S.html#acfa959174e457286ef1afd932bdbef60">ljmpl</a> $0x08, $stackSetup   <span class="comment">/* set cs register to 0x08 */</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   <a class="code" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a>  $0x10, %<a class="code" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a>      <span class="comment">/* Setting the segment selectors*/</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;   <a class="code" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a>  %<a class="code" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a>, %ss        <span class="comment">/* stack is data*/</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   <a class="code" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a>  %<a class="code" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a>, %ds    </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;   <a class="code" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a>  %<a class="code" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a>, %es</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   <a class="code" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a>  %<a class="code" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a>, %gs</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;   <a class="code" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a>  %<a class="code" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a>, %fs</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;   <a class="code" href="boot_8S.html#a6a2ad912bf5c0bb7df09baa9a6a8077f">ljmpl</a> $0x08, $stackSetup   <span class="comment">/* set cs register to 0x08 */</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<a class="code" href="boot_8S.html#a309bf8d094cdf04e19838b37c5f2f981">stackSetup</a>:             <span class="comment">/*Creating a stack*/</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   <a class="code" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a>  $(stack + <a class="code" href="config_8h.html#ab84fd5359aa475aeef51323866ef5d73" title="Größe für den Stack, die der Bootcode anlegen und nutzen soll.">BOOT_STACK_SIZE</a>), %esp</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<a class="code" href="boot_8S.html#a25dde79da329eeceb77597a0685b55ec">stackSetup</a>:             <span class="comment">/*Creating a stack*/</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   <a class="code" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a>  $(stack + <a class="code" href="config_8h.html#ab84fd5359aa475aeef51323866ef5d73" title="Größe für den Stack, die der Bootcode anlegen und nutzen soll.">BOOT_STACK_SIZE</a>), %esp</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<a class="code" href="boot_8S.html#adb57c81c2c1827e06a7015cc230f8aae">multibootSetup</a>:         <span class="comment">/* Passing multiboot arguments to kernel */</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   pushl  %<a class="code" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a>      </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;   pushl  %<a class="code" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<a class="code" href="boot_8S.html#acb122a82a81cbb8431c2ec04806d8b6a">multibootSetup</a>:         <span class="comment">/* Passing multiboot arguments to kernel */</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   pushl  %<a class="code" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a>      </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;   pushl  %<a class="code" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;idtSetup:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> $initialIDT, %<a class="code" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a> <span class="comment">/* Load the base address of the IDT template */</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="boot_8S.html#ae8831afb134363de048745378706f178">mov</a> $256, %dx         <span class="comment">/* There are 256 possible interrupts */</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a>  $(int_wrapper_0-<a class="code" href="boot_8S.html#ae4045f33f677b81f6047a39fc9053e71">INT_WRAPPER_END</a>+<a class="code" href="boot_8S.html#ab59b207d7128ace888297774731b86d3">INT_WRAPPER_START</a>), %<a class="code" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a>  <span class="comment">/* Load base address of the wrapper function */</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> $initialIDT, %<a class="code" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a> <span class="comment">/* Load the base address of the IDT template */</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="boot_8S.html#afed9ccb3db76558040261066337185cd">mov</a> $256, %dx         <span class="comment">/* There are 256 possible interrupts */</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a>  $(int_wrapper_0-<a class="code" href="boot_8S.html#a312b507f06e2c4351d12f7b515c888f2">INT_WRAPPER_END</a>+<a class="code" href="boot_8S.html#a9e6ac1eb44e68fee177b3bb0d78f6a70">INT_WRAPPER_START</a>), %<a class="code" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a>  <span class="comment">/* Load base address of the wrapper function */</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;.<a class="code" href="boot_8S.html#a2d3583e547158b12cf139920c005272c">loop</a>:</div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="boot_8S.html#a61723cd2f668c45cc83ab7dab81734d0">   77</a></span>&#160;  <a class="code" href="boot_8S.html#afb62e42d422f503bfc9d7ea1ce028702">add</a>  $(<a class="code" href="boot_8S.html#ae4045f33f677b81f6047a39fc9053e71">INT_WRAPPER_END</a>-<a class="code" href="boot_8S.html#ab59b207d7128ace888297774731b86d3">INT_WRAPPER_START</a>), %<a class="code" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a>         <span class="comment">/* Load the address of the current wrapper function */</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="boot_8S.html#aed0edaf7a9f9542fe8d84e5217620080">movl</a> %<a class="code" href="boot_8S.html#af8c3dad903dc5ce31f1b569dc396f91a">ebx</a>, %ecx</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  mov  %<a class="code" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a>, (%<a class="code" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a>)      <span class="comment">/* Copy the lower bytes of the address to the IDT */</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="boot_8S.html#a61723cd2f668c45cc83ab7dab81734d0">shr</a>  $16, %ecx</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  mov  %<a class="code" href="boot_8S.html#abb847124ab91c84675cf45ea5d858807">cx</a>, 6(%<a class="code" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a>)     <span class="comment">/* Copy the upper bytes of the address to the IDT */</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="boot_8S.html#afb62e42d422f503bfc9d7ea1ce028702">add</a>  $8,  %<a class="code" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;.<a class="code" href="boot_8S.html#ae522a0cd9baa6e46af1a745b46fe929d">loop</a>:</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="boot_8S.html#aed19021fa1f30c9638bd12bc917af472">   77</a></span>&#160;  <a class="code" href="boot_8S.html#a06c8ca731d95b9a76485ec149c9ee955">add</a>  $(<a class="code" href="boot_8S.html#a312b507f06e2c4351d12f7b515c888f2">INT_WRAPPER_END</a>-<a class="code" href="boot_8S.html#a9e6ac1eb44e68fee177b3bb0d78f6a70">INT_WRAPPER_START</a>), %<a class="code" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a>         <span class="comment">/* Load the address of the current wrapper function */</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="boot_8S.html#a06f814cacbea993e74f9fded03bf8df8">movl</a> %<a class="code" href="boot_8S.html#a2798bbadf3ff26e25a1cdc5d7c542797">ebx</a>, %ecx</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  mov  %<a class="code" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a>, (%<a class="code" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a>)      <span class="comment">/* Copy the lower bytes of the address to the IDT */</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="boot_8S.html#aed19021fa1f30c9638bd12bc917af472">shr</a>  $16, %ecx</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  mov  %<a class="code" href="boot_8S.html#a16fed93bb8fdfe3fe18f72504b0e6a46">cx</a>, 6(%<a class="code" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a>)     <span class="comment">/* Copy the upper bytes of the address to the IDT */</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="boot_8S.html#a06c8ca731d95b9a76485ec149c9ee955">add</a>  $8,  %<a class="code" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="o__stream_8h.html#a143762d59413d6d7cae38fb25104c5c4" title="switch basis of o_stream to decimal">dec</a>  %dx</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  jnz  .<a class="code" href="boot_8S.html#a2d3583e547158b12cf139920c005272c">loop</a></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  jnz  .<a class="code" href="boot_8S.html#ae522a0cd9baa6e46af1a745b46fe929d">loop</a></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  lidt IDTR             <span class="comment">/* Load the IDT */</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<a class="code" href="boot_8S.html#a6d9acb0e6f8443a21f0a468870022a17">disableNMI</a>:             <span class="comment">/* Disable non-maskable interrupts */</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  mov $0x80, %<a class="code" href="boot_8S.html#a120dcb1a498079e1fbb0a8e414752c9d">al</a>        <span class="comment">/* NMI verbieten */</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  out %<a class="code" href="boot_8S.html#a120dcb1a498079e1fbb0a8e414752c9d">al</a>, $0x70</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<a class="code" href="boot_8S.html#a57eff1cd2174014fc3589f57a83c3c90">disableNMI</a>:             <span class="comment">/* Disable non-maskable interrupts */</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  mov $0x80, %<a class="code" href="boot_8S.html#a8b7d0b4a1cdede682ba85324d7d7fbdf">al</a>        <span class="comment">/* NMI verbieten */</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  out %<a class="code" href="boot_8S.html#a8b7d0b4a1cdede682ba85324d7d7fbdf">al</a>, $0x70</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<a class="code" href="boot_8S.html#a08d131fbb61d353c17f998c81f95ad03">initFPU</a>:                    <span class="comment">/* setup FPU for 486 and newer */</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  pushl %<a class="code" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  mov  %CR0, %<a class="code" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="boot_8S.html#ad9262432da5399fd6224c72200dff57d">and</a>  $(-1-0x04), %<a class="code" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a>     <span class="comment">/* clear CR0.EM Bit */</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="code" href="boot_8S.html#a82a2b84ec1e71d3db2ec43370c863f6c">   96</a></span>&#160;  <a class="code" href="boot_8S.html#a82a2b84ec1e71d3db2ec43370c863f6c">or</a>   $0x20, %<a class="code" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a>          <span class="comment">/*   set CR0.NE Bit */</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  mov  %<a class="code" href="boot_8S.html#a81cc0d72065afb3131a4f613d9bb9b12">eax</a>, %CR0</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<a class="code" href="boot_8S.html#abf3bdba7ca3d8367d19001e1cffc8850">initFPU</a>:                    <span class="comment">/* setup FPU for 486 and newer */</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  pushl %<a class="code" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  mov  %CR0, %<a class="code" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="boot_8S.html#a5e5ef984ba5f83a4701b4cddd64254d0">and</a>  $(-1-0x04), %<a class="code" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a>     <span class="comment">/* clear CR0.EM Bit */</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="code" href="boot_8S.html#a8a396f634853349b7555a7f01d58e62c">   96</a></span>&#160;  <a class="code" href="boot_8S.html#a8a396f634853349b7555a7f01d58e62c">or</a>   $0x20, %<a class="code" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a>          <span class="comment">/*   set CR0.NE Bit */</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  mov  %<a class="code" href="boot_8S.html#a6baed073e0781854e2369fb00b23c2c2">eax</a>, %CR0</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  popl %eax</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  finit                     <span class="comment">/* initialize floating point */</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  fldcw fpucw_37E           <span class="comment">/* enable invalid opcode exception */</span></div>
@@ -188,7 +188,7 @@
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  push %ecx             <span class="comment">/* save volatile registers */</span></div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  push %edx</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <a class="code" href="boot_8S.html#ad9262432da5399fd6224c72200dff57d">and</a>  $0xFF, %eax      <span class="comment">/* the interrupt wrapper only provides 8bit */</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <a class="code" href="boot_8S.html#a5e5ef984ba5f83a4701b4cddd64254d0">and</a>  $0xFF, %eax      <span class="comment">/* the interrupt wrapper only provides 8bit */</span></div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  cmp  $0x20, %eax</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  jb callEHandle</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  </div>
@@ -235,8 +235,8 @@
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  push 16(%ebp)</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  push %eax</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="comment">/*cmp $0x00, %ax</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">  je extraCEH*/</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  cmp $0x00, %ax</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  je extraCEH</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  </div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  call <a class="code" href="guardian_8cc.html#afe78f34c7c65df79376008e0d23c1afd" title="This function is called if a normal exception is raised by the cpu.">handleException</a></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  </div>
@@ -249,10 +249,10 @@
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  pushl endCEH</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  push %esp</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  push %eax</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <span class="comment">/* call analyseException */</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  call <a class="code" href="analyse_8h.html#a07755aa59f817c8a4e46336d1c1a15eb" title="Funktion zur Analyse einer Fehlerbehandlungsroutine.">analyseException</a></div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  pop %eax</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  pop %esp</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  pop %eax</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  add $4, %esp</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  jmp endCEH</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;callExcEHandle:         <span class="comment">/* handle exception interrupt with error code */</span></div>
@@ -278,12 +278,12 @@
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  </div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  jmp endGuardian</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;gotoAnalyse:</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<a class="code" href="task3B_8cc.html#a093a9be7f170c441fa1da1b4742f46e4">gotoAnalyse</a>:</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  push %ebp</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  mov %esp, %ebp</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  add $8, %ebp</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  push %ebp</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <span class="comment">/* call analyseProcedureStack */</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  call <a class="code" href="analyse_8h.html#abc6c5d595df60f1c6df14f547f5b03d6" title="Diese Funktion dient der Analyse des Prozedurstacks.">analyseProcedureStack</a></div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  pop %ebp</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  pop %ebp</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  ret</div>
@@ -358,7 +358,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Mon Mai 20 2013 12:56:27 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Mai 29 2013 23:52:15 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>
