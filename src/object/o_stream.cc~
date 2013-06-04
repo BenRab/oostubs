@@ -23,16 +23,24 @@ int ulongToChar(unsigned long n, char* stack, int base)
 {
   char digits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
   int i = 79;
+  int l = 0;
+  if(base == 16) {
+    for(int k=0; k<8; k++)
+    {
+      stack[i-k] = '0';
+    }
+  }
   do
   {
     int reminder = n%base;
     n /= base;
     stack[i] = (digits[reminder]);
+    l++;
     --i;
   } while(n > 0);
   if(base == 16) {
-    stack[i] = 'x';
-    --i;
+    i = 71;
+    stack[i--] = 'x';
   }
   if(base == 8) {
     stack[i] = 'o';
@@ -139,18 +147,21 @@ O_Stream& O_Stream::operator << (void* value) {
 /** \todo implementieren **/
 O_Stream& O_Stream::operator << (FGColor fgColor){
   setAttributes(fgColor.color, -1, -1, false);
+  this->flush();
   return *this;
 }
 
 /** \todo implementieren **/
 O_Stream& O_Stream::operator << (BGColor bgColor){
   setAttributes(-1, bgColor.color, -1, false);
+  this->flush();
   return *this;
 }
 
 /** \todo implementieren **/
 O_Stream& O_Stream::operator << (Blink blink){
   setAttributes(-1, -1, blink.blink, true);
+  this->flush();
   return *this;
 }
 

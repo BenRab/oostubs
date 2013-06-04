@@ -94,10 +94,10 @@ void analyseProcedureStack(void** esp){
   for(int i=0; i<60; i++){
       if(i%4 == 0 && i != 0)
           kout << endl;
-
       kout << *(esp+i) << " ";
   }
   kout << endl;
+  
   /* * * * * * * * * * * * * * * * * * *\
   #  Ende ToDo-Bereich                  #
   \* * * * * * * * * * * * * * * * * * */

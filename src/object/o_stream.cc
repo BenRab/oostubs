@@ -23,6 +23,12 @@ int ulongToChar(unsigned long n, char* stack, int base)
 {
   char digits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
   int i = 79;
+  if(base == 16) {
+    for(int k=0; k<8; k++)
+    {
+      stack[i-k] = '0';
+    }
+  }
   do
   {
     int reminder = n%base;
@@ -31,8 +37,8 @@ int ulongToChar(unsigned long n, char* stack, int base)
     --i;
   } while(n > 0);
   if(base == 16) {
-    stack[i] = 'x';
-    --i;
+    i = 71;
+    stack[i--] = 'x';
   }
   if(base == 8) {
     stack[i] = 'o';

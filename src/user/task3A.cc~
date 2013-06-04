@@ -131,7 +131,7 @@ void Task3A::testFPNSqrt(){
   SFixedPointNumber x,y;
   
   /* * * * * * * * * * * * * * * * * * * *\
-  #  Quadratwurzel                       #
+  #  Quadrahtwurzel                       #
   \* * * * * * * * * * * * * * * * * * * */
   x = genFPN(1,500);
   kout << "x: " << x << ", sqrt(x): " << x.sqrt() << endl;
