@@ -5,5 +5,8 @@
  *                                        useful/pic                                             *
  *                                                                                               *
 \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-#include "machine/pic.h"
+#include "machine/swpic.h"
+
+typedef Software_PIC PIC;
+
 extern PIC pic;

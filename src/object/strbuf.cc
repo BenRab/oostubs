@@ -8,17 +8,18 @@
 
 #include "object/strbuf.h"
 
-Stringbuffer::Stringbuffer() {
-	pos = 0;
+Stringbuffer::Stringbuffer() : pos(0){
+  
 }
 
-Stringbuffer::~Stringbuffer() {
-
+Stringbuffer::~Stringbuffer(){
+  
 }
 
-void Stringbuffer::put(char c) {
-	buf[pos++] = c;
-	if(pos == BUFFERSIZE-1)
-		flush();
+void Stringbuffer::put (char c) {
+  buffer[pos] = c;
+  pos++;
+  if (pos == sizeof (buffer))
+    flush ();
 }
- 
+

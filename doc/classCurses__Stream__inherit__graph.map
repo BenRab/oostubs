@@ -1,0 +1,5 @@
+<map id="Curses_Stream" name="Curses_Stream">
+<area shape="rect" id="node2" href="$classO__Stream.html" title="Manipulation class providing formatted output support." alt="" coords="11,83,96,111"/>
+<area shape="rect" id="node4" href="$classStringbuffer.html" title="Buffer containing text to output." alt="" coords="5,6,101,34"/>
+<area shape="rect" id="node6" href="$classCurses__Screen.html" title="Curses&#45;Display driver." alt="" coords="120,83,237,111"/>
+</map>

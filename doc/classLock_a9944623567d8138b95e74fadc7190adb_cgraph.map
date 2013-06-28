@@ -1,0 +1,5 @@
+<map id="Lock::Lock" name="Lock::Lock">
+<area shape="rect" id="node3" href="$classVirtual__CPU.html#ae19d0f9544fc5985ce274fbebadc1d1a" title="globally dissable interrupts" alt="" coords="141,5,315,33"/>
+<area shape="rect" id="node5" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="204,55,252,83"/>
+<area shape="rect" id="node7" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="364,55,497,83"/>
+</map>

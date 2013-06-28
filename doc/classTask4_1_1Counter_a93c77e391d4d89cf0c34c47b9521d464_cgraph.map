@@ -1,0 +1,8 @@
+<map id="Task4::Counter::action" name="Task4::Counter::action">
+<area shape="rect" id="node3" href="$classCurses__Stream.html#ab6a0496fec8d85e70bc648e554ddeefb" title="flush the content of the internal buffer" alt="" coords="223,5,380,33"/>
+<area shape="rect" id="node7" href="$classCurses__Screen.html#ad48d8a732fe5b60d8ebe70f53bfad92b" title="set the cursor position" alt="" coords="217,55,385,83"/>
+<area shape="rect" id="node9" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="277,106,325,134"/>
+<area shape="rect" id="node13" href="$classThread.html#aa686864d54ff4dd4cadf76297da472f9" title="Resume execution with another ready thread." alt="" coords="240,157,363,185"/>
+<area shape="rect" id="node5" href="$classCurses__Screen.html#a77b0eb8866a6286e5f1cd8d400adecd2" title="print a string to the current position" alt="" coords="435,5,589,33"/>
+<area shape="rect" id="node11" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="445,106,579,134"/>
+</map>

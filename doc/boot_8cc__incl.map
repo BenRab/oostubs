@@ -1,0 +1,8 @@
+<map id="src/internal/boot.cc" name="src/internal/boot.cc">
+<area shape="rect" id="node3" href="$key_8h.html" title="machine/key.h" alt="" coords="5,83,117,111"/>
+<area shape="rect" id="node7" href="$pic_8h.html" title="useful/pic.h" alt="" coords="208,238,301,266"/>
+<area shape="rect" id="node13" href="$cpu_8h.html" title="help include file for use of global declared variable cpu, declared in main.cc" alt="" coords="263,83,361,111"/>
+<area shape="rect" id="node21" href="$object_2log_8h.html" title="object/log.h" alt="" coords="436,83,532,111"/>
+<area shape="rect" id="node9" href="$swpic_8h.html" title="machine/swpic.h" alt="" coords="192,315,317,343"/>
+<area shape="rect" id="node15" href="$virtcpu_8h.html" title="machine/virtcpu.h" alt="" coords="267,161,403,189"/>
+</map>

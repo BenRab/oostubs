@@ -1,0 +1,12 @@
+digraph "KeyboardEmulation::action"
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="KeyboardEmulation::\laction",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="Key::scancode",height=0.2,width=0.4,color="black",URL="$classKey.html#ae67075af1a5c0a7f585e8e61fc8515f8",tooltip="Set scancode value."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="System::signal",height=0.2,width=0.4,color="black",URL="$classSystem.html#af4120f231063b4fc96a6bca0d5593a93"];
+}

@@ -1,0 +1,14 @@
+<map id="System::callKernel" name="System::callKernel">
+<area shape="rect" id="node3" href="$boot_8cc.html#aadb4d5397feda84ee5ee39b33082faca" title="kernel entry point" alt="" coords="192,182,253,210"/>
+<area shape="rect" id="node5" href="$classCurses__Screen.html#ad48d8a732fe5b60d8ebe70f53bfad92b" title="set the cursor position" alt="" coords="311,5,479,33"/>
+<area shape="rect" id="node7" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="371,55,419,83"/>
+<area shape="rect" id="node11" href="$classCurses__Keyboard.html#a31e84201f2f54cb363f5b3d18438e7d5" title="Curses_Keyboard::key_hit" alt="" coords="303,106,487,134"/>
+<area shape="rect" id="node13" href="$classKey.html#a4292f24b142a697e610fb7780a0dc9d5" title="Test for validity." alt="" coords="355,157,435,185"/>
+<area shape="rect" id="node15" href="$classKey.html#abb65ed9de2b4a8c24f557416b484df34" title="Set ascii value." alt="" coords="356,207,433,235"/>
+<area shape="rect" id="node17" href="$classCurses__Keyboard.html#ada76cfa420d3b63fd720c1421d84d2ef" title="enable the interrupt mechanism of the keyboard" alt="" coords="305,258,484,286"/>
+<area shape="rect" id="node23" href="$classWatch.html#a147c656850857b641537d7ca232f5aff" title="Enable the clock interrupt and its handling." alt="" coords="339,309,451,337"/>
+<area shape="rect" id="node25" href="$classScheduler.html#a45442044c5cb2151b00f507a3c8d8195" title="Start the scheduling by starting the first thread of the system." alt="" coords="320,359,469,387"/>
+<area shape="rect" id="node9" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="541,55,675,83"/>
+<area shape="rect" id="node19" href="$classPlugbox.html#a7f48e4645e6709fe2030aaa79eb0d3f1" title="assign a Gate object to a specific interrupt" alt="" coords="548,233,668,261"/>
+<area shape="rect" id="node21" href="$classSoftware__PIC.html#af6e50ac35035238fe28b9c17e83815d9" title="allow a specific hardware interrupt" alt="" coords="536,283,680,311"/>
+</map>

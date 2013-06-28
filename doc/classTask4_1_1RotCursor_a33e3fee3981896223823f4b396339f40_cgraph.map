@@ -1,0 +1,6 @@
+<map id="Task4::RotCursor::action" name="Task4::RotCursor::action">
+<area shape="rect" id="node3" href="$classCurses__Stream.html#ab6a0496fec8d85e70bc648e554ddeefb" title="flush the content of the internal buffer" alt="" coords="236,5,393,33"/>
+<area shape="rect" id="node7" href="$classCurses__Screen.html#ad48d8a732fe5b60d8ebe70f53bfad92b" title="set the cursor position" alt="" coords="231,55,399,83"/>
+<area shape="rect" id="node9" href="$classThread.html#aa686864d54ff4dd4cadf76297da472f9" title="Resume execution with another ready thread." alt="" coords="253,106,376,134"/>
+<area shape="rect" id="node5" href="$classCurses__Screen.html#a77b0eb8866a6286e5f1cd8d400adecd2" title="print a string to the current position" alt="" coords="448,5,603,33"/>
+</map>

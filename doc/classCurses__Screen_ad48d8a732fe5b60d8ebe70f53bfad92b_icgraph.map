@@ -1,0 +1,10 @@
+<map id="Curses_Screen::setpos" name="Curses_Screen::setpos">
+<area shape="rect" id="node3" href="$classCurses__Keyboard.html#a362c518016cf5fce53e588e487d1c048" title="handle keyboard interrupt" alt="" coords="225,5,407,33"/>
+<area shape="rect" id="node5" href="$main_8cc.html#aadb4d5397feda84ee5ee39b33082faca" title="kernel entry point" alt="" coords="285,55,347,83"/>
+<area shape="rect" id="node13" href="$classTask4_1_1RotCursor.html#a33e3fee3981896223823f4b396339f40" title="start outputting the symbol" alt="" coords="229,106,403,134"/>
+<area shape="rect" id="node15" href="$classTask4_1_1Counter.html#a93c77e391d4d89cf0c34c47b9521d464" title="start outputting and incrementing the counter value" alt="" coords="235,157,397,185"/>
+<area shape="rect" id="node17" href="$classTask4.html#a2a7d07836599ad51be274201cf6c2027" title="start operation" alt="" coords="264,207,368,235"/>
+<area shape="rect" id="node7" href="$classSystem.html#aaf51e695421f1ab3d4d11d461587be1c" title="System::callKernel" alt="" coords="456,55,595,83"/>
+<area shape="rect" id="node9" href="$classSystem.html#a46b629e7c09840071570332d4e9a907d" title="System::start" alt="" coords="643,55,752,83"/>
+<area shape="rect" id="node11" href="$boot_8cc.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="801,55,855,83"/>
+</map>

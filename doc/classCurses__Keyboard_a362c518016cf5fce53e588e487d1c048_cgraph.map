@@ -1,0 +1,6 @@
+<map id="Curses_Keyboard::trigger" name="Curses_Keyboard::trigger">
+<area shape="rect" id="node3" href="$classCurses__Stream.html#ab6a0496fec8d85e70bc648e554ddeefb" title="flush the content of the internal buffer" alt="" coords="252,5,409,33"/>
+<area shape="rect" id="node7" href="$classCurses__Screen.html#ad48d8a732fe5b60d8ebe70f53bfad92b" title="set the cursor position" alt="" coords="247,55,415,83"/>
+<area shape="rect" id="node9" href="$classCurses__Keyboard.html#a31e84201f2f54cb363f5b3d18438e7d5" title="Curses_Keyboard::key_hit" alt="" coords="239,106,423,134"/>
+<area shape="rect" id="node5" href="$classCurses__Screen.html#a77b0eb8866a6286e5f1cd8d400adecd2" title="print a string to the current position" alt="" coords="472,5,627,33"/>
+</map>

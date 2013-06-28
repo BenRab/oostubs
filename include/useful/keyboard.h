@@ -5,5 +5,8 @@
  *                                        useful/keyboard                                        * 
  *                                                                                               * 
 \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-#include "device/keyboard.h"
+#include "device/curskbd.h"
+
+typedef Curses_Keyboard Keyboard;
+
 extern Keyboard keyboard;

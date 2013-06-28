@@ -1,0 +1,7 @@
+<map id="Software_PIC::allow" name="Software_PIC::allow">
+<area shape="rect" id="node3" href="$classCurses__Keyboard.html#ada76cfa420d3b63fd720c1421d84d2ef" title="enable the interrupt mechanism of the keyboard" alt="" coords="197,5,376,33"/>
+<area shape="rect" id="node5" href="$main_8cc.html#aadb4d5397feda84ee5ee39b33082faca" title="kernel entry point" alt="" coords="424,5,485,33"/>
+<area shape="rect" id="node7" href="$classSystem.html#aaf51e695421f1ab3d4d11d461587be1c" title="System::callKernel" alt="" coords="533,5,672,33"/>
+<area shape="rect" id="node9" href="$classSystem.html#a46b629e7c09840071570332d4e9a907d" title="System::start" alt="" coords="720,5,829,33"/>
+<area shape="rect" id="node11" href="$boot_8cc.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="879,5,932,33"/>
+</map>

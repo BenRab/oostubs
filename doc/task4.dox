@@ -6,12 +6,130 @@
  * Diese Aufgabe basiert auf einem neuen Grundsystem. Dieses läuft nicht mehr Dieses läuft nicht 
  * mehr als eigenständiges Betriebssystem, sondern als normales Programm unter Linux. 
  * Zur Nutzung ist eine neue Vorgabe herunter zu laden. \n
- * 
- * Die Informationen dieser Aufgabe erscheinen mit dem entsprechenden Patch.
- * 
+ 
+ * Mit dieser Aufgabe sollen eine wichtig Abstraktionen moderner
+ * Betriebssysteme angewendet, bzw. implementiert werden - Threads und deren
+ * Scheduling. Dafür sind zwei Aufgaben umzusetzen:
+
+ * \section task4 Aufgabe A
+ 
+ * In der ersten Aufgabe soll ein kooperatives Scheduling implementiert werden.
+ * Die Klasse \ref task4 initialisiert in \ref Task4::action zum Testen der
+ * entsprechenden Funktionen vier Applikationen \ref RotCursor, \ref counter1
+ * und \ref counter2 sowie das Fragment des Schedulers \ref scheduler. Die
+ * verschiedenen Applikationen erben alle von \ref Thread und unterstützen
+ * damit vollständige POSIX Eigenschaften. Sofern die globale Variable \ref
+ * coop True gesetzt ist, durchlaufen die Methoden eine bestimmte Anwendung und
+ * geben die Kontrolle wieder zurück an den Dispatcher (Aufruf von \ref
+ * resume)
+  
  * \~english
  * \page task4 Task 4 - Threads
+ 
+ * Diese Aufgabe basiert auf einem neuen Grundsystem. Dieses läuft nicht mehr
+ * Dieses läuft nicht mehr als eigenständiges Betriebssystem, sondern als
+ * normales Programm unter Linux. Zur Nutzung ist eine neue Vorgabe herunter zu
+ * laden. \n
+ 
  * 
- * There is no english describtion. Use the german one.
- */
+ * Das Ziel dieser Aufgabe ist die Vermittelung eines der wichtigsten Abstraktionen moderner
+ * Betriebssysteme: Threads und deren Scheduling. Die Aufgabe ist in 2 Unteraufgaben unterteilt:
+ 
+ 
+ * \section task4_a Aufgabe A - Kooperative Scheduling
+ *
+ 
+ * Diese Aufgabe befasst sich mit kooperativen Scheduling. Daher muss jeder
+ * Thread individuell die Aktivität an andere Threads übergeben, es findet kein
+ * externes Scheduling statt.
+ 
+ 
+ * Die Klasse \ref Task4 initialisiert in \ref Task4::action zum Testen der
+ * entsprechenden Funktionen drei Applikationen \ref Task4::counter1, \ref
+ * Task4::counter2 und \ref Task4::rotCursor. Diese Threads werden in \ref
+ * Task4::action dem Scheduler als bereite Threads übergeben (Funktion \ref
+ * Scheduler::ready). Die verschiedenen Applikationen erben alle von \ref
+ * Thread der damit die Grundlage für jede Applikation übernimmt \ref
+ * Application. 
+
+ * Der Scheudler legt die Anwendungen in seiner Ready-Queue ab, die dann
+ * sequentiell durchlaufen wird. Wir verwenden dafür den STL-Container Deque
+ * \ref Scheduler::threads der bereits im Header File angelegt ist. 
+
+ * Das Umschalten zwischen den verschiedenen Threads geschit durch die
+ * Scheduler Funktion \ref Scheduler::resume oder \ref Scheduler::exit. Diese
+ * sind zur leichter Benutzbarkeit als Forwarding-Funktionen in \ref Thread
+ * bereits vorgesehen.
+ 
+ * Der eiegntliche Kontextwechsel wird dann durch den \ref Dispatcher
+ * vorgenommen. Dieser soll hierfür die Linux Context Funktionen
+ * nutzen (getcontext, setcontext, makecontext, swapcontext). Weitere
+ * Informationen zu diesen Funktionen findet ihr in den entsprechenden
+ * man-Pages.
+ 
+ * Das Starten des ersten Threads des Systems, Task4 selber, geschieht über
+ * eine spezielle Scheduler Funktion \ref Scheduler::schedule. Diese Funktion
+ * wird am Ende von \ref kernel aufgerufen und kehrt nie zurück!
+ 
+ * \subsection task4_a_steps Vorgehen
+ 
+ *   \li Recherchieren sie die Methoden (getcontext, setcontext, makecontext,
+ *   swapcontext).
+ 
+ *   \li Implementieren sie die Methode \ref Scheduler::schedule mit allen
+ *   Abhänigkeiten des Dispatchers.
+ 
+ *   \li Verifizieren sie den initialen Kontextwechsel durch Ausgaben in
+ *   Task4::action
+ 
+ *   \li Recherchieren Sie die Methoden des Deque Containers.
+ 
+ *   \li Implementieren Sie \ref Scheduler::ready, um Tasks in der Queue
+ *   abzulegen.
+ 
+ *   \li Implementieren Sie \ref Scheduler::resume, die den neuen Task läd und
+ *   den alten in der Queue abspeichert. Zudem muss der Dispatcher aufgerufen
+ *   werden \ref Dispatcher::dispatch
+ 
+ *   \li Füllen Sie die Methode \ref Scheduler::exit (Beenden und Löschen des
+ *   aktuellen Threads) und \ref Scheduler::kill (Löschen eines
+ *   nicht-aktiven Threads) mit Ihrem Code. 
+
+ * \section task4_b Aufgabe B - Preemptives Scheduling
+ *
+ * Preemtives Scheduling erweitert das kooperative Scheduling um einen
+ * periodischen asynchronen Aufruf von \ref Scheduler::resume.
+ 
+ * Hierdurch wird einerseits ein interaktiverer Betrieb ermöglicht,
+ * andererseits muss aber der Umschaltvorgang an sich geschützt werden um die
+ * Konsistenz der beteiligten Datenstrukturen sicherzustellen.  In unserem
+ * Beispiel muss lediglich der Zugriff auf die Warteschlange als kritischer
+ * Abschnitt geschützt werden. Dazu wird eine Klasse \ref Lock
+ * bereitgestellt.
+
+ * Objekte dieser Klasse erzeugen für die Dauer ihrer Lebenszeit eine
+ * kritischen Abschnitt.
+ * \code 
+ * {
+ *   Lock lock;
+ *   ...
+ * }\endcode
+
+ * Dieses Code Fragment erzeugt eine kritischen Abschnitt inerhalb des durch
+ * geschweifte Klammern markierten Bereichs.
+
+ * Der periodische Call zu Scheduler::resume wird durch einen emulierten
+ * Hardware-Timer zur Verfügung gestellt. Daher muss eine entsprechende
+ * Interuptbehandlung von Interrupt 0 durchgeführt werden, welcher alle \ref
+ * rrTimeSlice ausgelöst wird. Dafür soll die Klasse Watch genutzt werden,
+ * deren Struktur dabei dem bekannten Aufbau eines \ref Gate Objektes folgt.
+ * Insebsondere umfasst sie zu implementierenden Methoden \ref Watch::windup
+ * (einhängen des Timers in der Plugbox) und \ref Watch::trigger (wird
+ * ausgeführt wenn eine Periode abgelaufen ist).
+ 
+ * \subsection task4_b_steps Vorgehen
+ *   \li Implementieren Sie die Methoden der Klasse Watch.
+ *   \li Evaluieren sie die Richtigkeit durch periodische Textausgaben.
+ *   \li Sichern Sie die Zugriffe auf die Queue
+ **/
 

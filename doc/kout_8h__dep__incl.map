@@ -1,0 +1,6 @@
+<map id="include/useful/kout.h" name="include/useful/kout.h">
+<area shape="rect" id="node3" href="$curskbd_8cc.html" title="src/device/curskbd.cc" alt="" coords="5,83,163,111"/>
+<area shape="rect" id="node5" href="$panic_8cc.html" title="src/device/panic.cc" alt="" coords="187,83,328,111"/>
+<area shape="rect" id="node7" href="$guardian_8cc.html" title="interrupt handler function" alt="" coords="352,83,512,111"/>
+<area shape="rect" id="node9" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="536,83,667,111"/>
+</map>

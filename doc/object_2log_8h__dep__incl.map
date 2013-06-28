@@ -1,0 +1,7 @@
+<map id="include/object/log.h" name="include/object/log.h">
+<area shape="rect" id="node3" href="$useful_2log_8h.html" title="include/useful/log.h" alt="" coords="99,83,243,111"/>
+<area shape="rect" id="node12" href="$boot_8cc.html" title="startup code" alt="" coords="267,83,411,111"/>
+<area shape="rect" id="node5" href="$lock_8h.html" title="include/thread/lock.h" alt="" coords="36,161,191,189"/>
+<area shape="rect" id="node9" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="163,238,293,266"/>
+<area shape="rect" id="node7" href="$lock_8cc.html" title="src/thread/lock.cc" alt="" coords="5,238,139,266"/>
+</map>

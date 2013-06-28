@@ -24,7 +24,7 @@
     size="4.2,4.2";
     node [shape=box, style="solid,filled", fillcolor=white];
     
-      kernelF [label="kernel(...)", shape=oval, URL="\ref kernel"];
+    kernelF [label="kernel(...)", shape=oval, URL="\ref kernel"];
     
     subgraph cluster_subuser {
       rank="source";

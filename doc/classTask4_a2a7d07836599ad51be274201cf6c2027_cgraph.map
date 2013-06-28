@@ -1,0 +1,10 @@
+<map id="Task4::action" name="Task4::action">
+<area shape="rect" id="node3" href="$classCurses__Screen.html#a90244e275eb84ce9702eb8a205f5cd5b" title="clear the screen" alt="" coords="184,5,341,33"/>
+<area shape="rect" id="node5" href="$classCurses__Screen.html#ad48d8a732fe5b60d8ebe70f53bfad92b" title="set the cursor position" alt="" coords="179,55,347,83"/>
+<area shape="rect" id="node7" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="239,106,287,134"/>
+<area shape="rect" id="node11" href="$classTask4_1_1RotCursor.html#aa317aab41cd3e8f579df5dfeb1b99108" title="Task4::RotCursor::enableCoop" alt="" coords="157,157,368,185"/>
+<area shape="rect" id="node13" href="$classTask4_1_1Counter.html#a23b32a250857ab5e8fdc0b4fb5a0ee43" title="Task4::Counter::enableCoop" alt="" coords="163,207,363,235"/>
+<area shape="rect" id="node15" href="$classScheduler.html#a01502861acea705fd4b34590b257c354" title="Insert the specified thread into the queue." alt="" coords="197,258,328,286"/>
+<area shape="rect" id="node17" href="$classVirtual__CPU.html#a39ba591439ef5995981373f83e52703b" title="globally enable interrupts" alt="" coords="177,309,348,337"/>
+<area shape="rect" id="node9" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="417,106,551,134"/>
+</map>

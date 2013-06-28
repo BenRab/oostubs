@@ -41,34 +41,24 @@
  * 'protected'.
  */
 class Stringbuffer {
-  public:
-    
   protected:
-    /** \brief buffer containing the characters
-     * 
-     * \~
-     * \todo write declaration
+    /** 
+     * \brief buffer containing the characters
      */
-    char buf[BUFFERSIZE];//BUFFERSIZE=128
-
-    /** \brief buffer pointer saving the position of the next insertion 
-     * 
-     * \~
-     * \todo write declaration
+    char buffer[BUFFERSIZE];
+    
+    /** 
+     * \brief buffer pointer saving the position of the next insertion
      */
     short pos;
     
-    /** \brief Default constructor setting the buffer empty. 
-     * 
-     * \~
-     * \todo write implementation
+    /** 
+     * \brief Default constructor setting the buffer empty. 
      */
     Stringbuffer();
     
-    /** \brief Default destructor of Stringbuffer
-     *
-     * \~
-     * \todo write implementation
+    /** 
+     * \brief Default destructor of Stringbuffer
      */
     virtual ~Stringbuffer();
     
@@ -79,9 +69,6 @@ class Stringbuffer {
      * flush().
      *
      * @param c character to be inserted into the buffer
-     * 
-     * \~
-     * \todo write implementation
      */
     void put(char c);
     
@@ -94,6 +81,9 @@ class Stringbuffer {
      * method has to be implemented in a subclass of Stringbuffer.
      */
     virtual void flush() = 0;
+    
+  public:
+    
 };
 
 #endif

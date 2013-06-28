@@ -1,0 +1,6 @@
+<map id="handleSegfault" name="handleSegfault">
+<area shape="rect" id="node3" href="$classSystem.html#aec90bf08b30b1944e5c8074387ed7354" title="System::stop" alt="" coords="177,5,284,33"/>
+<area shape="rect" id="node5" href="$boot_8cc.html#a2d14a2a3d6c6d794f098665ffb122998" title="handleMultiSig" alt="" coords="173,55,288,83"/>
+<area shape="rect" id="node7" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="337,55,385,83"/>
+<area shape="rect" id="node9" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="436,55,569,83"/>
+</map>

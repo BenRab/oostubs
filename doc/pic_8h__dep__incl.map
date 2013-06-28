@@ -1,0 +1,13 @@
+<map id="include/useful/pic.h" name="include/useful/pic.h">
+<area shape="rect" id="node3" href="$virtcpu_8h.html" title="include/machine/virtcpu.h" alt="" coords="443,83,627,111"/>
+<area shape="rect" id="node13" href="$curskbd_8cc.html" title="src/device/curskbd.cc" alt="" coords="5,238,163,266"/>
+<area shape="rect" id="node17" href="$guardian_8cc.html" title="interrupt handler function" alt="" coords="187,238,347,266"/>
+<area shape="rect" id="node19" href="$boot_8cc.html" title="startup code" alt="" coords="371,238,515,266"/>
+<area shape="rect" id="node5" href="$cpu_8h.html" title="help include file for use of global declared variable cpu, declared in main.cc" alt="" coords="369,161,516,189"/>
+<area shape="rect" id="node22" href="$virtcpu_8cc.html" title="src/machine/virtcpu.cc" alt="" coords="540,161,705,189"/>
+<area shape="rect" id="node24" href="$main_8cc.html" title="src/main.cc" alt="" coords="729,161,823,189"/>
+<area shape="rect" id="node7" href="$lock_8h.html" title="include/thread/lock.h" alt="" coords="539,238,693,266"/>
+<area shape="rect" id="node11" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="665,315,796,343"/>
+<area shape="rect" id="node15" href="$panic_8cc.html" title="src/device/panic.cc" alt="" coords="768,238,909,266"/>
+<area shape="rect" id="node9" href="$lock_8cc.html" title="src/thread/lock.cc" alt="" coords="508,315,641,343"/>
+</map>

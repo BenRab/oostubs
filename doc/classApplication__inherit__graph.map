@@ -1,0 +1,6 @@
+<map id="Application" name="Application">
+<area shape="rect" id="node5" href="$classTask4.html" title="Fourth test application." alt="" coords="5,161,61,189"/>
+<area shape="rect" id="node7" href="$classTask4_1_1Counter.html" title="Counting application." alt="" coords="85,161,200,189"/>
+<area shape="rect" id="node9" href="$classTask4_1_1RotCursor.html" title="Rotating symbol application" alt="" coords="224,161,349,189"/>
+<area shape="rect" id="node2" href="$classThread.html" title="Basic multitasking entity." alt="" coords="109,6,176,34"/>
+</map>

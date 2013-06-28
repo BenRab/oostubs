@@ -1,3 +1,6 @@
 set architecture i386
 target remote :1234
+handle SIGINT nopass
+handle SIG34 noprint nostop
+handle SIG35 noprint nostop
 break kernel

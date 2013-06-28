@@ -1,0 +1,62 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
+ *                                 Technische Informatik II                                      *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *                                                                                               *
+ *                                         S C H E D U L E R                                     *
+ *                                                                                               *
+\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *\
+#                   INCLUDES                      #
+\* * * * * * * * * * * * * * * * * * * * * * * * */
+
+#include "thread/scheduler.h"
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *\
+#                   METHODS                       #
+\* * * * * * * * * * * * * * * * * * * * * * * * */
+
+/**\~english \todo implement**/
+void Scheduler::schedule(Thread& first){
+  ready(first);
+  go(first);
+}
+
+/**\~english \todo implement**/
+void Scheduler::ready(Thread& that){
+  Lock lock;
+  threads.push_back(&that);
+}
+
+/**\~english \todo implement**/
+void Scheduler::exit(){
+  kill(*active());
+  while(threads.empty());
+  resume();
+}
+
+/**\~english \todo implement**/
+void Scheduler::kill(Thread& that){
+  Lock lock;
+  for(unsigned int i=0; i<threads.size(); i++)
+  {
+    if(threads[i] == &that)
+    {
+      threads.erase(threads.begin()+i);
+    }
+  }
+}
+
+/**\~english \todo implement**/
+void Scheduler::resume(){
+  if(!threads.empty())
+  {
+    Thread* th = threads.front();
+    {
+      Lock lock;
+      threads.pop_front();
+      threads.push_back(th);
+    }
+    dispatch(*th);
+  }
+}

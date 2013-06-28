@@ -1,0 +1,10 @@
+digraph "include/guard" {
+  bgcolor=transparent;
+  compound=true
+  node [ fontsize="10", fontname="FreeSans"];
+  edge [ labelfontsize="10", labelfontname="FreeSans"];
+  subgraph clusterdir_d44c64559bbebec7f509842c48db8b23 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="include" fontname="FreeSans", fontsize="10", URL="dir_d44c64559bbebec7f509842c48db8b23.html"]
+  dir_d351f5eb9dc394a602aa43835ddf1c15 [shape=box, label="guard", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_d351f5eb9dc394a602aa43835ddf1c15.html"];
+  }
+}

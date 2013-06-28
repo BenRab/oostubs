@@ -1,0 +1,265 @@
+diff -r -u Aufgabe4/include/machine/key.h Aufgabe4_patch/include/machine/key.h
+--- Aufgabe4/include/machine/key.h	2013-06-21 14:22:35.632136396 +0200
++++ Aufgabe4_patch/include/machine/key.h	2013-06-21 14:02:35.741141040 +0200
+@@ -25,6 +25,14 @@
+      * A freshly constructed key is invalid.
+      */
+     Key () : asc (0) {}
++
++    /** \brief Valid key constructor
++     *
++     * Since this constructor takes the content of a key the constructed key is
++     * valid unless the scancode was 0.
++     *
++     */
++    Key(unsigned int s) : asc(s) {}
+     
+     /** \brief Test for validity.
+      *
+@@ -54,7 +62,7 @@
+      *
+      * \param s The new scancode value
+      **/
+-    void scancode (unsigned char s) { 
++    void scancode (unsigned int s) { 
+       asc = s; 
+     }
+ 
+diff -r -u Aufgabe4/misc/linux64/config.mk Aufgabe4_patch/misc/linux64/config.mk
+--- Aufgabe4/misc/linux64/config.mk	2013-06-21 14:22:42.391916733 +0200
++++ Aufgabe4_patch/misc/linux64/config.mk	2013-06-21 13:57:51.200386250 +0200
+@@ -14,8 +14,8 @@
+ #CFLAGS+=-fno-exceptions -m32 -fno-stack-protector
+ #CXXFLAGS+=${CFLAGS} -fno-rtti -nostdinc++
+ #LDFLAGS=-e entry -T misc/sections -melf_i386
+-ASMFLAGS := --32
+-CFLAGS   := -pthread -m32 -Wall -g
++ASMFLAGS := 
++CFLAGS   := -pthread -Wall -g
+ CXXFLAGS := ${CFLAGS}
+ LDFLAGS  := -lncurses ${CFLAGS}
+ 
+diff -r -u Aufgabe4/misc/rules.mk Aufgabe4_patch/misc/rules.mk
+--- Aufgabe4/misc/rules.mk	2013-06-21 14:22:46.001799421 +0200
++++ Aufgabe4_patch/misc/rules.mk	2013-06-21 13:58:01.970036143 +0200
+@@ -20,9 +20,10 @@
+ SOURCES          := $(wildcard ${SRC}/*/*.cc ${SRC}/*.cc ${SRC}/*/*.c ${SRC}/*/*.S )
+ HEADERS          := $(filter %.h, $(wildcard ${INCLUDE}/*/*.h))
+ DOXS             := $(wildcard ${DOC}/*.dox)
+-SYSTEM_OBJECTS   :=$(addprefix ${BUILD}/,$(filter-out ${OBJECT_IGNORE}, $(addsuffix .o,$(basename $(notdir ${SOURCES})))))
++BOOT_OBJECT      := ${BUILD}/boot.o
++SYSTEM_OBJECTS   := $(filter-out ${BOOT_OBJECT}, $(addprefix ${BUILD}/,$(filter-out ${OBJECT_IGNORE}, $(addsuffix .o,$(basename $(notdir ${SOURCES}))))))
+ DEPS             := $(addsuffix .d,${SYSTEM_OBJECTS})
+-OBJECTS          := ${SYSTEM_OBJECTS}
++OBJECTS          := ${BOOT_OBJECT} ${SYSTEM_OBJECTS}
+ TARGET           := ${BIN}/${TARGET}
+ EMTARGET         := ${BIN}/${EMUTARGET}
+ INCPATHS         := $(addprefix -I,${INCLUDE} ${INCPATHS})
+diff -r -u Aufgabe4/src/device/curskbd.cc Aufgabe4_patch/src/device/curskbd.cc
+--- Aufgabe4/src/device/curskbd.cc	2013-06-21 14:22:52.061602547 +0200
++++ Aufgabe4_patch/src/device/curskbd.cc	2013-06-21 14:01:24.553453459 +0200
+@@ -13,11 +13,14 @@
+ #include "useful/plugbox.h"
+ #include "useful/pic.h"
+ #include "useful/kout.h"
+-#include "useful/cpu.h"
+-#include <curses.h>
++#include <pthread.h>
+ 
++/* * * * * * * * * * * * * * * * * * * * * * * * *\
++#                GLOBAL OBJECTS                   #
++\* * * * * * * * * * * * * * * * * * * * * * * * */
+ 
+-extern Key keyBuffer;
++extern pthread_mutex_t keyMutex;
++extern volatile unsigned int keyBuffer;
+ /* * * * * * * * * * * * * * * * * * * * * * * * *\
+ #                    METHODS                      # 
+ \* * * * * * * * * * * * * * * * * * * * * * * * */
+@@ -26,22 +29,21 @@
+ }
+ 
+ void Curses_Keyboard::plugin(){
+-  //erst registrieren
+   plugbox.assign(Plugbox::keyboard, *this);
+-  //und im PIC erlauben
+   pic.allow(Software_PIC::keyboard);
+ }
+ 
+ Key Curses_Keyboard::key_hit()
+ {
+-    Key temp=keyBuffer;
+-    keyBuffer=Key();
+-    return temp;
++    pthread_mutex_lock(&keyMutex);
++    unsigned int temp=keyBuffer;
++    keyBuffer=0;
++    pthread_mutex_unlock(&keyMutex);
++    return Key(temp);
+ }
+ 
+ void Curses_Keyboard::trigger()
+ {
+-      //Zeichen an fester Position ausgeben
+     kout.flush();
+     kout.setpos(4,10);
+     kout << key_hit();
+diff -r -u Aufgabe4/src/device/watch.cc Aufgabe4_patch/src/device/watch.cc
+--- Aufgabe4/src/device/watch.cc	2013-06-21 14:22:54.051537926 +0200
++++ Aufgabe4_patch/src/device/watch.cc	2013-06-21 14:00:29.925228081 +0200
+@@ -11,12 +11,14 @@
+ \* * * * * * * * * * * * * * * * * * * * * * * * */
+ 
+ #include "device/watch.h"
++#include <pthread.h>
+ 
+ /* * * * * * * * * * * * * * * * * * * * * * * * *\
+ #                GLOBAL OBJECTS                   #
+ \* * * * * * * * * * * * * * * * * * * * * * * * */
+ 
+-extern unsigned int rrTimeSlice;
++extern volatile unsigned int rrTimeSlice;
++extern pthread_mutex_t tsMutex;
+ 
+ /* * * * * * * * * * * * * * * * * * * * * * * * *\
+ #                   METHODS                       #
+@@ -24,7 +26,9 @@
+ 
+ Watch::Watch(unsigned int us) : Gate()
+ {
++    pthread_mutex_lock(&tsMutex);
+     rrTimeSlice=us;
++    pthread_mutex_unlock(&tsMutex);
+ }
+ 
+ /**\~english \todo implement**/
+diff -r -u Aufgabe4/src/internal/boot.cc Aufgabe4_patch/src/internal/boot.cc
+--- Aufgabe4/src/internal/boot.cc	2013-06-21 14:23:48.799759020 +0200
++++ Aufgabe4_patch/src/internal/boot.cc	2013-06-21 14:21:05.035079500 +0200
+@@ -21,12 +21,15 @@
+ /**
+  * \~english
+  * \brief Internal global variable containing the last pressed key, that was net delivered to the keyboard driver.**/
+-Key keyBuffer;
++volatile unsigned int keyBuffer;
+ /**
+  * \~english
+  * \brief Internal global variable containing the current clock period length in us
+  **/
+-unsigned int rrTimeSlice;
++volatile unsigned int rrTimeSlice;
++
++pthread_mutex_t keyMutex=PTHREAD_MUTEX_INITIALIZER;
++pthread_mutex_t tsMutex=PTHREAD_MUTEX_INITIALIZER;
+ 
+ extern void kernel();
+ extern void guardian(unsigned short slot);
+@@ -38,7 +41,6 @@
+   public:
+     System()
+     {
+-
+         initscr();
+         noecho();
+         cbreak();
+@@ -83,6 +85,7 @@
+         pthread_sigmask(SIG_BLOCK, &segfaultSet, NULL);
+         pthread_cancel(os);
+         pthread_join(os, NULL);
++        endwin();
+     }
+ };
+ 
+@@ -120,9 +123,14 @@
+             pthread_sigmask(SIG_BLOCK, &all, NULL);
+             while(true)
+             {
+-                keyBuffer.scancode(getch());
+-
+-                os.signal(interrupt, exception);
++                int key = getch();
++                if(key!=ERR)
++                {
++                    pthread_mutex_lock(&keyMutex);
++                    keyBuffer=key;
++                    pthread_mutex_unlock(&keyMutex);
++                    os.signal(interrupt, exception);
++                }
+             }
+ 
+             return NULL;
+@@ -167,7 +175,10 @@
+             pthread_sigmask(SIG_BLOCK, &all, NULL);
+             while(true)
+             {
+-                usleep(rrTimeSlice);
++                pthread_mutex_lock(&tsMutex);
++                unsigned int localBuffer=rrTimeSlice;
++                pthread_mutex_unlock(&tsMutex);
++                usleep(localBuffer);
+ 
+                 os.signal(interrupt, exception);
+             }
+@@ -184,6 +195,9 @@
+ 
+ void handleMultiSig(int sig)
+ {
++    endwin();
++    echo();
++    nocbreak();
+     log << "Got multiple signals: " << strsignal(sig) << "(" << sig << ")" << endl;
+     log << "Hard killing OS" << endl;
+     _exit(sig);
+Only in Aufgabe4/src/internal: boot.cc.rej
+diff -r -u Aufgabe4/src/machine/cursscr.cc Aufgabe4_patch/src/machine/cursscr.cc
+--- Aufgabe4/src/machine/cursscr.cc	2013-06-21 14:24:03.759273064 +0200
++++ Aufgabe4_patch/src/machine/cursscr.cc	2013-06-21 14:21:31.074233532 +0200
+@@ -12,6 +12,7 @@
+ Curses_Screen::Curses_Screen() : attribute(0x7){
+   win=newwin(25,80,0,0);
+   scrollok(win, true);
++  redrawwin(win);
+ }
+ 
+ Curses_Screen::~Curses_Screen(){
+diff -r -u Aufgabe4/src/main.cc Aufgabe4_patch/src/main.cc
+--- Aufgabe4/src/main.cc	2013-06-21 14:23:02.231272206 +0200
++++ Aufgabe4_patch/src/main.cc	2013-06-21 14:12:28.981859240 +0200
+@@ -31,7 +31,7 @@
+ Curses_Stream   kout;
+ Curses_Keyboard keyboard;
+ Scheduler       scheduler;
+-Watch           watch;
++Watch           watch(10000);
+ 
+ 
+ /* * * * * * * * * * * * * * * * * * * * * * * * *\
+@@ -43,14 +43,22 @@
+  * all interrupts will be disabled and the cpu will be halted.
+  **/
+ void kernel(){
+-  kout.setpos(20,5);
+-  kout << "Choose Subtask(A,B)!" << endl;
++  kout << " " << endl;
++  kout << "Choose Subtask(A,B)!" << endl << endl;
++  unsigned short x,y;
++  kout.getpos(x,y);
+   Key k;
+-  do
++  while(true)
+   {
++    kout.setpos(x,y);
+     k = keyboard.key_hit();
+-  }while(!k.valid() || (k.ascii()!='A' && k.ascii()!='B'));
+-  kout << endl << "Subtask " << k.ascii() << " chosen." << endl;
++    if(!k.valid())
++        continue;
++    if(k.ascii()=='A' || k.ascii()=='B')
++        break;
++    kout << "Invalid choice " << k.ascii() << endl;
++  }
++  kout << "Subtask " << k.ascii() << " chosen." << endl;
+   Task4 task(k.ascii()=='A');
+ 
+   keyboard.plugin();
+Only in Aufgabe4/src: main.cc.rej

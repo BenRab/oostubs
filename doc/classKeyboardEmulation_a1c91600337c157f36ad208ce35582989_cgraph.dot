@@ -1,0 +1,18 @@
+digraph "KeyboardEmulation::start"
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="KeyboardEmulation::\lstart",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="endl",height=0.2,width=0.4,color="black",URL="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d",tooltip="print buffer after adding a newline"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="Stringbuffer::flush",height=0.2,width=0.4,color="black",URL="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac",tooltip="flush the content of the buffer to the screen"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="KeyboardEmulation::\laction",height=0.2,width=0.4,color="black",URL="$classKeyboardEmulation.html#a9d4d0eda2675b0388a5747089762d052"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="Key::scancode",height=0.2,width=0.4,color="black",URL="$classKey.html#ae67075af1a5c0a7f585e8e61fc8515f8",tooltip="Set scancode value."];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="System::signal",height=0.2,width=0.4,color="black",URL="$classSystem.html#af4120f231063b4fc96a6bca0d5593a93"];
+}

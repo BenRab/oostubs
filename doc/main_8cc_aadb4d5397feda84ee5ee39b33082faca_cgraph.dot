@@ -1,0 +1,30 @@
+digraph "kernel"
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="kernel",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="Curses_Screen::setpos",height=0.2,width=0.4,color="black",URL="$classCurses__Screen.html#ad48d8a732fe5b60d8ebe70f53bfad92b",tooltip="set the cursor position"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="endl",height=0.2,width=0.4,color="black",URL="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d",tooltip="print buffer after adding a newline"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="Stringbuffer::flush",height=0.2,width=0.4,color="black",URL="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac",tooltip="flush the content of the buffer to the screen"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="Curses_Keyboard::key_hit",height=0.2,width=0.4,color="black",URL="$classCurses__Keyboard.html#a31e84201f2f54cb363f5b3d18438e7d5"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="Key::valid",height=0.2,width=0.4,color="black",URL="$classKey.html#a4292f24b142a697e610fb7780a0dc9d5",tooltip="Test for validity."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="Key::ascii",height=0.2,width=0.4,color="black",URL="$classKey.html#abb65ed9de2b4a8c24f557416b484df34",tooltip="Set ascii value."];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node8 [label="Curses_Keyboard::plugin",height=0.2,width=0.4,color="black",URL="$classCurses__Keyboard.html#ada76cfa420d3b63fd720c1421d84d2ef",tooltip="enable the interrupt mechanism of the keyboard"];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node9 [label="Plugbox::assign",height=0.2,width=0.4,color="black",URL="$classPlugbox.html#a7f48e4645e6709fe2030aaa79eb0d3f1",tooltip="assign a Gate object to a specific interrupt"];
+  Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node10 [label="Software_PIC::allow",height=0.2,width=0.4,color="black",URL="$classSoftware__PIC.html#af6e50ac35035238fe28b9c17e83815d9",tooltip="allow a specific hardware interrupt"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node11 [label="Watch::windup",height=0.2,width=0.4,color="black",URL="$classWatch.html#a147c656850857b641537d7ca232f5aff",tooltip="Enable the clock interrupt and its handling."];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node12 [label="Scheduler::schedule",height=0.2,width=0.4,color="black",URL="$classScheduler.html#a45442044c5cb2151b00f507a3c8d8195",tooltip="Start the scheduling by starting the first thread of the system."];
+}

@@ -8,197 +8,156 @@
 
 #include "object/o_stream.h"
 
-/** \todo implementieren **/
-O_Stream::O_Stream() : Stringbuffer(){
-  base = dec;
-  pos = 0;
+O_Stream::O_Stream() : Stringbuffer(), fgColor(WHITE), bgColor(BLACK), blink(false), base(dec){
+  
 }
 
-/** \todo implementieren **/
 O_Stream::~O_Stream(){
-  /* ToDo: insert sourcecode */
+  
 }
 
-int ulongToChar(unsigned long n, char* stack, int base)
-{
-  char digits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
-  int i = 79;
-  if(base == 16) {
-    for(int k=0; k<8; k++)
-    {
-      stack[i-k] = '0';
-    }
-  }
-  do
-  {
-    int reminder = n%base;
-    n /= base;
-    stack[i] = (digits[reminder]);
-    --i;
-  } while(n > 0);
-  if(base == 16) {
-    i = 71;
-    stack[i--] = 'x';
-  }
-  if(base == 8) {
-    stack[i] = 'o';
-    --i;
-  }
-  if(base == 8 || base == 16) {
-    stack[i] = '0';
-    --i;
-  }
-  if(base == 2) {
-    stack[i] = 'b';
-    --i;
-  }
-  return i;
-}
-
-/** \todo implementieren **/
-O_Stream& O_Stream::operator << (char value) {
-  put(value);
+// display of a character
+O_Stream& O_Stream::operator << (char c) {
+  put(c);
   return *this;
 }
 
-/** \todo implementieren **/
-O_Stream& O_Stream::operator << (unsigned char value) {
-  put((char) value);
+O_Stream& O_Stream::operator << (unsigned char c) {
+  return *this << (char) c;
+}
+
+// display of a string
+O_Stream& O_Stream::operator << (char* string) {
+  return *this << static_cast<const char*>(string);
+}
+
+O_Stream& O_Stream::operator << (const char* string) {
+  while (*string)
+    put (*string++);
   return *this;
 }
 
-/** \todo implementieren **/
-O_Stream& O_Stream::operator << (char* value) {
-  int i = 0;
-  while(value[i] != '\0'){
-    put(value[i]);
-    i++;
+// display of digits using basis base to determen the output refering to 
+// the value
+O_Stream& O_Stream::operator << (short ival) {
+  return *this << (long) ival;
+}
+
+O_Stream& O_Stream::operator << (unsigned short ival) {
+  return *this << (unsigned long) ival;
+}
+
+O_Stream& O_Stream::operator << (int ival) {
+  return *this << (long ) ival;
+}
+
+O_Stream& O_Stream::operator << (unsigned int ival) {
+  return *this << (unsigned long) ival;
+
+}
+
+// display of a digit as a long
+O_Stream& O_Stream::operator << (long ival) {
+  // if value is negative a minus is outputed first
+  if (ival < 0) {
+    put ('-');
+    ival = -ival;
   }
-  return *this;
+  // than the absolute value of the digit is outputed
+  return *this << (unsigned long) ival;
 }
 
-/** \todo implementieren **/
-O_Stream& O_Stream::operator << (const char* value) {
-  return operator<<((char*) value);
-}
-
-/** \todo implementieren **/
-O_Stream& O_Stream::operator << (short value) {
-  return operator<<((long) value);
-}
-
-/** \todo implementieren **/
-O_Stream& O_Stream::operator << (unsigned short value) {
-  return operator<<((unsigned long) value);
-}
-
-/** \todo implementieren **/
-O_Stream& O_Stream::operator << (int value) {
-  return operator<<((long) value);
-}
-
-/** \todo implementieren **/
-O_Stream& O_Stream::operator << (unsigned int value) {
-  return operator<<((unsigned long) value);
-}
-
-/** \todo implementieren **/
-O_Stream& O_Stream::operator << (long value) {
-  char stack_[80];
-  int i = ulongToChar((unsigned long) value, stack_, base);
-
-  if(value < 0)
-  {
-    // push the sign on the stack and threat it as an positive number
-    stack_[i]='-';
-    --i;
+O_Stream& O_Stream::operator << (unsigned long ival) {
+  unsigned long div;
+  char digit;
+   
+  if (base == 8)
+    put ('0');              // oktal digits start with a NULL
+  else if (base == 16) {
+    put ('0');              // hexadezimal digits start with 0x
+    put ('x');
   }
-
-  for(int j = i+1; j < 80; ++j)
-  {
-    put(stack_[j]);
+  
+  // computes the max power of the choosen basis, that is smaler than the value
+  // of the digit
+  for (div = 1; ival/div >= (unsigned long) base; div *= base);
+  
+  // prints the digit character after character
+  for (; div > 0; div /= (unsigned long) base) {
+    digit = ival / div;
+    if (digit < 10)
+      put ('0' + digit);
+    else
+      put ('a' + digit - 10);
+    ival %= div;
   }
   return *this;
 }
 
-/** \todo implementieren **/
-O_Stream& O_Stream::operator << (unsigned long value) {
-  char stack_[80];
-  int i = ulongToChar(value, stack_, base);
-
-  for(int j = i+1; j < 80; ++j)
-  {
-    put(stack_[j]);
-  }
-  return *this;
-}
-
-/** \todo implementieren **/
-O_Stream& O_Stream::operator << (void* value) {
-  Base tmp = base;
+// display of a counter as hexadezimal digit
+O_Stream& O_Stream::operator << (void* ptr) {
+  Base oldbase = base;
   base = hex;
-  operator<<((unsigned long) value);
-  base = tmp;
+  *this << (unsigned long) ptr;
+  base = oldbase;
   return *this;
 }
 
-/** \todo implementieren **/
-O_Stream& O_Stream::operator << (FGColor fgColor){
-  setAttributes(fgColor.color, -1, -1, false);
-  this->flush();
+// call of a manipulator
+O_Stream& O_Stream::operator << (O_Stream& (*f) (O_Stream&)) {
+  return f(*this);
+}
+
+O_Stream& O_Stream::operator << (FGColor color){
+  flush();
+  fgColor = color.color;
+  setAttributes(fgColor, bgColor, blink);
   return *this;
 }
 
-/** \todo implementieren **/
-O_Stream& O_Stream::operator << (BGColor bgColor){
-  setAttributes(-1, bgColor.color, -1, false);
-  this->flush();
+O_Stream& O_Stream::operator << (BGColor color){
+  flush();
+  bgColor = color.color;
+  setAttributes(fgColor, bgColor, blink);
   return *this;
 }
 
-/** \todo implementieren **/
 O_Stream& O_Stream::operator << (Blink blink){
-  setAttributes(-1, -1, blink.blink, true);
-  this->flush();
+  flush();
+  this->blink = blink.blink;
+  setAttributes(fgColor, bgColor, this->blink);
   return *this;
 }
 
-/** \todo implementieren **/
+
+// ENDL: prints buffer after adding a newline at the end of the buffer
 O_Stream& endl (O_Stream& os) {
-  os.put('\n');
-  os.flush();
+  os << '\n';
+  os.flush ();
   return os;
 }
 
-/** \todo implementieren **/
+// BIN: choose binary basis for display
 O_Stream& bin (O_Stream& os) {
   os.base = O_Stream::bin;
   return os;
 }
 
-/** \todo implementieren **/
+// OCT: choose oktale basis for display
 O_Stream& oct (O_Stream& os) {
   os.base = O_Stream::oct;
   return os;
 }
 
-/** \todo implementieren **/
+// DEC: choose dezimal basis for display
 O_Stream& dec (O_Stream& os) {
   os.base = O_Stream::dec;
   return os;
 }
 
-/** \todo implementieren **/
+// HEX: choose hexadezimal basis for display
 O_Stream& hex (O_Stream& os) {
   os.base = O_Stream::hex;
   return os;
 }
 
-O_Stream& flush (O_Stream& os) {
-  os.flush();
-  return os;
-}
-
-O_Stream& O_Stream::operator << (O_Stream& (*f) (O_Stream&)) {
-  return f(*this);
-}

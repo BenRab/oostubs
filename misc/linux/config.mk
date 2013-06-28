@@ -1,17 +1,23 @@
 CC=gcc
 CXX=g++
 ASM=gcc
-LD=ld
+LD=g++
 EMU=qemu-system-i386
+#EMU=qemu-kvm
 EMUTARGET=${TARGET}
+GDBSRV=gdbserver
 GDB=gdb
 SED=sed
 OBJDUMP=objdump
 DOCGEN=doxygen
 
-CFLAGS+=-fno-exceptions -fno-stack-protector
-CXXFLAGS+=${CFLAGS} -fno-rtti -nostdinc++
-LDFLAGS=-e entry -T misc/sections
+#CFLAGS+=-fno-exceptions -m32 -fno-stack-protector
+#CXXFLAGS+=${CFLAGS} -fno-rtti -nostdinc++
+#LDFLAGS=-e entry -T misc/sections -melf_i386
+ASMFLAGS := 
+CFLAGS   := -pthread -Wall -g
+CXXFLAGS := ${CFLAGS}
+LDFLAGS  := -lncurses ${CFLAGS}
 
 OBJDUMPFLAGS=-Cxd
 EMUFLAGS+=-no-kvm -net none -vga std -kernel

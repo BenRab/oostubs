@@ -1,0 +1,10 @@
+<map id="src/thread/lock.cc" name="src/thread/lock.cc">
+<area shape="rect" id="node3" href="$lock_8h.html" title="thread/lock.h" alt="" coords="210,83,314,111"/>
+<area shape="rect" id="node5" href="$cpu_8h.html" title="help include file for use of global declared variable cpu, declared in main.cc" alt="" coords="70,161,169,189"/>
+<area shape="rect" id="node18" href="$useful_2log_8h.html" title="useful/log.h" alt="" coords="216,161,309,189"/>
+<area shape="rect" id="node26" href="$thread_8h.html" title="thread/thread.h" alt="" coords="333,161,456,189"/>
+<area shape="rect" id="node7" href="$virtcpu_8h.html" title="machine/virtcpu.h" alt="" coords="13,238,149,266"/>
+<area shape="rect" id="node13" href="$pic_8h.html" title="useful/pic.h" alt="" coords="116,315,209,343"/>
+<area shape="rect" id="node15" href="$swpic_8h.html" title="machine/swpic.h" alt="" coords="62,393,188,421"/>
+<area shape="rect" id="node20" href="$object_2log_8h.html" title="object/log.h" alt="" coords="222,238,318,266"/>
+</map>

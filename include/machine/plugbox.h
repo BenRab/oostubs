@@ -34,23 +34,26 @@
  **/
 class Plugbox {
   private:
+    ///\~german Anzahl der Elemente im Gate-Array \~english number of elements in gate array
+    static const unsigned int uiGateCount = 256;
+    
     /** 
      * \~german
      * \brief Array von Zeigern auf Gate-Objekte
      * 
      * Der Puffer soll Gate-Zeiger für alle möglichen 256 Interrupts vorhalten.
      * 
-     * \todo deklarieren
-     * 
      * \~english
      * \brief array of pointers to Gate objects
      * 
      * The buffer should contain gates for all 256 possible interrupts.
-     *
-     * \todo write declaration
      **/
-    Gate* interruptArray[256];
+     Gate* gates[uiGateCount];
+    
   public:
+    static const int timer    = 32;
+    static const int keyboard = 33;
+    
     /** 
      * \~german
      * \brief Standardkonstruktor

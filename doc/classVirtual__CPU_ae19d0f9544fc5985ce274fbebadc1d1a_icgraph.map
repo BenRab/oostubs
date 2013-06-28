@@ -1,0 +1,6 @@
+<map id="Virtual_CPU::disable_int" name="Virtual_CPU::disable_int">
+<area shape="rect" id="node3" href="$classLock.html#a9944623567d8138b95e74fadc7190adb" title="Lock creation" alt="" coords="276,5,364,33"/>
+<area shape="rect" id="node5" href="$guardian_8cc.html#afe78f34c7c65df79376008e0d23c1afd" title="This function is called if a normal exception is raised by the cpu." alt="" coords="257,55,383,83"/>
+<area shape="rect" id="node7" href="$guardian_8cc.html#a70466c5bd3ffac85265c22f65e9a4ef9" title="This function is called if a normal exception with error code is raised by the cpu." alt="" coords="253,106,387,134"/>
+<area shape="rect" id="node9" href="$guardian_8cc.html#a390d383038610b600ab986ec9b54879a" title="This function is called if a reserved exception is raised by the cpu." alt="" coords="228,157,412,185"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="include/device/cursstr.h" name="include/device/cursstr.h">
+<area shape="rect" id="node3" href="$kout_8h.html" title="help include file for use of global declared variable kout, declared in main.cc" alt="" coords="268,83,420,111"/>
+<area shape="rect" id="node13" href="$cursstr_8cc.html" title="src/device/cursstr.cc" alt="" coords="444,83,593,111"/>
+<area shape="rect" id="node15" href="$main_8cc.html" title="src/main.cc" alt="" coords="617,83,711,111"/>
+<area shape="rect" id="node5" href="$curskbd_8cc.html" title="src/device/curskbd.cc" alt="" coords="5,161,163,189"/>
+<area shape="rect" id="node7" href="$panic_8cc.html" title="src/device/panic.cc" alt="" coords="187,161,328,189"/>
+<area shape="rect" id="node9" href="$guardian_8cc.html" title="interrupt handler function" alt="" coords="352,161,512,189"/>
+<area shape="rect" id="node11" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="536,161,667,189"/>
+</map>

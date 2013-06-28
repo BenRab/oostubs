@@ -10,27 +10,19 @@
 #                    INCLUDES                     #
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 #include "device/panic.h"
-#include "machine/cpu.h"
-#include "device/cgastr.h"
 
-extern CPU cpu;
-extern CGA_Stream kout;
+#include "useful/kout.h"
+#include "useful/cpu.h"
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #                    METHODS                      # 
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 
-/** \todo \~german implementieren \~english write implementation*/
-Panic::Panic(){
+Panic::Panic():Gate(){
 }
 
-
-
-/** \todo \~german implementieren \~english write implementation*/
 void Panic::trigger(){
-  cpu.disable_int();
-
-  kout << "Interrupt: " << gateInterruptNumber << endl;
-
+  kout << endl << "PANIC(" << gateInterruptNumber << ")!" << endl;
   cpu.halt();
 }

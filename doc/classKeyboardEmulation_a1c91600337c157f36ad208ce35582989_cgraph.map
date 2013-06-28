@@ -1,0 +1,7 @@
+<map id="KeyboardEmulation::start" name="KeyboardEmulation::start">
+<area shape="rect" id="node3" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="261,5,309,33"/>
+<area shape="rect" id="node7" href="$classKeyboardEmulation.html#a9d4d0eda2675b0388a5747089762d052" title="KeyboardEmulation::\laction" alt="" coords="209,55,361,99"/>
+<area shape="rect" id="node5" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="412,5,545,33"/>
+<area shape="rect" id="node9" href="$classKey.html#ae67075af1a5c0a7f585e8e61fc8515f8" title="Set scancode value." alt="" coords="423,59,535,87"/>
+<area shape="rect" id="node11" href="$classSystem.html#af4120f231063b4fc96a6bca0d5593a93" title="System::signal" alt="" coords="421,110,536,138"/>
+</map>

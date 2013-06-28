@@ -1,0 +1,4 @@
+<map id="Curses_Screen::setAttributes" name="Curses_Screen::setAttributes">
+<area shape="rect" id="node3" href="$classCurses__Stream.html#a774336f371f5c3b9ef902b758cc02361" title="constructor calls Curses_Screen::setAttributes to set the default attributes of O_Stream" alt="" coords="284,5,457,49"/>
+<area shape="rect" id="node5" href="$classCurses__Stream.html#a4861c26f5270be9ceda53a5a50383a88" title="combine the setAttributes function of O_Stream with the presented interface of the Curses driver..." alt="" coords="265,71,476,99"/>
+</map>

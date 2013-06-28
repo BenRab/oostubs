@@ -1,0 +1,6 @@
+<map id="Curses_Keyboard::plugin" name="Curses_Keyboard::plugin">
+<area shape="rect" id="node3" href="$main_8cc.html#aadb4d5397feda84ee5ee39b33082faca" title="kernel entry point" alt="" coords="232,5,293,33"/>
+<area shape="rect" id="node5" href="$classSystem.html#aaf51e695421f1ab3d4d11d461587be1c" title="System::callKernel" alt="" coords="341,5,480,33"/>
+<area shape="rect" id="node7" href="$classSystem.html#a46b629e7c09840071570332d4e9a907d" title="System::start" alt="" coords="528,5,637,33"/>
+<area shape="rect" id="node9" href="$boot_8cc.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="687,5,740,33"/>
+</map>

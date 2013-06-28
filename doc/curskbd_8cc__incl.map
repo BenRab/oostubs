@@ -1,0 +1,17 @@
+<map id="src/device/curskbd.cc" name="src/device/curskbd.cc">
+<area shape="rect" id="node3" href="$curskbd_8h.html" title="device/curskbd.h" alt="" coords="5,161,133,189"/>
+<area shape="rect" id="node11" href="$useful_2plugbox_8h.html" title="useful/plugbox.h" alt="" coords="169,83,295,111"/>
+<area shape="rect" id="node16" href="$pic_8h.html" title="useful/pic.h" alt="" coords="695,238,788,266"/>
+<area shape="rect" id="node22" href="$kout_8h.html" title="help include file for use of global declared variable kout, declared in main.cc" alt="" coords="377,83,481,111"/>
+<area shape="rect" id="node35" href="$cpu_8h.html" title="help include file for use of global declared variable cpu, declared in main.cc" alt="" coords="675,83,773,111"/>
+<area shape="rect" id="node5" href="$gate_8h.html" title="guard/gate.h" alt="" coords="163,238,267,266"/>
+<area shape="rect" id="node7" href="$key_8h.html" title="machine/key.h" alt="" coords="20,238,132,266"/>
+<area shape="rect" id="node13" href="$machine_2plugbox_8h.html" title="machine/plugbox.h" alt="" coords="157,161,299,189"/>
+<area shape="rect" id="node18" href="$swpic_8h.html" title="machine/swpic.h" alt="" coords="671,315,796,343"/>
+<area shape="rect" id="node24" href="$cursstr_8h.html" title="device/cursstr.h" alt="" coords="377,161,500,189"/>
+<area shape="rect" id="node26" href="$o__stream_8h.html" title="object/o_stream.h" alt="" coords="532,238,671,266"/>
+<area shape="rect" id="node32" href="$cursscr_8h.html" title="machine/cursscr.h" alt="" coords="369,238,508,266"/>
+<area shape="rect" id="node28" href="$strbuf_8h.html" title="object/strbuf.h" alt="" coords="535,315,647,343"/>
+<area shape="rect" id="node30" href="$config_8h.html" title="config.h" alt="" coords="555,393,627,421"/>
+<area shape="rect" id="node37" href="$virtcpu_8h.html" title="machine/virtcpu.h" alt="" coords="715,161,851,189"/>
+</map>

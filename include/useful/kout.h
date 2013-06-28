@@ -5,5 +5,8 @@
  *                                       useful/kout                                             *
  *                                                                                               *
 \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-#include "device/cgastr.h"
-extern CGA_Stream kout;
+#include "device/cursstr.h"
+
+typedef Curses_Stream Kout;
+
+extern Kout kout;

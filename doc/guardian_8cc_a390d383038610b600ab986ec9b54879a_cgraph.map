@@ -1,0 +1,8 @@
+<map id="handleExceptionReserved" name="handleExceptionReserved">
+<area shape="rect" id="node3" href="$classCurses__Stream.html#ab6a0496fec8d85e70bc648e554ddeefb" title="flush the content of the internal buffer" alt="" coords="248,5,405,33"/>
+<area shape="rect" id="node7" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="303,55,351,83"/>
+<area shape="rect" id="node11" href="$classVirtual__CPU.html#ae19d0f9544fc5985ce274fbebadc1d1a" title="globally dissable interrupts" alt="" coords="240,106,413,134"/>
+<area shape="rect" id="node13" href="$classVirtual__CPU.html#ab379715eb56dd3ef38ee086314826f1f" title="halt the cpu" alt="" coords="263,157,391,185"/>
+<area shape="rect" id="node5" href="$classCurses__Screen.html#a77b0eb8866a6286e5f1cd8d400adecd2" title="print a string to the current position" alt="" coords="461,5,616,33"/>
+<area shape="rect" id="node9" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="472,55,605,83"/>
+</map>

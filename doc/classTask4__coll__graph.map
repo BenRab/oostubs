@@ -1,0 +1,6 @@
+<map id="Task4" name="Task4">
+<area shape="rect" id="node2" href="$classApplication.html" title="Basis of OOStuBs&#45;Applications." alt="" coords="33,86,124,114"/>
+<area shape="rect" id="node6" href="$classTask4_1_1Counter.html" title="Counting application." alt="" coords="21,166,136,194"/>
+<area shape="rect" id="node9" href="$classTask4_1_1RotCursor.html" title="Rotating symbol application" alt="" coords="160,166,285,194"/>
+<area shape="rect" id="node4" href="$classThread.html" title="Basic multitasking entity." alt="" coords="45,6,112,34"/>
+</map>

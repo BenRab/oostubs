@@ -1,0 +1,15 @@
+<map id="include/config.h" name="include/config.h">
+<area shape="rect" id="node3" href="$strbuf_8h.html" title="include/object/strbuf.h" alt="" coords="529,83,692,111"/>
+<area shape="rect" id="node19" href="$cursstr_8cc.html" title="src/device/cursstr.cc" alt="" coords="608,315,757,343"/>
+<area shape="rect" id="node28" href="$cursscr_8cc.html" title="src/machine/cursscr.cc" alt="" coords="767,83,932,111"/>
+<area shape="rect" id="node5" href="$o__stream_8h.html" title="include/object/o_stream.h" alt="" coords="335,161,521,189"/>
+<area shape="rect" id="node25" href="$strbuf_8cc.html" title="src/object/strbuf.cc" alt="" coords="545,161,687,189"/>
+<area shape="rect" id="node7" href="$cursstr_8h.html" title="include/device/cursstr.h" alt="" coords="332,238,503,266"/>
+<area shape="rect" id="node23" href="$o__stream_8cc.html" title="src/object/o_stream.cc" alt="" coords="527,238,692,266"/>
+<area shape="rect" id="node9" href="$kout_8h.html" title="help include file for use of global declared variable kout, declared in main.cc" alt="" coords="268,315,420,343"/>
+<area shape="rect" id="node21" href="$main_8cc.html" title="src/main.cc" alt="" coords="444,315,537,343"/>
+<area shape="rect" id="node11" href="$curskbd_8cc.html" title="src/device/curskbd.cc" alt="" coords="5,393,163,421"/>
+<area shape="rect" id="node13" href="$panic_8cc.html" title="src/device/panic.cc" alt="" coords="187,393,328,421"/>
+<area shape="rect" id="node15" href="$guardian_8cc.html" title="interrupt handler function" alt="" coords="352,393,512,421"/>
+<area shape="rect" id="node17" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="536,393,667,421"/>
+</map>

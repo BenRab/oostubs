@@ -1,0 +1,9 @@
+<map id="include/useful/cpu.h" name="include/useful/cpu.h">
+<area shape="rect" id="node3" href="$lock_8h.html" title="include/thread/lock.h" alt="" coords="36,83,191,111"/>
+<area shape="rect" id="node7" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="163,161,293,189"/>
+<area shape="rect" id="node9" href="$curskbd_8cc.html" title="src/device/curskbd.cc" alt="" coords="265,83,423,111"/>
+<area shape="rect" id="node11" href="$panic_8cc.html" title="src/device/panic.cc" alt="" coords="447,83,588,111"/>
+<area shape="rect" id="node13" href="$guardian_8cc.html" title="interrupt handler function" alt="" coords="612,83,772,111"/>
+<area shape="rect" id="node15" href="$boot_8cc.html" title="startup code" alt="" coords="796,83,940,111"/>
+<area shape="rect" id="node5" href="$lock_8cc.html" title="src/thread/lock.cc" alt="" coords="5,161,139,189"/>
+</map>

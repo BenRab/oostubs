@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classGate.html" title="Interrupt handling base class." alt="" coords="5,55,59,83"/>
+<area shape="rect" id="node3" href="$classCurses__Keyboard.html" title="Keyboard driver with interrupt support" alt="" coords="108,5,239,33"/>
+<area shape="rect" id="node5" href="$classPanic.html" title="Default interrupt handler." alt="" coords="147,55,200,83"/>
+<area shape="rect" id="node7" href="$classWatch.html" title="Handler for periodic timer interrupts." alt="" coords="144,106,203,134"/>
+</map>

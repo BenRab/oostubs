@@ -15,13 +15,15 @@ GDB:=@${GDB}
 SED:=@${SED}
 OBJDUMP:=@${OBJDUMP}
 
-INTERNAL_OBJECTS := $(addprefix ${BUILD}/, boot.o cppInit.o pow.o compat.o)
-SOURCES          := $(wildcard ${SRC}/*/*.cc ${SRC}/*.cc ${SRC}/asm/*.S )
+#INTERNAL_OBJECTS := $(addprefix ${BUILD}/, boot.o cppInit.o pow.o compat.o)
+#INTERNAL_OBJECTS := $(addprefix ${BUILD}/, boot.o)
+SOURCES          := $(wildcard ${SRC}/*/*.cc ${SRC}/*.cc ${SRC}/*/*.c ${SRC}/*/*.S )
 HEADERS          := $(filter %.h, $(wildcard ${INCLUDE}/*/*.h))
 DOXS             := $(wildcard ${DOC}/*.dox)
-SYSTEM_OBJECTS   :=$(addprefix ${BUILD}/,$(filter-out ${OBJECT_IGNORE}, $(addsuffix .o,$(basename $(notdir ${SOURCES})))))
+BOOT_OBJECT      := ${BUILD}/boot.o
+SYSTEM_OBJECTS   := $(filter-out ${BOOT_OBJECT}, $(addprefix ${BUILD}/,$(filter-out ${OBJECT_IGNORE}, $(addsuffix .o,$(basename $(notdir ${SOURCES}))))))
 DEPS             := $(addsuffix .d,${SYSTEM_OBJECTS})
-OBJECTS          := ${INTERNAL_OBJECTS} ${SYSTEM_OBJECTS}
+OBJECTS          := ${BOOT_OBJECT} ${SYSTEM_OBJECTS}
 TARGET           := ${BIN}/${TARGET}
 EMTARGET         := ${BIN}/${EMUTARGET}
 INCPATHS         := $(addprefix -I,${INCLUDE} ${INCPATHS})
@@ -32,17 +34,17 @@ BUILD_GARBAGE    := $(wildcard *~ *.sw?) ${BIN} ${BUILD} $(wildcard *.dump)
 DOC_GARBAGE      := ${DOC}/html ${DOC}/log
 GARBAGE          := $(BUILD_GARBAGE) $(DOC_GARBAGE)
 
-.PHONY: all clean run debug doc dump cleanDoc cleanBuild
+.PHONY: all clean run debug_server debug_client doc dump cleanDoc cleanBuild
 
-vpath %.cc ${SRC} ${SRC}/machine ${SRC}/user ${SRC}/object ${SRC}/syscall ${SRC}/thread ${SRC}/meetings ${SRC}/guard ${SRC}/device
+vpath %.cc ${INTERNAL} ${SRC} ${SRC}/machine ${SRC}/user ${SRC}/object ${SRC}/syscall ${SRC}/thread ${SRC}/meetings ${SRC}/guard ${SRC}/device
 vpath %.c  ${INTERNAL} ${SRC}/machine 
-vpath %.S  ${INTERNAL} ${SRC}/asm
+vpath %.S  ${INTERNAL} ${SRC}/machine
 
 all: ${TARGET}
 
 ${TARGET}: ${OBJECTS} | ${BIN}
 	@echo "(LD   ) $@ <- [$(notdir ${SYSTEM_OBJECTS})]"
-	${LD} ${LDFLAGS} ${OBJECTS} -o $@
+	${LD} ${LDFLAGS} ${OBJECTS} -o $@ -lncurses
 
 ${BUILD}/%.o: %.S Makefile | ${BUILD}
 	@echo "(AS   ) $@ <- $<"
@@ -84,13 +86,17 @@ cleanBuild:
 	@echo "(CLEAN build)"
 	@rm -rf ${BUILD_GARBAGE}
 
-run: ${EMUTARGET}
-	@echo "(EMU  )"
-	${EMU} ${EMUFLAGS} $< 
+run: ${TARGET}
+	@echo "(RUN  ) $(notdir ${TARGET})"
+	@./$<
 
-debug: ${TARGET}
-	@echo "(DEBUG)"
-	${EMU} ${EMUFLAGS} $< ${EMUDEBUG} -S -s -daemonize && ${RAWGDB} ${TARGET} ${GDBFLAGS}
+debug_server: ${TARGET}
+	@echo "(DBGSRV) $(notdir ${TARGET}) on :1234"
+	${GDBSRV} :1234 $< 
+
+debug_client: ${TARGET}
+	@echo "(DBGCLI) $(notdir ${TARGET}) on :1234"
+	${GDB} $< -x misc/gdb.script
 
 doc: ${DOC}/html/index.html
 	@$(shell if [ -d ./doc/pics ] ; then cp -f ./doc/pics/* ./doc/html ; fi )

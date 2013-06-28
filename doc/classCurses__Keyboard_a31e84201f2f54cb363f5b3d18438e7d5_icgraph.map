@@ -1,0 +1,7 @@
+<map id="Curses_Keyboard::key_hit" name="Curses_Keyboard::key_hit">
+<area shape="rect" id="node3" href="$classCurses__Keyboard.html#a362c518016cf5fce53e588e487d1c048" title="handle keyboard interrupt" alt="" coords="241,5,423,33"/>
+<area shape="rect" id="node5" href="$main_8cc.html#aadb4d5397feda84ee5ee39b33082faca" title="kernel entry point" alt="" coords="301,55,363,83"/>
+<area shape="rect" id="node7" href="$classSystem.html#aaf51e695421f1ab3d4d11d461587be1c" title="System::callKernel" alt="" coords="472,55,611,83"/>
+<area shape="rect" id="node9" href="$classSystem.html#a46b629e7c09840071570332d4e9a907d" title="System::start" alt="" coords="659,55,768,83"/>
+<area shape="rect" id="node11" href="$boot_8cc.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="817,55,871,83"/>
+</map>

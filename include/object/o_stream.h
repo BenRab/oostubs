@@ -101,6 +101,16 @@ class Blink{
  */
 class O_Stream : public Stringbuffer{
   protected: 
+    /// \~german  intern gespeicherte Vordergrundfarbe
+    /// \~english internal saved foreground color
+    int fgColor;
+    /// \~german  intern gespeicherte Hintergrundfarbe
+    /// \~english internal saved background color
+    int bgColor;
+    /// \~german  intern gespeicherte Blinkverhalten
+    /// \~english internal saved blinking status
+    bool blink;
+    
     /**
      * \~german 
      * \brief ermöglicht dem O_Stream das setzen der Attribute
@@ -122,7 +132,7 @@ class O_Stream : public Stringbuffer{
      * \brief interface to set attributes
      * 
      * It is possible to stream in attributes like colour. But this class does not know
-     * how to set this, the driver has to do it. Hence this abstract function is provided
+     * how to how to set this, the driver has to do it. Hence this abstract function is provided
      * as an interface and a later, specific class has to implement it.
      * 
      * \param fgColor
@@ -134,8 +144,7 @@ class O_Stream : public Stringbuffer{
      * \param blink
      *    blinking state
      */
-    virtual void setAttributes(int fgColor, int bgColor, bool blink, bool enableblink) = 0;
-    
+    virtual void setAttributes(int fgColor, int bgColor, bool blink) = 0;
     
   public:
     
@@ -148,7 +157,12 @@ class O_Stream : public Stringbuffer{
       dec=10,
       hex=16
     };
+    
+    /** 
+     * \brief current selected base 
+     */
     Base base;
+    
     /** 
      * \brief Default constructor initialising with dezimal system 
      */
@@ -236,9 +250,6 @@ class O_Stream : public Stringbuffer{
      *
      * @param f mainpulator function to be applied to the ostream
      * @return reference to the current O_Stream object.
-     * 
-     * \~
-     * \todo write implementation
      **/
     O_Stream& operator << (O_Stream& (*f) (O_Stream&));
     
@@ -248,7 +259,6 @@ class O_Stream : public Stringbuffer{
     friend O_Stream& oct(O_Stream&);
     friend O_Stream& dec(O_Stream&);
     friend O_Stream& hex(O_Stream&);
-    friend O_Stream& flush(O_Stream&);
 };
 
 
@@ -263,41 +273,31 @@ class O_Stream : public Stringbuffer{
  * into the input of the stream.
  * Main goal of the manipulators is to influence the display of the following 
  * output (eg. by choosing a basis for the display of digits).
- */ 
-O_Stream& flush(O_Stream &out);
-/** \brief print buffer after adding a newline 
- *
- * \~
- * \todo write implementation
+ **/ 
+
+/** 
+ * \brief print buffer after adding a newline 
  */
 O_Stream& endl(O_Stream &out);
- 
-/** \brief switch basis of o_stream to binary 
- *
- * \~
- * \todo write implementation
+
+/** 
+ * \brief switch basis of o_stream to binary 
  */
 O_Stream& bin(O_Stream &out);
- 
-/** \brief switch basis of o_stream to octal 
- *
- * \~
- * \todo write implementation
+
+/** 
+ * \brief switch basis of o_stream to octal 
  */
 O_Stream& oct(O_Stream &out);
- 
-/** \brief switch basis of o_stream to decimal 
- *
- * \~
- * \todo write implementation
+
+/** 
+ * \brief switch basis of o_stream to decimal 
  */
 O_Stream& dec(O_Stream &out);
- 
-/** \brief switch basis of o_stream to hexadecimal 
- *
- * \~
- * \todo write implementation
+
+/** 
+ * \brief switch basis of o_stream to hexadecimal 
  */
 O_Stream& hex(O_Stream &out);
- 
+
 #endif
