@@ -14,6 +14,7 @@
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 #include "guard/gate.h"
 #include "machine/key.h"
+#include "thread/semaphore.h"
  
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #                    CLASSES                      #
@@ -31,6 +32,17 @@
  * for the keyboard.
  */
 class Curses_Keyboard : public Gate  {
+  private:
+      static const unsigned int maxBufferSize=1;
+      std::deque<Key> buffer;
+      Semaphore sem;
+
+      /** \brief Fetch a key from the keyboard controller(ncurses)
+       *
+       * \return A Key object representing the fetched key or an invalid object if none was available
+       **/
+      Key key_hit();
+
   public:
      
      /** 
@@ -59,20 +71,20 @@ class Curses_Keyboard : public Gate  {
     void plugin ();
     
     /** 
-     * \~german
-     * \brief einen auftretenden Tastaturinterrupt behandeln
-     * 
-     * Tritt ein Interrupt für die Tastatur auf, so soll diese Funktion aufgerufen werden.
-     * 
-     * In Aufgabe 2 soll die Funktion das eingegeben Zeichen an einer festen Position, z.B.
-     * x=4, y=10, auf dem Bildschirm ausgeben.
-     * 
      * \~english
      * \brief handle keyboard interrupt
      */
     virtual void trigger ();
 
-    Key key_hit();
+    /**
+     * \~english
+     * \brief fetch a key from the keybord's key storage
+     *
+     * This method may block the calling thread until a key is available.
+     *
+     * \return A Key object holding the last pressed key
+     **/
+    Key getkey();
 };
 
 #endif

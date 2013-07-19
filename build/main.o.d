@@ -32,10 +32,8 @@ build/main.o: src/main.cc include/machine/virtcpu.h /usr/include/signal.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.6/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h /usr/include/unctrl.h \
- include/device/cursstr.h include/object/o_stream.h \
- include/object/strbuf.h include/config.h include/machine/cursscr.h \
- include/device/panic.h include/device/watch.h include/thread/scheduler.h \
- include/thread/dispatch.h include/thread/thread.h \
+ include/thread/semaphore.h include/thread/waitingroom.h \
+ include/thread/customer.h include/thread/thread.h \
  /usr/include/ucontext.h /usr/include/c++/4.6/deque \
  /usr/include/c++/4.6/bits/stl_algobase.h \
  /usr/include/c++/4.6/x86_64-linux-gnu/./bits/c++config.h \
@@ -59,5 +57,38 @@ build/main.o: src/main.cc include/machine/virtcpu.h /usr/include/signal.h \
  /usr/include/c++/4.6/bits/stl_deque.h \
  /usr/include/c++/4.6/initializer_list \
  /usr/include/c++/4.6/bits/range_access.h \
- /usr/include/c++/4.6/bits/deque.tcc include/user/task4.h \
- include/user/appl.h
+ /usr/include/c++/4.6/bits/deque.tcc include/device/cursstr.h \
+ include/object/o_stream.h include/object/strbuf.h include/config.h \
+ include/machine/cursscr.h include/device/panic.h include/device/watch.h \
+ include/thread/organizer.h include/thread/scheduler.h \
+ include/thread/dispatch.h include/user/task5.h include/user/task4.h \
+ include/user/appl.h /usr/include/c++/4.6/map \
+ /usr/include/c++/4.6/bits/stl_tree.h \
+ /usr/include/c++/4.6/bits/stl_function.h \
+ /usr/include/c++/4.6/backward/binders.h \
+ /usr/include/c++/4.6/bits/stl_map.h \
+ /usr/include/c++/4.6/bits/stl_multimap.h /usr/include/c++/4.6/string \
+ /usr/include/c++/4.6/bits/stringfwd.h \
+ /usr/include/c++/4.6/bits/char_traits.h \
+ /usr/include/c++/4.6/bits/postypes.h /usr/include/c++/4.6/cwchar \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/c++/4.6/bits/localefwd.h \
+ /usr/include/c++/4.6/x86_64-linux-gnu/./bits/c++locale.h \
+ /usr/include/c++/4.6/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.6/iosfwd \
+ /usr/include/c++/4.6/cctype /usr/include/ctype.h \
+ /usr/include/c++/4.6/bits/ostream_insert.h \
+ /usr/include/c++/4.6/bits/cxxabi_forced.h \
+ /usr/include/c++/4.6/bits/basic_string.h \
+ /usr/include/c++/4.6/ext/atomicity.h \
+ /usr/include/c++/4.6/x86_64-linux-gnu/./bits/gthr.h \
+ /usr/include/c++/4.6/x86_64-linux-gnu/./bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
+ /usr/include/c++/4.6/x86_64-linux-gnu/./bits/atomic_word.h \
+ /usr/include/c++/4.6/bits/basic_string.tcc

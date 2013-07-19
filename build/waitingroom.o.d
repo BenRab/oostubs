@@ -1,5 +1,6 @@
-build/thread.o: src/thread/thread.cc include/thread/thread.h \
- /usr/include/ucontext.h /usr/include/features.h \
+build/waitingroom.o: src/thread/waitingroom.cc \
+ include/thread/waitingroom.h include/thread/customer.h \
+ include/thread/thread.h /usr/include/ucontext.h /usr/include/features.h \
  /usr/include/x86_64-linux-gnu/bits/predefs.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -17,8 +18,6 @@ build/thread.o: src/thread/thread.cc include/thread/thread.h \
  /usr/include/x86_64-linux-gnu/bits/sigstack.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/x86_64-linux-gnu/bits/sigthread.h \
- include/useful/scheduler.h include/thread/organizer.h \
- include/thread/scheduler.h include/thread/dispatch.h \
  /usr/include/c++/4.6/deque /usr/include/c++/4.6/bits/stl_algobase.h \
  /usr/include/c++/4.6/x86_64-linux-gnu/./bits/c++config.h \
  /usr/include/c++/4.6/x86_64-linux-gnu/./bits/os_defines.h \
@@ -41,5 +40,4 @@ build/thread.o: src/thread/thread.cc include/thread/thread.h \
  /usr/include/c++/4.6/bits/stl_deque.h \
  /usr/include/c++/4.6/initializer_list \
  /usr/include/c++/4.6/bits/range_access.h \
- /usr/include/c++/4.6/bits/deque.tcc include/thread/customer.h \
- include/thread/waitingroom.h
+ /usr/include/c++/4.6/bits/deque.tcc

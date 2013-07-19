@@ -12,7 +12,7 @@
 #include "device/curskbd.h"
 #include "useful/plugbox.h"
 #include "useful/pic.h"
-#include "useful/kout.h"
+#include "thread/lock.h"
 #include <pthread.h>
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
@@ -24,7 +24,7 @@ extern volatile unsigned int keyBuffer;
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #                    METHODS                      # 
 \* * * * * * * * * * * * * * * * * * * * * * * * */
-Curses_Keyboard::Curses_Keyboard() : Gate(){
+Curses_Keyboard::Curses_Keyboard() : Gate(), sem(0){
 
 }
 
@@ -44,8 +44,18 @@ Key Curses_Keyboard::key_hit()
 
 void Curses_Keyboard::trigger()
 {
-    kout.flush();
-    kout.setpos(4,10);
-    kout << key_hit();
-    kout.flush();
+    {
+        Lock lock;
+        buffer.push_back(key_hit());
+    }
+    sem.signal();
+}
+
+Key Curses_Keyboard::getkey()
+{
+    sem.wait();
+    Lock lock;
+    Key k=buffer.front();
+    buffer.pop_front();
+    return k;
 }

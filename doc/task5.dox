@@ -1,16 +1,48 @@
-/**
- * \~german
- * \page task5 Aufgabe 5 - Semaphoren
- * \tableofcontents
+/** \~german \page task5 Aufgabe 5 - Blockierendes Warten \tableofcontents
  * 
- * Diese Aufgabe basiert auf dem neuen Grundsystem von \ref task4 "Aufgabe 4". Dieses läuft nicht 
- * mehr als eigenständiges Betriebssystem, sondern als normales Programm unter Linux. \n
+ * Keine deutsche Dokumentation verfügbar. Bitte nutzt die Englische.
  * 
- * Die Informationen dieser Aufgabe erscheinen mit dem entsprechenden Patch.
- * 
- * \~english
- * \page task5 Task 5 - Semaphor
- * 
- * There is no english describtion. Use the german one.
- */
+ * \~english \page task5 Task 5 - Blocking Wait
+ *
+ * The goal of the fifth task is to enable threads to block on I/O-Operations.
+ * To support this the Curses_Keyboard is extended through a method getkey,
+ * which delivers a key if one is available and blocks the calling thread until
+ * a key is available. This functionality needs a synchronization mechanism
+ * between individual threads and I/O-Drivers. OOStuBS uses semaphores to do
+ * this synchronization. Therefore the existing scheduling mechanism needs to
+ * be extended to represent the third state of the basic process model
+ * "blocked".
+ *
+ * The existing class hierarchie is extended at two points, on one hand the
+ * Scheduler is extended to the Organizer to handle blocking and wake up of
+ * individual threads, on the other hand the Thread is extended to a Customer
+ * to support tracking of the semaphore the customer is blocked in.
+ *
+ * The extended appraoch considers each customer to be present in either the
+ * ready-queue of the scheduler, a waiting-queue of a semaphore or in the
+ * current-pointer of the Dispatcher. Therefore semaphore needs a machanism to
+ * track the customers waiting for their ressource. This is done through the
+ * Waitingroom class. This class respresents the underlying waiting-queue of a
+ * sempahrore object.
+ *
+ * Depending on the implementation of the Scheduler in Task 4 it may be
+ * necessary to change some implementation details. There exist new situations,
+ * which were not present in Task 4 one is an empty ready list and another is
+ * the killing of a customer in any state(ready, running, blocked).
+ *
+ * Especially the problem of an empty ready-queue is not trivial to solve,
+ * since Watch will issue Scheduler::resume   independant of the state of the
+ * ready-list. Generally there exist to feasable solutions either the methods
+ * of Scheduler are adapted to work even on empty ready-queues or a
+ * non-terminatable low-priority Idle-Thread may be created, to prevent the
+ * ready-queue from being empty.
+ *
+ * BUGS:
+ *
+ *  - If an additional thread is started it may happen that OOStuBS cannot be
+ *  killed through CTRL-C or other signals. In this case please issue "make
+ *  hardkill" in the Task5 folder of your oostubs in another terminal.
+ *  Afterwards the terminal will be broken until you issue "reset".
+ *
+ **/
 

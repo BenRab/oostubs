@@ -34,6 +34,11 @@ pthread_mutex_t tsMutex=PTHREAD_MUTEX_INITIALIZER;
 extern void kernel();
 extern void guardian(unsigned short slot);
 
+#define SIG_CLK SIGRTMIN
+#define SIG_KBD SIGRTMIN+1
+
+sigset_t errorSet;
+
 class System
 {
   private:
@@ -44,6 +49,10 @@ class System
         initscr();
         noecho();
         cbreak();
+        sigfillset(&errorSet);
+        sigdelset(&errorSet, SIGILL);
+        sigdelset(&errorSet, SIGBUS);
+        sigdelset(&errorSet, SIGSEGV);
     }
 
     ~System()
@@ -55,10 +64,7 @@ class System
 
     static void* callKernel(void* arg)
     {
-        sigset_t segfaultSet;
-        sigfillset(&segfaultSet);
-        sigdelset(&segfaultSet, SIGSEGV);
-        pthread_sigmask(SIG_BLOCK, &segfaultSet, NULL);
+        pthread_sigmask(SIG_BLOCK, &errorSet, NULL);
         pthread_setcanceltype(PTHREAD_CANCEL_ASYNCHRONOUS, NULL);
         kernel();
         return NULL;
@@ -79,13 +85,9 @@ class System
 
     void stop()
     {
-        sigset_t segfaultSet;
-        sigfillset(&segfaultSet);
-        sigdelset(&segfaultSet, SIGSEGV);
-        pthread_sigmask(SIG_BLOCK, &segfaultSet, NULL);
+        pthread_sigmask(SIG_BLOCK, &errorSet, NULL);
         pthread_cancel(os);
         pthread_join(os, NULL);
-        endwin();
     }
 };
 
@@ -118,9 +120,7 @@ class KeyboardEmulation
 
         static void* action(void* arg)
         {
-            sigset_t all;
-            sigfillset(&all);
-            pthread_sigmask(SIG_BLOCK, &all, NULL);
+            pthread_sigmask(SIG_BLOCK, &errorSet, NULL);
             while(true)
             {
                 int key = getch();
@@ -170,9 +170,7 @@ class ClockEmulation
 
         static void* action(void* arg)
         {
-            sigset_t all;
-            sigfillset(&all);
-            pthread_sigmask(SIG_BLOCK, &all, NULL);
+            pthread_sigmask(SIG_BLOCK, &errorSet, NULL);
             while(true)
             {
                 pthread_mutex_lock(&tsMutex);
@@ -193,20 +191,19 @@ unsigned short ClockEmulation::exception;
 
 static ClockEmulation clk(0, 32);
 
-void handleMultiSig(int sig)
-{
-    endwin();
-    echo();
-    nocbreak();
-    log << "Got multiple signals: " << strsignal(sig) << "(" << sig << ")" << endl;
-    log << "Hard killing OS" << endl;
-    _exit(sig);
-}
+sig_atomic_t gotSig=0;
 
-void handleSegfault(int sig)
+void handleErrorSig(int sig)
 {
-    os.stop();
-    handleMultiSig(sig);
+  if(gotSig)
+  {
+    endwin();
+    nocbreak();
+    echo();
+    _exit(sig);
+  }
+  else
+    gotSig=sig;
 }
 
 void handleInts(int signum, siginfo_t* info, void* context)
@@ -218,34 +215,45 @@ void handleInts(int signum, siginfo_t* info, void* context)
 int main()
 {
     struct sigaction intAction;
-    sigset_t errorSet;
+    struct sigaction errorAction;
+    sigset_t rtSet;
 
-    signal(SIGSEGV, &handleSegfault);
-    signal(SIGINT , &handleMultiSig);
-    signal(SIGABRT, &handleMultiSig);
-    signal(SIGSEGV, &handleMultiSig);
-    signal(SIGTERM, &handleMultiSig);
+    sigemptyset(&rtSet);
+    sigaddset(&rtSet, SIG_CLK);
+    sigaddset(&rtSet, SIG_KBD);
 
     sigfillset(&errorSet);
-    pthread_sigmask(SIG_BLOCK, &errorSet, NULL);
+    sigdelset(&errorSet, SIGILL);
+    sigdelset(&errorSet, SIGSEGV);
+    sigdelset(&errorSet, SIGBUS);
+
+    memset(&errorAction, 0, sizeof(errorAction));
+    errorAction.sa_handler=&handleErrorSig;
+    errorAction.sa_flags=0;
+    errorAction.sa_mask=rtSet;
+    sigaction(SIGSEGV, &errorAction, NULL);
+    sigaction(SIGINT , &errorAction, NULL);
+    sigaction(SIGABRT, &errorAction, NULL);
+    sigaction(SIGTERM, &errorAction, NULL);
+    sigaction(SIGQUIT, &errorAction, NULL);
+    sigaction(SIGHUP , &errorAction, NULL);
+    sigaction(SIGILL , &errorAction, NULL);
 
     memset(&intAction, 0, sizeof(intAction));
     intAction.sa_sigaction=&handleInts;
-    intAction.sa_flags=SA_SIGINFO | SA_RESTART;
-    sigaction(SIGRTMIN, &intAction, NULL);
-    sigaction(SIGRTMIN+1, &intAction, NULL);
+    intAction.sa_flags=SA_SIGINFO;
+    sigaction(SIG_CLK, &intAction, NULL);
+    sigaction(SIG_KBD, &intAction, NULL);
 
-    sigdelset(&errorSet, SIGRTMIN);
-    sigdelset(&errorSet, SIGRTMIN+1);
-    int sig;
+
+    pthread_sigmask(SIG_BLOCK, &rtSet, NULL);
 
     os.start();
     clk.start();
     kbd.start();
-    sigwait(&errorSet, &sig);
-    pthread_sigmask(SIG_UNBLOCK, &errorSet, NULL);
+    sigsuspend(&rtSet);
 
-    log << "Got signal: " << strsignal(sig) << "(" << sig << ")" << endl;
+    log << "Got signal: " << strsignal(gotSig) << "(" << gotSig << ")" << endl;
     log << "Terminating OS" << endl;
     clk.stop();
     kbd.stop();
@@ -253,5 +261,5 @@ int main()
 
     log << "OS terminated correctly" << endl;
 
-    return sig;
+    return gotSig;
 }

@@ -1,5 +1,6 @@
 build/task4.o: src/user/task4.cc include/user/task4.h include/user/appl.h \
- include/thread/thread.h /usr/include/ucontext.h /usr/include/features.h \
+ include/thread/customer.h include/thread/thread.h \
+ /usr/include/ucontext.h /usr/include/features.h \
  /usr/include/x86_64-linux-gnu/bits/predefs.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -98,9 +99,11 @@ build/task4.o: src/user/task4.cc include/user/task4.h include/user/appl.h \
  /usr/include/_G_config.h /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h /usr/include/unctrl.h \
  include/useful/keyboard.h include/device/curskbd.h include/guard/gate.h \
- include/machine/key.h include/useful/scheduler.h \
- include/thread/scheduler.h include/thread/dispatch.h \
- /usr/include/c++/4.6/deque /usr/include/c++/4.6/bits/stl_construct.h \
+ include/machine/key.h include/thread/semaphore.h \
+ include/thread/waitingroom.h /usr/include/c++/4.6/deque \
+ /usr/include/c++/4.6/bits/stl_construct.h \
  /usr/include/c++/4.6/bits/stl_uninitialized.h \
  /usr/include/c++/4.6/bits/stl_deque.h \
- /usr/include/c++/4.6/bits/deque.tcc
+ /usr/include/c++/4.6/bits/deque.tcc include/useful/scheduler.h \
+ include/thread/organizer.h include/thread/scheduler.h \
+ include/thread/dispatch.h

@@ -15,10 +15,10 @@ build/watch.o: src/device/watch.cc include/device/watch.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h /usr/include/xlocale.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h include/useful/scheduler.h \
- include/thread/scheduler.h include/thread/dispatch.h \
- include/thread/thread.h /usr/include/ucontext.h \
- /usr/include/x86_64-linux-gnu/sys/ucontext.h /usr/include/signal.h \
- /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ include/thread/organizer.h include/thread/scheduler.h \
+ include/thread/dispatch.h include/thread/thread.h \
+ /usr/include/ucontext.h /usr/include/x86_64-linux-gnu/sys/ucontext.h \
+ /usr/include/signal.h /usr/include/x86_64-linux-gnu/bits/sigset.h \
  /usr/include/x86_64-linux-gnu/bits/signum.h \
  /usr/include/x86_64-linux-gnu/bits/siginfo.h \
  /usr/include/x86_64-linux-gnu/bits/sigaction.h \
@@ -47,5 +47,6 @@ build/watch.o: src/device/watch.cc include/device/watch.h \
  /usr/include/c++/4.6/bits/stl_deque.h \
  /usr/include/c++/4.6/initializer_list \
  /usr/include/c++/4.6/bits/range_access.h \
- /usr/include/c++/4.6/bits/deque.tcc include/useful/plugbox.h \
+ /usr/include/c++/4.6/bits/deque.tcc include/thread/customer.h \
+ include/thread/waitingroom.h include/useful/plugbox.h \
  include/machine/plugbox.h include/useful/pic.h include/machine/swpic.h

@@ -1,5 +1,5 @@
 /*---------------------------------------------------------------------------*
- * Operating Systems I                                                       *
+ * Technical Computer Science II                                             *
  *---------------------------------------------------------------------------*
  *                                                                           *
  *                         A P P L I C A T I O N                             *
@@ -9,18 +9,18 @@
 #ifndef __application_include__
 #define __application_include__
 
-#include "thread/thread.h"
+#include "thread/customer.h"
 
 /** \brief Basis of OOStuBs-Applications
  *
  * This class defines the only application used by oo-StuBS. Every application
  * class is derived from this class.
  */        
-class Application : public Thread{
+class Application : public Customer{
 public:
-  /** \brief Default Constructor passing stack
+  /** \brief Default Constructor
    **/
-  Application() : Thread(){}
+  Application() : Customer(){}
 
   /** \brief Start the application
    *

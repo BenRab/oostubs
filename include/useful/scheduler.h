@@ -5,6 +5,6 @@
  *                                        useful/scheduler                                       *
  *                                                                                               *
 \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-#include "thread/scheduler.h"
+#include "thread/organizer.h"
 
-extern Scheduler scheduler;
+extern Organizer scheduler;

@@ -34,7 +34,7 @@ BUILD_GARBAGE    := $(wildcard *~ *.sw?) ${BIN} ${BUILD} $(wildcard *.dump)
 DOC_GARBAGE      := ${DOC}/html ${DOC}/log
 GARBAGE          := $(BUILD_GARBAGE) $(DOC_GARBAGE)
 
-.PHONY: all clean run debug_server debug_client doc dump cleanDoc cleanBuild
+.PHONY: all clean run debug_server debug_client doc dump cleanDoc cleanBuild kill hardkill reset
 
 vpath %.cc ${INTERNAL} ${SRC} ${SRC}/machine ${SRC}/user ${SRC}/object ${SRC}/syscall ${SRC}/thread ${SRC}/meetings ${SRC}/guard ${SRC}/device
 vpath %.c  ${INTERNAL} ${SRC}/machine 
@@ -106,5 +106,16 @@ ${DOC}/html/index.html: ${DOC}/Doxyfile ${DOXS} ${SOURCES} ${HEADERS}
 	@echo "(DOC  )"
 	@${DOCGEN} $< > ${DOC}/log
 	
+kill: 
+	@echo "(KILL ) <- $(notdir ${TARGET})"
+	@killall $(notdir ${TARGET})
+
+hardkill: 
+	@echo "(KILL ) <- $(notdir ${TARGET})"
+	@killall -9 $(notdir ${TARGET})
+
+reset:
+	@echo "(RESET)"
+	@reset
 
 -include ${DEPS}

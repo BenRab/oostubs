@@ -16,8 +16,8 @@
 #include "device/cursstr.h"
 #include "device/panic.h"
 #include "device/watch.h"
-#include "thread/scheduler.h"
-#include "user/task4.h"
+#include "thread/organizer.h"
+#include "user/task5.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #                GLOBAL OBJECTS                   #
@@ -30,8 +30,9 @@ Panic           panic;
 Plugbox         plugbox;
 Curses_Stream   kout;
 Curses_Keyboard keyboard;
-Scheduler       scheduler;
+Organizer       scheduler;
 Watch           watch(10000);
+Task5           task;
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
@@ -43,27 +44,9 @@ Watch           watch(10000);
  * all interrupts will be disabled and the cpu will be halted.
  **/
 void kernel(){
-  kout << " " << endl;
-  kout << "Choose Subtask(A,B)!" << endl << endl;
-  unsigned short x,y;
-  kout.getpos(x,y);
-  Key k;
-  while(true)
-  {
-    kout.setpos(x,y);
-    k = keyboard.key_hit();
-    if(!k.valid())
-        continue;
-    if(k.ascii()=='A' || k.ascii()=='B')
-        break;
-    kout << "Invalid choice " << k.ascii() << endl;
-  }
-  kout << "Subtask " << k.ascii() << " chosen." << endl;
-  Task4 task(k.ascii()=='A');
 
   keyboard.plugin();
-  if(k.ascii()=='B')
-      watch.windup();
+  watch.windup();
 
   scheduler.schedule(task);
 }
