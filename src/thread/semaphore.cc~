@@ -1,5 +1,4 @@
 #include "thread/semaphore.h"
-#include "useful/scheduler.h"
 
 /** \todo Implement constructor **/
 Semaphore::Semaphore(unsigned int value){

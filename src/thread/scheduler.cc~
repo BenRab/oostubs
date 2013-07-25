@@ -11,6 +11,7 @@
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 
 #include "thread/scheduler.h"
+#include "thread/lock.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #                   METHODS                       #
@@ -32,7 +33,7 @@ void Scheduler::ready(Thread& that){
 void Scheduler::exit(){
   kill(*active());
   while(threads.empty());
-  resume();
+  //resume();
 }
 
 /**\~english \todo implement**/

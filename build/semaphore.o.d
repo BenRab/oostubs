@@ -40,4 +40,6 @@ build/semaphore.o: src/thread/semaphore.cc include/thread/semaphore.h \
  /usr/include/c++/4.6/bits/stl_deque.h \
  /usr/include/c++/4.6/initializer_list \
  /usr/include/c++/4.6/bits/range_access.h \
- /usr/include/c++/4.6/bits/deque.tcc
+ /usr/include/c++/4.6/bits/deque.tcc include/useful/scheduler.h \
+ include/thread/organizer.h include/thread/scheduler.h \
+ include/thread/dispatch.h

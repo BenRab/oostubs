@@ -23,7 +23,7 @@ void Waitingroom::enqueue(Customer& that){
 
 /** \todo Implement method **/
 Customer& Waitingroom::dequeue(){
-  Customer *cmr = queue.front();
+  Customer cmr = queue.front();
   queue.pop_front();
 
   return *reinterpret_cast<Customer*>(cmr);

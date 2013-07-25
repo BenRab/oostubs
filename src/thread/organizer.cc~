@@ -1,8 +1,9 @@
 #include "thread/organizer.h"
-
+#include "thread/lock.h"
 
 /** \todo Implement method **/
 void Organizer::block(Waitingroom& room){
+Lock lock;
   active()->waiting_in(&room);
   room.enqueue(*active());
   exit();

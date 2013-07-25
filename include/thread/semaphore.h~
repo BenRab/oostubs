@@ -30,7 +30,6 @@ class Semaphore : public Waitingroom
      *
      * \todo Declare internal variable
      **/
-  	int counter;
 	public:
     /** \brief Default Constructor
      *
