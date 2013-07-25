@@ -1,16 +1,10 @@
-<map id="handleException" name="handleException">
-<area shape="rect" id="node3" href="$classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers" alt="" coords="171,131,301,159"/>
-<area shape="rect" id="node18" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="213,194,259,222"/>
-<area shape="rect" id="node24" href="$o__stream_8h.html#a143762d59413d6d7cae38fb25104c5c4" title="switch basis of o_stream to decimal" alt="" coords="215,245,257,273"/>
-<area shape="rect" id="node26" href="$o__stream_8h.html#a53efad1d7227486b7c2208929d9b4390" title="switch basis of o_stream to binary" alt="" coords="217,295,255,323"/>
-<area shape="rect" id="node28" href="$classCPU.html#a23c8f5e46dac3304f1d8def9c612b88e" title="Interupts werden global deaktiviert." alt="" coords="179,346,293,374"/>
-<area shape="rect" id="node30" href="$classCPU.html#a189729f4ca240ff52004a34b9057d448" title="hält die CPU an" alt="" coords="199,397,273,425"/>
-<area shape="rect" id="node5" href="$classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus" alt="" coords="351,106,479,134"/>
-<area shape="rect" id="node7" href="$classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position" alt="" coords="532,5,673,33"/>
-<area shape="rect" id="node9" href="$classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt" alt="" coords="529,55,676,83"/>
-<area shape="rect" id="node11" href="$classCGA__Screen.html#a8176499ecb3ce4e9eb05910e66aee9d2" title="print a character to a specific position" alt="" coords="725,81,859,109"/>
-<area shape="rect" id="node14" href="$classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position" alt="" coords="532,157,673,185"/>
-<area shape="rect" id="node16" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="743,157,841,185"/>
-<area shape="rect" id="node20" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer" alt="" coords="360,201,469,229"/>
-<area shape="rect" id="node22" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="544,207,661,235"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCurses__Stream.html#ab6a0496fec8d85e70bc648e554ddeefb" title="flush the content of the internal buffer" alt="" coords="181,5,331,35"/>
+<area shape="rect" id="node7" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="233,59,279,88"/>
+<area shape="rect" id="node11" href="$o__stream_8h.html#a143762d59413d6d7cae38fb25104c5c4" title="switch basis of o_stream to decimal" alt="" coords="235,112,277,141"/>
+<area shape="rect" id="node13" href="$o__stream_8h.html#a53efad1d7227486b7c2208929d9b4390" title="switch basis of o_stream to binary" alt="" coords="237,165,275,195"/>
+<area shape="rect" id="node15" href="$classVirtual__CPU.html#ae19d0f9544fc5985ce274fbebadc1d1a" title="globally dissable interrupts" alt="" coords="173,219,339,248"/>
+<area shape="rect" id="node17" href="$classVirtual__CPU.html#ab379715eb56dd3ef38ee086314826f1f" title="halt the cpu" alt="" coords="195,272,317,301"/>
+<area shape="rect" id="node5" href="$classCurses__Screen.html#a77b0eb8866a6286e5f1cd8d400adecd2" title="print a string to the current position" alt="" coords="388,5,532,35"/>
+<area shape="rect" id="node9" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="397,59,523,88"/>
 </map>

@@ -1,0 +1,15 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$watch_8h.html" title="device/watch.h" alt="" coords="5,160,115,189"/>
+<area shape="rect" id="node9" href="$useful_2scheduler_8h.html" title="useful/scheduler.h" alt="" coords="312,83,440,112"/>
+<area shape="rect" id="node31" href="$useful_2plugbox_8h.html" title="useful/plugbox.h" alt="" coords="171,83,288,112"/>
+<area shape="rect" id="node36" href="$pic_8h.html" title="useful/pic.h" alt="" coords="473,83,561,112"/>
+<area shape="rect" id="node5" href="$gate_8h.html" title="guard/gate.h" alt="" coords="20,237,113,267"/>
+<area shape="rect" id="node11" href="$organizer_8h.html" title="thread/organizer.h" alt="" coords="304,160,429,189"/>
+<area shape="rect" id="node13" href="$thread_2scheduler_8h.html" title="thread/scheduler.h" alt="" coords="140,237,268,267"/>
+<area shape="rect" id="node24" href="$customer_8h.html" title="thread/customer.h" alt="" coords="364,315,489,344"/>
+<area shape="rect" id="node27" href="$waitingroom_8h.html" title="thread/waitingroom.h" alt="" coords="292,237,433,267"/>
+<area shape="rect" id="node15" href="$dispatch_8h.html" title="thread/dispatch.h" alt="" coords="87,315,209,344"/>
+<area shape="rect" id="node17" href="$thread_8h.html" title="thread/thread.h" alt="" coords="192,392,301,421"/>
+<area shape="rect" id="node33" href="$machine_2plugbox_8h.html" title="machine/plugbox.h" alt="" coords="143,160,273,189"/>
+<area shape="rect" id="node38" href="$swpic_8h.html" title="machine/swpic.h" alt="" coords="467,160,587,189"/>
+</map>

@@ -1,12 +1,9 @@
-<map id="include/machine/key.h" name="include/machine/key.h">
-<area shape="rect" id="node3" href="$device_2keyboard_8h.html" title="include/device/keyboard.h" alt="" coords="135,161,305,189"/>
-<area shape="rect" id="node15" href="$keyboard_8cc.html" title="src/device/keyboard.cc" alt="" coords="5,238,157,266"/>
-<area shape="rect" id="node19" href="$keyctrl_8h.html" title="include/machine/keyctrl.h" alt="" coords="211,83,379,111"/>
-<area shape="rect" id="node5" href="$useful_2keyboard_8h.html" title="include/useful/keyboard.h" alt="" coords="293,238,459,266"/>
-<area shape="rect" id="node17" href="$main_8cc.html" title="Grunddatei von OOStuBS." alt="" coords="181,238,269,266"/>
-<area shape="rect" id="node7" href="$task1_8cc.html" title="src/user/task1.cc" alt="" coords="103,315,220,343"/>
-<area shape="rect" id="node9" href="$task2_8cc.html" title="src/user/task2.cc" alt="" coords="244,315,361,343"/>
-<area shape="rect" id="node11" href="$task3A_8cc.html" title="src/user/task3A.cc" alt="" coords="385,315,513,343"/>
-<area shape="rect" id="node13" href="$task3B_8cc.html" title="src/user/task3B.cc" alt="" coords="537,315,665,343"/>
-<area shape="rect" id="node22" href="$keyctrl_8cc.html" title="src/machine/keyctrl.cc" alt="" coords="329,161,479,189"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$curskbd_8h.html" title="include/device/curskbd.h" alt="" coords="241,83,407,112"/>
+<area shape="rect" id="node15" href="$boot_8cc.html" title="startup code" alt="" coords="431,83,564,112"/>
+<area shape="rect" id="node5" href="$keyboard_8h.html" title="include/useful/keyboard.h" alt="" coords="55,160,225,189"/>
+<area shape="rect" id="node11" href="$curskbd_8cc.html" title="src/device/curskbd.cc" alt="" coords="249,160,399,189"/>
+<area shape="rect" id="node13" href="$main_8cc.html" title="src/main.cc" alt="" coords="423,160,513,189"/>
+<area shape="rect" id="node7" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="5,237,128,267"/>
+<area shape="rect" id="node9" href="$task5_8cc.html" title="src/user/task5.cc" alt="" coords="152,237,275,267"/>
 </map>

@@ -1,0 +1,29 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$boot_8cc.html#a89edb1cc0c0142ea57e64e6f2f0b19fa" title="handleErrorSig" alt="" coords="136,113,243,143"/>
+<area shape="rect" id="node5" href="$boot_8cc.html#a00c7ff42826be9ac4c82e3a35f5863c4" title="handleInts" alt="" coords="148,167,231,196"/>
+<area shape="rect" id="node17" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="612,324,657,353"/>
+<area shape="rect" id="node21" href="$classSystem.html#a46b629e7c09840071570332d4e9a907d" title="System::start" alt="" coords="139,220,240,249"/>
+<area shape="rect" id="node44" href="$classClockEmulation.html#a248ab922f959e0780d4db684feeca034" title="ClockEmulation::start" alt="" coords="116,505,263,535"/>
+<area shape="rect" id="node51" href="$classKeyboardEmulation.html#a1c91600337c157f36ad208ce35582989" title="KeyboardEmulation::start" alt="" coords="105,427,273,456"/>
+<area shape="rect" id="node58" href="$classClockEmulation.html#a48399eef02213677fe18e0b2aeffa5e2" title="ClockEmulation::stop" alt="" coords="339,271,485,300"/>
+<area shape="rect" id="node61" href="$classKeyboardEmulation.html#a93d354c0127324d567a0fdba797d877e" title="KeyboardEmulation::stop" alt="" coords="328,375,496,404"/>
+<area shape="rect" id="node64" href="$classSystem.html#aec90bf08b30b1944e5c8074387ed7354" title="System::stop" alt="" coords="140,559,239,588"/>
+<area shape="rect" id="node7" href="$guardian_8cc.html#a9017cbb15c79b718e82c9ed18a58ed60" title="Entry point for interrupts." alt="" coords="377,112,447,141"/>
+<area shape="rect" id="node9" href="$classSoftware__PIC.html#ab13dd24a30e333614d1e9b6ff8c95ff7" title="returns the ISR of one of the two PICs" alt="" coords="559,59,711,88"/>
+<area shape="rect" id="node11" href="$classPlugbox.html#a94a04c50b59ce8ce9ba0578b9d5831d9" title="report the assigned Gate object for a specific interrupt" alt="" coords="580,112,689,141"/>
+<area shape="rect" id="node13" href="$classGate.html#a7f5a37b264ba3dce2ff3a5f45cb71729" title="set interrupt number" alt="" coords="549,165,720,195"/>
+<area shape="rect" id="node15" href="$classGate.html#a02e9dccfd4136f7152b531a024dcd37a" title="interrupt handling method" alt="" coords="588,5,681,35"/>
+<area shape="rect" id="node19" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="789,325,915,355"/>
+<area shape="rect" id="node24" href="$classSystem.html#aaf51e695421f1ab3d4d11d461587be1c" title="System::callKernel" alt="" coords="347,167,477,196"/>
+<area shape="rect" id="node26" href="$boot_8cc.html#aadb4d5397feda84ee5ee39b33082faca" title="kernel entry point" alt="" coords="607,219,663,248"/>
+<area shape="rect" id="node28" href="$classCurses__Keyboard.html#ada76cfa420d3b63fd720c1421d84d2ef" title="enable the interrupt mechanism of the keyboard" alt="" coords="768,272,936,301"/>
+<area shape="rect" id="node34" href="$classWatch.html#a147c656850857b641537d7ca232f5aff" title="Enable the clock interrupt and its handling." alt="" coords="797,219,907,248"/>
+<area shape="rect" id="node38" href="$classScheduler.html#a45442044c5cb2151b00f507a3c8d8195" title="Start the scheduling by starting the first thread of the system." alt="" coords="783,165,921,195"/>
+<area shape="rect" id="node30" href="$classPlugbox.html#a7f48e4645e6709fe2030aaa79eb0d3f1" title="assign a Gate object to a specific interrupt" alt="" coords="999,219,1113,248"/>
+<area shape="rect" id="node32" href="$classSoftware__PIC.html#af6e50ac35035238fe28b9c17e83815d9" title="allow a specific hardware interrupt" alt="" coords="985,272,1127,301"/>
+<area shape="rect" id="node40" href="$classScheduler.html#a01502861acea705fd4b34590b257c354" title="Insert the specified thread into the queue." alt="" coords="996,112,1116,141"/>
+<area shape="rect" id="node42" href="$classDispatcher.html#a65b4f6201a1d7a1d73353942193c0dd5" title="Starts the scheduling." alt="" coords="1003,165,1109,195"/>
+<area shape="rect" id="node47" href="$classClockEmulation.html#a927b53d25184726bf44b9b81aba621df" title="ClockEmulation::action" alt="" coords="333,583,491,612"/>
+<area shape="rect" id="node49" href="$classSystem.html#af4120f231063b4fc96a6bca0d5593a93" title="System::signal" alt="" coords="580,531,689,560"/>
+<area shape="rect" id="node54" href="$classKeyboardEmulation.html#a9d4d0eda2675b0388a5747089762d052" title="KeyboardEmulation::action" alt="" coords="323,479,501,508"/>
+</map>

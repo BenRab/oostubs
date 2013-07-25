@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$lock_8h.html" title="include/thread/lock.h" alt="" coords="387,83,528,112"/>
+<area shape="rect" id="node11" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="656,160,779,189"/>
+<area shape="rect" id="node5" href="$curskbd_8cc.html" title="src/device/curskbd.cc" alt="" coords="5,160,155,189"/>
+<area shape="rect" id="node7" href="$lock_8cc.html" title="src/thread/lock.cc" alt="" coords="179,160,304,189"/>
+<area shape="rect" id="node9" href="$scheduler_8cc.html" title="src/thread/scheduler.cc" alt="" coords="328,160,485,189"/>
+<area shape="rect" id="node13" href="$task5_8cc.html" title="src/user/task5.cc" alt="" coords="509,160,632,189"/>
+</map>

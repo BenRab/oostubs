@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classScheduler.html" title="Basic Scheduler." alt="" coords="8,181,88,211"/>
+<area shape="rect" id="node4" href="$classDispatcher.html" title="Managing currently active threads." alt="" coords="5,101,91,131"/>
+<area shape="rect" id="node6" href="$classThread.html" title="Basic multitasking entity." alt="" coords="17,5,79,35"/>
+</map>

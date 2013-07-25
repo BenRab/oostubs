@@ -1,21 +1,15 @@
-<map id="include/config.h" name="include/config.h">
-<area shape="rect" id="node3" href="$strbuf_8h.html" title="include/object/strbuf.h" alt="" coords="972,83,1119,111"/>
-<area shape="rect" id="node40" href="$boot_8S.html" title="enthält Start&#45;Code" alt="" coords="1143,83,1268,111"/>
-<area shape="rect" id="node5" href="$o__stream_8h.html" title="include/object/o_stream.h" alt="" coords="875,161,1043,189"/>
-<area shape="rect" id="node38" href="$strbuf_8cc.html" title="src/object/strbuf.cc" alt="" coords="1067,161,1197,189"/>
-<area shape="rect" id="node7" href="$cgastr_8h.html" title="include/device/cgastr.h" alt="" coords="795,238,947,266"/>
-<area shape="rect" id="node36" href="$o__stream_8cc.html" title="src/object/o_stream.cc" alt="" coords="971,238,1123,266"/>
-<area shape="rect" id="node9" href="$fixedPointNumber_8h.html" title="include/object/fixedPoint\lNumber.h" alt="" coords="212,315,375,359"/>
-<area shape="rect" id="node15" href="$kout_8h.html" title="alles notwendige zum nutzen der in main.cc deklarierten globalen Variable kout" alt="" coords="640,323,779,351"/>
-<area shape="rect" id="node30" href="$cgastr_8cc.html" title="CGA_Stream ist hier implementiert" alt="" coords="803,323,939,351"/>
-<area shape="rect" id="node32" href="$panic_8cc.html" title="src/device/panic.cc" alt="" coords="963,323,1093,351"/>
-<area shape="rect" id="node34" href="$main_8cc.html" title="Grunddatei von OOStuBS." alt="" coords="1117,323,1205,351"/>
-<area shape="rect" id="node11" href="$fixedPointNumber_8cc.html" title="src/object/fixedPointNumber.cc" alt="" coords="5,409,205,437"/>
-<area shape="rect" id="node13" href="$task3A_8cc.html" title="src/user/task3A.cc" alt="" coords="229,409,357,437"/>
-<area shape="rect" id="node17" href="$keyboard_8cc.html" title="src/device/keyboard.cc" alt="" coords="381,409,533,437"/>
-<area shape="rect" id="node19" href="$guardian_8cc.html" title="Interrupt&#45;Behandlungsfunktionen." alt="" coords="557,409,701,437"/>
-<area shape="rect" id="node21" href="$analyse_8cc.html" title="src/user/analyse.cc" alt="" coords="725,409,856,437"/>
-<area shape="rect" id="node23" href="$task1_8cc.html" title="src/user/task1.cc" alt="" coords="880,409,997,437"/>
-<area shape="rect" id="node25" href="$task2_8cc.html" title="src/user/task2.cc" alt="" coords="1021,409,1139,437"/>
-<area shape="rect" id="node28" href="$task3B_8cc.html" title="src/user/task3B.cc" alt="" coords="1163,409,1291,437"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$strbuf_8h.html" title="include/object/strbuf.h" alt="" coords="493,83,643,112"/>
+<area shape="rect" id="node19" href="$cursstr_8cc.html" title="src/device/cursstr.cc" alt="" coords="565,315,709,344"/>
+<area shape="rect" id="node28" href="$cursscr_8cc.html" title="src/machine/cursscr.cc" alt="" coords="717,83,875,112"/>
+<area shape="rect" id="node5" href="$o__stream_8h.html" title="include/object/o_stream.h" alt="" coords="311,160,481,189"/>
+<area shape="rect" id="node25" href="$strbuf_8cc.html" title="src/object/strbuf.cc" alt="" coords="505,160,639,189"/>
+<area shape="rect" id="node7" href="$cursstr_8h.html" title="include/device/cursstr.h" alt="" coords="304,237,464,267"/>
+<area shape="rect" id="node23" href="$o__stream_8cc.html" title="src/object/o_stream.cc" alt="" coords="488,237,643,267"/>
+<area shape="rect" id="node9" href="$kout_8h.html" title="help include file for use of global declared variable kout, declared in main.cc" alt="" coords="244,315,385,344"/>
+<area shape="rect" id="node21" href="$main_8cc.html" title="src/main.cc" alt="" coords="409,315,500,344"/>
+<area shape="rect" id="node11" href="$panic_8cc.html" title="src/device/panic.cc" alt="" coords="5,392,139,421"/>
+<area shape="rect" id="node13" href="$guardian_8cc.html" title="interrupt handler function" alt="" coords="163,392,309,421"/>
+<area shape="rect" id="node15" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="333,392,456,421"/>
+<area shape="rect" id="node17" href="$task5_8cc.html" title="src/user/task5.cc" alt="" coords="480,392,603,421"/>
 </map>

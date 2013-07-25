@@ -1,11 +1,14 @@
-<map id="src/device/panic.cc" name="src/device/panic.cc">
-<area shape="rect" id="node3" href="$device_2panic_8h.html" title="device/panic.h" alt="" coords="5,83,109,111"/>
-<area shape="rect" id="node7" href="$machine_2cpu_8h.html" title="machine/cpu.h" alt="" coords="133,83,240,111"/>
-<area shape="rect" id="node9" href="$cgastr_8h.html" title="device/cgastr.h" alt="" coords="264,83,371,111"/>
-<area shape="rect" id="node5" href="$gate_8h.html" title="guard/gate.h" alt="" coords="11,161,104,189"/>
-<area shape="rect" id="node11" href="$o__stream_8h.html" title="object/o_stream.h" alt="" coords="192,161,315,189"/>
-<area shape="rect" id="node17" href="$cgascr_8h.html" title="machine/cgascr.h" alt="" coords="339,161,461,189"/>
-<area shape="rect" id="node13" href="$strbuf_8h.html" title="object/strbuf.h" alt="" coords="203,238,304,266"/>
-<area shape="rect" id="node15" href="$config_8h.html" title="verschiedene defines für Einstellungen" alt="" coords="220,315,287,343"/>
-<area shape="rect" id="node19" href="$io__port_8h.html" title="io_port.h" alt="" coords="365,238,435,266"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$device_2panic_8h.html" title="device/panic.h" alt="" coords="39,83,145,112"/>
+<area shape="rect" id="node7" href="$kout_8h.html" title="help include file for use of global declared variable kout, declared in main.cc" alt="" coords="171,83,267,112"/>
+<area shape="rect" id="node21" href="$cpu_8h.html" title="help include file for use of global declared variable cpu, declared in main.cc" alt="" coords="309,83,403,112"/>
+<area shape="rect" id="node5" href="$gate_8h.html" title="guard/gate.h" alt="" coords="44,160,137,189"/>
+<area shape="rect" id="node9" href="$cursstr_8h.html" title="device/cursstr.h" alt="" coords="161,160,276,189"/>
+<area shape="rect" id="node11" href="$o__stream_8h.html" title="object/o_stream.h" alt="" coords="5,237,131,267"/>
+<area shape="rect" id="node17" href="$cursscr_8h.html" title="machine/cursscr.h" alt="" coords="155,237,283,267"/>
+<area shape="rect" id="node13" href="$strbuf_8h.html" title="object/strbuf.h" alt="" coords="16,315,120,344"/>
+<area shape="rect" id="node15" href="$config_8h.html" title="config.h" alt="" coords="35,392,101,421"/>
+<area shape="rect" id="node23" href="$virtcpu_8h.html" title="machine/virtcpu.h" alt="" coords="313,160,439,189"/>
+<area shape="rect" id="node29" href="$pic_8h.html" title="useful/pic.h" alt="" coords="445,237,533,267"/>
+<area shape="rect" id="node31" href="$swpic_8h.html" title="machine/swpic.h" alt="" coords="393,315,513,344"/>
 </map>

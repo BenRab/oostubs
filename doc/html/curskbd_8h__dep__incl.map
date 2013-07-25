@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$keyboard_8h.html" title="include/useful/keyboard.h" alt="" coords="55,83,225,112"/>
+<area shape="rect" id="node9" href="$curskbd_8cc.html" title="src/device/curskbd.cc" alt="" coords="249,83,399,112"/>
+<area shape="rect" id="node11" href="$main_8cc.html" title="src/main.cc" alt="" coords="423,83,513,112"/>
+<area shape="rect" id="node5" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="5,160,128,189"/>
+<area shape="rect" id="node7" href="$task5_8cc.html" title="src/user/task5.cc" alt="" coords="152,160,275,189"/>
+</map>

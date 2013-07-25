@@ -1,8 +1,8 @@
-digraph "Grafische Darstellung der Klassenhierarchie"
+digraph G
 {
   bgcolor="transparent";
-  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
-  node [fontname="FreeSans",fontsize="10",shape=record];
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="Task1::Memory_Map",height=0.2,width=0.4,color="black",URL="$structTask1_1_1Memory__Map.html",tooltip="Memory map information."];
+  Node1 [label="Virtual_CPU",height=0.2,width=0.4,color="black",URL="$classVirtual__CPU.html",tooltip="Emulation of CPU specific instructions of a virtual process CPU."];
 }

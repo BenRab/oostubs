@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$curskbd_8h.html" title="device/curskbd.h" alt="" coords="116,83,236,112"/>
+<area shape="rect" id="node5" href="$gate_8h.html" title="guard/gate.h" alt="" coords="5,160,99,189"/>
+<area shape="rect" id="node7" href="$key_8h.html" title="machine/key.h" alt="" coords="123,160,229,189"/>
+<area shape="rect" id="node11" href="$semaphore_8h.html" title="thread/semaphore.h" alt="" coords="253,160,389,189"/>
+<area shape="rect" id="node13" href="$waitingroom_8h.html" title="thread/waitingroom.h" alt="" coords="251,237,392,267"/>
+<area shape="rect" id="node15" href="$customer_8h.html" title="thread/customer.h" alt="" coords="201,315,327,344"/>
+<area shape="rect" id="node17" href="$thread_8h.html" title="thread/thread.h" alt="" coords="209,392,319,421"/>
+</map>

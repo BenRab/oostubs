@@ -1,8 +1,22 @@
-digraph "Grafische Darstellung der Klassenhierarchie"
+digraph G
 {
   bgcolor="transparent";
-  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
-  node [fontname="FreeSans",fontsize="10",shape=record];
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="Task1::ELF_Section\l_Header_Table",height=0.2,width=0.4,color="black",URL="$structTask1_1_1ELF__Section__Header__Table.html",tooltip="Section header table for ELF executables."];
+  Node1 [label="Thread",height=0.2,width=0.4,color="black",URL="$classThread.html",tooltip="Basic multitasking entity."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Customer",height=0.2,width=0.4,color="black",URL="$classCustomer.html",tooltip="Extension of Thread able to wait in a Waitingroom."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Application",height=0.2,width=0.4,color="black",URL="$classApplication.html",tooltip="Basis of OOStuBs-Applications."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Task4",height=0.2,width=0.4,color="black",URL="$classTask4.html",tooltip="Fourth test application."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Task5",height=0.2,width=0.4,color="black",URL="$classTask5.html",tooltip="Fifth test Application."];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Task4::Counter",height=0.2,width=0.4,color="black",URL="$classTask4_1_1Counter.html",tooltip="Counting application."];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Task4::RotCursor",height=0.2,width=0.4,color="black",URL="$classTask4_1_1RotCursor.html",tooltip="Rotating symbol application"];
+  Node3 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Task5::Cmd",height=0.2,width=0.4,color="black",URL="$classTask5_1_1Cmd.html",tooltip="Command line application."];
 }

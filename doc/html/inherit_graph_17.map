@@ -1,3 +1,4 @@
-<map id="Grafische Darstellung der Klassenhierarchie" name="Grafische Darstellung der Klassenhierarchie">
-<area shape="rect" id="node1" href="$structTask1_1_1Module.html" title="Loaded module information." alt="" coords="7,5,111,33"/>
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classWaitingroom.html" title="A waitingroom Customers can wait in." alt="" coords="7,5,100,35"/>
+<area shape="rect" id="node3" href="$classSemaphore.html" title="Basic synchronisation object." alt="" coords="149,5,237,35"/>
 </map>

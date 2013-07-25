@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classLock.html#a9944623567d8138b95e74fadc7190adb" title="Lock creation" alt="" coords="264,5,349,35"/>
+<area shape="rect" id="node5" href="$guardian_8cc.html#afe78f34c7c65df79376008e0d23c1afd" title="This function is called if a normal exception is raised by the cpu." alt="" coords="248,59,365,88"/>
+<area shape="rect" id="node7" href="$guardian_8cc.html#a70466c5bd3ffac85265c22f65e9a4ef9" title="This function is called if a normal exception with error code is raised by the cpu." alt="" coords="244,112,369,141"/>
+<area shape="rect" id="node9" href="$guardian_8cc.html#a390d383038610b600ab986ec9b54879a" title="This function is called if a reserved exception is raised by the cpu." alt="" coords="220,165,393,195"/>
+</map>

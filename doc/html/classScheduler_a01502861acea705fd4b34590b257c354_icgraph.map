@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classScheduler.html#a45442044c5cb2151b00f507a3c8d8195" title="Start the scheduling by starting the first thread of the system." alt="" coords="180,5,319,35"/>
+<area shape="rect" id="node13" href="$classTask4.html#a2a7d07836599ad51be274201cf6c2027" title="start operation" alt="" coords="199,59,300,88"/>
+<area shape="rect" id="node15" href="$classTask5_1_1Cmd.html#afa6a6e5baabe9be5d12c0c88c44e1ef2" title="Start an application." alt="" coords="175,112,324,141"/>
+<area shape="rect" id="node17" href="$classTask5.html#a9348e9a0fadd86b7e76c66d66521fe39" title="Functionality of the fifth test application." alt="" coords="199,165,300,195"/>
+<area shape="rect" id="node5" href="$main_8cc.html#aadb4d5397feda84ee5ee39b33082faca" title="kernel entry point" alt="" coords="375,5,431,35"/>
+<area shape="rect" id="node7" href="$classSystem.html#aaf51e695421f1ab3d4d11d461587be1c" title="System::callKernel" alt="" coords="481,5,612,35"/>
+<area shape="rect" id="node9" href="$classSystem.html#a46b629e7c09840071570332d4e9a907d" title="System::start" alt="" coords="661,5,763,35"/>
+<area shape="rect" id="node11" href="$boot_8cc.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="811,5,861,35"/>
+</map>

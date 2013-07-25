@@ -1,3 +1,5 @@
-<map id="Grafische Darstellung der Klassenhierarchie" name="Grafische Darstellung der Klassenhierarchie">
-<area shape="rect" id="node1" href="$classCPU.html" title="Zugriff auf einige spezielle CPU&#45;Anweisungen." alt="" coords="7,5,55,33"/>
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classDispatcher.html" title="Managing currently active threads." alt="" coords="5,5,91,35"/>
+<area shape="rect" id="node3" href="$classScheduler.html" title="Basic Scheduler." alt="" coords="139,5,219,35"/>
+<area shape="rect" id="node5" href="$classOrganizer.html" title="Extension of Scheduler to support blocking of Threads." alt="" coords="268,5,345,35"/>
 </map>

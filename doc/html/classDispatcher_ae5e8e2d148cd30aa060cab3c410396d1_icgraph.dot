@@ -1,0 +1,26 @@
+digraph G
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Dispatcher::dispatch",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Scheduler::resume",height=0.2,width=0.4,color="black",URL="$classScheduler.html#aa4da1861292d77ea37cfa90b6ad569f3",tooltip="Use the scheduling algorithm to get the next thread and resumes with that thread."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Watch::trigger",height=0.2,width=0.4,color="black",URL="$classWatch.html#a405dccf51f12ca5b5c5409add9a5a09f",tooltip="Handling method of the clock interrupt."];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Scheduler::exit",height=0.2,width=0.4,color="black",URL="$classScheduler.html#a7648753bdb11886d5d8ae560b7d0e52b",tooltip="Remove the currently active thread from the queue."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Thread::exit",height=0.2,width=0.4,color="black",URL="$classThread.html#a89750f9023df256c125c79048f217562",tooltip="Terminate execution of this thread."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Thread::kickoff",height=0.2,width=0.4,color="black",URL="$classThread.html#acbe0a6de445c1c2dbe20e8741a9ed531",tooltip="Kickoff function to initiate thread action."];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Thread::Thread",height=0.2,width=0.4,color="black",URL="$classThread.html#a95c703fb8f2f27cb64f475a8c940864a",tooltip="Default constructor."];
+  Node2 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Thread::resume",height=0.2,width=0.4,color="black",URL="$classThread.html#aa686864d54ff4dd4cadf76297da472f9",tooltip="Resume execution with another ready thread."];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Task4::RotCursor::action",height=0.2,width=0.4,color="black",URL="$classTask4_1_1RotCursor.html#a33e3fee3981896223823f4b396339f40",tooltip="start outputting the symbol"];
+  Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Task4::Counter::action",height=0.2,width=0.4,color="black",URL="$classTask4_1_1Counter.html#a93c77e391d4d89cf0c34c47b9521d464",tooltip="start outputting and incrementing the counter value"];
+}

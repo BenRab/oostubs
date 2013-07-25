@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$gate_8h.html" title="guard/gate.h" alt="" coords="5,83,99,112"/>
+<area shape="rect" id="node5" href="$key_8h.html" title="machine/key.h" alt="" coords="123,83,229,112"/>
+<area shape="rect" id="node9" href="$semaphore_8h.html" title="thread/semaphore.h" alt="" coords="253,83,389,112"/>
+<area shape="rect" id="node11" href="$waitingroom_8h.html" title="thread/waitingroom.h" alt="" coords="251,160,392,189"/>
+<area shape="rect" id="node13" href="$customer_8h.html" title="thread/customer.h" alt="" coords="201,237,327,267"/>
+<area shape="rect" id="node15" href="$thread_8h.html" title="thread/thread.h" alt="" coords="209,315,319,344"/>
+</map>

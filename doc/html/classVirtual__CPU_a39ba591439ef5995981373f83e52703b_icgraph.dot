@@ -1,0 +1,16 @@
+digraph G
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Virtual_CPU::enable_int",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Lock::asymmetricUnlock",height=0.2,width=0.4,color="black",URL="$classLock.html#aad19368fb0bc0983e7fa2cd540c66907",tooltip="Explicit unlocking in asymmetric contexts."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Lock::~Lock",height=0.2,width=0.4,color="black",URL="$classLock.html#a7ab6d9485c8665bb3643710432882971",tooltip="Lock destruction"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Task4::action",height=0.2,width=0.4,color="black",URL="$classTask4.html#a2a7d07836599ad51be274201cf6c2027",tooltip="start operation"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Task5::action",height=0.2,width=0.4,color="black",URL="$classTask5.html#a9348e9a0fadd86b7e76c66d66521fe39",tooltip="Functionality of the fifth test application."];
+}

@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classKeyboardEmulation.html#a9d4d0eda2675b0388a5747089762d052" title="KeyboardEmulation::action" alt="" coords="163,5,341,35"/>
+<area shape="rect" id="node9" href="$classClockEmulation.html#a927b53d25184726bf44b9b81aba621df" title="ClockEmulation::action" alt="" coords="173,59,331,88"/>
+<area shape="rect" id="node5" href="$classKeyboardEmulation.html#a1c91600337c157f36ad208ce35582989" title="KeyboardEmulation::start" alt="" coords="391,5,559,35"/>
+<area shape="rect" id="node7" href="$boot_8cc.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="608,32,659,61"/>
+<area shape="rect" id="node11" href="$classClockEmulation.html#a248ab922f959e0780d4db684feeca034" title="ClockEmulation::start" alt="" coords="401,59,548,88"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classScheduler.html#a7301daa452a49c955534a11741634c8d" title="Remove the specified thread from the queue of processes." alt="" coords="176,5,280,35"/>
+<area shape="rect" id="node5" href="$classDispatcher.html#ac90194c2cc30bc1941ea4a0244e747f2" title="Returns the currently active thread." alt="" coords="164,59,292,88"/>
+<area shape="rect" id="node7" href="$classScheduler.html#aa4da1861292d77ea37cfa90b6ad569f3" title="Use the scheduling algorithm to get the next thread and resumes with that thread." alt="" coords="163,112,293,141"/>
+<area shape="rect" id="node9" href="$classDispatcher.html#ae5e8e2d148cd30aa060cab3c410396d1" title="Switch to another thread." alt="" coords="343,112,484,141"/>
+</map>

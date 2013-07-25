@@ -1,8 +1,8 @@
-digraph "Grafische Darstellung der Klassenhierarchie"
+digraph G
 {
   bgcolor="transparent";
-  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
-  node [fontname="FreeSans",fontsize="10",shape=record];
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="Task1::AOut_Symbol\l_Table",height=0.2,width=0.4,color="black",URL="$structTask1_1_1AOut__Symbol__Table.html",tooltip="Symbol table for a.out executables."];
+  Node1 [label="System",height=0.2,width=0.4,color="black",URL="$classSystem.html"];
 }
