@@ -38,7 +38,7 @@ void Task5::Cmd::action(){
 
     }
     parseBuffer();
-    keyboard.getkey();
+    //keyboard.getkey();
   }
 }
 

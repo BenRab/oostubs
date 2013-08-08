@@ -3,23 +3,22 @@
 
 /** \todo Implement constructor **/
 Semaphore::Semaphore(unsigned int value){
+  counter = value;
 }
 
 
 /** \todo Implement method **/
 void Semaphore::p(){
-  --counter;
-  
-  if(counter < 0)
+  if(counter <= 0)
 	scheduler.block(*this);
+  else
+	--counter;
 }
 
 /** \todo Implement method **/
 void Semaphore::v(){
-  ++counter;
-
-  if(counter <= 0)
-  {
+  if(counter <= 0 && !empty())
 	scheduler.wakeup(dequeue());
-  }
+  else
+	++counter; 
 }

@@ -31,7 +31,8 @@ void Scheduler::ready(Thread& that){
 
 /**\~english \todo implement**/
 void Scheduler::exit(){
-  kill(*active());
+  //kill(*active());
+  threads.erase(threads.begin());
   while(threads.empty());
   resume();
 }
@@ -39,12 +40,10 @@ void Scheduler::exit(){
 /**\~english \todo implement**/
 void Scheduler::kill(Thread& that){
   Lock lock;
-  for(unsigned int i=0; i<threads.size(); i++)
+  for(ThreadIterator it = threads.begin(); it != threads.end(); it++)
   {
-    if(threads[i] == &that)
-    {
-      threads.erase(threads.begin()+i);
-    }
+    if(*it == &that)
+      threads.erase(it);
   }
 }
 

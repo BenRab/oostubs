@@ -50,7 +50,7 @@ class Waitingroom
      *  again.
      *
      **/
-    virtual ~Waitingroom();
+		virtual ~Waitingroom();
     /** \brief Remove a customer from the waiting queue
      *
      *  This represents a kill command for customers currently waiting in this
@@ -60,7 +60,7 @@ class Waitingroom
      *
      *  \see Scheduler::kill
      **/
-    void remove(Customer& that);
+		void remove(Customer& that);
     /** \brief Add a customer to the end of the waiting queue
      *
      * \param that Customer to be enqueued

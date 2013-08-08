@@ -30,7 +30,7 @@ class Semaphore : public Waitingroom
      *
      * \todo Declare internal variable
      **/
-  	int counter;
+  	unsigned int counter;
 	public:
     /** \brief Default Constructor
      *
@@ -38,17 +38,17 @@ class Semaphore : public Waitingroom
      *
      *  \param value The initial value
      **/
-		Semaphore(unsigned int value);
+	Semaphore(unsigned int value);
     /** \brief Virtual Destructor to wake up al waiting customers **/
-		virtual ~Semaphore(){}
+	virtual ~Semaphore(){}
     /** \brief Decrease value or block calling thread **/
-		void p();
+	void p();
     /** \brief Increase value or wake up blocked thread **/
-		void v();
+	void v();
     /** \brief Decrease value or block calling thread **/
-		void wait(){p();}
+	void wait(){p();}
     /** \brief Increase value or wake up blocked thread **/
-		void signal(){v();}
+	void signal(){v();}
 };
 
 #endif

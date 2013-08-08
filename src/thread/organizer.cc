@@ -10,17 +10,21 @@ void Organizer::block(Waitingroom& room){
 
 /** \todo Implement method **/
 void Organizer::wakeup(Customer& customer){
+  customer.waiting_in()->remove(customer);
   customer.waiting_in(0);
   ready(customer);
 }
 
 /** \todo Implement method **/
 void Organizer::kill(Customer& that){
-  Waitingroom *w;
-  if((w = that.waiting_in()))
+  Waitingroom *w = that.waiting_in();
+  if(w)
+  {
+	//that.waiting_in(0);
   	w->remove(that);
-  
-  Scheduler::kill(that);
+  }
+  else
+  	Scheduler::kill(that);
   
 }
 
