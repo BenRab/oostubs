@@ -6,19 +6,9 @@ digraph G
   rankdir="LR";
   Node1 [label="Scheduler::ready",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="Scheduler::schedule",height=0.2,width=0.4,color="black",URL="$classScheduler.html#a45442044c5cb2151b00f507a3c8d8195",tooltip="Start the scheduling by starting the first thread of the system."];
-  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="kernel",height=0.2,width=0.4,color="black",URL="$main_8cc.html#aadb4d5397feda84ee5ee39b33082faca",tooltip="kernel entry point"];
-  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="System::callKernel",height=0.2,width=0.4,color="black",URL="$classSystem.html#aaf51e695421f1ab3d4d11d461587be1c"];
-  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="System::start",height=0.2,width=0.4,color="black",URL="$classSystem.html#a46b629e7c09840071570332d4e9a907d"];
-  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="main",height=0.2,width=0.4,color="black",URL="$boot_8cc.html#ae66f6b31b5ad750f1fe042a706a4e3d4"];
-  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="Task4::action",height=0.2,width=0.4,color="black",URL="$classTask4.html#a2a7d07836599ad51be274201cf6c2027",tooltip="start operation"];
-  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="Task5::Cmd::startApp",height=0.2,width=0.4,color="black",URL="$classTask5_1_1Cmd.html#afa6a6e5baabe9be5d12c0c88c44e1ef2",tooltip="Start an application."];
-  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node9 [label="Task5::action",height=0.2,width=0.4,color="black",URL="$classTask5.html#a9348e9a0fadd86b7e76c66d66521fe39",tooltip="Functionality of the fifth test application."];
+  Node2 [label="Task4::action",height=0.2,width=0.4,color="black",URL="$classTask4.html#a2a7d07836599ad51be274201cf6c2027",tooltip="start operation"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Task5::Cmd::startApp",height=0.2,width=0.4,color="black",URL="$classTask5_1_1Cmd.html#afa6a6e5baabe9be5d12c0c88c44e1ef2",tooltip="Start an application."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Task5::action",height=0.2,width=0.4,color="black",URL="$classTask5.html#a9348e9a0fadd86b7e76c66d66521fe39",tooltip="Functionality of the fifth test application."];
 }

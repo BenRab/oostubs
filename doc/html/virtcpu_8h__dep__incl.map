@@ -1,14 +1,13 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$cpu_8h.html" title="help include file for use of global declared variable cpu, declared in main.cc" alt="" coords="604,83,743,112"/>
-<area shape="rect" id="node25" href="$virtcpu_8cc.html" title="src/machine/virtcpu.cc" alt="" coords="767,83,921,112"/>
-<area shape="rect" id="node27" href="$main_8cc.html" title="src/main.cc" alt="" coords="945,83,1036,112"/>
-<area shape="rect" id="node5" href="$lock_8h.html" title="include/thread/lock.h" alt="" coords="364,160,505,189"/>
-<area shape="rect" id="node13" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="509,237,632,267"/>
-<area shape="rect" id="node15" href="$task5_8cc.html" title="src/user/task5.cc" alt="" coords="656,237,779,267"/>
-<area shape="rect" id="node17" href="$panic_8cc.html" title="src/device/panic.cc" alt="" coords="659,160,792,189"/>
-<area shape="rect" id="node19" href="$guardian_8cc.html" title="interrupt handler function" alt="" coords="816,160,963,189"/>
-<area shape="rect" id="node21" href="$boot_8cc.html" title="startup code" alt="" coords="987,160,1120,189"/>
+<area shape="rect" id="node3" href="$cpu_8h.html" title="help include file for use of global declared variable cpu, declared in main.cc" alt="" coords="471,83,609,112"/>
+<area shape="rect" id="node23" href="$virtcpu_8cc.html" title="src/machine/virtcpu.cc" alt="" coords="633,83,788,112"/>
+<area shape="rect" id="node25" href="$main_8cc.html" title="src/main.cc" alt="" coords="812,83,903,112"/>
+<area shape="rect" id="node5" href="$lock_8h.html" title="include/thread/lock.h" alt="" coords="259,160,400,189"/>
+<area shape="rect" id="node11" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="328,237,451,267"/>
+<area shape="rect" id="node13" href="$task5_8cc.html" title="src/user/task5.cc" alt="" coords="475,237,597,267"/>
+<area shape="rect" id="node15" href="$panic_8cc.html" title="src/device/panic.cc" alt="" coords="525,160,659,189"/>
+<area shape="rect" id="node17" href="$guardian_8cc.html" title="interrupt handler function" alt="" coords="683,160,829,189"/>
+<area shape="rect" id="node19" href="$boot_8cc.html" title="startup code" alt="" coords="853,160,987,189"/>
 <area shape="rect" id="node7" href="$curskbd_8cc.html" title="src/device/curskbd.cc" alt="" coords="5,237,155,267"/>
 <area shape="rect" id="node9" href="$lock_8cc.html" title="src/thread/lock.cc" alt="" coords="179,237,304,267"/>
-<area shape="rect" id="node11" href="$scheduler_8cc.html" title="src/thread/scheduler.cc" alt="" coords="328,237,485,267"/>
 </map>

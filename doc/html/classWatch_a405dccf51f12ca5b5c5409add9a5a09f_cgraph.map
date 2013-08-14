@@ -1,4 +1,3 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$classScheduler.html#aa4da1861292d77ea37cfa90b6ad569f3" title="Use the scheduling algorithm to get the next thread and resumes with that thread." alt="" coords="157,5,288,35"/>
-<area shape="rect" id="node5" href="$classDispatcher.html#ae5e8e2d148cd30aa060cab3c410396d1" title="Switch to another thread." alt="" coords="337,5,479,35"/>
 </map>

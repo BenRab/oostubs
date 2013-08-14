@@ -1,21 +1,30 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
- *                                 Technische Informatik II                                      *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *                                                                                               *
- *                                         S C H E D U L E R                                     *
- *                                                                                               *
+* Technische Informatik II *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* *
+* S C H E D U L E R *
+* *
 \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
-#                   INCLUDES                      #
+# INCLUDES #
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 
 #include "thread/scheduler.h"
 #include "thread/lock.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
-#                   METHODS                       #
+# METHODS #
 \* * * * * * * * * * * * * * * * * * * * * * * * */
+
+class IdleThread : public Thread {
+  void action() 
+  {
+    while(1);
+  }
+};
+
+IdleThread idle;
 
 /**\~english \todo implement**/
 void Scheduler::schedule(Thread& first){
@@ -31,32 +40,48 @@ void Scheduler::ready(Thread& that){
 
 /**\~english \todo implement**/
 void Scheduler::exit(){
-  //kill(*active());
-  threads.erase(threads.begin());
-  while(threads.empty())
-    resume();
+  kill(*active());
 }
 
 /**\~english \todo implement**/
 void Scheduler::kill(Thread& that){
-  Lock lock;
-  for(ThreadIterator it = threads.begin(); it != threads.end(); it++)
+  if(threads.empty())
+    return;
+
+  //Lock lock;
+  ThreadIterator it = threads.begin();
+
+  while (it != threads.end() && *it != &that) 
+  {	
+    it++;
+  } 
+  if(*it == &that) 
   {
-    if(*it == &that)
-      threads.erase(it);
+    threads.erase(it);
+  }
+
+  if(active() == &that)
+  {
+    resume();
   }
 }
 
 /**\~english \todo implement**/
 void Scheduler::resume(){
-  if(!threads.empty())
+  Thread* next;
   {
-    Thread* th = threads.front();
+    Lock lock;
+
+    if(threads.empty())
     {
-      Lock lock;
-      threads.pop_front();
-      threads.push_back(th);
+      next = &idle;
     }
-    dispatch(*th);
+    else 
+    {
+      next = threads.front();
+      threads.pop_front();
+      threads.push_back(next);
+    }
   }
+  dispatch(*next);
 }

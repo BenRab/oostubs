@@ -37,8 +37,8 @@ void Task5::Cmd::action(){
       kout.getpos(tempX, tempY);
 
     }
-    parseBuffer();
-    //keyboard.getkey();
+	  parseBuffer();
+    keyboard.getkey();
   }
 }
 

@@ -27,14 +27,14 @@
 class Task4 : public Application{
 	private:
 
-	enum Constants{
-		rotCursorX=79,
-		rotCursorY=0,
-		counter1X=10,
-		counter1Y=10,
-		counter2X=10,
-		counter2Y=15,
-	};
+enum Constants{
+	rotCursorX=79,
+	rotCursorY=0,
+	counter1X=10,
+	counter1Y=10,
+	counter2X=10,
+	counter2Y=15,
+};
     bool coop;
 
 protected:
@@ -107,8 +107,8 @@ class Counter : public Application
 		/** \brief Default Constructor 
 		 *
 		 * Setting the applications up
-         	 *
-         	 * \param coop enables or disables cooperative multitasking
+         *
+         * \param coop enables or disables cooperative multitasking
 		 **/
 		Task4(bool coop);
 

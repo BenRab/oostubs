@@ -1,24 +1,26 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
- *                                 Technische Informatik II                                      *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *                                                                                               *
- *                                         T H R E A D                                           *
- *                                                                                               *
+* Technische Informatik II *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* *
+* T H R E A D *
+* *
 \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
-#                   INCLUDES                      #
+# INCLUDES #
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 
 #include "thread/thread.h"
 #include "useful/scheduler.h"
+#include "thread/lock.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
-#                   METHODS                       #
+# METHODS #
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 
 /**\~english \todo implement**/
 void Thread::kickoff(Thread* thread){
+  //Lock::asymmetricUnlock();
   thread->action();
   thread->exit();
 }
@@ -29,11 +31,12 @@ Thread::Thread(){
   context.uc_stack.ss_sp = stack;
   context.uc_stack.ss_size = sizeof(stack);
   context.uc_link = 0;
-  makecontext(&context, (void (*)(void))kickoff, 1, this);
+  makecontext(&context, (void (*)())Thread::kickoff, 1, this);
 }
 
 /**\~english \todo implement**/
-Thread::~Thread(){ 
+Thread::~Thread(){
+
 }
 
 /**\~english \todo implement**/

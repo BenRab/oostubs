@@ -13,8 +13,4 @@ digraph G
   Node4 [label="Curses_Screen::setpos",height=0.2,width=0.4,color="black",URL="$classCurses__Screen.html#ad48d8a732fe5b60d8ebe70f53bfad92b",tooltip="set the cursor position"];
   Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="Thread::resume",height=0.2,width=0.4,color="black",URL="$classThread.html#aa686864d54ff4dd4cadf76297da472f9",tooltip="Resume execution with another ready thread."];
-  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="Scheduler::resume",height=0.2,width=0.4,color="black",URL="$classScheduler.html#aa4da1861292d77ea37cfa90b6ad569f3",tooltip="Use the scheduling algorithm to get the next thread and resumes with that thread."];
-  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="Dispatcher::dispatch",height=0.2,width=0.4,color="black",URL="$classDispatcher.html#ae5e8e2d148cd30aa060cab3c410396d1",tooltip="Switch to another thread."];
 }

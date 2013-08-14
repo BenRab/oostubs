@@ -13,12 +13,10 @@ digraph G
   Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="src/thread/lock.cc",height=0.2,width=0.4,color="black",URL="$lock_8cc.html"];
   Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="src/thread/scheduler.cc",height=0.2,width=0.4,color="black",URL="$scheduler_8cc.html"];
+  Node6 [label="src/user/task4.cc",height=0.2,width=0.4,color="black",URL="$task4_8cc.html"];
   Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="src/user/task4.cc",height=0.2,width=0.4,color="black",URL="$task4_8cc.html"];
-  Node3 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="src/user/task5.cc",height=0.2,width=0.4,color="black",URL="$task5_8cc.html"];
-  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node9 [label="src/internal/boot.cc",height=0.2,width=0.4,color="black",URL="$boot_8cc.html",tooltip="startup code"];
+  Node7 [label="src/user/task5.cc",height=0.2,width=0.4,color="black",URL="$task5_8cc.html"];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="src/internal/boot.cc",height=0.2,width=0.4,color="black",URL="$boot_8cc.html",tooltip="startup code"];
 }

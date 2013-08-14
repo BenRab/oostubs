@@ -1,5 +1,5 @@
 #include "thread/organizer.h"
-
+#include "thread/lock.h"
 
 /** \todo Implement method **/
 void Organizer::block(Waitingroom& room){
@@ -18,14 +18,11 @@ void Organizer::wakeup(Customer& customer){
 /** \todo Implement method **/
 void Organizer::kill(Customer& that){
   Waitingroom *w = that.waiting_in();
-  if(w)
-  {
-	//that.waiting_in(0);
-  	w->remove(that);
+  if(w) {
+    w->remove(that);
+  } else {
+    Scheduler::kill(that);
   }
-  else
-  	Scheduler::kill(that);
-  
 }
 
 Customer* Organizer::active() const{

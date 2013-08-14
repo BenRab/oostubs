@@ -27,7 +27,7 @@
  *  semantics. Extended threads called customers are able to wait for certain
  *  operations to finish or may wait if a ressource is unavailable. To support
  *  this ressources which might be unavailable inherit from Waitingroom to
- *  track and manage individual customers waiting fro their service. The
+ *  track and manage individual customers waiting for their service. The
  *  organizer handles the transitions of customer between the states "ready",
  *  "running" and "blocked".
  *
@@ -42,7 +42,7 @@ class Organizer : public Scheduler{
      *
      *  \param room The room the customer will wait in
      **/
-	  void block(Waitingroom& room);
+    void block(Waitingroom& room);
 
     /** \brief Wake up a customer waiting in a room
      *
@@ -51,7 +51,7 @@ class Organizer : public Scheduler{
      *
      *  \param customer The customer to wake up
      **/
-	  void wakeup(Customer& customer);
+    void wakeup(Customer& customer);
 
     /** \brief Kill a customer either waiting, running or ready
      *
@@ -63,7 +63,7 @@ class Organizer : public Scheduler{
      *
      *  \param that The customer to kill
      **/
-	  void kill(Customer& that);
+    void kill(Customer& that);
 
     /** \brief Return the currently active customer
      *

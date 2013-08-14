@@ -1,20 +1,19 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$organizer_8h.html" title="include/thread/organizer.h" alt="" coords="259,237,429,267"/>
-<area shape="rect" id="node19" href="$waitingroom_8h.html" title="include/thread/waitingroom.h" alt="" coords="436,83,623,112"/>
-<area shape="rect" id="node37" href="$appl_8h.html" title="declaration of basic class for application of the tasks" alt="" coords="744,83,875,112"/>
-<area shape="rect" id="node5" href="$useful_2scheduler_8h.html" title="include/useful/scheduler.h" alt="" coords="69,315,243,344"/>
-<area shape="rect" id="node15" href="$main_8cc.html" title="src/main.cc" alt="" coords="619,315,709,344"/>
-<area shape="rect" id="node17" href="$organizer_8cc.html" title="src/thread/organizer.cc" alt="" coords="267,315,421,344"/>
-<area shape="rect" id="node7" href="$watch_8cc.html" title="src/device/watch.cc" alt="" coords="5,392,144,421"/>
-<area shape="rect" id="node9" href="$thread_8cc.html" title="src/thread/thread.cc" alt="" coords="168,392,307,421"/>
-<area shape="rect" id="node11" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="831,392,953,421"/>
-<area shape="rect" id="node13" href="$task5_8cc.html" title="src/user/task5.cc" alt="" coords="684,392,807,421"/>
-<area shape="rect" id="node22" href="$semaphore_8h.html" title="include/thread/semaphore.h" alt="" coords="439,160,620,189"/>
-<area shape="rect" id="node35" href="$waitingroom_8cc.html" title="src/thread/waitingroom.cc" alt="" coords="644,160,815,189"/>
-<area shape="rect" id="node24" href="$curskbd_8h.html" title="include/device/curskbd.h" alt="" coords="453,237,619,267"/>
-<area shape="rect" id="node33" href="$semaphore_8cc.html" title="src/thread/semaphore.cc" alt="" coords="643,237,808,267"/>
-<area shape="rect" id="node26" href="$keyboard_8h.html" title="include/useful/keyboard.h" alt="" coords="733,315,904,344"/>
-<area shape="rect" id="node30" href="$curskbd_8cc.html" title="src/device/curskbd.cc" alt="" coords="445,315,595,344"/>
-<area shape="rect" id="node39" href="$task4_8h.html" title="include/user/task4.h" alt="" coords="839,160,977,189"/>
-<area shape="rect" id="node41" href="$task5_8h.html" title="include/user/task5.h" alt="" coords="832,237,971,267"/>
+<area shape="rect" id="node3" href="$organizer_8h.html" title="include/thread/organizer.h" alt="" coords="195,237,365,267"/>
+<area shape="rect" id="node17" href="$waitingroom_8h.html" title="include/thread/waitingroom.h" alt="" coords="372,83,559,112"/>
+<area shape="rect" id="node35" href="$appl_8h.html" title="declaration of basic class for application of the tasks" alt="" coords="680,83,811,112"/>
+<area shape="rect" id="node5" href="$useful_2scheduler_8h.html" title="include/useful/scheduler.h" alt="" coords="5,315,179,344"/>
+<area shape="rect" id="node13" href="$main_8cc.html" title="src/main.cc" alt="" coords="555,315,645,344"/>
+<area shape="rect" id="node15" href="$organizer_8cc.html" title="src/thread/organizer.cc" alt="" coords="203,315,357,344"/>
+<area shape="rect" id="node7" href="$watch_8cc.html" title="src/device/watch.cc" alt="" coords="23,392,161,421"/>
+<area shape="rect" id="node9" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="767,392,889,421"/>
+<area shape="rect" id="node11" href="$task5_8cc.html" title="src/user/task5.cc" alt="" coords="620,392,743,421"/>
+<area shape="rect" id="node20" href="$semaphore_8h.html" title="include/thread/semaphore.h" alt="" coords="375,160,556,189"/>
+<area shape="rect" id="node33" href="$waitingroom_8cc.html" title="src/thread/waitingroom.cc" alt="" coords="580,160,751,189"/>
+<area shape="rect" id="node22" href="$curskbd_8h.html" title="include/device/curskbd.h" alt="" coords="389,237,555,267"/>
+<area shape="rect" id="node31" href="$semaphore_8cc.html" title="src/thread/semaphore.cc" alt="" coords="579,237,744,267"/>
+<area shape="rect" id="node24" href="$keyboard_8h.html" title="include/useful/keyboard.h" alt="" coords="669,315,840,344"/>
+<area shape="rect" id="node28" href="$curskbd_8cc.html" title="src/device/curskbd.cc" alt="" coords="381,315,531,344"/>
+<area shape="rect" id="node37" href="$task4_8h.html" title="include/user/task4.h" alt="" coords="775,160,913,189"/>
+<area shape="rect" id="node39" href="$task5_8h.html" title="include/user/task5.h" alt="" coords="768,237,907,267"/>
 </map>

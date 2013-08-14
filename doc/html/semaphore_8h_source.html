@@ -80,21 +80,22 @@
 <a name="l00026"></a><a class="code" href="classSemaphore.html">00026</a> <span class="keyword">class </span><a class="code" href="classSemaphore.html" title="Basic synchronisation object.">Semaphore</a> : <span class="keyword">public</span> <a class="code" href="classWaitingroom.html" title="A waitingroom Customers can wait in.">Waitingroom</a>
 <a name="l00027"></a>00027 {
 <a name="l00028"></a>00028   <span class="keyword">private</span>:
-<a name="l00033"></a>00033   <span class="keyword">public</span>:
-<a name="l00040"></a>00040     <a class="code" href="classSemaphore.html#a4901e66bebcf10ec1b096812538cb59c" title="Current value of semaphore.">Semaphore</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value);
-<a name="l00042"></a><a class="code" href="classSemaphore.html#a7039839a61ed189258fb0de6338848e3">00042</a>     <span class="keyword">virtual</span> <a class="code" href="classSemaphore.html#a7039839a61ed189258fb0de6338848e3" title="Virtual Destructor to wake up al waiting customers.">~Semaphore</a>(){}
-<a name="l00044"></a>00044     <span class="keywordtype">void</span> <a class="code" href="classSemaphore.html#a3ece53ecda8bbf021a3584b5f8154438" title="Decrease value or block calling thread.">p</a>();
-<a name="l00046"></a>00046     <span class="keywordtype">void</span> <a class="code" href="classSemaphore.html#af241cab5feb1a86bba81a1d6a424aac7" title="Increase value or wake up blocked thread.">v</a>();
-<a name="l00048"></a><a class="code" href="classSemaphore.html#a85500356c2f7d1057d4568227e7f35b7">00048</a>     <span class="keywordtype">void</span> <a class="code" href="classSemaphore.html#a85500356c2f7d1057d4568227e7f35b7" title="Decrease value or block calling thread.">wait</a>(){<a class="code" href="classSemaphore.html#a3ece53ecda8bbf021a3584b5f8154438" title="Decrease value or block calling thread.">p</a>();}
-<a name="l00050"></a><a class="code" href="classSemaphore.html#a1d7c51da55f9ac913a6a711cb6d6e52a">00050</a>     <span class="keywordtype">void</span> <a class="code" href="classSemaphore.html#a1d7c51da55f9ac913a6a711cb6d6e52a" title="Increase value or wake up blocked thread.">signal</a>(){<a class="code" href="classSemaphore.html#af241cab5feb1a86bba81a1d6a424aac7" title="Increase value or wake up blocked thread.">v</a>();}
-<a name="l00051"></a>00051 };
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053 <span class="preprocessor">#endif</span>
+<a name="l00033"></a><a class="code" href="classSemaphore.html#a574d81e4475392be6f8534ad6fe9d70a">00033</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classSemaphore.html#a574d81e4475392be6f8534ad6fe9d70a" title="Current value of semaphore.">counter</a>;
+<a name="l00034"></a>00034   <span class="keyword">public</span>:
+<a name="l00041"></a>00041   <a class="code" href="classSemaphore.html#a4901e66bebcf10ec1b096812538cb59c" title="Default Constructor.">Semaphore</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value);
+<a name="l00043"></a><a class="code" href="classSemaphore.html#a7039839a61ed189258fb0de6338848e3">00043</a>   <span class="keyword">virtual</span> <a class="code" href="classSemaphore.html#a7039839a61ed189258fb0de6338848e3" title="Virtual Destructor to wake up al waiting customers.">~Semaphore</a>(){}
+<a name="l00045"></a>00045   <span class="keywordtype">void</span> <a class="code" href="classSemaphore.html#a3ece53ecda8bbf021a3584b5f8154438" title="Decrease value or block calling thread.">p</a>();
+<a name="l00047"></a>00047   <span class="keywordtype">void</span> <a class="code" href="classSemaphore.html#af241cab5feb1a86bba81a1d6a424aac7" title="Increase value or wake up blocked thread.">v</a>();
+<a name="l00049"></a><a class="code" href="classSemaphore.html#a85500356c2f7d1057d4568227e7f35b7">00049</a>   <span class="keywordtype">void</span> <a class="code" href="classSemaphore.html#a85500356c2f7d1057d4568227e7f35b7" title="Decrease value or block calling thread.">wait</a>(){<a class="code" href="classSemaphore.html#a3ece53ecda8bbf021a3584b5f8154438" title="Decrease value or block calling thread.">p</a>();}
+<a name="l00051"></a><a class="code" href="classSemaphore.html#a1d7c51da55f9ac913a6a711cb6d6e52a">00051</a>   <span class="keywordtype">void</span> <a class="code" href="classSemaphore.html#a1d7c51da55f9ac913a6a711cb6d6e52a" title="Increase value or wake up blocked thread.">signal</a>(){<a class="code" href="classSemaphore.html#af241cab5feb1a86bba81a1d6a424aac7" title="Increase value or wake up blocked thread.">v</a>();}
+<a name="l00052"></a>00052 };
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 22 2013 13:06:34 for OOStuBS - Technische Informatik II (TI-II) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 9 2013 12:59:46 for OOStuBS - Technische Informatik II (TI-II) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

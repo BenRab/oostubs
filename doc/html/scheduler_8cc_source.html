@@ -69,56 +69,30 @@
 <a name="l00011"></a>00011 <span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span>
 <a name="l00012"></a>00012 
 <a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="thread_2scheduler_8h.html">thread/scheduler.h</a>&quot;</span>
-<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="lock_8h.html">thread/lock.h</a>&quot;</span>
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016 <span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span>
-<a name="l00017"></a>00017 <span class="comment">#                   METHODS                       #</span>
-<a name="l00018"></a>00018 <span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span>
-<a name="l00019"></a>00019 
-<a name="l00021"></a><a class="code" href="classScheduler.html#a45442044c5cb2151b00f507a3c8d8195">00021</a> <span class="keywordtype">void</span> <a class="code" href="classScheduler.html#a45442044c5cb2151b00f507a3c8d8195" title="Start the scheduling by starting the first thread of the system.">Scheduler::schedule</a>(<a class="code" href="classThread.html" title="Basic multitasking entity.">Thread</a>&amp; first){
-<a name="l00022"></a>00022   <a class="code" href="classScheduler.html#a01502861acea705fd4b34590b257c354" title="Insert the specified thread into the queue.">ready</a>(first);
-<a name="l00023"></a>00023   <a class="code" href="classDispatcher.html#a65b4f6201a1d7a1d73353942193c0dd5" title="Starts the scheduling.">go</a>(first);
-<a name="l00024"></a>00024 }
-<a name="l00025"></a>00025 
-<a name="l00027"></a><a class="code" href="classScheduler.html#a01502861acea705fd4b34590b257c354">00027</a> <span class="keywordtype">void</span> <a class="code" href="classScheduler.html#a01502861acea705fd4b34590b257c354" title="Insert the specified thread into the queue.">Scheduler::ready</a>(<a class="code" href="classThread.html" title="Basic multitasking entity.">Thread</a>&amp; that){
-<a name="l00028"></a>00028   <a class="code" href="classLock.html" title="Global interrupt lock.">Lock</a> lock;
-<a name="l00029"></a>00029   <a class="code" href="classScheduler.html#a07562b9fa3f140d4b99b500a457d90cd" title="Queue of threads that are ready to be processed.">threads</a>.push_back(&amp;that);
-<a name="l00030"></a>00030 }
-<a name="l00031"></a>00031 
-<a name="l00033"></a><a class="code" href="classScheduler.html#a7648753bdb11886d5d8ae560b7d0e52b">00033</a> <span class="keywordtype">void</span> <a class="code" href="classScheduler.html#a7648753bdb11886d5d8ae560b7d0e52b" title="Remove the currently active thread from the queue.">Scheduler::exit</a>(){
-<a name="l00034"></a>00034   <a class="code" href="classScheduler.html#a7301daa452a49c955534a11741634c8d" title="Remove the specified thread from the queue of processes.">kill</a>(*<a class="code" href="classDispatcher.html#ac90194c2cc30bc1941ea4a0244e747f2" title="Returns the currently active thread.">active</a>());
-<a name="l00035"></a>00035   <span class="keywordflow">while</span>(<a class="code" href="classScheduler.html#a07562b9fa3f140d4b99b500a457d90cd" title="Queue of threads that are ready to be processed.">threads</a>.empty());
-<a name="l00036"></a>00036   <a class="code" href="classScheduler.html#aa4da1861292d77ea37cfa90b6ad569f3" title="Use the scheduling algorithm to get the next thread and resumes with that thread.">resume</a>();
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 <span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span>
+<a name="l00016"></a>00016 <span class="comment">#                   METHODS                       #</span>
+<a name="l00017"></a>00017 <span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span>
+<a name="l00018"></a>00018 
+<a name="l00020"></a><a class="code" href="classScheduler.html#a45442044c5cb2151b00f507a3c8d8195">00020</a> <span class="keywordtype">void</span> <a class="code" href="classScheduler.html#a45442044c5cb2151b00f507a3c8d8195" title="Start the scheduling by starting the first thread of the system.">Scheduler::schedule</a>(<a class="code" href="classThread.html" title="Basic multitasking entity.">Thread</a>&amp; first){
+<a name="l00021"></a>00021 }
+<a name="l00022"></a>00022 
+<a name="l00024"></a><a class="code" href="classScheduler.html#a01502861acea705fd4b34590b257c354">00024</a> <span class="keywordtype">void</span> <a class="code" href="classScheduler.html#a01502861acea705fd4b34590b257c354" title="Insert the specified thread into the queue.">Scheduler::ready</a>(<a class="code" href="classThread.html" title="Basic multitasking entity.">Thread</a>&amp; that){
+<a name="l00025"></a>00025 }
+<a name="l00026"></a>00026 
+<a name="l00028"></a><a class="code" href="classScheduler.html#a7648753bdb11886d5d8ae560b7d0e52b">00028</a> <span class="keywordtype">void</span> <a class="code" href="classScheduler.html#a7648753bdb11886d5d8ae560b7d0e52b" title="Remove the currently active thread from the queue.">Scheduler::exit</a>(){
+<a name="l00029"></a>00029 }
+<a name="l00030"></a>00030 
+<a name="l00032"></a><a class="code" href="classScheduler.html#a7301daa452a49c955534a11741634c8d">00032</a> <span class="keywordtype">void</span> <a class="code" href="classScheduler.html#a7301daa452a49c955534a11741634c8d" title="Remove the specified thread from the queue of processes.">Scheduler::kill</a>(<a class="code" href="classThread.html" title="Basic multitasking entity.">Thread</a>&amp; that){
+<a name="l00033"></a>00033 }
+<a name="l00034"></a>00034 
+<a name="l00036"></a><a class="code" href="classScheduler.html#aa4da1861292d77ea37cfa90b6ad569f3">00036</a> <span class="keywordtype">void</span> <a class="code" href="classScheduler.html#aa4da1861292d77ea37cfa90b6ad569f3" title="Use the scheduling algorithm to get the next thread and resumes with that thread.">Scheduler::resume</a>(){
 <a name="l00037"></a>00037 }
-<a name="l00038"></a>00038 
-<a name="l00040"></a><a class="code" href="classScheduler.html#a7301daa452a49c955534a11741634c8d">00040</a> <span class="keywordtype">void</span> <a class="code" href="classScheduler.html#a7301daa452a49c955534a11741634c8d" title="Remove the specified thread from the queue of processes.">Scheduler::kill</a>(<a class="code" href="classThread.html" title="Basic multitasking entity.">Thread</a>&amp; that){
-<a name="l00041"></a>00041   <a class="code" href="classLock.html" title="Global interrupt lock.">Lock</a> lock;
-<a name="l00042"></a>00042   <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="classScheduler.html#a07562b9fa3f140d4b99b500a457d90cd" title="Queue of threads that are ready to be processed.">threads</a>.size(); i++)
-<a name="l00043"></a>00043   {
-<a name="l00044"></a>00044     <span class="keywordflow">if</span>(<a class="code" href="classScheduler.html#a07562b9fa3f140d4b99b500a457d90cd" title="Queue of threads that are ready to be processed.">threads</a>[i] == &amp;that)
-<a name="l00045"></a>00045     {
-<a name="l00046"></a>00046       <a class="code" href="classScheduler.html#a07562b9fa3f140d4b99b500a457d90cd" title="Queue of threads that are ready to be processed.">threads</a>.erase(<a class="code" href="classScheduler.html#a07562b9fa3f140d4b99b500a457d90cd" title="Queue of threads that are ready to be processed.">threads</a>.begin()+i);
-<a name="l00047"></a>00047     }
-<a name="l00048"></a>00048   }
-<a name="l00049"></a>00049 }
-<a name="l00050"></a>00050 
-<a name="l00052"></a><a class="code" href="classScheduler.html#aa4da1861292d77ea37cfa90b6ad569f3">00052</a> <span class="keywordtype">void</span> <a class="code" href="classScheduler.html#aa4da1861292d77ea37cfa90b6ad569f3" title="Use the scheduling algorithm to get the next thread and resumes with that thread.">Scheduler::resume</a>(){
-<a name="l00053"></a>00053   <span class="keywordflow">if</span>(!<a class="code" href="classScheduler.html#a07562b9fa3f140d4b99b500a457d90cd" title="Queue of threads that are ready to be processed.">threads</a>.empty())
-<a name="l00054"></a>00054   {
-<a name="l00055"></a>00055     <a class="code" href="classThread.html" title="Basic multitasking entity.">Thread</a>* th = <a class="code" href="classScheduler.html#a07562b9fa3f140d4b99b500a457d90cd" title="Queue of threads that are ready to be processed.">threads</a>.front();
-<a name="l00056"></a>00056     {
-<a name="l00057"></a>00057       <a class="code" href="classLock.html" title="Global interrupt lock.">Lock</a> lock;
-<a name="l00058"></a>00058       <a class="code" href="classScheduler.html#a07562b9fa3f140d4b99b500a457d90cd" title="Queue of threads that are ready to be processed.">threads</a>.pop_front();
-<a name="l00059"></a>00059       <a class="code" href="classScheduler.html#a07562b9fa3f140d4b99b500a457d90cd" title="Queue of threads that are ready to be processed.">threads</a>.push_back(th);
-<a name="l00060"></a>00060     }
-<a name="l00061"></a>00061     <a class="code" href="classDispatcher.html#ae5e8e2d148cd30aa060cab3c410396d1" title="Switch to another thread.">dispatch</a>(*th);
-<a name="l00062"></a>00062   }
-<a name="l00063"></a>00063 }
 </pre></div></div><!-- contents -->
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 22 2013 13:06:34 for OOStuBS - Technische Informatik II (TI-II) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 9 2013 12:59:46 for OOStuBS - Technische Informatik II (TI-II) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

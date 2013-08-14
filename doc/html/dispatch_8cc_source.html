@@ -75,19 +75,15 @@
 <a name="l00017"></a>00017 <span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span>
 <a name="l00018"></a>00018 
 <a name="l00020"></a><a class="code" href="classDispatcher.html#a65b4f6201a1d7a1d73353942193c0dd5">00020</a> <span class="keywordtype">void</span> <a class="code" href="classDispatcher.html#a65b4f6201a1d7a1d73353942193c0dd5" title="Starts the scheduling.">Dispatcher::go</a>(<a class="code" href="classThread.html" title="Basic multitasking entity.">Thread</a>&amp; first){
-<a name="l00021"></a>00021   <a class="code" href="classDispatcher.html#a670064698281fded2e428642edcddbc8" title="The currently active thread.">activeThread</a> = &amp;first;
-<a name="l00022"></a>00022   setcontext(&amp;(first.<a class="code" href="classThread.html#a7ea9b464c853c948fded3d01e9b7dece" title="Thread control block in linux specific format.">context</a>));
-<a name="l00023"></a>00023 }
-<a name="l00024"></a>00024 
-<a name="l00026"></a><a class="code" href="classDispatcher.html#ae5e8e2d148cd30aa060cab3c410396d1">00026</a> <span class="keywordtype">void</span> <a class="code" href="classDispatcher.html#ae5e8e2d148cd30aa060cab3c410396d1" title="Switch to another thread.">Dispatcher::dispatch</a>(<a class="code" href="classThread.html" title="Basic multitasking entity.">Thread</a>&amp; next){
-<a name="l00027"></a>00027   swapcontext(&amp;(<a class="code" href="classDispatcher.html#a670064698281fded2e428642edcddbc8" title="The currently active thread.">activeThread</a>-&gt;<a class="code" href="classThread.html#a7ea9b464c853c948fded3d01e9b7dece" title="Thread control block in linux specific format.">context</a>), &amp;(next.<a class="code" href="classThread.html#a7ea9b464c853c948fded3d01e9b7dece" title="Thread control block in linux specific format.">context</a>));
-<a name="l00028"></a>00028   <a class="code" href="classDispatcher.html#a670064698281fded2e428642edcddbc8" title="The currently active thread.">activeThread</a> = &amp;next;
-<a name="l00029"></a>00029 }
+<a name="l00021"></a>00021 }
+<a name="l00022"></a>00022 
+<a name="l00024"></a><a class="code" href="classDispatcher.html#ae5e8e2d148cd30aa060cab3c410396d1">00024</a> <span class="keywordtype">void</span> <a class="code" href="classDispatcher.html#ae5e8e2d148cd30aa060cab3c410396d1" title="Switch to another thread.">Dispatcher::dispatch</a>(<a class="code" href="classThread.html" title="Basic multitasking entity.">Thread</a>&amp; next){
+<a name="l00025"></a>00025 }
 </pre></div></div><!-- contents -->
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 22 2013 13:06:34 for OOStuBS - Technische Informatik II (TI-II) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 9 2013 12:59:46 for OOStuBS - Technische Informatik II (TI-II) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

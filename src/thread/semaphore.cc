@@ -10,15 +10,15 @@ Semaphore::Semaphore(unsigned int value){
 /** \todo Implement method **/
 void Semaphore::p(){
   if(counter <= 0)
-	scheduler.block(*this);
+    scheduler.block(*this);
   else
-	--counter;
+    --counter;
 }
 
 /** \todo Implement method **/
 void Semaphore::v(){
   if(counter <= 0 && !empty())
-	scheduler.wakeup(dequeue());
+    scheduler.wakeup(dequeue());
   else
-	++counter; 
+    ++counter;
 }

@@ -69,40 +69,30 @@
 <a name="l00011"></a>00011 <span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span>
 <a name="l00012"></a>00012 
 <a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="thread_8h.html">thread/thread.h</a>&quot;</span>
-<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="useful_2scheduler_8h.html">useful/scheduler.h</a>&quot;</span>
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016 <span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span>
-<a name="l00017"></a>00017 <span class="comment">#                   METHODS                       #</span>
-<a name="l00018"></a>00018 <span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span>
-<a name="l00019"></a>00019 
-<a name="l00021"></a><a class="code" href="classThread.html#acbe0a6de445c1c2dbe20e8741a9ed531">00021</a> <span class="keywordtype">void</span> <a class="code" href="classThread.html#acbe0a6de445c1c2dbe20e8741a9ed531" title="Kickoff function to initiate thread action.">Thread::kickoff</a>(<a class="code" href="classThread.html" title="Basic multitasking entity.">Thread</a>* thread){
-<a name="l00022"></a>00022   thread-&gt;<a class="code" href="classThread.html#ab6d114e3cce348e72ee4023c85a32724" title="Thread specific task method.">action</a>();
-<a name="l00023"></a>00023   thread-&gt;<a class="code" href="classThread.html#a89750f9023df256c125c79048f217562" title="Terminate execution of this thread.">exit</a>();
-<a name="l00024"></a>00024 }
-<a name="l00025"></a>00025 
-<a name="l00027"></a><a class="code" href="classThread.html#a95c703fb8f2f27cb64f475a8c940864a">00027</a> <a class="code" href="classThread.html#a95c703fb8f2f27cb64f475a8c940864a" title="Default constructor.">Thread::Thread</a>(){
-<a name="l00028"></a>00028   getcontext(&amp;<a class="code" href="classThread.html#a7ea9b464c853c948fded3d01e9b7dece" title="Thread control block in linux specific format.">context</a>);
-<a name="l00029"></a>00029   <a class="code" href="classThread.html#a7ea9b464c853c948fded3d01e9b7dece" title="Thread control block in linux specific format.">context</a>.uc_stack.ss_sp = <a class="code" href="classThread.html#a50f5128ae156e13ed2a594bb3d205675" title="Local 1MB stack of this thread.">stack</a>;
-<a name="l00030"></a>00030   <a class="code" href="classThread.html#a7ea9b464c853c948fded3d01e9b7dece" title="Thread control block in linux specific format.">context</a>.uc_stack.ss_size = <span class="keyword">sizeof</span>(<a class="code" href="classThread.html#a50f5128ae156e13ed2a594bb3d205675" title="Local 1MB stack of this thread.">stack</a>);
-<a name="l00031"></a>00031   <a class="code" href="classThread.html#a7ea9b464c853c948fded3d01e9b7dece" title="Thread control block in linux specific format.">context</a>.uc_link = 0;
-<a name="l00032"></a>00032   makecontext(&amp;<a class="code" href="classThread.html#a7ea9b464c853c948fded3d01e9b7dece" title="Thread control block in linux specific format.">context</a>, (<span class="keywordtype">void</span> (*)(<span class="keywordtype">void</span>))<a class="code" href="classThread.html#acbe0a6de445c1c2dbe20e8741a9ed531" title="Kickoff function to initiate thread action.">kickoff</a>, 1, <span class="keyword">this</span>);
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 <span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span>
+<a name="l00016"></a>00016 <span class="comment">#                   METHODS                       #</span>
+<a name="l00017"></a>00017 <span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span>
+<a name="l00018"></a>00018 
+<a name="l00020"></a><a class="code" href="classThread.html#acbe0a6de445c1c2dbe20e8741a9ed531">00020</a> <span class="keywordtype">void</span> <a class="code" href="classThread.html#acbe0a6de445c1c2dbe20e8741a9ed531" title="Kickoff function to initiate thread action.">Thread::kickoff</a>(<a class="code" href="classThread.html" title="Basic multitasking entity.">Thread</a>* thread){
+<a name="l00021"></a>00021 }
+<a name="l00022"></a>00022 
+<a name="l00024"></a><a class="code" href="classThread.html#a95c703fb8f2f27cb64f475a8c940864a">00024</a> <a class="code" href="classThread.html#a95c703fb8f2f27cb64f475a8c940864a" title="Default constructor.">Thread::Thread</a>(){
+<a name="l00025"></a>00025 }
+<a name="l00026"></a>00026 
+<a name="l00028"></a><a class="code" href="classThread.html#a37d9edd3a1a776cbc27dedff949c9726">00028</a> <a class="code" href="classThread.html#a37d9edd3a1a776cbc27dedff949c9726" title="Destructor.">Thread::~Thread</a>(){
+<a name="l00029"></a>00029 }
+<a name="l00030"></a>00030 
+<a name="l00032"></a><a class="code" href="classThread.html#aa686864d54ff4dd4cadf76297da472f9">00032</a> <span class="keywordtype">void</span> <a class="code" href="classThread.html#aa686864d54ff4dd4cadf76297da472f9" title="Resume execution with another ready thread.">Thread::resume</a>(){
 <a name="l00033"></a>00033 }
 <a name="l00034"></a>00034 
-<a name="l00036"></a><a class="code" href="classThread.html#a37d9edd3a1a776cbc27dedff949c9726">00036</a> <a class="code" href="classThread.html#a37d9edd3a1a776cbc27dedff949c9726" title="Destructor.">Thread::~Thread</a>(){ 
+<a name="l00036"></a><a class="code" href="classThread.html#a89750f9023df256c125c79048f217562">00036</a> <span class="keywordtype">void</span> <a class="code" href="classThread.html#a89750f9023df256c125c79048f217562" title="Terminate execution of this thread.">Thread::exit</a>(){
 <a name="l00037"></a>00037 }
-<a name="l00038"></a>00038 
-<a name="l00040"></a><a class="code" href="classThread.html#aa686864d54ff4dd4cadf76297da472f9">00040</a> <span class="keywordtype">void</span> <a class="code" href="classThread.html#aa686864d54ff4dd4cadf76297da472f9" title="Resume execution with another ready thread.">Thread::resume</a>(){
-<a name="l00041"></a>00041   <a class="code" href="useful_2scheduler_8h.html#a062ff00c1f5185f8c38473daf2fc4555">scheduler</a>.<a class="code" href="classScheduler.html#aa4da1861292d77ea37cfa90b6ad569f3" title="Use the scheduling algorithm to get the next thread and resumes with that thread.">resume</a>();
-<a name="l00042"></a>00042 }
-<a name="l00043"></a>00043 
-<a name="l00045"></a><a class="code" href="classThread.html#a89750f9023df256c125c79048f217562">00045</a> <span class="keywordtype">void</span> <a class="code" href="classThread.html#a89750f9023df256c125c79048f217562" title="Terminate execution of this thread.">Thread::exit</a>(){
-<a name="l00046"></a>00046   <a class="code" href="useful_2scheduler_8h.html#a062ff00c1f5185f8c38473daf2fc4555">scheduler</a>.<a class="code" href="classScheduler.html#a7648753bdb11886d5d8ae560b7d0e52b" title="Remove the currently active thread from the queue.">exit</a>();
-<a name="l00047"></a>00047 }
 </pre></div></div><!-- contents -->
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 22 2013 13:06:34 for OOStuBS - Technische Informatik II (TI-II) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 9 2013 12:59:46 for OOStuBS - Technische Informatik II (TI-II) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

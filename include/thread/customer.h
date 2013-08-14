@@ -40,14 +40,14 @@ class Customer : public Thread
      *
      *  If NULL this thread is not waiting in any room.
      **/
-		Waitingroom* room;
+	Waitingroom* room;
 
 	public:
     /** \brief Default Constructor
      *
      *  Initializes the thread and declares it non-waiting
      **/
-		Customer() : Thread(), room(0){}
+	Customer() : Thread(), room(0){}
 
 	private:
     /** \brief Sets the room this thread is waiting in 
@@ -55,18 +55,18 @@ class Customer : public Thread
      * Overloaded setter method, which may only be called by Organizer.
      **/
 
-		void waiting_in(Waitingroom* room){
-			this->room=room;
-		}
+	void waiting_in(Waitingroom* room){
+		this->room=room;
+	}
 	
 	public:
     /** \brief Gets the room this thread is waiting in 
      *
      * Overloaded getter method.
      **/
-		Waitingroom* waiting_in() const{
-			return room;
-		}
+	Waitingroom* waiting_in() const{
+		return room;
+	}
   /** \brief Friend declaration of Organizer to enable waitingroom changes. **/
 	friend class Organizer;
 };

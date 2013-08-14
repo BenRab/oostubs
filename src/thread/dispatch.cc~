@@ -19,11 +19,12 @@
 /**\~english \todo implement**/
 void Dispatcher::go(Thread& first){
   activeThread = &first;
-  setcontext(&(first.context));
+  setcontext(&activeThread->context);
 }
 
 /**\~english \todo implement**/
 void Dispatcher::dispatch(Thread& next){
-  swapcontext(&(activeThread->context), &(next.context));
+  Thread *old = activeThread;
   activeThread = &next;
+  swapcontext(&old->context, &next.context);
 }

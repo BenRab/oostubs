@@ -1,12 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$thread_2scheduler_8h.html" title="thread/scheduler.h" alt="" coords="121,83,249,112"/>
-<area shape="rect" id="node14" href="$lock_8h.html" title="thread/lock.h" alt="" coords="312,83,408,112"/>
+<area shape="rect" id="node3" href="$thread_2scheduler_8h.html" title="thread/scheduler.h" alt="" coords="101,83,229,112"/>
 <area shape="rect" id="node5" href="$dispatch_8h.html" title="thread/dispatch.h" alt="" coords="5,160,128,189"/>
-<area shape="rect" id="node7" href="$thread_8h.html" title="thread/thread.h" alt="" coords="111,237,220,267"/>
-<area shape="rect" id="node16" href="$cpu_8h.html" title="help include file for use of global declared variable cpu, declared in main.cc" alt="" coords="333,160,427,189"/>
-<area shape="rect" id="node29" href="$useful_2log_8h.html" title="useful/log.h" alt="" coords="479,160,567,189"/>
-<area shape="rect" id="node18" href="$virtcpu_8h.html" title="machine/virtcpu.h" alt="" coords="300,237,425,267"/>
-<area shape="rect" id="node24" href="$pic_8h.html" title="useful/pic.h" alt="" coords="403,315,491,344"/>
-<area shape="rect" id="node26" href="$swpic_8h.html" title="machine/swpic.h" alt="" coords="351,392,471,421"/>
-<area shape="rect" id="node31" href="$object_2log_8h.html" title="object/log.h" alt="" coords="505,237,593,267"/>
+<area shape="rect" id="node7" href="$thread_8h.html" title="thread/thread.h" alt="" coords="61,237,171,267"/>
 </map>

@@ -37,7 +37,7 @@ void Task5::Cmd::action(){
       kout.getpos(tempX, tempY);
 
     }
-    parseBuffer();
+	  parseBuffer();
     keyboard.getkey();
   }
 }
@@ -135,9 +135,9 @@ void Task5::action(){
  	kout.clear();
 	kout.setpos(31,1);
 	kout << "OOStuBs - Task 5" << endl << endl;
-  cmd.registerApp(counter1, "Counter-1");
-  cmd.registerApp(counter2, "Counter-2");
-  cmd.registerApp(rotCursor, "Rotating-Cursor");
+  	cmd.registerApp(counter1, "Counter-1");
+  	cmd.registerApp(counter2, "Counter-2");
+  	cmd.registerApp(rotCursor, "Rotating-Cursor");
 	scheduler.ready(cmd);
-  cpu.enable_int();
+  	cpu.enable_int();
 }
