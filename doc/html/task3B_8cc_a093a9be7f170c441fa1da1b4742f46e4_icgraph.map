@@ -1,7 +1,0 @@
-<map id="gotoAnalyse" name="gotoAnalyse">
-<area shape="rect" id="node3" href="$task3B_8cc.html#a14ee0807c6f73199cdce10829f021544" title="alphaAckermann" alt="" coords="148,5,265,33"/>
-<area shape="rect" id="node5" href="$task3B_8cc.html#aca93d1551a065652079d5ff2ae3b2539" title="doAckermann" alt="" coords="316,5,417,33"/>
-<area shape="rect" id="node7" href="$task3B_8cc.html#a5874bf2c7fd779b0760c4d5f16bb2d08" title="doTask3BAction" alt="" coords="467,5,584,33"/>
-<area shape="rect" id="node9" href="$classTask3B.html#aa803f35a028d2dc338d20d69ab592f20" title="prints the line" alt="" coords="632,5,739,33"/>
-<area shape="rect" id="node11" href="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point" alt="" coords="788,5,844,33"/>
-</map>

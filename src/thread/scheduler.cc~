@@ -12,17 +12,13 @@
 
 #include "thread/scheduler.h"
 #include "thread/lock.h"
+#include "thread/idle.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 # METHODS #
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 
-class IdleThread : public Thread {
-  void action() 
-  {
-    while(1);
-  }
-};
+
 
 IdleThread idle;
 
@@ -48,7 +44,6 @@ void Scheduler::kill(Thread& that){
   if(threads.empty())
     return;
 
-  //Lock lock;
   ThreadIterator it = threads.begin();
 
   while (it != threads.end() && *it != &that) 
@@ -57,6 +52,7 @@ void Scheduler::kill(Thread& that){
   } 
   if(*it == &that) 
   {
+    Lock lock;
     threads.erase(it);
   }
 

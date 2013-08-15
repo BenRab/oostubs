@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node7" href="$classTask4.html" title="Fourth test application." alt="" coords="5,237,64,267"/>
-<area shape="rect" id="node11" href="$classTask4_1_1Counter.html" title="Counting application." alt="" coords="88,237,200,267"/>
-<area shape="rect" id="node13" href="$classTask4_1_1RotCursor.html" title="Rotating symbol application" alt="" coords="224,237,349,267"/>
-<area shape="rect" id="node15" href="$classTask5_1_1Cmd.html" title="Command line application." alt="" coords="373,237,467,267"/>
-<area shape="rect" id="node2" href="$classCustomer.html" title="Extension of Thread able to wait in a Waitingroom." alt="" coords="176,83,253,112"/>
-<area shape="rect" id="node4" href="$classThread.html" title="Basic multitasking entity." alt="" coords="184,5,245,35"/>
-<area shape="rect" id="node9" href="$classTask5.html" title="Fifth test Application." alt="" coords="5,315,64,344"/>
-</map>

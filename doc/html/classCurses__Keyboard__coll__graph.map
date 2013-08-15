@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$classGate.html" title="Interrupt handling base class." alt="" coords="9,85,60,115"/>
-<area shape="rect" id="node4" href="$classSemaphore.html" title="Basic synchronisation object." alt="" coords="84,85,172,115"/>
-<area shape="rect" id="node6" href="$classWaitingroom.html" title="A waitingroom Customers can wait in." alt="" coords="81,5,175,35"/>
-</map>

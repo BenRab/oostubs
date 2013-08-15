@@ -1,4 +1,0 @@
-Do not run!
-
-Nicht ausführen!
-Zum Starten von OOStuBS sollten entsprechende Projekte (run_normal oder run_debug) "erstellt" werden.

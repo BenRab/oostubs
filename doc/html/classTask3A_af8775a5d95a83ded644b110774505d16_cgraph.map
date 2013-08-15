@@ -1,6 +1,0 @@
-<map id="Task3A::testFPNMul" name="Task3A::testFPNMul">
-<area shape="rect" id="node3" href="$fixedPointNumber_8h.html#a832c00376d036efa282dd93a56a79952" title="generate a SFixedPointNumber from two parts, without extra signum" alt="" coords="195,5,264,33"/>
-<area shape="rect" id="node5" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="207,55,252,83"/>
-<area shape="rect" id="node7" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer" alt="" coords="313,55,423,83"/>
-<area shape="rect" id="node9" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="473,55,591,83"/>
-</map>

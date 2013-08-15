@@ -1,7 +1,0 @@
-<map id="Task3A::testFPNSqrt" name="Task3A::testFPNSqrt">
-<area shape="rect" id="node3" href="$fixedPointNumber_8h.html#a832c00376d036efa282dd93a56a79952" title="generate a SFixedPointNumber from two parts, without extra signum" alt="" coords="245,5,315,33"/>
-<area shape="rect" id="node5" href="$structSFixedPointNumber.html#a59a33208466823c71f4881f6629c4b91" title="sqare root of the Number" alt="" coords="199,55,361,83"/>
-<area shape="rect" id="node7" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="257,106,303,134"/>
-<area shape="rect" id="node9" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer" alt="" coords="412,106,521,134"/>
-<area shape="rect" id="node11" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="572,106,689,134"/>
-</map>

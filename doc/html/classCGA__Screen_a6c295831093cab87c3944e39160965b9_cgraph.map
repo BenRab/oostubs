@@ -1,7 +1,0 @@
-<map id="CGA_Screen::print" name="CGA_Screen::print">
-<area shape="rect" id="node3" href="$classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position" alt="" coords="188,5,329,33"/>
-<area shape="rect" id="node5" href="$classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt" alt="" coords="185,55,332,83"/>
-<area shape="rect" id="node7" href="$classCGA__Screen.html#a8176499ecb3ce4e9eb05910e66aee9d2" title="print a character to a specific position" alt="" coords="381,81,515,109"/>
-<area shape="rect" id="node10" href="$classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position" alt="" coords="188,157,329,185"/>
-<area shape="rect" id="node12" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="399,157,497,185"/>
-</map>

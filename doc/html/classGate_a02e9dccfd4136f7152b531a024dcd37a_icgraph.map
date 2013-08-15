@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$boot_8cc.html#a9017cbb15c79b718e82c9ed18a58ed60" title="Entry point for interrupts." alt="" coords="151,5,220,35"/>
-<area shape="rect" id="node5" href="$boot_8cc.html#a00c7ff42826be9ac4c82e3a35f5863c4" title="handleInts" alt="" coords="269,5,352,35"/>
-<area shape="rect" id="node7" href="$boot_8cc.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="400,5,451,35"/>
-</map>

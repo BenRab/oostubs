@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$cpu_8h.html" title="help include file for use of global declared variable cpu, declared in main.cc" alt="" coords="69,83,162,112"/>
-<area shape="rect" id="node16" href="$useful_2log_8h.html" title="useful/log.h" alt="" coords="209,83,297,112"/>
-<area shape="rect" id="node24" href="$thread_8h.html" title="thread/thread.h" alt="" coords="321,83,430,112"/>
-<area shape="rect" id="node5" href="$virtcpu_8h.html" title="machine/virtcpu.h" alt="" coords="16,160,141,189"/>
-<area shape="rect" id="node11" href="$pic_8h.html" title="useful/pic.h" alt="" coords="113,237,201,267"/>
-<area shape="rect" id="node13" href="$swpic_8h.html" title="machine/swpic.h" alt="" coords="61,315,181,344"/>
-<area shape="rect" id="node18" href="$object_2log_8h.html" title="object/log.h" alt="" coords="216,160,304,189"/>
-</map>

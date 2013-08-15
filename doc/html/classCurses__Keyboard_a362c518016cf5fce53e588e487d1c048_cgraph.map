@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classCurses__Keyboard.html#a31e84201f2f54cb363f5b3d18438e7d5" title="Fetch a key from the keyboard controller(ncurses)" alt="" coords="224,5,400,35"/>
-<area shape="rect" id="node5" href="$classSemaphore.html#a1d7c51da55f9ac913a6a711cb6d6e52a" title="Increase value or wake up blocked thread." alt="" coords="247,59,377,88"/>
-<area shape="rect" id="node7" href="$classSemaphore.html#af241cab5feb1a86bba81a1d6a424aac7" title="Increase value or wake up blocked thread." alt="" coords="449,59,551,88"/>
-</map>

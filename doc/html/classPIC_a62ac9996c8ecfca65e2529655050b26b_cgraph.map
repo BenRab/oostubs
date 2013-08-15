@@ -1,5 +1,0 @@
-<map id="PIC::allow" name="PIC::allow">
-<area shape="rect" id="node3" href="$classCPU.html#ab5e5a2260ef84a433c181786f11c4609" title="Interrupts werden global aktiviert." alt="" coords="133,5,248,33"/>
-<area shape="rect" id="node5" href="$classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port." alt="" coords="145,55,236,83"/>
-<area shape="rect" id="node7" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="141,106,240,134"/>
-</map>

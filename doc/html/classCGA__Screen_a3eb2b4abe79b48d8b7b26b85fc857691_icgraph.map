@@ -1,4 +1,0 @@
-<map id="CGA_Screen::setAttributes" name="CGA_Screen::setAttributes">
-<area shape="rect" id="node2" href="$classCGA__Stream.html#ae41fde43a40fbd3b5fc327633605622c" title="Der Konstruktor ruft die Funktion CGA_Screen::setAttributes, um damit die durch O_Stream verwalteten ..." alt="" coords="229,5,408,32"/>
-<area shape="rect" id="node3" href="$classCGA__Stream.html#a45d56b322e20ef8aa27ee6c21982cd22" title="verbindet die setAttributes&#45;Funktion von O_Stream mit dem CGA&#45;Treiber" alt="" coords="230,56,407,83"/>
-</map>

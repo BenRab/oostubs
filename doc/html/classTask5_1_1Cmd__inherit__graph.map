@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$classApplication.html" title="Basis of OOStuBs&#45;Applications." alt="" coords="9,160,95,189"/>
-<area shape="rect" id="node4" href="$classCustomer.html" title="Extension of Thread able to wait in a Waitingroom." alt="" coords="13,83,91,112"/>
-<area shape="rect" id="node6" href="$classThread.html" title="Basic multitasking entity." alt="" coords="21,5,83,35"/>
-</map>

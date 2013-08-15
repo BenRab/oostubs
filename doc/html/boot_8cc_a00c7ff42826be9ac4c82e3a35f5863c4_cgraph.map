@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$guardian_8cc.html#a9017cbb15c79b718e82c9ed18a58ed60" title="Entry point for interrupts." alt="" coords="137,112,207,141"/>
-<area shape="rect" id="node5" href="$classSoftware__PIC.html#ab13dd24a30e333614d1e9b6ff8c95ff7" title="returns the ISR of one of the two PICs" alt="" coords="265,5,417,35"/>
-<area shape="rect" id="node7" href="$classPlugbox.html#a94a04c50b59ce8ce9ba0578b9d5831d9" title="report the assigned Gate object for a specific interrupt" alt="" coords="287,59,396,88"/>
-<area shape="rect" id="node9" href="$classGate.html#a7f5a37b264ba3dce2ff3a5f45cb71729" title="set interrupt number" alt="" coords="256,112,427,141"/>
-<area shape="rect" id="node11" href="$classGate.html#a02e9dccfd4136f7152b531a024dcd37a" title="interrupt handling method" alt="" coords="295,165,388,195"/>
-<area shape="rect" id="node13" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline" alt="" coords="319,219,364,248"/>
-<area shape="rect" id="node15" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen" alt="" coords="475,219,600,248"/>
-</map>

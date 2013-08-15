@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classCurses__Stream.html#ab6a0496fec8d85e70bc648e554ddeefb" title="flush the content of the internal buffer" alt="" coords="229,5,379,35"/>
-<area shape="rect" id="node7" href="$classCurses__Screen.html#ad48d8a732fe5b60d8ebe70f53bfad92b" title="set the cursor position" alt="" coords="225,59,383,88"/>
-<area shape="rect" id="node9" href="$classThread.html#aa686864d54ff4dd4cadf76297da472f9" title="Resume execution with another ready thread." alt="" coords="248,112,360,141"/>
-<area shape="rect" id="node5" href="$classCurses__Screen.html#a77b0eb8866a6286e5f1cd8d400adecd2" title="print a string to the current position" alt="" coords="433,5,577,35"/>
-</map>

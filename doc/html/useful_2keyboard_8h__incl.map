@@ -1,7 +1,0 @@
-<map id="include/useful/keyboard.h" name="include/useful/keyboard.h">
-<area shape="rect" id="node3" href="$device_2keyboard_8h.html" title="device/keyboard.h" alt="" coords="141,83,267,111"/>
-<area shape="rect" id="node5" href="$keyctrl_8h.html" title="machine/keyctrl.h" alt="" coords="44,161,167,189"/>
-<area shape="rect" id="node9" href="$key_8h.html" title="machine/key.h" alt="" coords="152,238,256,266"/>
-<area shape="rect" id="node11" href="$gate_8h.html" title="guard/gate.h" alt="" coords="241,161,335,189"/>
-<area shape="rect" id="node7" href="$io__port_8h.html" title="machine/io_port.h" alt="" coords="5,238,128,266"/>
-</map>

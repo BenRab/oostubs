@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$classGate.html" title="Interrupt handling base class." alt="" coords="5,59,56,88"/>
-<area shape="rect" id="node3" href="$classCurses__Keyboard.html" title="Keyboard driver with interrupt support" alt="" coords="105,5,231,35"/>
-<area shape="rect" id="node5" href="$classPanic.html" title="Default interrupt handler." alt="" coords="141,59,195,88"/>
-<area shape="rect" id="node7" href="$classWatch.html" title="Handler for periodic timer interrupts." alt="" coords="139,112,197,141"/>
-</map>

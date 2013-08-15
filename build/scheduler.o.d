@@ -95,4 +95,5 @@ build/scheduler.o: src/thread/scheduler.cc include/thread/scheduler.h \
  /usr/include/c++/4.6/bits/basic_ios.tcc /usr/include/c++/4.6/ostream \
  /usr/include/c++/4.6/bits/ostream.tcc \
  /usr/include/c++/4.6/bits/istream.tcc \
- /usr/include/c++/4.6/bits/sstream.tcc /usr/include/c++/4.6/iostream
+ /usr/include/c++/4.6/bits/sstream.tcc /usr/include/c++/4.6/iostream \
+ include/thread/idle.h

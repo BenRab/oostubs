@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classPanic.html#a2b509a675cded39f5422ef625261c6ba" title="handle unknown/unregistered interrupt" alt="" coords="217,5,316,35"/>
-<area shape="rect" id="node5" href="$guardian_8cc.html#afe78f34c7c65df79376008e0d23c1afd" title="This function is called if a normal exception is raised by the cpu." alt="" coords="208,59,325,88"/>
-<area shape="rect" id="node7" href="$guardian_8cc.html#a70466c5bd3ffac85265c22f65e9a4ef9" title="This function is called if a normal exception with error code is raised by the cpu." alt="" coords="204,112,329,141"/>
-<area shape="rect" id="node9" href="$guardian_8cc.html#a390d383038610b600ab986ec9b54879a" title="This function is called if a reserved exception is raised by the cpu." alt="" coords="180,165,353,195"/>
-</map>

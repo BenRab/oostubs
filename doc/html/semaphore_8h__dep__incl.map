@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$curskbd_8h.html" title="include/device/curskbd.h" alt="" coords="241,83,407,112"/>
-<area shape="rect" id="node15" href="$semaphore_8cc.html" title="src/thread/semaphore.cc" alt="" coords="431,83,596,112"/>
-<area shape="rect" id="node5" href="$keyboard_8h.html" title="include/useful/keyboard.h" alt="" coords="55,160,225,189"/>
-<area shape="rect" id="node11" href="$curskbd_8cc.html" title="src/device/curskbd.cc" alt="" coords="249,160,399,189"/>
-<area shape="rect" id="node13" href="$main_8cc.html" title="src/main.cc" alt="" coords="423,160,513,189"/>
-<area shape="rect" id="node7" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="5,237,128,267"/>
-<area shape="rect" id="node9" href="$task5_8cc.html" title="src/user/task5.cc" alt="" coords="152,237,275,267"/>
-</map>

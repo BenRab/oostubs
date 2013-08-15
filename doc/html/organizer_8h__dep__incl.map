@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$useful_2scheduler_8h.html" title="include/useful/scheduler.h" alt="" coords="143,83,316,112"/>
-<area shape="rect" id="node11" href="$main_8cc.html" title="src/main.cc" alt="" coords="340,83,431,112"/>
-<area shape="rect" id="node13" href="$organizer_8cc.html" title="src/thread/organizer.cc" alt="" coords="455,83,609,112"/>
-<area shape="rect" id="node5" href="$watch_8cc.html" title="src/device/watch.cc" alt="" coords="5,160,144,189"/>
-<area shape="rect" id="node7" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="168,160,291,189"/>
-<area shape="rect" id="node9" href="$task5_8cc.html" title="src/user/task5.cc" alt="" coords="315,160,437,189"/>
-</map>

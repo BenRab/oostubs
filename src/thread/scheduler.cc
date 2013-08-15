@@ -12,19 +12,11 @@
 
 #include "thread/scheduler.h"
 #include "thread/lock.h"
+#include "thread/idle.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 # METHODS #
 \* * * * * * * * * * * * * * * * * * * * * * * * */
-
-class IdleThread : public Thread {
-  void action() 
-  {
-    while(1);
-  }
-};
-
-IdleThread idle;
 
 /**\~english \todo implement**/
 void Scheduler::schedule(Thread& first){
@@ -65,6 +57,8 @@ void Scheduler::kill(Thread& that){
     resume();
   }
 }
+
+IdleThread idle;
 
 /**\~english \todo implement**/
 void Scheduler::resume(){

@@ -1,8 +1,0 @@
-<map id="Key::scroll_lock" name="Key::scroll_lock">
-<area shape="rect" id="node3" href="$classKey.html#af3d96c346d2e6088cafbc94fe7c783ef" title="Key::scroll_lock" alt="" coords="167,30,276,58"/>
-<area shape="rect" id="node5" href="$classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2" title="interpret the received scancode and modifier bits" alt="" coords="325,22,464,66"/>
-<area shape="rect" id="node7" href="$classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21" title="get the last pressed key" alt="" coords="512,22,651,66"/>
-<area shape="rect" id="node9" href="$classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353" title="einen auftretenden Tastaturinterrupt behandeln" alt="" coords="709,5,827,33"/>
-<area shape="rect" id="node11" href="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object" alt="" coords="699,55,837,83"/>
-<area shape="rect" id="node13" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information" alt="" coords="885,55,984,83"/>
-</map>

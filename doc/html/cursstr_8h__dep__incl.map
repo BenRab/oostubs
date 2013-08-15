@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$kout_8h.html" title="help include file for use of global declared variable kout, declared in main.cc" alt="" coords="244,83,385,112"/>
-<area shape="rect" id="node13" href="$cursstr_8cc.html" title="src/device/cursstr.cc" alt="" coords="409,83,553,112"/>
-<area shape="rect" id="node15" href="$main_8cc.html" title="src/main.cc" alt="" coords="577,83,668,112"/>
-<area shape="rect" id="node5" href="$panic_8cc.html" title="src/device/panic.cc" alt="" coords="5,160,139,189"/>
-<area shape="rect" id="node7" href="$guardian_8cc.html" title="interrupt handler function" alt="" coords="163,160,309,189"/>
-<area shape="rect" id="node9" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="333,160,456,189"/>
-<area shape="rect" id="node11" href="$task5_8cc.html" title="src/user/task5.cc" alt="" coords="480,160,603,189"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$guardian_8cc.html#afe78f34c7c65df79376008e0d23c1afd" title="This function is called if a normal exception is raised by the cpu." alt="" coords="99,5,216,35"/>
-<area shape="rect" id="node5" href="$guardian_8cc.html#a70466c5bd3ffac85265c22f65e9a4ef9" title="This function is called if a normal exception with error code is raised by the cpu." alt="" coords="95,59,220,88"/>
-</map>

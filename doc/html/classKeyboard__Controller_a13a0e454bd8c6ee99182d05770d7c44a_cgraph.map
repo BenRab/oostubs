@@ -1,6 +1,0 @@
-<map id="Keyboard_Controller::Keyboard_Controller" name="Keyboard_Controller::Keyboard_Controller">
-<area shape="rect" id="node3" href="$classKeyboard__Controller.html#a36dfc2c73c4031c8662e37159238d5b0" title="switch the specified LED of the keyboard on or off." alt="" coords="197,90,336,134"/>
-<area shape="rect" id="node5" href="$classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port." alt="" coords="388,32,479,60"/>
-<area shape="rect" id="node9" href="$classKeyboard__Controller.html#aa213c738efd52d7986fb925e6aaa7d95" title="set the speed and delay of repeats of the keyboard." alt="" coords="197,24,336,68"/>
-<area shape="rect" id="node7" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port." alt="" coords="384,90,483,118"/>
-</map>

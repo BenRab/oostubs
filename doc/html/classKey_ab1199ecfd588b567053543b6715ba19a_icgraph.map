@@ -1,7 +1,0 @@
-<map id="Key::alt_left" name="Key::alt_left">
-<area shape="rect" id="node3" href="$classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2" title="interpret the received scancode and modifier bits" alt="" coords="144,22,283,66"/>
-<area shape="rect" id="node5" href="$classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21" title="get the last pressed key" alt="" coords="331,22,469,66"/>
-<area shape="rect" id="node7" href="$classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353" title="einen auftretenden Tastaturinterrupt behandeln" alt="" coords="528,5,645,33"/>
-<area shape="rect" id="node9" href="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object" alt="" coords="517,55,656,83"/>
-<area shape="rect" id="node11" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information" alt="" coords="704,55,803,83"/>
-</map>
